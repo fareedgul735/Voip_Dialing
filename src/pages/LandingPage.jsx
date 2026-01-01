@@ -11,13 +11,6 @@ import image1 from "../../public/image1.jpg";
 import image2 from "../../public/image2.jpg";
 import image3 from "../../public/image3.png";
 
-import title1 from "../../public/title1.png";
-import title2 from "../../public/title2.png";
-import title4 from "../../public/title4.png";
-import title5 from "../../public/title5.png";
-import title6 from "../../public/title6.png";
-import title7 from "../../public/title7.png";
-
 import HeadPhones from "../../public/HeadPhone.png";
 import CallCenter from "../../public/CallCenter.png";
 import Dots from "../../public/Dots.png";
@@ -28,39 +21,12 @@ import Doctor3 from "../../public/Doctor 3.png";
 import Doctor4 from "../../public/Doctor 4.jpg";
 import Doctor5 from "../../public/Doctor 5.png";
 import Detailed from "../../public/VoipDeatiling.png";
+import ContactInformation from "../ui/ContactInformation";
+import CustomUi from "../ui/CustomUi";
 
 const LandingPage = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [activeBtn, setActiveBtn] = useState("login");
-
-  const [formData, setFormData] = useState({
-    name: "Key Points",
-    phoneEmail: "salend@vandaling.com",
-    subject: "702-927-7777\n855-VDualing (855-834-2546)",
-  });
-
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (formData.name && formData.phoneEmail) {
-      setIsSubmitted(true);
-      setTimeout(() => setIsSubmitted(false), 3000);
-
-      console.log("Form submitted:", formData);
-    } else {
-      alert("Please fill in at least your name and phone number.");
-    }
-  };
 
   const testimonials = [
     {
@@ -94,10 +60,10 @@ const LandingPage = () => {
   return (
     <>
       <div
-        className="container w-full bg-gradient-to-r from-[#FFE8E0] to-[#E6F0FF]"
+        className="p-[28px] bg-gradient-to-r from-[#FFE8E0] to-[#E6F0FF]"
         // style={{ backgroundImage: `url('/bg_image.png')` }}
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-4 py-20 items-center">
+        <div className="p-[18px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
             <div className="flex justify-center items-center panel bg-white w-70 h-8 rounded-[18px] mb-2 shadow-md">
               <span className="text-orange-600">
@@ -187,74 +153,10 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-60 flex justify-end mt-20 mb-4 px-4">
-        <div className="relative flex items-center gap-6 p-8 bg-orange-50 rounded-4xl shadow-sm w-[85%] ml-auto">
-          <div className="absolute top-12 -left-40 bg-orange-500 text-white rounded-2xl px-10 py-8 text-center shadow-lg z-10">
-            <h2 className="text-4xl font-bold">200+</h2>
-            <p className="mt-3 leading-snug text-sm">
-              Certified & <br />
-              Authorized <br />
-              Reseller/Integrator
-            </p>
-          </div>
-
-          <div className="flex-1 pl-16">
-            <div className="flex justify-between">
-              <p className="font-semibold text-gray-800 mb-6 leading-relaxed">
-                We Empower your business with seamless,
-                <br />
-                high-quality calling solutions.
-              </p>
-
-              <p className="flex gap-2 w-100 font-semibold text-gray-800 mb-6 leading-relaxed">
-                <span>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-                  rem molestiae consequatur!
-                </span>
-                <img
-                  src={title6}
-                  className="h-10 object-contain opacity-90"
-                  alt="logo"
-                />
-              </p>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-8">
-              <img
-                src={title1}
-                className="h-20 object-contain opacity-90"
-                alt="logo"
-              />
-              <img
-                src={title2}
-                className="h-20 object-contain opacity-90"
-                alt="logo"
-              />
-              <img
-                src={title4}
-                className="h-20 object-contain opacity-90"
-                alt="logo"
-              />
-              <img
-                src={title5}
-                className="h-20 object-contain opacity-90"
-                alt="logo"
-              />
-              <img
-                src={title6}
-                className="h-20 object-contain opacity-90"
-                alt="logo"
-              />
-              <img
-                src={title7}
-                className="h-20 object-contain opacity-90"
-                alt="logo"
-              />
-            </div>
-          </div>
-        </div>
+      <div className="w-full p-[28px] h-60 flex justify-end mt-20 mb-4 px-4">
+        <CustomUi />
       </div>
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
+      <div className="w-full  bg-gradient-to-br from-orange-50 to-red-50">
         <div className="container mx-auto px-6 py-12">
           <div className="flex justify-between items-center mb-12">
             <div className="text-orange-500 flex items-center gap-2 text-sm font-medium">
@@ -523,7 +425,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white flex flex-col">
+      <div className="w-full  bg-gradient-to-b from-orange-50 to-white flex flex-col">
         <div className="text-center py-3 text-xs tracking-widest text-orange-400 font-semibold">
           SOFTWARE DEMO
         </div>
@@ -536,7 +438,7 @@ const LandingPage = () => {
           <img src={Detailed} />
         </div>
       </div>
-      <div className="min-h-screen bg-white flex items-center justify-center p-6">
+      <div className="w-full  bg-white flex items-center justify-center p-6">
         <div className="max-w-7xl w-full bg-white rounded-2xl shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="p-8 flex flex-col justify-center">
             <p className="uppercase tracking-widest text-orange-500 font-semibold mb-2">
@@ -603,7 +505,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
+      <div className="w-full  bg-gradient-to-b from-orange-50 to-white">
         <div className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-4">
@@ -735,111 +637,8 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="mb-24 w-full bg-white shadow-2xl rounded-xl overflow-hidden flex flex-col md:flex-row">
-        <div className="bg-[#FF6B35] text-white p-8 md:p-12 lg:p-16 flex-1">
-          <div className="max-w-md">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-              READY TO
-              <br />
-              GROW BUSINESS
-              <br />
-              <span className="text-white font-black">WITH US</span>
-            </h1>
-
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6 mt-8">
-              REQUEST A CALL
-            </h2>
-
-            <p className="text-lg md:text-xl mb-10 opacity-90 leading-relaxed">
-              Our team will call you back promptly to discuss how we can help
-              grow your business.
-            </p>
-
-            <div className="h-px bg-white/20 my-8"></div>
-          </div>
-        </div>
-
-        <div className="bg-white p-8 md:p-12 lg:p-16 flex-1 flex items-center">
-          <div className="w-full max-w-md mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-8">
-              Request a Call
-            </h2>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-gray-700 font-medium mb-2"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B35] focus:border-[#FF6B35] outline-none transition"
-                  placeholder="Enter your name"
-                  required
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="phoneEmail"
-                  className="block text-gray-700 font-medium mb-2"
-                >
-                  Phone & Email (optional)
-                </label>
-                <input
-                  type="text"
-                  id="phoneEmail"
-                  name="phoneEmail"
-                  value={formData.phoneEmail}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B35] focus:border-[#FF6B35] outline-none transition"
-                  placeholder="Enter phone number"
-                  required
-                />
-                <p className="text-sm text-gray-500 mt-1 italic">
-                  Email is optional but helpful for follow-up
-                </p>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-gray-700 font-medium mb-2"
-                >
-                  Subject
-                </label>
-                <textarea
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  rows="3"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B35] focus:border-[#FF6B35] outline-none transition resize-none"
-                  placeholder="What would you like to discuss?"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-[#FF6B35] hover:bg-[#e55a2b] text-white font-semibold py-4 px-6 rounded-lg transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
-              >
-                Request a Call
-              </button>
-
-              {isSubmitted && (
-                <div className="mt-4 p-4 bg-green-50 text-green-700 rounded-lg border border-green-200 animate-pulse">
-                  ✓ Thank you! We'll call you back shortly.
-                </div>
-              )}
-            </form>
-          </div>
-        </div>
+      <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
+        <ContactInformation />
       </div>
     </>
   );

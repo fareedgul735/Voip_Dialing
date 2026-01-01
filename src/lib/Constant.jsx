@@ -37,4 +37,5 @@ export const navLinks = [
   },
   { id: "pricing", link: "/pricing", label: "Pricing", icon: LuTag },
   { id: "about", link: "/about", label: "About", icon: LuInfo },
+  { id: "contact", link: "/contact", label: "Contact", icon: LuInfo },
 ];

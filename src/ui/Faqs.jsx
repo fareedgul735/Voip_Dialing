@@ -1,79 +1,112 @@
-const FAQItem = ({ question, answer, index, isOpen, onClick }) => {
+import React, { useState } from "react";
+import { Plus, Minus } from "lucide-react";
+
+export default function FAQAccordion() {
+  const [openItems, setOpenItems] = useState({});
+
+  const faqs = [
+    {
+      id: 1,
+      question: "Does Biotix remember previous conversations?",
+      answer:
+        "Yes, Biotix maintains context throughout your conversation session, allowing for more natural and coherent interactions based on previous exchanges.",
+    },
+    {
+      id: 2,
+      question: "Does Biotix integrate with other software tools?",
+      answer:
+        "Biotix offers seamless integration with popular business tools and platforms through our API and native connectors, enabling smooth workflow automation.",
+    },
+    {
+      id: 3,
+      question: "Biotix handle sensitive customer information?",
+      answer:
+        "We employ enterprise-grade encryption and comply with international data protection standards to ensure your customer information remains secure and confidential.",
+    },
+    {
+      id: 4,
+      question: "Is the memory feature in Biotix automatic?",
+      answer:
+        "Yes, the memory feature works automatically during your session, intelligently storing relevant context to provide more personalized and accurate responses.",
+    },
+    {
+      id: 5,
+      question: "Is Biotix capable of voice interaction?",
+      answer:
+        "Yes, Biotix supports voice interactions, allowing users to communicate naturally through speech for a more accessible and convenient experience.",
+    },
+    {
+      id: 6,
+      question: "How do I set up Biotix for my business?",
+      answer:
+        "Setting up Biotix is straightforward - simply sign up, configure your business parameters, train the AI with your specific data, and integrate it with your existing systems.",
+    },
+    {
+      id: 7,
+      question: "How does Biotix handle large volumes of queries?",
+      answer:
+        "Biotix is built on scalable infrastructure that can handle thousands of concurrent queries, ensuring consistent performance even during peak usage times.",
+    },
+    {
+      id: 8,
+      question: "What kind of support does Biotix provide?",
+      answer:
+        "We offer 24/7 customer support through multiple channels including email, chat, and phone, along with comprehensive documentation and onboarding assistance.",
+    },
+  ];
+
+  const toggleItem = (id) => {
+    setOpenItems((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
   return (
-    <div
-      className={`border border-gray-300 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 ${
-        isOpen ? "ring-2 ring-[#FF6B35]/30" : ""
-      }`}
-    >
-      <button
-        className={`w-full p-7 text-left flex justify-between items-center transition-all duration-300 ${
-          isOpen
-            ? "bg-gradient-to-r from-[#FF6B35] to-[#ff8b35] text-white"
-            : "bg-white text-gray-800 hover:bg-gray-50"
-        }`}
-        onClick={onClick}
-        aria-expanded={isOpen}
-        aria-controls={`faq-answer-${index}`}
-      >
-        <div className="flex items-start gap-4">
-          <div
-            className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${
-              isOpen ? "bg-white/20" : "bg-gray-100"
-            }`}
-          >
-            <span
-              className={`font-bold ${isOpen ? "text-white" : "text-gray-600"}`}
+    <div className=" bg-orange-50 py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-800 mb-3">
+            Frequently Asked Questions
+          </h1>
+          <p className="text-gray-500 text-sm">
+            How Spitflox can benefit your business, understanding its features
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {faqs.map((faq) => (
+            <div
+              key={faq.id}
+              className="bg-orange-100 rounded-lg overflow-hidden transition-all duration-200"
             >
-              {index + 1}
-            </span>
-          </div>
-          <span className="font-semibold text-xl pr-8 text-left">
-            {question}
-          </span>
-        </div>
-        <div className="flex-shrink-0">
-          <span
-            className={`text-3xl font-light transition-all duration-300 ${
-              isOpen ? "rotate-180 scale-110" : ""
-            }`}
-          >
-            {isOpen ? "−" : "+"}
-          </span>
-        </div>
-      </button>
+              <button
+                onClick={() => toggleItem(faq.id)}
+                className="w-full px-5 py-4 flex items-center justify-between text-left hover:bg-orange-200 transition-colors"
+              >
+                <span className="text-gray-800 text-sm font-medium pr-4">
+                  {faq.question}
+                </span>
+                <div className="flex-shrink-0">
+                  {openItems[faq.id] ? (
+                    <Minus className="w-4 h-4 text-gray-600" />
+                  ) : (
+                    <Plus className="w-4 h-4 text-gray-600" />
+                  )}
+                </div>
+              </button>
 
-      <div
-        id={`faq-answer-${index}`}
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="p-7 bg-white border-t border-gray-200">
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-2 bg-gradient-to-b from-[#FF6B35] to-[#ff8b35] rounded-full"></div>
-            <p className="text-gray-700 leading-relaxed text-lg">{answer}</p>
-          </div>
-
-          {/* Additional resources (optional) */}
-          {isOpen && (
-            <div className="mt-6 pt-6 border-t border-gray-200">
-              <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
-                  Related to your question
-                </span>
-                <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
-                  Business Solutions
-                </span>
-                <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
-                  Technical Support
-                </span>
-              </div>
+              {openItems[faq.id] && (
+                <div className="px-5 pb-4 pt-0">
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
+              )}
             </div>
-          )}
+          ))}
         </div>
       </div>
     </div>
   );
-};
-
-export default FAQItem;
+}

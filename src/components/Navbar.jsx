@@ -1,18 +1,23 @@
 import { LuChevronDown, LuShoppingCart } from "react-icons/lu";
 import { CustomButton } from "../ui/CustomButton";
 import { useState } from "react";
-import { activeStyle, baseBtn, inactiveStyle, navActive, navBase, navInactive } from "../lib/styles";
+import {
+  activeStyle,
+  baseBtn,
+  inactiveStyle,
+  navActive,
+  navBase,
+  navInactive,
+} from "../lib/styles";
 import logo from "../../public/logo.png";
 import { navLinks } from "../lib/Constant.jsx";
-import { NavLink } from "react-router-dom";
-
-
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [activeBtn, setActiveBtn] = useState("login");
 
   return (
-    <div className="w-full bg-white shadow">
+    <div className="bg-white shadow">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
         <div className="w-32">
           <img src={logo} alt="logo" />
@@ -55,26 +60,28 @@ const Navbar = () => {
           <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
             <LuShoppingCart />
           </div>
-
-          <CustomButton
-            onClick={() => setActiveBtn("login")}
-            className={`
+          <Link to={"/signin"}>
+            <CustomButton
+              onClick={() => setActiveBtn("login")}
+              className={`
               ${baseBtn}
               ${activeBtn === "login" ? activeStyle : inactiveStyle}
               hover:!opacity-90 active:!scale-90
             `}
-            value="Login"
-          />
-
-          <CustomButton
-            onClick={() => setActiveBtn("signup")}
-            className={`
+              value="Login"
+            />
+          </Link>
+          <Link to={"/signup"}>
+            <CustomButton
+              onClick={() => setActiveBtn("signup")}
+              className={`
               ${baseBtn}
               ${activeBtn === "signup" ? activeStyle : inactiveStyle}
               hover:!opacity-90 active:!scale-90
             `}
-            value="Get Started"
-          />
+              value="Get Started"
+            />
+          </Link>
         </div>
       </div>
     </div>
