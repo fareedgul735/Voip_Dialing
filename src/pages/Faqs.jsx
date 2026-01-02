@@ -1,6 +1,6 @@
 import ContactInformation from "../ui/ContactInformation";
 import CustomUi from "../ui/CustomUi";
-import FAQAccordion from "../ui/Faqs";
+import FAQAccordion from "../ui/FaqsUi";
 
 const Faqs = () => {
   return (
@@ -11,7 +11,7 @@ const Faqs = () => {
       <div className="w-full h-60 flex justify-end mt-20 mb-4 px-4">
         <CustomUi />
       </div>
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
+      <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
         <ContactInformation />
       </div>
     </div>

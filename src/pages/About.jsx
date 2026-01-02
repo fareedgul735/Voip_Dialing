@@ -10,7 +10,7 @@ import { Check } from "lucide-react";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import CallCenter from "../../public/CallCenter.png";
-import FAQAccordion from "../ui/Faqs";
+import FAQAccordion from "../ui/FaqsUi";
 import ContactInformation from "../ui/ContactInformation";
 import CustomUi from "../ui/CustomUi";
 

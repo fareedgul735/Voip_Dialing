@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ContactInformation from "../ui/ContactInformation";
 import CustomUi from "../ui/CustomUi";
+import Downloads from "../ui/Product";
+import AwardsNews from "../ui/Award";
+import dummy1 from "../../public/dummy1.png";
 
 const Blogs = () => {
   const [activeTab, setActiveTab] = useState("Blog");
@@ -165,120 +168,27 @@ const Blogs = () => {
     } else if (activeTab === "Product Data Sheet") {
       return (
         <div className="bg-white rounded-2xl shadow-sm p-12 border border-gray-100">
-          <div className="text-center max-w-2xl mx-auto">
-            <div className="w-20 h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center mx-auto mb-6">
-              <svg
-                className="w-10 h-10 text-orange-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Product Data Sheets
-            </h3>
-            <p className="text-gray-600 mb-8">
-              Explore detailed specifications and technical information about
-              our products. Data sheets coming soon!
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-gray-50 rounded-lg p-6 border-2 border-dashed border-gray-200">
-                <p className="text-gray-400 font-medium">
-                  AI Chatbot Solutions
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-lg p-6 border-2 border-dashed border-gray-200">
-                <p className="text-gray-400 font-medium">
-                  CRM Integration Guide
-                </p>
-              </div>
-            </div>
-          </div>
+          <Downloads />
         </div>
       );
     } else if (activeTab === "Press Release") {
       return (
         <div className="bg-white rounded-2xl shadow-sm p-12 border border-gray-100">
-          <div className="text-center max-w-2xl mx-auto">
-            <div className="w-20 h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center mx-auto mb-6">
-              <svg
-                className="w-10 h-10 text-orange-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
-                />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Press Releases
-            </h3>
-            <p className="text-gray-600 mb-8">
-              Stay updated with our latest company news and announcements. Press
-              releases will be published here.
-            </p>
-            <div className="bg-gradient-to-r from-orange-50 to-pink-50 rounded-lg p-8 border border-orange-100">
-              <p className="text-gray-500 italic">
-                No press releases available at the moment. Check back soon for
-                updates!
-              </p>
-            </div>
-          </div>
+          <AwardsNews />
         </div>
       );
     } else if (activeTab === "Announcement") {
       return (
-        <div className="bg-white rounded-2xl shadow-sm p-12 border border-gray-100">
-          <div className="text-center max-w-2xl mx-auto">
-            <div className="w-20 h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center mx-auto mb-6">
-              <svg
-                className="w-10 h-10 text-orange-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
-                />
-              </svg>
+        <div className="bg-white rounded-2xl p-12 border border-gray-100">
+          <div className="w-full flex gap-8">
+            <div className="img">
+              <img src={dummy1} />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Announcements
-            </h3>
-            <p className="text-gray-600 mb-8">
-              Important updates and announcements from our team. Stay informed
-              about new features and updates.
-            </p>
-            <div className="space-y-4">
-              <div className="bg-gradient-to-r from-orange-50 to-pink-50 rounded-lg p-6 border border-orange-100 text-left">
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
-                  <div>
-                    <p className="font-semibold text-gray-900 mb-1">
-                      Coming Soon
-                    </p>
-                    <p className="text-gray-600 text-sm">
-                      New announcements will be posted here. Stay tuned for
-                      exciting updates!
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div className="img">
+              <img src={dummy1} />
+            </div>
+            <div className="img">
+              <img src={dummy1} />
             </div>
           </div>
         </div>
@@ -298,7 +208,7 @@ const Blogs = () => {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-6 py-2.5 rounded-full font-medium transition-all ${
+                className={`cursor-pointer px-6 py-2.5 rounded-full font-medium transition-all ${
                   activeTab === tab
                     ? "bg-orange-500 text-white shadow-md"
                     : "bg-white text-gray-700 border border-orange-200 hover:border-orange-300 hover:bg-orange-50"

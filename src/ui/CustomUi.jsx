@@ -17,7 +17,7 @@ const CustomUi = () => {
         </p>
       </div>
 
-      <div className="flex-1 pl-16">
+      <div className="flex-1 pl-16 p-[12px]">
         <div className="flex justify-between">
           <p className="font-semibold text-gray-800 mb-6 leading-relaxed">
             We Empower your business with seamless,
