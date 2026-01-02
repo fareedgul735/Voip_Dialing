@@ -3,6 +3,10 @@ import { CustomButton } from "../ui/CustomButton";
 import { activeStyle, baseBtn, inactiveStyle } from "../lib/styles";
 import { Phone, MessageSquare, Wifi, Hash, Package, Check } from "lucide-react";
 
+import title6 from "../../public/title6.png";
+import dummy3 from "../../public/dummy3.png";
+import dummy4 from "../../public/dummy4.png";
+
 import { CheckCircle } from "lucide-react";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -60,7 +64,7 @@ const LandingPage = () => {
   return (
     <>
       <div
-        className="p-[28px] bg-gradient-to-r from-[#FFE8E0] to-[#E6F0FF]"
+        className="p-[28px] bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]"
         // style={{ backgroundImage: `url('/bg_image.png')` }}
       >
         <div className="p-[18px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -156,7 +160,7 @@ const LandingPage = () => {
       <div className="w-full p-[28px] h-60 flex justify-end mt-20 mb-4 px-4">
         <CustomUi />
       </div>
-      <div className="w-full  bg-gradient-to-br from-orange-50 to-red-50">
+      <div className="w-full bg-[#FAF9F6]">
         <div className="container mx-auto px-6 py-12">
           <div className="flex justify-between items-center mb-12">
             <div className="text-orange-500 flex items-center gap-2 text-sm font-medium">
@@ -350,96 +354,82 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="container mx-auto px-6 py-16">
+        <div className="bg-white rounded-3xl  overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="relative p-12">
+              <div className="w-32">
+                <img src={HeadPhones} alt="logo" />
+              </div>
 
-        <div className="container mx-auto px-6 py-16">
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="relative bg-gradient-to-br from-blue-100 to-blue-200 p-12">
+              <div className="absolute bottom-8 left-8 grid grid-cols-5 gap-2">
                 <div className="w-32">
-                  <img src={HeadPhones} alt="logo" />
+                  <img src={Dots} alt="logo" />
                 </div>
+              </div>
 
-                <div className="absolute bottom-8 left-8 grid grid-cols-5 gap-2">
-                  <div className="w-32">
-                    <img src={Dots} alt="logo" />
-                  </div>
-                </div>
-
-                <div className="relative z-10 flex justify-center items-end h-96">
-                  <div>
-                    <div className="w-100 mb-32">
-                      <img
-                        src={CallCenter}
-                        alt="Main User"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="absolute bottom-12 right-12 bg-white rounded-2xl p-6 shadow-xl">
-                  <div className="text-5xl font-bold text-orange-500 mb-1">
-                    20+
-                  </div>
-                  <div className="text-sm text-gray-600 font-medium">
-                    Years Experience
+              <div className="relative z-10 flex justify-center items-end h-96">
+                <div>
+                  <div className="w-100 mb-32">
+                    <img
+                      src={CallCenter}
+                      alt="Main User"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </div>
 
-              <div className="p-12">
-                <div className="text-orange-500 text-sm font-semibold tracking-wider uppercase mb-4">
-                  BUSINESS GROWTH
+              <div className="absolute bottom-42 right-42 bg-white rounded-2xl p-6 shadow-xl z-999">
+                <div className="text-5xl font-bold text-orange-500 mb-1">
+                  20+
                 </div>
-
-                <h2 className="text-4xl font-bold text-gray-800 mb-6">
-                  Grow your business stronger
-                </h2>
-
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  VoipDailing delivers a powerful SIP-based Cloud PBX platform
-                  that runs seamlessly across cloud, on-premise, and hybrid
-                  environments. Our system supports IP phones, softphones,
-                  mobile apps, and WebRTC clients, enabling businesses to
-                  communicate effortlessly across multiple locations.
-                </p>
-
-                <p className="text-gray-600 mb-8 leading-relaxed">
-                  VoipDailing integrates seamlessly with leading CRM and
-                  business applications, allowing you to streamline workflows
-                  and maximize productivity. With a secure, feature-rich, and
-                  reliable Cloud PBX solution, VoipDailing empowers businesses
-                  to stay connected, efficient, and future-ready.
-                </p>
-
-                <div className="flex gap-4">
-                  <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-medium shadow-lg transition-all">
-                    Explore Services
-                  </button>
-                  <button className="border-2 border-orange-500 text-orange-500 hover:bg-orange-50 px-8 py-3 rounded-full font-medium transition-all">
-                    Get Started
-                  </button>
+                <div className="text-sm text-gray-600 font-medium">
+                  Years Experience
                 </div>
+              </div>
+            </div>
+
+            <div className="p-12">
+              <div className="text-orange-500 text-sm font-semibold tracking-wider uppercase mb-4">
+                BUSINESS GROWTH
+              </div>
+
+              <h2 className="text-4xl font-bold text-gray-800 mb-6">
+                Grow your business stronger
+              </h2>
+
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                VoipDailing delivers a powerful SIP-based Cloud PBX platform
+                that runs seamlessly across cloud, on-premise, and hybrid
+                environments. Our system supports IP phones, softphones, mobile
+                apps, and WebRTC clients, enabling businesses to communicate
+                effortlessly across multiple locations.
+              </p>
+
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                VoipDailing integrates seamlessly with leading CRM and business
+                applications, allowing you to streamline workflows and maximize
+                productivity. With a secure, feature-rich, and reliable Cloud
+                PBX solution, VoipDailing empowers businesses to stay connected,
+                efficient, and future-ready.
+              </p>
+
+              <div className="flex gap-4">
+                <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-medium shadow-lg transition-all">
+                  Explore Services
+                </button>
+                <button className="border-2 border-orange-500 text-orange-500 hover:bg-orange-50 px-8 py-3 rounded-full font-medium transition-all">
+                  Get Started
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="w-full  bg-gradient-to-b from-orange-50 to-white flex flex-col">
-        <div className="text-center py-3 text-xs tracking-widest text-orange-400 font-semibold">
-          SOFTWARE DEMO
-        </div>
-
-        <h1 className="text-2xl md:text-3xl font-semibold text-center text-slate-800 mb-4">
-          Get up and running in minutes
-        </h1>
-
-        <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-xl border border-orange-100 p-2 md:p-4 flex-1">
-          <img src={Detailed} />
-        </div>
-      </div>
       <div className="w-full  bg-white flex items-center justify-center p-6">
-        <div className="max-w-7xl w-full bg-white rounded-2xl shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="max-w-7xl w-full bg-white rounded-2xl  overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="p-8 flex flex-col justify-center">
             <p className="uppercase tracking-widest text-orange-500 font-semibold mb-2">
               Benefits
@@ -505,7 +495,20 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="w-full  bg-gradient-to-b from-orange-50 to-white">
+      <div className="w-full bg-[#FAF9F6] flex flex-col">
+        <div className="text-center py-3 text-xs tracking-widest text-orange-400 font-semibold">
+          SOFTWARE DEMO
+        </div>
+
+        <h1 className="text-2xl md:text-3xl font-semibold text-center text-slate-800 mb-4">
+          Get up and running in minutes
+        </h1>
+
+        <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-xl shadow-orange-300 border border-orange-100 p-2 md:p-4 flex-1">
+          <img src={Detailed} />
+        </div>
+      </div>
+      <div className="w-full bg-gradient-to-b from-orange-50 to-white">
         <div className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-4">
@@ -549,7 +552,7 @@ const LandingPage = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl mx-auto relative z-10 border border-gray-100">
+              <div className="bg-white border border-sky-500 rounded-2xl shadow-xl p-8 max-w-2xl mx-auto relative z-10 border border-gray-100">
                 <div className="flex justify-center mb-6">
                   <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
                     <svg
@@ -637,8 +640,26 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
+      <div className="bg-[linear-gradient(180deg,_#FEA134_0%,_#FFFFFF_100%,_#FEA034_100%,_#FFFFFF_100%)] flex items-center justify-center p-4">
         <ContactInformation />
+      </div>
+      <div className="award-winners w-full flex justify-evenly items-center gap-4 p-[48px]">
+        <h1 className="text-orange-400 text-3xl">Award Winners</h1>
+        <div className="img">
+          <img src={title6} className="w-20" />
+        </div>
+        <div className="img">
+          <img src={title6} className="w-20" />
+        </div>
+        <div className="img">
+          <img src={title6} className="w-20" />
+        </div>
+        <div className="img">
+          <img src={dummy3} />
+        </div>
+        <div className="img">
+          <img src={dummy4} />
+        </div>
       </div>
     </>
   );

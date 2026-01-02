@@ -37,7 +37,7 @@ const About = () => {
   ];
   return (
     <>
-      <div className="w-full  bg-gradient-to-br from-pink-100 via-purple-50 to-blue-100">
+      <div className="w-full bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
         <div className="container mx-auto px-6 py-12">
           <div className="p-[18px] grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -115,34 +115,33 @@ const About = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="container mx-auto px-6 py-16">
+        <h2 className="text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-4">
+          Why us?
+        </h2>
 
-        <div className="container mx-auto px-6 py-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-4">
-            Why us?
-          </h2>
+        <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+          VoIPDialing delivers reliable, high-quality VoIP solutions that
+          simplify business communication. Our platform is designed for clarity,
+          stability, and efficiency helping organizations connect better while
+          reducing costs.
+        </p>
 
-          <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12">
-            VoIPDialing delivers reliable, high-quality VoIP solutions that
-            simplify business communication. Our platform is designed for
-            clarity, stability, and efficiency helping organizations connect
-            better while reducing costs.
-          </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-white border-2 border-orange-100 rounded-2xl p-6 hover:border-orange-300 transition-colors hover:shadow-lg"
-              >
-                <div className="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                  <Check className="w-6 h-6 text-orange-500" strokeWidth={3} />
-                </div>
-                <p className="text-gray-800 font-medium leading-snug">
-                  {feature}
-                </p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="bg-white border-2 border-orange-100 rounded-2xl p-6 hover:border-orange-300 transition-colors hover:shadow-lg"
+            >
+              <div className="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                <Check className="w-6 h-6 text-orange-500" strokeWidth={3} />
               </div>
-            ))}
-          </div>
+              <p className="text-gray-800 font-medium leading-snug">
+                {feature}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -188,7 +187,7 @@ const About = () => {
         </div>
       </div>
       <div className="w-full  bg-white flex items-center justify-center p-6">
-        <div className="max-w-7xl w-full bg-white rounded-2xl shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="max-w-7xl w-full bg-white rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="p-8 flex flex-col justify-center">
             <p className="uppercase tracking-widest text-orange-500 font-semibold mb-2">
               Our Communities
@@ -333,10 +332,10 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="w-full  mx-auto px-4 py-8">
+      <div className="w-full mx-auto px-4 py-8">
         <FAQAccordion />
       </div>
-      <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
+      <div className="bg-[linear-gradient(180deg,_#FEA134_0%,_#FFFFFF_100%,_#FEA034_100%,_#FFFFFF_100%)] to-gray-100 flex items-center justify-center p-[18px]">
         <ContactInformation />
       </div>
     </>
