@@ -1,9 +1,5 @@
 export const baseBtn =
-  "!flex !items-center !justify-center !gap-2 " +
-  "!px-8 !py-2 !rounded-full " +
-  "!font-semibold !text-base " +
-  "!transition-all !duration-200 !ease-in-out " +
-  "cursor-pointer ";
+  "bg-orange-500 cursor-pointer hover:bg-orange-600 text-white px-6 py-3 rounded-full font-medium shadow-lg transition-all";
 
 export const activeStyle = "!bg-orange-600 !text-white !shadow-lg scale-95";
 

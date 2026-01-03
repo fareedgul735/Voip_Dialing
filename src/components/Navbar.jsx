@@ -14,7 +14,7 @@ import { navLinks } from "../lib/Constant.jsx";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const [activeBtn, setActiveBtn] = useState("login");
+  const [activeBtn, setActiveBtn] = useState("signup");
 
   return (
     <div className="bg-white shadow">
