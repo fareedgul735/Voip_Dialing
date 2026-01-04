@@ -5,7 +5,7 @@ import logo from "../../../public/logo.png";
 
 const Signin = () => {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-pink-100 via-purple-100 to-indigo-200 relative overflow-hidden">
+    <div className="min-h-screen p-[12px] w-full flex items-center justify-center bg-gradient-to-br from-pink-100 via-purple-100 to-indigo-200 relative overflow-hidden">
       <div className="relative bg-white w-[380px] rounded-2xl shadow-xl p-8">
         <div className="flex justify-center mb-6">
           <Link to={"/home"}>

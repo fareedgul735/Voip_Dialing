@@ -11,9 +11,7 @@ import { CheckCircle } from "lucide-react";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import image1 from "../../public/image1.jpg";
-import image2 from "../../public/image2.jpg";
-import image3 from "../../public/image3.png";
+
 
 import HeadPhones from "../../public/HeadPhone.png";
 import CallCenter from "../../public/CallCenter.png";
@@ -27,11 +25,11 @@ import Doctor5 from "../../public/Doctor 5.png";
 import Detailed from "../../public/VoipDeatiling.png";
 import ContactInformation from "../ui/ContactInformation";
 import CustomUi from "../ui/CustomUi";
+import BusinessCommunicationServices from "../ui/BusinessComunicationService";
+import HeroSection from "../ui/HeroSection";
 
 const LandingPage = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const [activeBtn, setActiveBtn] = useState("login");
-
   const testimonials = [
     {
       text: "VoIPDialing has completely upgraded our communication. The call quality is excellent, uptime is consistent, and their support team is always quick to help. It's been a reliable solution for our growing business.",
@@ -67,293 +65,13 @@ const LandingPage = () => {
         className="p-[28px] bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]"
         // style={{ backgroundImage: `url('/bg_image.png')` }}
       >
-        <div className="p-[18px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <div className="flex justify-center items-center panel bg-white w-70 h-8 rounded-[18px] mb-2 shadow-md">
-              <span className="text-orange-600">
-                No term or usage commitment
-              </span>
-            </div>
-
-            <h1 className="text-4xl font-bold text-[#0B1C2D] leading-tight">
-              Boost Your Business <br />
-              Communication with <br />
-              Reliable VoIP Solutions
-            </h1>
-
-            <ul className="mt-6 space-y-3 list-disc list-inside text-gray-700">
-              <li>Crystal-clear conversations</li>
-              <li>Scalable & cost-effective</li>
-              <li>Flexible VoIP plans</li>
-              <li>Reliable and secure connections</li>
-            </ul>
-            <div className="flex mt-6">
-              <CustomButton
-                onClick={() => setActiveBtn("login")}
-                className={`
-            ${baseBtn}
-            ${activeBtn === "login" ? activeStyle : inactiveStyle}
-            hover:!opacity-90 active:!scale-90
-          `}
-                value="Get Pricing"
-              />
-
-              <CustomButton
-                onClick={() => setActiveBtn("signup")}
-                className={`
-            ${baseBtn}
-            ${activeBtn === "signup" ? activeStyle : inactiveStyle}
-            hover:!opacity-90 active:!scale-90
-          `}
-                value="Contact Sales"
-              />
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="w-100 ml-12">
-              <img
-                src={image3}
-                alt="Main User"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            <div className="border border-white border-2 absolute -top-4 -left-4 w-12 h-12 bg-white rounded-full shadow overflow-hidden">
-              <img
-                src={image1}
-                alt="Profile 1"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            <div className="border border-white border-2 absolute top-10 -right-4 w-12 h-12 bg-white rounded-full shadow overflow-hidden">
-              <img
-                src={image2}
-                alt="Profile 2"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="border border-white border-2 absolute top-100 -right-4 w-12 h-12 bg-white rounded-full shadow overflow-hidden">
-              <img
-                src={image2}
-                alt="Profile 2"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            <div className="border border-white border-2 absolute bottom-6  w-12 h-12 bg-white rounded-full shadow overflow-hidden">
-              <img
-                src={image1}
-                alt="Profile 3"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            <div className="absolute bottom-4 right-22 bg-white px-6 py-4 rounded-xl shadow">
-              <p className="text-orange-500 text-2xl font-bold">12K+</p>
-              <p className="text-sm text-gray-600">Happy Clients</p>
-            </div>
-          </div>
-        </div>
+        <HeroSection />
       </div>
       <div className="w-full p-[28px] h-60 flex justify-end mt-20 mb-4 px-4">
         <CustomUi />
       </div>
       <div className="w-full bg-[#FAF9F6]">
-        <div className="container mx-auto px-6 py-12">
-          <div className="flex justify-between items-center mb-12">
-            <div className="text-orange-500 flex items-center gap-2 text-sm font-medium">
-              <Package className="w-4 h-4" />
-              Our Services
-            </div>
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-medium shadow-lg transition-all">
-              Schedule Demo
-            </button>
-          </div>
-
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12">
-            Business Communication Services We Offer
-          </h1>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="bg-orange-100 p-2 rounded-lg">
-                    <Phone className="w-5 h-5 text-orange-500" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    Cloud PBX
-                  </h3>
-                </div>
-                <p className="text-gray-600 text-sm">
-                  Cloud PBX Everything your business needs to be efficient and
-                  fully connected
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="bg-orange-100 p-2 rounded-lg">
-                    <MessageSquare className="w-5 h-5 text-orange-500" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    Bulk SMS
-                  </h3>
-                </div>
-                <p className="text-gray-600 text-sm">
-                  High-delivery SMS solutions for marketing, alerts, and
-                  customer engagement at scale.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="bg-orange-100 p-2 rounded-lg">
-                    <Wifi className="w-5 h-5 text-orange-500" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    VOIP Lines
-                  </h3>
-                </div>
-                <p className="text-gray-600 text-sm">
-                  Crystal-clear VoIP calling with stable connectivity and low
-                  latency for businesses and call centers.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="bg-orange-100 p-2 rounded-lg">
-                    <Hash className="w-5 h-5 text-orange-500" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    Phone Numbers
-                  </h3>
-                </div>
-                <p className="text-gray-600 text-sm">
-                  Local and international virtual phone numbers with flexible
-                  routing and failover.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="bg-orange-100 p-2 rounded-lg">
-                    <Package className="w-5 h-5 text-orange-500" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    Equipment
-                  </h3>
-                </div>
-                <p className="text-gray-600 text-sm">
-                  Plug-and-play IP phones, IP-PBX, and VoIP hardware for
-                  complete communication setups
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="text-orange-500 flex items-center gap-2 text-sm font-medium mb-4">
-                <Wifi className="w-4 h-4" />
-                How We Work
-              </div>
-
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">
-                Cloud Phone Systems
-              </h2>
-              <p className="text-2xl font-bold text-gray-800 mb-6">
-                Unified, Simplified and Efficient
-              </p>
-
-              <p className="text-gray-600 mb-8 text-sm leading-relaxed">
-                Cloud PBX delivers everything your business needs to communicate
-                efficiently. Built for remote teams and multi-location
-                businesses, our cloud phone systems are secure, scalable, and
-                easy to manage.
-              </p>
-
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="flex items-start gap-2">
-                  <div className="bg-orange-500 rounded-full p-1 mt-0.5">
-                    <Check className="w-3 h-3 text-white" />
-                  </div>
-                  <span className="text-sm text-gray-700">
-                    Don't buy expensive equipment
-                  </span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="bg-orange-500 rounded-full p-1 mt-0.5">
-                    <Check className="w-3 h-3 text-white" />
-                  </div>
-                  <span className="text-sm text-gray-700">
-                    Complete cloud-based communication services
-                  </span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="bg-orange-500 rounded-full p-1 mt-0.5">
-                    <Check className="w-3 h-3 text-white" />
-                  </div>
-                  <span className="text-sm text-gray-700">
-                    Advanced Class 5 PBX features
-                  </span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="bg-orange-500 rounded-full p-1 mt-0.5">
-                    <Check className="w-3 h-3 text-white" />
-                  </div>
-                  <span className="text-sm text-gray-700">
-                    Easily scalable as your business grows
-                  </span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="bg-orange-500 rounded-full p-1 mt-0.5">
-                    <Check className="w-3 h-3 text-white" />
-                  </div>
-                  <span className="text-sm text-gray-700">
-                    Geographic flexibility for remote teams
-                  </span>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="flex items-center gap-4">
-                  <div className="bg-orange-100 p-3 rounded-lg">
-                    <Package className="w-8 h-8 text-orange-500" />
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-gray-800">20+</div>
-                    <div className="text-sm text-gray-600">
-                      Years of Experience
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-orange-100 p-3 rounded-lg">
-                    <Phone className="w-8 h-8 text-orange-500" />
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-gray-800">509+</div>
-                    <div className="text-sm text-gray-600">Calls Per Day</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-medium shadow-lg transition-all">
-                  Get Pricing
-                </button>
-                <button className="border-2 border-orange-500 text-orange-500 hover:bg-orange-50 px-8 py-3 rounded-full font-medium transition-all">
-                  Contact Sales
-                </button>
-              </div>
-              <p className="text-xs text-gray-500 mt-4">
-                No credit card required
-              </p>
-            </div>
-          </div>
-        </div>
+        <BusinessCommunicationServices />
       </div>
       <div className="container mx-auto px-6 py-16">
         <div className="bg-white rounded-3xl  overflow-hidden">

@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <div className="bg-white shadow">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
-        <div className="w-32">
+        <div className="w-22">
           <img src={logo} alt="logo" />
         </div>
 
