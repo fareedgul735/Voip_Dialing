@@ -1,6 +1,5 @@
-import { FaFacebook, FaLinkedin, FaPhoneAlt, FaTwitter } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
 import { Link } from "react-router";
+import { Mail, Phone, Facebook, Twitter, Linkedin } from "lucide-react";
 
 const AnnouncementBar = () => {
   return (
@@ -9,13 +8,13 @@ const AnnouncementBar = () => {
         <div className="flex gap-4">
           <span className="flex justify-center items-center gap-2">
             <span>
-              <MdEmail />
+              <Mail />
             </span>
             <span> dummy@gmail.com</span>
           </span>
           <span className="flex justify-center items-center gap-2">
             <span>
-              <FaPhoneAlt />
+              <Phone />
             </span>
             <span> +09271 8999 000 </span>
           </span>
@@ -32,13 +31,13 @@ const AnnouncementBar = () => {
 
           <div className=" rounded flex justify-center items-center gap-2">
             <span className="flex justify-center items-center w-5 h-5 bg-orange-600 text-white rounded-full">
-              <FaFacebook />
+              <Facebook size={12} />
             </span>
             <span className="flex justify-center items-center w-5 h-5 bg-orange-600 text-white rounded-full">
-              <FaTwitter />
+              <Twitter size={12} />
             </span>
             <span className="flex justify-center items-center w-5 h-5 bg-orange-600 text-white rounded-full">
-              <FaLinkedin />
+              <Linkedin size={12} />
             </span>
           </div>
         </div>

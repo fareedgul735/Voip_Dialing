@@ -1,19 +1,12 @@
-import {
-  LuHouse,
-  LuBoxes,
-  LuLayers,
-  LuFactory,
-  LuTag,
-  LuInfo,
-} from "react-icons/lu";
+import { Home, Boxes, Layers, Factory, Tag, Info } from "lucide-react";
 
 export const navLinks = [
-  { id: "home", link: "/home", label: "Home", icon: LuHouse },
+  { id: "home", link: "/home", label: "Home", icon: Home },
   {
     id: "products",
     link: "/products",
     label: "Products",
-    icon: LuBoxes,
+    icon: Boxes,
     submenu: [
       { label: "Product A", link: "/products/a" },
       { label: "Product B", link: "/products/b" },
@@ -23,7 +16,7 @@ export const navLinks = [
     id: "solutions",
     link: "/solutions",
     label: "Solutions",
-    icon: LuLayers,
+    icon: Layers,
     submenu: [
       { label: "Solution X", link: "/solutions/x" },
       { label: "Solution Y", link: "/solutions/y" },
@@ -33,9 +26,9 @@ export const navLinks = [
     id: "industries",
     link: "/industries",
     label: "Industries",
-    icon: LuFactory,
+    icon: Factory,
   },
-  { id: "pricing", link: "/pricing", label: "Pricing", icon: LuTag },
-  { id: "about", link: "/about", label: "About", icon: LuInfo },
-  { id: "contact", link: "/contact", label: "Contact", icon: LuInfo },
+  { id: "pricing", link: "/pricing", label: "Pricing", icon: Tag },
+  { id: "about", link: "/about", label: "About", icon: Info },
+  { id: "contact", link: "/contact", label: "Contact", icon: Info },
 ];

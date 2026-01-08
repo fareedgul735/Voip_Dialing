@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 const Layout = () => {
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full">
       <AnnoucementBar />
       <Navbar />
       <Outlet />

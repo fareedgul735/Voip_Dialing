@@ -9,6 +9,8 @@ import Signin from "../../pages/Auth/Signin";
 import Signup from "../../pages/Auth/Signup";
 import ForgotPassword from "../../pages/Auth/ForgotPassword";
 import Contact from "../../pages/Contact";
+import Pricing from "../../pages/Pricing";
+import Solution from "../../pages/Solution";
 
 const routes = createBrowserRouter([
   {
@@ -20,7 +22,9 @@ const routes = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "faqs", element: <Faqs /> },
       { path: "blogs", element: <Blogs /> },
+      { path: "pricing", element: <Pricing /> },
       { path: "contact", element: <Contact /> },
+      { path: "solutions", element: <Solution /> },
     ],
   },
   {

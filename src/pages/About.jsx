@@ -335,7 +335,7 @@ const About = () => {
       <div className="w-full mx-auto px-4 py-8">
         <FAQAccordion />
       </div>
-      <div className="bg-[linear-gradient(180deg,_#FEA134_0%,_#FFFFFF_100%,_#FEA034_100%,_#FFFFFF_100%)] to-gray-100 flex items-center justify-center p-[18px]">
+      <div className="bg-[#FBF7F4] to-gray-100 flex items-center justify-center p-[18px]">
         <ContactInformation />
       </div>
     </>

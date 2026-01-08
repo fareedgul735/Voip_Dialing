@@ -1,7 +1,4 @@
 import { useState } from "react";
-import { CustomButton } from "../ui/CustomButton";
-import { activeStyle, baseBtn, inactiveStyle } from "../lib/styles";
-import { Phone, MessageSquare, Wifi, Hash, Package, Check } from "lucide-react";
 
 import title6 from "../../public/title6.png";
 import dummy3 from "../../public/dummy3.png";
@@ -10,8 +7,6 @@ import dummy4 from "../../public/dummy4.png";
 import { CheckCircle } from "lucide-react";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-
 
 import HeadPhones from "../../public/HeadPhone.png";
 import CallCenter from "../../public/CallCenter.png";
@@ -63,7 +58,7 @@ const LandingPage = () => {
     <>
       <div
         className="p-[28px] bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]"
-        // style={{ backgroundImage: `url('/bg_image.png')` }}
+       
       >
         <HeroSection />
       </div>
@@ -358,7 +353,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[linear-gradient(180deg,_#FEA134_0%,_#FFFFFF_100%,_#FEA034_100%,_#FFFFFF_100%)] flex items-center justify-center p-4">
+      <div className="bg-[#FBF7F4] flex items-center justify-center p-4">
         <ContactInformation />
       </div>
       <div className="award-winners w-full flex justify-evenly items-center gap-4 p-[48px]">
