@@ -1,40 +1,59 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router";
-import LandingPage from "../../pages/LandingPage";
-import Layout from "../../layout/Layout";
-import About from "../../pages/About";
-import Faqs from "../../pages/Faqs";
-import Blogs from "../../pages/Blogs";
-import AuthLayout from "../../layout/AuthLayout";
-import Signin from "../../pages/Auth/Signin";
-import Signup from "../../pages/Auth/Signup";
-import ForgotPassword from "../../pages/Auth/ForgotPassword";
-import Contact from "../../pages/Contact";
-import Pricing from "../../pages/Pricing";
-import Solution from "../../pages/Solution";
+import Loader from "../../ui/Loader";
+
+// Layouts
+const Layout = lazy(() => import("../../layout/Layout"));
+const AuthLayout = lazy(() => import("../../layout/AuthLayout"));
+
+// Pages
+const LandingPage = lazy(() => import("../../pages/LandingPage"));
+const About = lazy(() => import("../../pages/About"));
+const Faqs = lazy(() => import("../../pages/Faqs"));
+const Blogs = lazy(() => import("../../pages/Blogs"));
+const Contact = lazy(() => import("../../pages/Contact"));
+const Pricing = lazy(() => import("../../pages/Pricing"));
+const Solution = lazy(() => import("../../pages/solutions/Solution.jsx"));
+const Products = lazy(() => import("../../pages/products/Product.jsx"));
+
+// Auth pages
+const Signin = lazy(() => import("../../pages/Auth/Signin"));
+const Signup = lazy(() => import("../../pages/Auth/Signup"));
+const ForgotPassword = lazy(() => import("../../pages/Auth/ForgotPassword"));
+
+// Optional loader component
+<Loader />;
+
+const withSuspense = (Component) => (
+  <Suspense fallback={<Loader />}>
+    <Component />
+  </Suspense>
+);
 
 const routes = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: withSuspense(Layout),
     children: [
-      { index: true, element: <Navigate to={"home"} replace={true} /> },
-      { path: "home", element: <LandingPage /> },
-      { path: "about", element: <About /> },
-      { path: "faqs", element: <Faqs /> },
-      { path: "blogs", element: <Blogs /> },
-      { path: "pricing", element: <Pricing /> },
-      { path: "contact", element: <Contact /> },
-      { path: "solutions", element: <Solution /> },
+      { index: true, element: <Navigate to="home" replace /> },
+      { path: "home", element: withSuspense(LandingPage) },
+      { path: "about", element: withSuspense(About) },
+      { path: "faqs", element: withSuspense(Faqs) },
+      { path: "blogs", element: withSuspense(Blogs) },
+      { path: "pricing", element: withSuspense(Pricing) },
+      { path: "contact", element: withSuspense(Contact) },
+      { path: "solutions", element: withSuspense(Solution) },
+      { path: "products/cloud-pbx", element: withSuspense(Products) },
     ],
   },
   {
     path: "/",
-    element: <AuthLayout />,
+    element: withSuspense(AuthLayout),
     children: [
-      { index: true, element: <Navigate to={"signin"} replace={true} /> },
-      { path: "signin", element: <Signin /> },
-      { path: "signup", element: <Signup /> },
-      { path: "forgotPassword", element: <ForgotPassword /> },
+      { index: true, element: <Navigate to="signin" replace /> },
+      { path: "signin", element: withSuspense(Signin) },
+      { path: "signup", element: withSuspense(Signup) },
+      { path: "forgotPassword", element: withSuspense(ForgotPassword) },
     ],
   },
 ]);

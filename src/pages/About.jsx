@@ -11,8 +11,7 @@ import { Check } from "lucide-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import CallCenter from "../../public/CallCenter.png";
 import FAQAccordion from "../ui/FaqsUi";
-import ContactInformation from "../ui/ContactInformation";
-import CustomUi from "../ui/CustomUi";
+import BrandName from "../ui/BrandName";
 
 const About = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -249,7 +248,7 @@ const About = () => {
         </div>
       </div>
       <div className="w-full h-60 flex justify-end mt-20 mb-4 px-4">
-        <CustomUi />
+        <BrandName />
       </div>
       <div className="w-full py-16 px-4">
         <div className="max-w-6xl mx-auto">
@@ -334,9 +333,6 @@ const About = () => {
       </div>
       <div className="w-full mx-auto px-4 py-8">
         <FAQAccordion />
-      </div>
-      <div className="bg-[#FBF7F4] to-gray-100 flex items-center justify-center p-[18px]">
-        <ContactInformation />
       </div>
     </>
   );

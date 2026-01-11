@@ -1,9 +1,8 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import FAQAccordion from "../ui/FaqsUi";
-import CustomUi from "../ui/CustomUi";
-import title6 from "../../public/title6.png";
-import dummy3 from "../../public/dummy3.png";
-import dummy4 from "../../public/dummy4.png";
+import BrandName from "../ui/BrandName";
+
+
 
 export default function Contact() {
   return (
@@ -95,26 +94,9 @@ export default function Contact() {
         <FAQAccordion />
       </div>
       <div className="w-full p-4">
-        <CustomUi />
+        <BrandName />
       </div>
-      <div className="award-winners w-full flex justify-evenly items-center gap-4 mt-12">
-        <h1 className="text-orange-400 text-3xl">Award Winners</h1>
-        <div className="img">
-          <img src={title6} className="w-20" />
-        </div>
-        <div className="img">
-          <img src={title6} className="w-20" />
-        </div>
-        <div className="img">
-          <img src={title6} className="w-20" />
-        </div>
-        <div className="img">
-          <img src={dummy3} />
-        </div>
-        <div className="img">
-          <img src={dummy4} />
-        </div>
-      </div>
+     
     </div>
   );
 }

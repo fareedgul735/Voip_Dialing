@@ -1,8 +1,5 @@
 import { useState } from "react";
 
-import title6 from "../../public/title6.png";
-import dummy3 from "../../public/dummy3.png";
-import dummy4 from "../../public/dummy4.png";
 
 import { CheckCircle } from "lucide-react";
 
@@ -18,10 +15,9 @@ import Doctor3 from "../../public/Doctor 3.png";
 import Doctor4 from "../../public/Doctor 4.jpg";
 import Doctor5 from "../../public/Doctor 5.png";
 import Detailed from "../../public/VoipDeatiling.png";
-import ContactInformation from "../ui/ContactInformation";
-import CustomUi from "../ui/CustomUi";
 import BusinessCommunicationServices from "../ui/BusinessComunicationService";
 import HeroSection from "../ui/HeroSection";
+import BrandName from "../ui/BrandName";
 
 const LandingPage = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -56,14 +52,11 @@ const LandingPage = () => {
 
   return (
     <>
-      <div
-        className="p-[28px] bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]"
-       
-      >
+      <div className="p-[28px] bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
         <HeroSection />
       </div>
       <div className="w-full p-[28px] h-60 flex justify-end mt-20 mb-4 px-4">
-        <CustomUi />
+        <BrandName />
       </div>
       <div className="w-full bg-[#FAF9F6]">
         <BusinessCommunicationServices />
@@ -351,27 +344,6 @@ const LandingPage = () => {
               ))}
             </div>
           </div>
-        </div>
-      </div>
-      <div className="bg-[#FBF7F4] flex items-center justify-center p-4">
-        <ContactInformation />
-      </div>
-      <div className="award-winners w-full flex justify-evenly items-center gap-4 p-[48px]">
-        <h1 className="text-orange-400 text-3xl">Award Winners</h1>
-        <div className="img">
-          <img src={title6} className="w-20" />
-        </div>
-        <div className="img">
-          <img src={title6} className="w-20" />
-        </div>
-        <div className="img">
-          <img src={title6} className="w-20" />
-        </div>
-        <div className="img">
-          <img src={dummy3} />
-        </div>
-        <div className="img">
-          <img src={dummy4} />
         </div>
       </div>
     </>

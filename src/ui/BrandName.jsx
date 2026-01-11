@@ -5,7 +5,7 @@ import title5 from "../../public/title5.png";
 import title6 from "../../public/title6.png";
 import title7 from "../../public/title7.png";
 
-const CustomUi = () => {
+const BrandName = () => {
   return (
     <div className="relative flex items-center gap-6 p-8 bg-[linear-gradient(180deg,_#E2C8B5_0%,_rgba(255,224,208,0.802083)_19.79%,_rgba(226,200,181,0)_100%)] rounded-4xl shadow-sm w-[85%] ml-auto">
       <div className="absolute top-12 -left-40  bg-orange-500 text-white rounded-2xl px-10 py-8 text-center shadow-lg z-10">
@@ -75,4 +75,4 @@ const CustomUi = () => {
   );
 };
 
-export default CustomUi;
+export default BrandName;

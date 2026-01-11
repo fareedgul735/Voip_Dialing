@@ -1,9 +1,8 @@
 import { useState } from "react";
-import ContactInformation from "../ui/ContactInformation";
-import CustomUi from "../ui/CustomUi";
 import Downloads from "../ui/Product";
 import AwardsNews from "../ui/Award";
 import dummy1 from "../../public/dummy1.png";
+import BrandName from "../ui/BrandName";
 
 const Blogs = () => {
   const [activeTab, setActiveTab] = useState("Blog");
@@ -223,10 +222,7 @@ const Blogs = () => {
         {renderContent()}
       </div>
       <div className="w-full p-[28px] h-60 flex justify-end mt-20 mb-4 px-4">
-        <CustomUi />
-      </div>
-      <div className="p-[28px] bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
-        <ContactInformation />
+        <BrandName />
       </div>
     </div>
   );

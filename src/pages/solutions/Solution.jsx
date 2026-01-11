@@ -1,5 +1,5 @@
-import lady1 from "../../public/lady_1.jpg";
-import animate1 from "../../public/animate_1.png";
+import lady1 from "../../../public/lady_1.jpg";
+import animate1 from "../../../public/animate_1.png";
 import {
   CheckCircle,
   ClipboardList,
@@ -9,12 +9,6 @@ import {
   Users,
   Zap,
 } from "lucide-react";
-import ContactInformation from "../ui/ContactInformation";
-
-import title6 from "../../public/title6.png";
-import dummy3 from "../../public/dummy3.png";
-import dummy4 from "../../public/dummy4.png";
-
 const Solution = () => {
   return (
     <>
@@ -440,27 +434,6 @@ const Solution = () => {
               Contact Us
             </button>
           </div>
-        </div>
-      </div>
-      <div className="bg-[#FBF7F4] flex items-center justify-center p-4">
-        <ContactInformation />
-      </div>
-      <div className="award-winners w-full flex justify-evenly items-center gap-4 p-[48px]">
-        <h1 className="text-orange-400 text-3xl">Award Winners</h1>
-        <div className="img">
-          <img src={title6} className="w-20" />
-        </div>
-        <div className="img">
-          <img src={title6} className="w-20" />
-        </div>
-        <div className="img">
-          <img src={title6} className="w-20" />
-        </div>
-        <div className="img">
-          <img src={dummy3} />
-        </div>
-        <div className="img">
-          <img src={dummy4} />
         </div>
       </div>
     </>

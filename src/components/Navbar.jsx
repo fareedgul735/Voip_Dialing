@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import {
   ChevronDown,
   ShoppingCart,
@@ -10,26 +10,8 @@ import {
 } from "lucide-react";
 import { Drawer } from "antd";
 import logo from "../../public/logo.png";
+import { navLinks } from "../lib/Constant";
 
-const navLinks = [
-  { id: 1, label: "Home", link: "/" },
-  {
-    id: 3,
-    label: "Products",
-    submenu: [
-      { label: "Cloud PBX" },
-      { label: "Bulk SMS" },
-      { label: "VOIP Lines" },
-      { label: "Phone Numbers" },
-      { label: "Equipment" },
-    ],
-  },
-  { id: 2, label: "Solutions", link: "/solutions" },
-  { id: 4, label: "Pricing", link: "/pricing" },
-  { id: 4, label: "Industry", link: "/industry" },
-  { id: 4, label: "About", link: "/about" },
-  { id: 5, label: "Contact", link: "/contact" },
-];
 
 const navBase = "px-4 py-2 text-sm font-medium rounded-full transition";
 const navActive = "text-orange-600 bg-orange-50";
@@ -39,27 +21,26 @@ const baseBtn = "px-5 py-2 rounded-full text-sm font-semibold transition";
 const activeStyle = "bg-orange-500 text-white";
 const inactiveStyle = "bg-gray-100 text-gray-800";
 
+
 const Navbar = () => {
   const [activeBtn, setActiveBtn] = useState("signup");
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  const isSubmenuActive = (submenu) => {
+    if (!Array.isArray(submenu)) return false;
+    return submenu.some((sub) => location.pathname.startsWith(sub.link));
+  };
 
   return (
-    <div className="bg-white shadow sticky top-0 z-50 w-full">
+    <header className="bg-white shadow sticky top-0 z-50 w-full">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
         <img src={logo} alt="logo" className="w-28" />
 
-        <ul className="hidden lg:flex gap-2 justify-center items-center relative">
+        <ul className="hidden lg:flex gap-2 items-center relative">
           {navLinks.map((item) => (
-            <li key={item.id} className="relative group">
-              {item.submenu ? (
-                <button
-                  type="button"
-                  className={`${navBase} ${navInactive} flex items-center gap-1 cursor-default`}
-                >
-                  {item.label}
-                  <ChevronDown size={16} />
-                </button>
-              ) : (
+            <li key={item.id} className="group">
+              {!item.submenu ? (
                 <NavLink
                   to={item.link}
                   className={({ isActive }) =>
@@ -68,39 +49,106 @@ const Navbar = () => {
                 >
                   {item.label}
                 </NavLink>
+              ) : (
+                <span
+                  className={`${navBase} flex items-center gap-1 cursor-default
+                    ${isSubmenuActive(item.submenu) ? navActive : navInactive}`}
+                >
+                  {item.label}
+                  <ChevronDown size={16} />
+                </span>
               )}
 
               {item.submenu && (
                 <div
-                  className="absolute left-1/2 -translate-x-1/2 top-full mt-4
-                                w-[1100px] bg-white rounded-2xl shadow-xl
-                                opacity-0 invisible group-hover:visible group-hover:opacity-100
-                                transition p-8 z-50"
+                  className="absolute left-1/2 top-full -translate-x-1/2 mt-4
+                  opacity-0 invisible group-hover:visible group-hover:opacity-100
+                  transition-all duration-200 z-50"
                 >
-                  <div className="grid grid-cols-5 gap-6">
-                    <Link
-                      to="/solutions"
-                      className="p-5 rounded-xl bg-orange-50 hover:bg-orange-100 transition"
-                    >
-                      <h4 className="font-semibold text-lg mb-2">Cloud PBX</h4>
-                      <p className="text-sm text-gray-600">
-                        Cloud PBX Everything your business needs
-                      </p>
-                    </Link>
-
-                    {item.submenu.slice(1).map((sub, i) => (
-                      <div
-                        key={i}
-                        className="p-5 rounded-xl bg-orange-50 cursor-default"
-                      >
-                        <h4 className="font-semibold text-lg mb-2">
-                          {sub.label}
-                        </h4>
-                        <p className="text-sm text-gray-600">
-                          Cloud PBX Everything your business needs
-                        </p>
+                  <div className="w-[1200px] bg-white rounded-2xl shadow-2xl p-8">
+                    {Array.isArray(item.submenu) && (
+                      <div className="grid grid-cols-5 gap-6">
+                        {item.submenu.map((sub, i) => (
+                          <NavLink
+                            key={i}
+                            to={sub.link}
+                            className={({ isActive }) =>
+                              `p-5 rounded-xl transition
+                              ${
+                                isActive
+                                  ? "bg-orange-100 ring-2 ring-orange-400"
+                                  : "bg-orange-50 hover:bg-orange-100 hover:shadow-md"
+                              }`
+                            }
+                          >
+                            <h4 className="font-semibold text-lg mb-2">
+                              {sub.label}
+                            </h4>
+                            <p className="text-sm text-gray-600">
+                              Everything your business needs
+                            </p>
+                          </NavLink>
+                        ))}
                       </div>
-                    ))}
+                    )}
+
+                    {!Array.isArray(item.submenu) && (
+                      <div className="grid grid-cols-4 gap-8">
+                        <div className="rounded-2xl p-6 text-white bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-500">
+                          <h3 className="text-2xl font-bold mb-4">
+                            Get VOIP UNIFIED
+                          </h3>
+                          <ul className="space-y-2 text-sm">
+                            <li>✔ Conversational & Dialer Dial Plans</li>
+                            <li>✔ Secure, Reliable, Scalable</li>
+                            <li>✔ Simple and Affordable</li>
+                          </ul>
+
+                          <Link
+                            to="/contact"
+                            className="inline-block mt-6 bg-white text-gray-900
+                            px-4 py-2 rounded-full font-semibold"
+                          >
+                            Get Service Now
+                          </Link>
+                        </div>
+
+                        <div>
+                          <h4 className="font-semibold mb-3">
+                            By Business Type
+                          </h4>
+                          <ul className="space-y-2 text-sm">
+                            {item.submenu.businessType.map((b, i) => (
+                              <li key={i} className="hover:text-orange-600">
+                                {b}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h4 className="font-semibold mb-3">By Industry</h4>
+                          <ul className="space-y-2 text-sm">
+                            {item.submenu.industry.map((b, i) => (
+                              <li key={i} className="hover:text-orange-600">
+                                {b}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h4 className="font-semibold mb-3">By Solution</h4>
+                          <ul className="space-y-2 text-sm">
+                            {item.submenu.solution.map((b, i) => (
+                              <li key={i} className="hover:text-orange-600">
+                                {b}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               )}
@@ -142,24 +190,50 @@ const Navbar = () => {
         >
           <Menu size={22} />
         </button>
-
-        <Drawer
-          placement="left"
-          onClose={() => setOpen(false)}
-          open={open}
-          width={280}
-        >
+        <Drawer placement="left" onClose={() => setOpen(false)} open={open}>
           <img src={logo} alt="logo" className="w-32 mx-auto mb-6" />
 
-          <ul className="flex flex-col gap-4 items-center">
+          <ul className="flex flex-col gap-4">
             {navLinks.map((item) => (
               <li key={item.id}>
-                {item.submenu ? (
-                  <span className="font-semibold text-gray-700">
+                {!item.submenu ? (
+                  <NavLink
+                    to={item.link}
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      isActive ? "text-orange-600 font-semibold" : ""
+                    }
+                  >
                     {item.label}
-                  </span>
+                  </NavLink>
                 ) : (
-                  <NavLink to={item.link}>{item.label}</NavLink>
+                  <>
+                    <p
+                      className={`font-semibold mb-2 ${
+                        isSubmenuActive(item.submenu) ? "text-orange-600" : ""
+                      }`}
+                    >
+                      {item.label}
+                    </p>
+
+                    {Array.isArray(item.submenu) &&
+                      item.submenu.map((sub, i) => (
+                        <NavLink
+                          key={i}
+                          to={sub.link}
+                          onClick={() => setOpen(false)}
+                          className={({ isActive }) =>
+                            `block text-sm pl-4 mb-1 ${
+                              isActive
+                                ? "text-orange-600 font-medium"
+                                : "text-gray-600"
+                            }`
+                          }
+                        >
+                          {sub.label}
+                        </NavLink>
+                      ))}
+                  </>
                 )}
               </li>
             ))}
@@ -177,7 +251,7 @@ const Navbar = () => {
           </div>
         </Drawer>
       </div>
-    </div>
+    </header>
   );
 };
 

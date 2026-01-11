@@ -1,34 +1,59 @@
-import { Home, Boxes, Layers, Factory, Tag, Info } from "lucide-react";
+// import { Home, Boxes, Layers, Factory, Tag, Info } from "lucide-react";
+
 
 export const navLinks = [
-  { id: "home", link: "/home", label: "Home", icon: Home },
+  { id: 1, label: "Home", link: "/home" },
+
   {
-    id: "products",
-    link: "/products",
+    id: 2,
     label: "Products",
-    icon: Boxes,
     submenu: [
-      { label: "Product A", link: "/products/a" },
-      { label: "Product B", link: "/products/b" },
+      { label: "Cloud PBX", link: "/products/cloud-pbx" },
+      { label: "Bulk SMS", link: "/products/bulk-sms" },
+      { label: "VOIP Lines", link: "/products/voip-lines" },
+      { label: "Phone Numbers", link: "/products/phone-numbers" },
+      { label: "Equipment", link: "/products/equipment" },
     ],
   },
+
   {
-    id: "solutions",
-    link: "/solutions",
+    id: 3,
     label: "Solutions",
-    icon: Layers,
-    submenu: [
-      { label: "Solution X", link: "/solutions/x" },
-      { label: "Solution Y", link: "/solutions/y" },
-    ],
+    submenu: {
+      type: "solutions",
+      businessType: [
+        "Small medium businesses",
+        "Retail",
+        "Corporate Offices",
+        "Call center",
+        "Medical",
+        "Enterprise",
+      ],
+      industry: [
+        "Healthcare",
+        "Hospitality",
+        "Internet and Telco",
+        "Insurance",
+        "Constructions",
+        "Real Estate",
+        "Marketing",
+        "Education",
+        "Transportation",
+      ],
+      solution: [
+        "Sip Trunks",
+        "Cloud Phone System",
+        "SMS",
+        "Dialers",
+        "Global",
+        "Multi-location",
+        "Unified Communication",
+        "Fax",
+      ],
+    },
   },
-  {
-    id: "industries",
-    link: "/industries",
-    label: "Industries",
-    icon: Factory,
-  },
-  { id: "pricing", link: "/pricing", label: "Pricing", icon: Tag },
-  { id: "about", link: "/about", label: "About", icon: Info },
-  { id: "contact", link: "/contact", label: "Contact", icon: Info },
+
+  { id: 4, label: "Pricing", link: "/pricing" },
+  { id: 6, label: "About", link: "/about" },
+  { id: 7, label: "Contact", link: "/contact" },
 ];

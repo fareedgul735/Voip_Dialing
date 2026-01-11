@@ -4,7 +4,7 @@ import { Mail, Phone, Facebook, Twitter, Linkedin } from "lucide-react";
 const AnnouncementBar = () => {
   return (
     <div className="bg-sky-600 text-white text-sm">
-      <div className="max-w-7xl mx-auto flex justify-between items-center py-2">
+      <div className="max-w-7xl mx-auto flex justify-around items-center py-2">
         <div className="flex gap-4">
           <span className="flex justify-center items-center gap-2">
             <span>
@@ -23,6 +23,7 @@ const AnnouncementBar = () => {
             <span>(8899 7766 55 99000) </span>
           </span>
         </div>
+          <span className="!bg-orange-600 rounded p-[4px] hover:shadow shadow-orange-200 cursor-pointer">Request a Call </span>
 
         <div className="flex gap-4 items-center">
           <Link to={"/blogs"}>Blogs</Link>
