@@ -11,6 +11,12 @@ import Doctor4 from "../../../public/Doctor 4.jpg";
 import Doctor5 from "../../../public/Doctor 5.png";
 import { useState } from "react";
 import { Check } from "lucide-react";
+import { CheckCircle2, Award, Phone } from "lucide-react";
+import { Card, features, services } from "../../lib/Constant.jsx";
+
+const column1 = features.filter((f) => f.column === 1);
+const column2 = features.filter((f) => f.column === 2);
+const column3 = features.filter((f) => f.column === 3);
 
 const Products = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -21,6 +27,29 @@ const Products = () => {
       position: "Operations Manager",
     },
   ];
+
+  const CloudServiceCard = ({
+    image,
+    icon: Icon,
+    title,
+    description,
+    iconColor,
+  }) => (
+    <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform hover:scale-105 hover:shadow-xl">
+      <div className="aspect-video w-full overflow-hidden bg-gray-100">
+        <img src={image} alt={title} className="w-full h-full object-cover" />
+      </div>
+      <div className="p-6">
+        <div className="flex items-center gap-2 mb-3">
+          <div className={`${iconColor} rounded-lg p-2`}>
+            <Icon className="w-4 h-4 text-white" />
+          </div>
+          <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
+        </div>
+        <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
+      </div>
+    </div>
+  );
 
   return (
     <>
@@ -83,6 +112,136 @@ const Products = () => {
           </div>
         </div>
       </div>
+      <div className="w-full bg-[#FAF9F6] py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Cloud PBX Phone System for Modern Businesses
+            </h1>
+            <p className="text-gray-600 text-lg max-w-4xl mx-auto leading-relaxed">
+              Our Cloud PBX system delivers secure, high-quality VoIP calling
+              for businesses of all sizes. Designed for remote teams and
+              multi-location offices, it's easy to set up, cost-effective, and
+              built to grow with your business.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {Card.map((item, indx) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={indx}
+                  className="bg-white rounded-lg border border-orange-200 p-6 hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div className="bg-orange-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-orange-500" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Affordable VoIP Phones & Cloud PBX Plans
+            </h2>
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-8">
+              Choose from a wide range of VoIP desk phones and softphone options
+              available to buy or lease, perfectly integrated with our cloud PBX
+              platform.
+            </p>
+            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+              See Pricing
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="w-full  p-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-center">
+            <div className="mb-12">
+              <div className="text-orange-500 text-sm font-semibold tracking-wider uppercase mb-4">
+                FEATURES
+              </div>
+              <h1 className="text-4xl font-bold text-gray-900 mb-6">
+                Enterprise-Grade VoIP Dialing with Full Class 5 Features
+              </h1>
+              <p className="text-gray-600 text-lg max-w-4xl leading-relaxed">
+                Power your business communications with a robust VoIP dialing
+                platform built for performance, flexibility, and scale. Our
+                Class 5 Cloud PBX features give you complete control over call
+                flow, agent productivity, and customer experience.
+              </p>
+            </div>
+
+            <div className="flex gap-12 mb-26">
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center">
+                  <Award className="w-8 h-8 text-orange-500" />
+                </div>
+                <div>
+                  <div className="text-4xl font-bold text-gray-900">20+</div>
+                  <div className="text-gray-600 text-sm">
+                    Years of Experience
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center">
+                  <Phone className="w-8 h-8 text-orange-500" />
+                </div>
+                <div>
+                  <div className="text-4xl font-bold text-gray-900">509+</div>
+                  <div className="text-gray-600 text-sm">Calls Per Day</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-x-12 gap-y-6">
+            <div className="space-y-6">
+              {column1.map((feature, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700 font-medium">
+                    {feature.text}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-6">
+              {column2.map((feature, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700 font-medium">
+                    {feature.text}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-6">
+              {column3.map((feature, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700 font-medium">
+                    {feature.text}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="w-full bg-[#FAF9F6] flex flex-col">
         <div className="text-center py-3 text-xs tracking-widest text-orange-400 font-semibold">
           SOFTWARE DEMO
@@ -94,6 +253,31 @@ const Products = () => {
 
         <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-xl shadow-orange-300 border border-orange-100 p-2 md:p-4 flex-1">
           <img src={Detailed} />
+        </div>
+      </div>
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-orange-400 text-sm font-semibold tracking-wider uppercase mb-2">
+              CLOUD SERVICE
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Cloud Service of VOIP
+            </h1>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <CloudServiceCard
+                key={service.id}
+                image={service.image}
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                iconColor={service.iconColor}
+              />
+            ))}
+          </div>
         </div>
       </div>
       <div className="w-full p-[28px]">
@@ -108,8 +292,8 @@ const Products = () => {
               </h2>
               <div className="w-full py-12 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-8">
                 <div>
-                  <h4 className="text-md flex gap-2 text-orange-400 font-semibold text-gray-800 mb-1">
-                    <span>
+                  <h4 className="text-md flex gap-2  text-orange-400 font-semibold text-gray-800 mb-1">
+                    <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
                       <Check size={14} />
                     </span>
                     Lorem
@@ -121,8 +305,8 @@ const Products = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-md flex gap-2 text-orange-400 font-semibold text-gray-800 mb-1">
-                    <span>
+                  <h4 className="text-md flex gap-2  text-orange-400 font-semibold text-gray-800 mb-1">
+                    <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
                       <Check size={14} />
                     </span>
                     Lorem
@@ -134,8 +318,8 @@ const Products = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-md flex gap-2 text-orange-400 font-semibold text-gray-800 mb-1">
-                    <span>
+                  <h4 className="text-md flex gap-2  text-orange-400 font-semibold text-gray-800 mb-1">
+                    <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
                       <Check size={14} />
                     </span>
                     Lorem
@@ -147,8 +331,8 @@ const Products = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-md flex gap-2 text-orange-400 font-semibold text-gray-800 mb-1">
-                    <span>
+                  <h4 className="text-md flex gap-2  text-orange-400 font-semibold text-gray-800 mb-1">
+                    <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
                       <Check size={14} />
                     </span>
                     Lorem
@@ -160,8 +344,8 @@ const Products = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-md flex gap-2 text-orange-400 font-semibold text-gray-800 mb-1">
-                    <span>
+                  <h4 className="text-md flex gap-2  text-orange-400 font-semibold text-gray-800 mb-1">
+                    <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
                       <Check size={14} />
                     </span>
                     Lorem
@@ -173,8 +357,8 @@ const Products = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-md flex gap-2 text-orange-400 font-semibold text-gray-800 mb-1">
-                    <span>
+                  <h4 className="text-md flex gap-2  text-orange-400 font-semibold text-gray-800 mb-1">
+                    <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
                       <Check size={14} />
                     </span>
                     Lorem
@@ -186,8 +370,8 @@ const Products = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-md  flex gap-2 text-orange-400 font-semibold text-gray-800 mb-1">
-                    <span>
+                  <h4 className="text-md flex gap-2  text-orange-400 font-semibold text-gray-800 mb-1">
+                    <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
                       <Check size={14} />
                     </span>
                     Lorem
@@ -199,8 +383,8 @@ const Products = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-md flex gap-2 text-orange-400 font-semibold text-gray-800 mb-1">
-                    <span>
+                  <h4 className="text-md flex gap-2  text-orange-400 font-semibold text-gray-800 mb-1">
+                    <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
                       <Check size={14} />
                     </span>
                     Lorem

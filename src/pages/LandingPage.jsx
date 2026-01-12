@@ -21,6 +21,7 @@ import BrandName from "../ui/BrandName";
 
 const LandingPage = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  
   const testimonials = [
     {
       text: "VoIPDialing has completely upgraded our communication. The call quality is excellent, uptime is consistent, and their support team is always quick to help. It's been a reliable solution for our growing business.",
@@ -87,7 +88,7 @@ const LandingPage = () => {
                 </div>
               </div>
 
-              <div className="absolute bottom-42 right-42 bg-white rounded-2xl p-6 shadow-xl z-999">
+              <div className="absolute bottom-42 right-42 bg-white rounded-2xl p-6 shadow-xl z-12">
                 <div className="text-5xl font-bold text-orange-500 mb-1">
                   20+
                 </div>

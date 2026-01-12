@@ -23,7 +23,16 @@ const AnnouncementBar = () => {
             <span>(8899 7766 55 99000) </span>
           </span>
         </div>
-          <span className="!bg-orange-600 rounded p-[4px] hover:shadow shadow-orange-200 cursor-pointer">Request a Call </span>
+        <span
+          onClick={() => {
+            document
+              .getElementById("requestCall")
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="!bg-orange-600 rounded p-[4px] hover:shadow shadow-orange-200 cursor-pointer"
+        >
+          Request a Call
+        </span>
 
         <div className="flex gap-4 items-center">
           <Link to={"/blogs"}>Blogs</Link>

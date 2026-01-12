@@ -42,7 +42,7 @@ const routes = createBrowserRouter([
       { path: "blogs", element: withSuspense(Blogs) },
       { path: "pricing", element: withSuspense(Pricing) },
       { path: "contact", element: withSuspense(Contact) },
-      { path: "solutions", element: withSuspense(Solution) },
+      { path: "solutions/smallbusiness", element: withSuspense(Solution) },
       { path: "products/cloud-pbx", element: withSuspense(Products) },
     ],
   },
