@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronRight } from "lucide-react";
-import BrandName from "../ui/BrandName.jsx";
+import BrandName from "../ui/BrandName";
 
-const Pricing = () => {
-  const [activeStep, setActiveStep] = useState(0);
+const VoIPPricingInterface = () => {
+  const [activeStep, setActiveStep] = useState(null);
   const [openCollapse, setOpenCollapse] = useState(null);
 
   const steps = [
@@ -48,7 +48,7 @@ const Pricing = () => {
   };
 
   return (
-    <div className="bg-orange-50 p-6">
+    <div className="p-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center mb-8">
           {steps.map((step, index) => (
@@ -139,8 +139,8 @@ const Pricing = () => {
             ))}
           </div>
 
-          <div className="w-80 bg-orange-50 rounded-lg p-6 border border-orange-200 h-fit">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">
+          <div className="w-100 rounded-lg p-6 border border-orange-200 h-fit">
+            <h2 className="text-lg border-b border-orange-400 font-semibold text-gray-800 mb-4">
               Shopping Cart Totals
             </h2>
 
@@ -148,12 +148,7 @@ const Pricing = () => {
               No Item Added
             </div>
 
-            <div className="mt-8 pt-4 border-t border-orange-200">
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-sm text-gray-600">Total Price</span>
-                <span className="text-2xl font-bold text-gray-800">0.00</span>
-              </div>
-
+            <div className="mt-8 flex justify-between items-center pt-4 border-t border-orange-200">
               <div className="flex gap-3">
                 <button className="flex-1 py-2.5 px-4 bg-orange-400 text-white rounded-lg font-medium hover:bg-orange-500 transition-colors">
                   Next
@@ -161,6 +156,10 @@ const Pricing = () => {
                 <button className="flex-1 py-2.5 px-4 bg-white text-orange-500 border border-orange-300 rounded-lg font-medium hover:bg-orange-50 transition-colors">
                   Checkout
                 </button>
+              </div>
+              <div className="flex flex-col justify-between items-center mb-4">
+                <span className="text-sm text-gray-600">Total Price</span>
+                <span className="text-2xl font-bold text-gray-800">0.00</span>
               </div>
             </div>
           </div>
@@ -173,4 +172,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing;
+export default VoIPPricingInterface;

@@ -36,7 +36,7 @@ const AnnouncementBar = () => {
 
         <div className="flex gap-4 items-center">
           <Link to={"/blogs"}>Blogs</Link>
-          <Link to={"/shops"}>Shops</Link>
+          <Link to={"/pricing"}>Shops</Link>
           <Link to={"/faqs"}>Faq`s</Link>
 
           <div className=" rounded flex justify-center items-center gap-2">

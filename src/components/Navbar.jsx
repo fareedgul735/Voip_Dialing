@@ -11,14 +11,14 @@ import {
 import { Drawer } from "antd";
 import logo from "../../public/logo.png";
 import { navLinks } from "../lib/Constant";
-
-const navBase = "px-4 py-2 text-sm font-medium rounded-full transition";
-const navActive = "text-orange-600 bg-orange-50";
-const navInactive = "text-gray-700 hover:text-orange-600";
-
-const baseBtn = "px-5 py-2 rounded-full text-sm font-semibold transition";
-const activeStyle = "bg-orange-500 text-white";
-const inactiveStyle = "bg-gray-100 text-gray-800";
+import {
+  activeStyle,
+  baseBtn,
+  inactiveStyle,
+  navActive,
+  navBase,
+  navInactive,
+} from "../lib/styles";
 
 const Navbar = () => {
   const [activeBtn, setActiveBtn] = useState("signup");
@@ -26,8 +26,17 @@ const Navbar = () => {
   const location = useLocation();
 
   const isSubmenuActive = (submenu) => {
-    if (!Array.isArray(submenu)) return false;
-    return submenu.some((sub) => location.pathname.startsWith(sub.link));
+    if (Array.isArray(submenu)) {
+      return submenu.some((sub) => location.pathname.startsWith(sub.link));
+    }
+
+    if (submenu?.businessType) {
+      return submenu.businessType.some((b) =>
+        location.pathname.startsWith(`/${b.link}`)
+      );
+    }
+
+    return false;
   };
 
   return (
@@ -50,7 +59,7 @@ const Navbar = () => {
               ) : (
                 <span
                   className={`${navBase} flex items-center gap-1 cursor-default
-          ${isSubmenuActive(item.submenu) ? navActive : navInactive}`}
+                  ${isSubmenuActive(item.submenu) ? navActive : navInactive}`}
                 >
                   {item.label}
                   <ChevronDown size={16} />
@@ -60,8 +69,8 @@ const Navbar = () => {
               {item.submenu && (
                 <div
                   className="absolute left-1/2 top-full -translate-x-1/2 mt-4
-          opacity-0 invisible group-hover:visible group-hover:opacity-100
-          transition-all duration-200 z-50"
+                  opacity-0 invisible group-hover:visible group-hover:opacity-100
+                  transition-all duration-200 z-50"
                 >
                   <div className="w-[1200px] bg-white rounded-2xl shadow-2xl p-8">
                     {Array.isArray(item.submenu) && (
@@ -72,11 +81,11 @@ const Navbar = () => {
                             to={sub.link}
                             className={({ isActive }) =>
                               `p-5 rounded-xl transition
-                      ${
-                        isActive
-                          ? "bg-orange-100 ring-2 ring-orange-400"
-                          : "bg-orange-50 hover:bg-orange-100 hover:shadow-md"
-                      }`
+                              ${
+                                isActive
+                                  ? "bg-orange-100 ring-2 ring-orange-400"
+                                  : "bg-orange-50 hover:bg-orange-100 hover:shadow-md"
+                              }`
                             }
                           >
                             <h4 className="font-semibold text-lg mb-2">
@@ -105,7 +114,7 @@ const Navbar = () => {
                           <Link
                             to="/contact"
                             className="inline-block mt-6 bg-white text-gray-900
-                    px-4 py-2 rounded-full font-semibold"
+                            px-4 py-2 rounded-full font-semibold"
                           >
                             Get Service Now
                           </Link>
@@ -117,8 +126,17 @@ const Navbar = () => {
                           </h4>
                           <ul className="space-y-2 text-sm">
                             {item.submenu.businessType.map((b, i) => (
-                              <li key={i} className="hover:text-orange-600">
-                                <Link to={`/${b.link}`}>{b.label}</Link>
+                              <li key={i}>
+                                <NavLink
+                                  to={`/${b.link}`}
+                                  className={({ isActive }) =>
+                                    isActive
+                                      ? "text-orange-600 font-semibold"
+                                      : "hover:text-orange-600"
+                                  }
+                                >
+                                  {b.label}
+                                </NavLink>
                               </li>
                             ))}
                           </ul>
@@ -156,13 +174,15 @@ const Navbar = () => {
 
         <div className="hidden lg:flex items-center gap-4">
           <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
-            <ShoppingCart size={18} />
+            <Link to={"/pricing"}>
+              <ShoppingCart size={18} />
+            </Link>
           </div>
 
           <Link to="/signin">
             <button
               onClick={() => setActiveBtn("login")}
-              className={`cursor-pointer ${baseBtn} ${
+              className={`${baseBtn} ${
                 activeBtn === "login" ? activeStyle : inactiveStyle
               }`}
             >
@@ -173,7 +193,7 @@ const Navbar = () => {
           <Link to="/signup">
             <button
               onClick={() => setActiveBtn("signup")}
-              className={`cursor-pointer ${baseBtn} ${
+              className={`${baseBtn} ${
                 activeBtn === "signup" ? activeStyle : inactiveStyle
               }`}
             >
@@ -188,6 +208,7 @@ const Navbar = () => {
         >
           <Menu size={22} />
         </button>
+
         <Drawer placement="left" onClose={() => setOpen(false)} open={open}>
           <img src={logo} alt="logo" className="w-32 mx-auto mb-6" />
 

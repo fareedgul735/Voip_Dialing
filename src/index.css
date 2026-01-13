@@ -22,7 +22,7 @@
 .loader span {
   width: 14px;
   height: 14px;
-  background: #f29007; 
+  background: #f29007;
   border-radius: 50%;
   animation: bounce 0.6s infinite alternate;
 }

@@ -114,11 +114,11 @@ export const navLinks = [
     submenu: {
       businessType: [
         { label: "Small medium businesses", link: "solutions/smallbusiness" },
-        { label: "Retail", link: "solutions/smallbusiness" },
-        { label: "Corporate Offices", link: "solutions/smallbusiness" },
-        { label: "Call center", link: "solutions/smallbusiness" },
-        { label: "Medical", link: "solutions/smallbusiness" },
-        { label: "Enterprise", link: "solutions/smallbusiness" },
+        { label: "Retail", link: "solutions/retails" },
+        { label: "Corporate Offices", link: "solutions/CorporateOffices" },
+        { label: "Call center", link: "solutions/Callcenter" },
+        { label: "Medical", link: "solutions/Medical" },
+        { label: "Enterprise", link: "solutions/Enterprise" },
       ],
       industry: [
         "Healthcare",

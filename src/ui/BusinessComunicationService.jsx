@@ -99,176 +99,187 @@ const BusinessCommunicationServices = () => {
   const Icon = currentService.icon;
 
   return (
-    <div className="p-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center mb-12">
-          <div>
-            <p className="text-orange-500 flex items-center gap-2 mb-4">
-              <Settings className="w-5 h-5" />
-              Our Services
-            </p>
-            <h1 className="text-3xl md:text-3xl font-bold text-gray-900">
-              Business Communication Services We Offer
-            </h1>
+   <div className="p-4 sm:p-6 md:p-8">
+  <div className="max-w-7xl mx-auto">
+
+    <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 mb-10 sm:mb-12 text-center md:text-left">
+      <div>
+        <p className="text-orange-500 flex items-center gap-2 mb-3 justify-center md:justify-start">
+          <Settings className="w-5 h-5" />
+          Our Services
+        </p>
+        <h1 className="text-2xl sm:text-3xl md:text-3xl font-bold text-gray-900">
+          Business Communication Services We Offer
+        </h1>
+      </div>
+
+      <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold transition-colors self-center md:self-auto">
+        Schedule Demo
+      </button>
+    </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12">
+
+      <div className="space-y-6">
+        {services.map((service, index) => {
+          const ServiceIcon = service.icon;
+          const isActive = index === activeService;
+
+          return (
+            <div
+              key={index}
+              className={`flex gap-4 transition-all duration-500 ${
+                isActive ? "opacity-100" : "opacity-40"
+              }`}
+            >
+              <div
+                className={`w-1 rounded-full transition-all duration-500 ${
+                  isActive ? "bg-orange-500" : "bg-transparent"
+                }`}
+              />
+
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-2">
+                  <div
+                    className={`p-2 rounded-lg transition-colors duration-500 ${
+                      isActive ? "bg-orange-100" : "bg-gray-100"
+                    }`}
+                  >
+                    <ServiceIcon
+                      className={`w-5 h-5 sm:w-6 sm:h-6 transition-colors duration-500 ${
+                        isActive ? "text-orange-500" : "text-gray-400"
+                      }`}
+                    />
+                  </div>
+                  <h3
+                    className={`text-lg sm:text-xl font-bold transition-colors duration-500 ${
+                      isActive ? "text-gray-900" : "text-gray-500"
+                    }`}
+                  >
+                    {service.title}
+                  </h3>
+                </div>
+
+                <p
+                  className={`text-sm leading-relaxed transition-colors duration-500 ${
+                    isActive ? "text-gray-600" : "text-gray-400"
+                  }`}
+                >
+                  {service.description}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="text-center lg:text-left">
+
+        <div className="mb-6">
+          <p className="text-orange-500 flex items-center gap-2 mb-2 justify-center lg:justify-start">
+            <Settings className="w-4 h-4" />
+            How We Work
+          </p>
+
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 transition-opacity duration-500">
+            {currentService.mainTitle}
+          </h2>
+
+          <h3 className="text-lg sm:text-xl text-gray-600 transition-opacity duration-500">
+            {currentService.mainSubtitle}
+          </h3>
+        </div>
+
+        <p className="text-gray-600 text-sm sm:text-base mb-6 transition-opacity duration-500">
+          {currentService.mainDescription}
+        </p>
+
+        <div className="space-y-3 mb-8 text-left">
+          {currentService.features.map((feature, index) => (
+            <div
+              key={index}
+              className="flex items-center gap-3 transition-all duration-500"
+              style={{
+                opacity: 0,
+                animation: `fadeIn 0.5s ease-in ${index * 0.1}s forwards`,
+              }}
+            >
+              <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg
+                  className="w-4 h-4 text-white"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="text-gray-700 text-sm sm:text-base">
+                {feature}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+          <div className="flex items-center gap-3 justify-start lg:justify-start">
+            <div className="p-3 bg-orange-100 rounded-full">
+              <Settings className="w-6 h-6 text-orange-500" />
+            </div>
+            <div>
+              <p className="text-2xl sm:text-3xl font-bold text-orange-500">
+                {currentService.stats.years}
+              </p>
+              <p className="text-sm text-gray-600">Years of Experience</p>
+            </div>
           </div>
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold transition-colors">
-            Schedule Demo
+
+          <div className="flex items-center gap-3 justify-start lg:justify-start">
+            <div className="p-3 bg-orange-100 rounded-full">
+              <Phone className="w-6 h-6 text-orange-500" />
+            </div>
+            <div>
+              <p className="text-2xl sm:text-3xl font-bold text-orange-500">
+                {currentService.stats.calls}
+              </p>
+              <p className="text-sm text-gray-600">Calls Per Day</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+            Get Pricing
+          </button>
+          <button className="border-2 border-orange-500 text-orange-500 hover:bg-orange-50 px-6 py-3 rounded-lg font-semibold transition-colors">
+            Contact Sales
           </button>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-6">
-            {services.map((service, index) => {
-              const ServiceIcon = service.icon;
-              const isActive = index === activeService;
-
-              return (
-                <div
-                  key={index}
-                  className={`flex gap-4 transition-all duration-500 ${
-                    isActive ? "opacity-100" : "opacity-40"
-                  }`}
-                >
-                  <div
-                    className={`w-1 rounded-full transition-all duration-500 ${
-                      isActive ? "bg-orange-500" : "bg-transperency"
-                    }`}
-                  />
-
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div
-                        className={`p-2 rounded-lg transition-colors duration-500 ${
-                          isActive ? "bg-orange-100" : "bg-gray-100"
-                        }`}
-                      >
-                        <ServiceIcon
-                          className={`w-6 h-6 transition-colors duration-500 ${
-                            isActive ? "text-orange-500" : "text-gray-400"
-                          }`}
-                        />
-                      </div>
-                      <h3
-                        className={`text-xl font-bold transition-colors duration-500 ${
-                          isActive ? "text-gray-900" : "text-gray-500"
-                        }`}
-                      >
-                        {service.title}
-                      </h3>
-                    </div>
-                    <p
-                      className={`text-sm transition-colors duration-500 ${
-                        isActive ? "text-gray-600" : "text-gray-400"
-                      }`}
-                    >
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          <div className="">
-            <div className="mb-6">
-              <p className="text-orange-500 flex items-center gap-2 mb-2">
-                <Settings className="w-4 h-4" />
-                How We Work
-              </p>
-              <h2 className="text-3xl font-bold text-gray-900 mb-2 transition-opacity duration-500">
-                {currentService.mainTitle}
-              </h2>
-              <h3 className="text-xl text-gray-600 transition-opacity duration-500">
-                {currentService.mainSubtitle}
-              </h3>
-            </div>
-
-            <p className="text-gray-600 mb-6 transition-opacity duration-500">
-              {currentService.mainDescription}
-            </p>
-
-            <div className="space-y-3 mb-8">
-              {currentService.features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-3 transition-all duration-500"
-                  style={{
-                    opacity: 0,
-                    animation: `fadeIn 0.5s ease-in ${index * 0.1}s forwards`,
-                  }}
-                >
-                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg
-                      className="w-4 h-4 text-white"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">{feature}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-2 gap-6 mb-8">
-              <div className="flex items-center gap-3">
-                <div className="p-3 bg-orange-100 rounded-full">
-                  <Settings className="w-6 h-6 text-orange-500" />
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-orange-500">
-                    {currentService.stats.years}
-                  </p>
-                  <p className="text-sm text-gray-600">Years of Experience</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="p-3 bg-orange-100 rounded-full">
-                  <Phone className="w-6 h-6 text-orange-500" />
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-orange-500">
-                    {currentService.stats.calls}
-                  </p>
-                  <p className="text-sm text-gray-600">Calls Per Day</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
-                Get Pricing
-              </button>
-              <button className="border-2 border-orange-500 text-orange-500 hover:bg-orange-50 px-6 py-3 rounded-lg font-semibold transition-colors">
-                Contact Sales
-              </button>
-            </div>
-
-            <p className="text-sm text-gray-500 mt-4">
-              No credit card required
-            </p>
-          </div>
-        </div>
+        <p className="text-xs sm:text-sm text-gray-500 mt-4 text-center lg:text-left">
+          No credit card required
+        </p>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
+  </div>
+
+  <style jsx>{`
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  `}</style>
+</div>
+
   );
 };
 

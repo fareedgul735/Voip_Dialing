@@ -95,12 +95,12 @@ const HeroSection = () => {
   const inactiveStyle = "bg-white text-orange-500 border-2 border-orange-500";
 
   return (
-    <div className="p-7 md:p-[28px]">
+    <div className="p-6 sm:p-7 md:p-[28px]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-7xl mx-auto">
-        <div className="space-y-6">
+        <div className="space-y-6 text-center md:text-left">
           <div
             key={`badge-${activeSlide}`}
-            className="inline-flex justify-center items-center bg-white px-6 py-2 rounded-[18px] shadow-md animate-fadeIn"
+            className="inline-flex justify-center md:justify-start items-center bg-white px-5 sm:px-6 py-2 rounded-[18px] shadow-md animate-fadeIn"
           >
             <span className="text-orange-600 font-medium">
               {currentSlide.badge}
@@ -109,7 +109,7 @@ const HeroSection = () => {
 
           <h1
             key={`title-${activeSlide}`}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1C2D] leading-tight animate-fadeIn"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1C2D] leading-tight animate-fadeIn"
           >
             {currentSlide.title}
           </h1>
@@ -127,32 +127,28 @@ const HeroSection = () => {
             ))}
           </ul>
 
-          <div className="flex flex-wrap gap-4 pt-4">
+          <div className="flex flex-wrap gap-4 pt-4 justify-center md:justify-start">
             <button
               onClick={() => setActiveBtn("login")}
-              className={`
-                ${baseBtn}
-                ${activeBtn === "login" ? activeStyle : inactiveStyle}
-                hover:opacity-90 active:scale-95
-              `}
+              className={`${baseBtn} ${
+                activeBtn === "login" ? activeStyle : inactiveStyle
+              } hover:opacity-90 active:scale-95`}
             >
               Get Pricing
             </button>
 
             <button
               onClick={() => setActiveBtn("signup")}
-              className={`
-                ${baseBtn}
-                ${activeBtn === "signup" ? activeStyle : inactiveStyle}
-                hover:opacity-90 active:scale-95
-              `}
+              className={`${baseBtn} ${
+                activeBtn === "signup" ? activeStyle : inactiveStyle
+              } hover:opacity-90 active:scale-95`}
             >
               Contact Sales
             </button>
           </div>
         </div>
 
-        <div className="relative h-[500px] flex items-center justify-center">
+        <div className="relative h-[400px] sm:h-[450px] md:h-[500px] flex items-center justify-center">
           <div
             key={`main-${activeSlide}`}
             className="w-full max-w-md animate-fadeIn"
@@ -164,7 +160,7 @@ const HeroSection = () => {
             />
           </div>
 
-          <div className="absolute -top-4 -left-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float">
+          <div className="absolute -top-4 -left-4 w-10 h-10 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float">
             <img
               src={image2}
               alt="Profile 1"
@@ -173,7 +169,7 @@ const HeroSection = () => {
           </div>
 
           <div
-            className="absolute top-10 -right-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
+            className="absolute top-10 -right-4 w-10 h-10 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
             style={{ animationDelay: "0.5s" }}
           >
             <img
@@ -184,7 +180,7 @@ const HeroSection = () => {
           </div>
 
           <div
-            className="absolute top-1/2 -right-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
+            className="absolute top-1/2 -right-4 w-10 h-10 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
             style={{ animationDelay: "1s" }}
           >
             <img
@@ -195,7 +191,7 @@ const HeroSection = () => {
           </div>
 
           <div
-            className="absolute bottom-20 -left-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
+            className="absolute bottom-20 -left-4 w-10 h-10 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
             style={{ animationDelay: "1.5s" }}
           >
             <img
@@ -276,16 +272,13 @@ const HeroSection = () => {
         .animate-fadeIn {
           animation: fadeIn 0.6s ease-out;
         }
-
         .animate-slideIn {
           animation: slideIn 0.5s ease-out;
           animation-fill-mode: both;
         }
-
         .animate-slideUp {
           animation: slideUp 0.6s ease-out;
         }
-
         .animate-float {
           animation: float 3s ease-in-out infinite;
         }

@@ -7,68 +7,51 @@ import title7 from "../../public/title7.png";
 
 const BrandName = () => {
   return (
-    <div className="relative flex items-center gap-6 p-8 bg-[linear-gradient(180deg,_#E2C8B5_0%,_rgba(255,224,208,0.802083)_19.79%,_rgba(226,200,181,0)_100%)] rounded-4xl shadow-sm w-[85%] ml-auto">
-      <div className="absolute top-12 -left-40  bg-orange-500 text-white rounded-2xl px-10 py-8 text-center shadow-lg z-10">
-        <h2 className="text-4xl font-bold">200+</h2>
-        <p className="mt-3 leading-snug text-sm">
+    <div
+      className="relative flex items-center gap-6 p-6 sm:p-8 
+  bg-[linear-gradient(180deg,_#E2C8B5_0%,_rgba(255,224,208,0.802083)_19.79%,_rgba(226,200,181,0)_100%)] 
+  rounded-4xl shadow-sm 
+  w-full lg:w-[85%] 
+  mx-auto lg:ml-auto"
+    >
+      <div
+        className="
+      absolute 
+      bg-orange-500 text-white rounded-2xl text-center shadow-lg z-10
+
+      px-6 py-4 sm:px-8 sm:py-6 lg:px-10 lg:py-8
+
+      -top-8 left-2/4 -translate-x-1/2
+      md:top-6
+      lg:top-12 lg:-left-30 lg:translate-x-0
+    "
+      >
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">200+</h2>
+        <p className="mt-2 lg:mt-3 leading-snug text-xs sm:text-sm">
           Certified & <br />
           Authorized <br />
           Reseller/Integrator
         </p>
       </div>
 
-      <div className="flex-1 pl-16 p-[12px]">
-        <div className="flex justify-between">
-          <p className="font-semibold text-gray-800 mb-6 leading-relaxed">
-            We Empower your business with seamless,
-            <br />
-            high-quality calling solutions.
-          </p>
-
-          <p className="flex gap-2 w-100 font-semibold text-gray-800 mb-6 leading-relaxed">
-            <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos rem
-              molestiae consequatur!
-            </span>
+      <div className="flex-1 pt-24 sm:pt-28 lg:pt-0 lg:pl-16 p-3">
+        <div
+          className="
+        flex items-center gap-6 sm:gap-8
+        overflow-x-auto
+        whitespace-nowrap
+        scrollbar-hide
+        lg:flex-wrap lg:justify-around lg:overflow-visible
+      "
+        >
+          {[title1, title2, title4, title5, title6, title7].map((logo, i) => (
             <img
-              src={title6}
-              className="h-10 object-contain opacity-90"
+              key={i}
+              src={logo}
+              className="h-14 sm:h-16 lg:h-20 object-contain opacity-90 flex-shrink-0"
               alt="logo"
             />
-          </p>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-8">
-          <img
-            src={title1}
-            className="h-20 object-contain opacity-90"
-            alt="logo"
-          />
-          <img
-            src={title2}
-            className="h-20 object-contain opacity-90"
-            alt="logo"
-          />
-          <img
-            src={title4}
-            className="h-20 object-contain opacity-90"
-            alt="logo"
-          />
-          <img
-            src={title5}
-            className="h-20 object-contain opacity-90"
-            alt="logo"
-          />
-          <img
-            src={title6}
-            className="h-20 object-contain opacity-90"
-            alt="logo"
-          />
-          <img
-            src={title7}
-            className="h-20 object-contain opacity-90"
-            alt="logo"
-          />
+          ))}
         </div>
       </div>
     </div>
