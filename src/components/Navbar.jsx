@@ -24,6 +24,21 @@ const Navbar = () => {
   const [activeBtn, setActiveBtn] = useState("signup");
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  //   const location = useLocation();
+
+  // // Check if any submenu item matches current path
+  // const isSubmenuActive = (submenu) => {
+  //   if (!submenu) return false;
+  //   if (Array.isArray(submenu)) {
+  //     return submenu.some((item) => location.pathname === item.link);
+  //   } else if (typeof submenu === "object") {
+  //     // Solutions nested object
+  //     return Object.values(submenu).some((arr) =>
+  //       arr.some((item) => item.link && location.pathname === item.link)
+  //     );
+  //   }
+  //   return false;
+  // };
 
   const isSubmenuActive = (submenu) => {
     if (Array.isArray(submenu)) {
@@ -209,66 +224,113 @@ const Navbar = () => {
           <Menu size={22} />
         </button>
 
-        <Drawer placement="left" onClose={() => setOpen(false)} open={open}>
-          <img src={logo} alt="logo" className="w-32 mx-auto mb-6" />
+       <Drawer placement="left" onClose={() => setOpen(false)} open={open}>
+      <img src={logo} alt="logo" className="w-32 mx-auto mb-6" />
 
-          <ul className="flex flex-col gap-4">
-            {navLinks.map((item) => (
-              <li key={item.id}>
-                {!item.submenu ? (
-                  <NavLink
-                    to={item.link}
-                    onClick={() => setOpen(false)}
-                    className={({ isActive }) =>
-                      isActive ? "text-orange-600 font-semibold" : ""
-                    }
-                  >
-                    {item.label}
-                  </NavLink>
-                ) : (
-                  <>
-                    <p
-                      className={`font-semibold mb-2 ${
-                        isSubmenuActive(item.submenu) ? "text-orange-600" : ""
-                      }`}
+      <ul className="flex flex-col gap-4">
+        {navLinks.map((item) => (
+          <li key={item.id}>
+            {/* Single Link */}
+            {!item.submenu ? (
+              <NavLink
+                to={item.link}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-orange-600 font-semibold"
+                    : "text-gray-700 hover:text-orange-600 transition-colors"
+                }
+              >
+                {item.label}
+              </NavLink>
+            ) : (
+              <>
+                {/* Parent Label */}
+                <p
+                  className={`font-semibold mb-2 ${
+                    isSubmenuActive(item.submenu)
+                      ? "text-orange-600"
+                      : "text-gray-700"
+                  }`}
+                >
+                  {item.label}
+                </p>
+
+                {/* Submenu */}
+                {Array.isArray(item.submenu) &&
+                  item.submenu.map((sub, i) => (
+                    <NavLink
+                      key={i}
+                      to={sub.link}
+                      onClick={() => setOpen(false)}
+                      className={({ isActive }) =>
+                        `block text-sm pl-4 mb-1 transition-colors ${
+                          isActive
+                            ? "text-orange-600 font-medium"
+                            : "text-gray-600 hover:text-orange-500"
+                        }`
+                      }
                     >
-                      {item.label}
-                    </p>
+                      {sub.label}
+                    </NavLink>
+                  ))}
 
-                    {Array.isArray(item.submenu) &&
-                      item.submenu.map((sub, i) => (
-                        <NavLink
-                          key={i}
-                          to={sub.link}
-                          onClick={() => setOpen(false)}
-                          className={({ isActive }) =>
-                            `block text-sm pl-4 mb-1 ${
-                              isActive
-                                ? "text-orange-600 font-medium"
-                                : "text-gray-600"
-                            }`
-                          }
-                        >
-                          {sub.label}
-                        </NavLink>
-                      ))}
-                  </>
-                )}
-              </li>
-            ))}
-          </ul>
+                {/* Nested object submenu (like Solutions) */}
+                {typeof item.submenu === "object" &&
+                  !Array.isArray(item.submenu) &&
+                  Object.entries(item.submenu).map(([key, arr], idx) => (
+                    <div key={idx} className="pl-4 mb-2">
+                      <p className="text-gray-400 uppercase text-xs mb-1">
+                        {key.replace(/([A-Z])/g, " $1")}
+                      </p>
+                      {arr.map((sub, i) =>
+                        sub.link ? (
+                          <NavLink
+                            key={i}
+                            to={sub.link}
+                            onClick={() => setOpen(false)}
+                            className={({ isActive }) =>
+                              `block text-sm pl-4 mb-1 transition-colors ${
+                                isActive
+                                  ? "text-orange-600 font-medium"
+                                  : "text-gray-600 hover:text-orange-500"
+                              }`
+                            }
+                          >
+                            {sub.label}
+                          </NavLink>
+                        ) : (
+                          <span
+                            key={i}
+                            className="block text-sm pl-4 mb-1 text-gray-400"
+                          >
+                            {sub}
+                          </span>
+                        )
+                      )}
+                    </div>
+                  ))}
+              </>
+            )}
+          </li>
+        ))}
+      </ul>
 
-          <div className="mt-6 flex flex-col gap-3 items-center">
-            <Link to="/signin">Login</Link>
-            <Link to="/signup">Get Started</Link>
-          </div>
+      <div className="mt-6 flex flex-col gap-3 items-center">
+        <Link to="/signin" className="text-gray-700 hover:text-orange-600">
+          Login
+        </Link>
+        <Link to="/signup" className="text-gray-700 hover:text-orange-600">
+          Get Started
+        </Link>
+      </div>
 
-          <div className="mt-6 flex justify-center gap-3">
-            <Facebook size={16} />
-            <Twitter size={16} />
-            <Linkedin size={16} />
-          </div>
-        </Drawer>
+      <div className="mt-6 flex justify-center gap-3 text-white">
+        <Facebook size={16} className="hover:text-orange-500" />
+        <Twitter size={16} className="hover:text-orange-500" />
+        <Linkedin size={16} className="hover:text-orange-500" />
+      </div>
+    </Drawer>
       </div>
     </header>
   );

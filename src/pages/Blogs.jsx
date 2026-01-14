@@ -172,22 +172,42 @@ const Blogs = () => {
       );
     } else if (activeTab === "Press Release") {
       return (
-        <div className="bg-white rounded-2xl shadow-sm p-12 border border-gray-100">
+        <div className="bg-white rounded-2xl shadow-sm p-6 sm:p-8 lg:p-12 border border-gray-100">
           <AwardsNews />
         </div>
       );
     } else if (activeTab === "Announcement") {
       return (
-        <div className="bg-white rounded-2xl p-12 border border-gray-100">
-          <div className="w-full flex gap-8">
-            <div className="img">
-              <img src={dummy1} />
+        <div className="bg-white rounded-2xl p-6 sm:p-8 lg:p-12 border border-gray-100">
+          <div
+            className="
+          w-full 
+          grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 
+          gap-6
+        "
+          >
+            <div className="flex justify-center">
+              <img
+                src={dummy1}
+                alt="Announcement"
+                className="w-full max-w-sm rounded-xl object-cover"
+              />
             </div>
-            <div className="img">
-              <img src={dummy1} />
+
+            <div className="flex justify-center">
+              <img
+                src={dummy1}
+                alt="Announcement"
+                className="w-full max-w-sm rounded-xl object-cover"
+              />
             </div>
-            <div className="img">
-              <img src={dummy1} />
+
+            <div className="flex justify-center">
+              <img
+                src={dummy1}
+                alt="Announcement"
+                className="w-full max-w-sm rounded-xl object-cover"
+              />
             </div>
           </div>
         </div>
@@ -196,7 +216,7 @@ const Blogs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white">
+    <div>
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Blog</h1>

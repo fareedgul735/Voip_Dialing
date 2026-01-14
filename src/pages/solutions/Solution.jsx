@@ -12,40 +12,43 @@ import {
 const Solution = () => {
   return (
     <>
-      <div className="w-full p-[28px] bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
-        <div className="mx-auto px-4 py-12">
-          <div className="flex gap-10 items-center justify-between max-w-7xl mx-auto">
-            <div>
+      <div className="w-full p-4 sm:p-6 md:p-[28px] bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
+        <div className="mx-auto py-12">
+          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-center justify-between">
+            <div className="text-center lg:text-left max-w-xl">
               <p className="text-orange-500 text-sm font-semibold mb-2">
                 © VOIP For Small Businesses
               </p>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 The small business Flexible Trusted Affordable PBX by businesses
               </h1>
-              <ul className="space-y-2 mb-8 text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-orange-500 mr-2">•</span>
+
+              <ul className="space-y-3 mb-8 text-gray-700">
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-500">•</span>
                   <span>
                     Talk, text, meet, and manage calls with AI Receptionists
                     from one phone system.
                   </span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-orange-500 mr-2">•</span>
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-500">•</span>
                   <span>
                     Deliver first-in-call and stay connected with all your
                     customers.
                   </span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-orange-500 mr-2">•</span>
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-500">•</span>
                   <span>
                     Set up in minutes, and run your business from anywhere, on
                     any device.
                   </span>
                 </li>
               </ul>
-              <div className="flex gap-4">
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold transition">
                   Contact Sales
                 </button>
@@ -54,15 +57,33 @@ const Solution = () => {
                 </button>
               </div>
             </div>
-            <div className="relative">
+
+            <div className="relative flex justify-center w-full lg:w-auto">
               <img
                 src={animate1}
                 alt="VoIP Technology"
-                className="rounded-lg w-130"
+                className="rounded-lg w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl object-contain"
               />
-              <div className="absolute  bottom-10 -left-18 bg-white rounded-lg shadow-lg p-2">
-                <p className="text-3xl font-bold text-orange-500">20+</p>
-                <p className="text-sm text-gray-600">Years Experience</p>
+
+              <div
+                className="
+            absolute 
+            bg-white rounded-lg shadow-lg px-4 py-2 text-center
+            text-sm
+
+            /* SM & MD → top center */
+            top-2 left-1/2 -translate-x-1/2
+
+            /* LG → original position */
+            lg:top-auto lg:bottom-10 lg:-left-18 lg:translate-x-0
+          "
+              >
+                <p className="text-2xl sm:text-3xl font-bold text-orange-500">
+                  20+
+                </p>
+                <p className="text-xs sm:text-sm text-gray-600">
+                  Years Experience
+                </p>
               </div>
             </div>
           </div>
@@ -408,29 +429,53 @@ const Solution = () => {
           </div>
         </div>
       </div>
-      <div className="w-full mx-auto px-4 py-20">
+      <div className="w-full mx-auto px-4 py-16 sm:py-20">
         <div
-          className="relative w-full min-h-[500px] rounded-2xl shadow-2xl bg-cover bg-center bg-no-repeat flex items-center justify-end"
+          className="
+      relative 
+      w-full 
+      min-h-[420px] sm:min-h-[480px] lg:min-h-[500px]
+      rounded-2xl 
+      shadow-2xl 
+      bg-cover bg-center bg-no-repeat 
+      flex 
+      items-center 
+      justify-center 
+      lg:justify-end
+    "
           style={{
             backgroundImage: "url('/audio_1.jpg')",
           }}
         >
-          <div className="bg-white rounded-xl shadow-xl p-8 max-w-lg mr-10">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          {/* ================= CONTENT CARD ================= */}
+          <div
+            className="
+        bg-white 
+        rounded-xl 
+        shadow-xl 
+        p-6 sm:p-8 
+        max-w-lg 
+        mx-4 
+        lg:mx-0 
+        lg:mr-10
+        text-center lg:text-left
+      "
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
               We Have A Team Ready To Serve You
             </h2>
 
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-4 text-sm sm:text-base">
               Our dedicated support team works around the clock to ensure your
               communication stays smooth and uninterrupted.
             </p>
 
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 mb-6 text-sm sm:text-base">
               With fast responses and expert guidance, we make sure you're
               always connected when it matters most.
             </p>
 
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold transition shadow-lg uppercase">
+            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 sm:py-4 rounded-full font-semibold transition shadow-lg uppercase">
               Contact Us
             </button>
           </div>

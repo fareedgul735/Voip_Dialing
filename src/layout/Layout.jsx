@@ -10,7 +10,7 @@ import dummy4 from "../../public/dummy4.png";
 const Layout = () => {
   return (
     <div className="w-full">
-      {/* <AnnoucementBar /> */}
+      <AnnoucementBar />
       <Navbar />
       <Outlet />
       <div className="bg-[#FBF7F4] flex items-center justify-center p-4" id="requestCall">

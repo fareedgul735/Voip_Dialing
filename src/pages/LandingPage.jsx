@@ -1,55 +1,16 @@
-import { useState } from "react";
-
 import { CheckCircle } from "lucide-react";
-
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import HeadPhones from "../../public/HeadPhone.png";
 import CallCenter from "../../public/CallCenter.png";
 import Dots from "../../public/Dots.png";
 
-import Doctor1 from "../../public/Doctor 1.png";
-import Doctor2 from "../../public/Doctor 2.png";
-import Doctor3 from "../../public/Doctor 3.png";
-import Doctor4 from "../../public/Doctor 4.jpg";
-import Doctor5 from "../../public/Doctor 5.png";
 import Detailed from "../../public/VoipDeatiling.png";
 import BusinessCommunicationServices from "../ui/BusinessComunicationService";
 import HeroSection from "../ui/HeroSection";
 import BrandName from "../ui/BrandName";
+import Testominals from "../ui/Testominals";
 
 const LandingPage = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-
-  const testimonials = [
-    {
-      text: "VoIPDialing has completely upgraded our communication. The call quality is excellent, uptime is consistent, and their support team is always quick to help. It's been a reliable solution for our growing business.",
-      author: "Alex Hales",
-      position: "Operations Manager",
-    },
-  ];
-
-  const services = [
-    {
-      title: "Cloud PBX Service",
-      description:
-        "The system allows for precise campaign starting enabling marketers to plan.",
-      image: "desktop",
-    },
-    {
-      title: "Cloud PBX Service",
-      description:
-        "The system allows for precise campaign starting enabling marketers to plan.",
-      image: "mobile",
-    },
-    {
-      title: "Cloud PBX Service",
-      description:
-        "The system allows for precise campaign starting enabling marketers to plan.",
-      image: "tablet",
-    },
-  ];
-
   return (
     <>
       <div className="p-[28px] bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
@@ -223,136 +184,7 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="w-full bg-gradient-to-b from-orange-50 to-white">
-        <div className="py-16 px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-4">
-              <p className="text-orange-400 uppercase tracking-wider text-sm font-semibold">
-                Testimonials
-              </p>
-            </div>
-
-            <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">
-              What Our Clients are Saying
-            </h2>
-
-            <div className="relative flex items-center justify-center">
-              <div className="absolute -left-8 top-0 w-20 h-20 rounded-full bg-gradient-to-br from-orange-400 to-pink-400 overflow-hidden shadow-lg">
-                <div className="w-full h-full bg-orange-300">
-                  <img src={Doctor1} />
-                </div>
-              </div>
-
-              <div className="absolute -left-4 bottom-12 w-16 h-16 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 overflow-hidden shadow-lg">
-                <div className="w-full h-full bg-orange-300">
-                  <img src={Doctor5} />
-                </div>
-              </div>
-
-              <div className="absolute -right-8 top-4 w-20 h-20 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 overflow-hidden shadow-lg">
-                <div className="w-full h-full bg-orange-300">
-                  <img src={Doctor2} />
-                </div>
-              </div>
-
-              <div className="absolute -right-4 bottom-8 w-16 h-16 rounded-full bg-gradient-to-br from-purple-300 to-purple-400 overflow-hidden shadow-lg">
-                <div className="w-full h-full bg-orange-300">
-                  <img src={Doctor3} />
-                </div>
-              </div>
-
-              <div className="absolute right-1/3 bottom-2 w-14 h-14 rounded-full bg-gradient-to-br from-orange-300 to-orange-400 overflow-hidden shadow-lg">
-                <div className="w-full h-full bg-orange-300">
-                  <img src={Doctor4} />
-                </div>
-              </div>
-
-              <div className="bg-white border border-sky-500 rounded-2xl shadow-xl p-8 max-w-2xl mx-auto relative z-10 border border-gray-100">
-                <div className="flex justify-center mb-6">
-                  <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
-                  </div>
-                </div>
-
-                <p className="text-gray-600 text-center mb-6 leading-relaxed">
-                  {testimonials[currentTestimonial].text}
-                </p>
-
-                <div className="text-center">
-                  <p className="text-orange-500 font-semibold">
-                    {testimonials[currentTestimonial].author}
-                  </p>
-                  <p className="text-gray-400 text-sm">
-                    {testimonials[currentTestimonial].position}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex justify-center gap-4 mt-8">
-              <button className="w-10 h-10 bg-orange-500 hover:bg-orange-600 rounded-full flex items-center justify-center text-white shadow-lg transition-colors">
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button className="w-10 h-10 bg-orange-500 hover:bg-orange-600 rounded-full flex items-center justify-center text-white shadow-lg transition-colors">
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="py-16 px-4 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-4">
-              <p className="text-orange-400 uppercase tracking-wider text-sm font-semibold">
-                VOIP BLOGS
-              </p>
-            </div>
-
-            <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">
-              The Services you really need for growing fast
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {services.map((service, index) => (
-                <div key={index} className="group cursor-pointer">
-                  <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-orange-300 via-pink-300 to-blue-500 p-8 h-80 flex items-center justify-center shadow-xl hover:shadow-2xl transition-shadow">
-                    <div className="relative w-full h-full flex items-center justify-center">
-                      {index === 0 && (
-                        <div className="bg-gray-800 rounded-lg p-4 w-48 h-32 shadow-2xl">
-                          <div className="bg-white rounded h-full"></div>
-                        </div>
-                      )}
-                      {index === 1 && (
-                        <div className="bg-white rounded-2xl p-4 w-32 h-56 shadow-2xl">
-                          <div className="bg-gray-100 rounded h-full"></div>
-                        </div>
-                      )}
-                      {index === 2 && (
-                        <div className="bg-gray-800 rounded-xl p-4 w-56 h-40 shadow-2xl">
-                          <div className="bg-blue-400 rounded h-full"></div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="mt-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-2">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <Testominals />
       </div>
     </>
   );
