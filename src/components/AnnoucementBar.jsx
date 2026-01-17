@@ -5,8 +5,7 @@ const AnnouncementBar = () => {
   return (
     <div className="bg-sky-600 text-white text-sm">
       <div className="max-w-7xl mx-auto py-2 overflow-x-auto scrollbar-hide">
-        <div className="flex min-w-max justify-start lg:justify-around items-center gap-6 px-4 lg:px-0">
-          {/* Contact Info */}
+        <div className="flex min-w-max justify-start lg:justify-between items-center gap-6 px-4 lg:px-0">
           <div className="flex gap-4 flex-shrink-0">
             <span className="flex justify-center items-center gap-2">
               <Mail />
@@ -19,9 +18,6 @@ const AnnouncementBar = () => {
             <span className="flex justify-center items-center gap-2">
               -<span>(8899 7766 55 99000)</span>
             </span>
-          </div>
-
-          {/* Request Call */}
           <span
             onClick={() => {
               document
@@ -32,8 +28,9 @@ const AnnouncementBar = () => {
           >
             Request a Call
           </span>
+          </div>
 
-          {/* Links and Social */}
+
           <div className="flex gap-4 items-center flex-shrink-0">
             <Link to={"/blogs"}>Blogs</Link>
             <Link to={"/pricing"}>Shops</Link>
@@ -58,3 +55,5 @@ const AnnouncementBar = () => {
 };
 
 export default AnnouncementBar;
+
+

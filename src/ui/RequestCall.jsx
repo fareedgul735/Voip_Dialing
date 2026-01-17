@@ -21,9 +21,9 @@ const RequestCall = () => {
     });
   };
   return (
-    <div className="w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden">
+    <div className="w-full max-w-5xl bg-[#FBF7F4] rounded-3xl shadow-2xl overflow-hidden">
       <div className="flex flex-col md:flex-row">
-        <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-8 md:p-12 text-white md:w-2/5 relative overflow-hidden">
+        <div className="bg-[#F26722] p-8 md:p-12 text-white md:w-2/5 relative overflow-hidden">
           <div className="relative z-10">
             <p className="text-sm font-medium tracking-wider mb-3 opacity-90">
               READY TO
@@ -117,7 +117,7 @@ const RequestCall = () => {
 
               <button
                 onClick={handleSubmit}
-                className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 rounded-full font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                className="w-full bg-[#F26722] text-white py-3 rounded-full font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 Request a Call
               </button>
