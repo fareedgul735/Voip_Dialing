@@ -66,7 +66,7 @@ const VoIPPricingInterface = () => {
     setSelectedNumbers((prev) =>
       prev.includes(number)
         ? prev.filter((n) => n !== number)
-        : [...prev, number]
+        : [...prev, number],
     );
   };
 
@@ -85,13 +85,13 @@ const VoIPPricingInterface = () => {
               className={`relative flex-1 py-3 px-6 text-center font-medium cursor-pointer transition-colors ${
                 activeStep === step.id
                   ? "bg-orange-500 text-white"
-                  : "bg-blue-500 text-white hover:bg-blue-600"
+                  : "bg-[#027DB6] text-white hover:bg-[#027DB7]"
               }`}
               style={{
                 clipPath:
                   index === steps.length - 1
                     ? "polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%, 20px 50%)"
-                    : "polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%, 20px 50%)",
+                    : "polygon(0 0, calc(100% - 20px ) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%, 20px 50%)",
                 marginLeft: index === 0 ? "0" : "-20px",
                 zIndex: steps.length - index,
               }}

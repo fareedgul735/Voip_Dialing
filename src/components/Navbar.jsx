@@ -19,9 +19,10 @@ import {
   navBase,
   navInactive,
 } from "../lib/styles";
+import { CustomButton, CustomButtonTwin } from "../ui/CustomButton";
 
 const Navbar = () => {
-  const [activeBtn, setActiveBtn] = useState("signup");
+  // const [activeBtn, setActiveBtn] = useState("signup");
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
@@ -32,7 +33,7 @@ const Navbar = () => {
 
     if (submenu?.businessType) {
       return submenu.businessType.some((b) =>
-        location.pathname.startsWith(`/${b.link}`)
+        location.pathname.startsWith(`/${b.link}`),
       );
     }
 
@@ -181,25 +182,19 @@ const Navbar = () => {
           </div>
 
           <Link to="/signin">
-            <button
+            <CustomButton
               onClick={() => setActiveBtn("login")}
-              className={`cursor-pointer ${baseBtn} ${
-                activeBtn === "login" ? activeStyle : inactiveStyle
-              }`}
-            >
-              Login
-            </button>
+              className={`cursor-pointer shadow-md border border-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-50 transition`}
+              value={"Login"}
+            />
           </Link>
 
           <Link to="/signup">
-            <button
+            <CustomButtonTwin
               onClick={() => setActiveBtn("signup")}
-              className={`cursor-pointer ${baseBtn} ${
-                activeBtn === "signup" ? activeStyle : inactiveStyle
-              }`}
-            >
-              Get Started
-            </button>
+              className={`cursor-pointer shadow-md bg-orange-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-orange-600 transition`}
+              value={"Get Started"}
+            />
           </Link>
         </div>
 
@@ -288,7 +283,7 @@ const Navbar = () => {
                               >
                                 {sub}
                               </span>
-                            )
+                            ),
                           )}
                         </div>
                       ))}

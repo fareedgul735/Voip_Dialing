@@ -1,5 +1,5 @@
 import lady1 from "../../../public/lady_1.jpg";
-import heroLogo from "../../../public/2efae453c0538a9f984231f811da4f7c2cc45dac.png";
+import heroLogo from "../../../public/image5.png";
 import FAQAccordion from "../../ui/FaqsUi";
 import Detailed from "../../../public/VoipDeatiling.png";
 import BrandName from "../../ui/BrandName";

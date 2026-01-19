@@ -2,20 +2,20 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import FAQAccordion from "../ui/FaqsUi";
 import BrandName from "../ui/BrandName";
 
-
-
 export default function Contact() {
   return (
-    <div className="p-[48px] flex flex-col items-center justify-center bg-gradient-to-br from-[#fff3ec] to-[#fffaf7] px-6">
+    <div className="p-[48px] flex flex-col items-center justify-center bg-[white] px-6">
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-16">
-        <div>
-          <h1 className="text-4xl font-bold mb-4">Contact us</h1>
-          <p className="text-gray-500 max-w-md mb-10">
-            Quick way to request a call back, we prioritize your experience and
-            are committed to resolving any issues you may encounter.
-          </p>
+        <div className="flex flex-col justify-start">
+          <div>
+            <h1 className="text-4xl font-bold mb-4">Contact us</h1>
+            <p className="text-gray-500 max-w-md mb-10">
+              Quick way to request a call back, we prioritize your experience
+              and are committed to resolving any issues you may encounter.
+            </p>
+          </div>
 
-          <div className="space-y-6 text-sm">
+          <div className="space-y-6 mt-12 text-sm">
             <div className="flex items-start gap-3">
               <Mail className="text-orange-500 w-5 h-5 mt-1" />
               <span>sales@voipdialing.com</span>
@@ -93,10 +93,9 @@ export default function Contact() {
       <div>
         <FAQAccordion />
       </div>
-      <div className="w-full p-4">
+      <div className="w-full p-[28px] h-60 flex justify-end mt-20 mb-4 px-4">
         <BrandName />
       </div>
-     
     </div>
   );
 }

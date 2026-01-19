@@ -8,7 +8,7 @@ import title7 from "../../public/title7.png";
 const BrandName = () => {
   return (
     <div
-      className="relative flex justify-center items-center gap-6 p-6 sm:p-8 
+      className="absolute w-full flex justify-center items-center gap-6 p-6 sm:p-8 
   bg-[linear-gradient(180deg,_#E2C8B5_0%,_rgba(255,224,208,0.802083)_19.79%,_rgba(226,200,181,0)_100%)] 
   rounded-4xl shadow-sm 
   w-full lg:w-[85%] 

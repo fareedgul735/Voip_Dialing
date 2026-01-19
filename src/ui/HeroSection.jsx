@@ -3,18 +3,24 @@ import { useState, useEffect } from "react";
 import image1 from "../../public/image1.jpg";
 import image2 from "../../public/image2.jpg";
 import image3 from "../../public/image3.png";
+import image4 from "../../public/image4.jpg";
+import image5 from "../../public/image5.png";
+
+import { CustomButton, CustomButtonTwin } from "./CustomButton";
 
 const HeroSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [activeBtn, setActiveBtn] = useState("login");
 
   const slides = [
     {
       badge: "No term or usage commitment",
+      image: image1,
       title: (
         <>
-          Boost Your Business <br />
-          Communication with <br />
+          Boost Your <span className="highlight bg-orange-500">Business</span>
+          <br />
+          <span className="highlight bg-blue-500">Communication</span> with{" "}
+          <br />
           Reliable VoIP Solutions
         </>
       ),
@@ -26,12 +32,17 @@ const HeroSection = () => {
       ],
       stats: { count: "12K+", label: "Happy Clients" },
     },
+
     {
       badge: "24/7 Customer Support",
+      image: image2,
       title: (
         <>
-          Transform Your Business <br />
-          with Cloud PBX <br />
+          Transform Your{" "}
+          <span className="highlight bg-green-500">Business</span>
+          <br />
+          with <span className="highlight bg-purple-500">Cloud PBX</span>
+          <br />
           Phone Systems
         </>
       ),
@@ -43,12 +54,16 @@ const HeroSection = () => {
       ],
       stats: { count: "500+", label: "Daily Calls" },
     },
+
     {
       badge: "High Delivery Rates",
+      image: image3,
       title: (
         <>
-          Reach Customers <br />
-          Instantly with Our <br />
+          Reach <span className="highlight bg-red-500">Customers</span>
+          <br />
+          <span className="highlight bg-orange-500">Instantly</span> with Our{" "}
+          <br />
           Bulk SMS Solutions
         </>
       ),
@@ -59,23 +74,6 @@ const HeroSection = () => {
         "Cost-effective pricing",
       ],
       stats: { count: "1M+", label: "Messages Sent" },
-    },
-    {
-      badge: "Global Coverage",
-      title: (
-        <>
-          Get Virtual Phone <br />
-          Numbers from <br />
-          Around the World
-        </>
-      ),
-      features: [
-        "Local & international numbers",
-        "Instant activation",
-        "Flexible routing options",
-        "No hardware required",
-      ],
-      stats: { count: "50+", label: "Countries" },
     },
   ];
 
@@ -89,18 +87,13 @@ const HeroSection = () => {
 
   const currentSlide = slides[activeSlide];
 
-  const baseBtn =
-    "px-6 py-3 rounded-lg font-semibold transition-all duration-300 mr-4";
-  const activeStyle = "bg-orange-500 text-white";
-  const inactiveStyle = "bg-white text-orange-500 border-2 border-orange-500";
-
   return (
     <div className="p-6 sm:p-7 md:p-[28px]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-7xl mx-auto">
         <div className="space-y-6 text-center md:text-left">
           <div
             key={`badge-${activeSlide}`}
-            className="inline-flex justify-center md:justify-start items-center bg-white px-5 sm:px-6 py-2 rounded-[18px] shadow-md animate-fadeIn"
+            className="inline-flex items-center bg-white px-6 py-2 rounded-[18px] shadow-md animate-fadeIn"
           >
             <span className="text-orange-600 font-medium">
               {currentSlide.badge}
@@ -121,86 +114,62 @@ const HeroSection = () => {
                 className="flex items-center gap-3 animate-slideIn"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-orange-500 rounded-full" />
                 <span>{feature}</span>
               </li>
             ))}
           </ul>
 
           <div className="flex flex-wrap gap-4 pt-4 justify-center md:justify-start">
-            <button
-              onClick={() => setActiveBtn("login")}
-              className={`${baseBtn} ${
-                activeBtn === "login" ? activeStyle : inactiveStyle
-              } hover:opacity-90 active:scale-95`}
-            >
-              Get Pricing
-            </button>
-
-            <button
-              onClick={() => setActiveBtn("signup")}
-              className={`${baseBtn} ${
-                activeBtn === "signup" ? activeStyle : inactiveStyle
-              } hover:opacity-90 active:scale-95`}
-            >
-              Contact Sales
-            </button>
+            <CustomButtonTwin
+              className="shadow-md bg-orange-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-orange-600 transition"
+              value="Talk to Sales"
+            />
+            <CustomButton
+              className="shadow-md border border-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-50 transition"
+              value="Get Pricing"
+            />
           </div>
         </div>
 
         <div className="relative h-[400px] sm:h-[450px] md:h-[500px] flex items-center justify-center">
           <div
-            key={`main-${activeSlide}`}
+            key={`main-image-${activeSlide}`}
             className="w-full max-w-md animate-fadeIn"
           >
             <img
-              src={image3}
+              src={currentSlide.image}
               alt="Business Communication"
               className="w-full h-auto object-cover"
             />
           </div>
 
-          <div className="absolute -top-4 -left-4 w-10 h-10 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float">
-            <img
-              src={image2}
-              alt="Profile 1"
-              className="w-full h-full object-cover"
-            />
+          <div className="absolute -top-4 -left-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float">
+            <img src={image2} className="w-full h-full object-cover" />
           </div>
 
           <div
-            className="absolute top-10 -right-4 w-10 h-10 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
+            className="absolute top-10 -right-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
             style={{ animationDelay: "0.5s" }}
           >
-            <img
-              src={image1}
-              alt="Profile 2"
-              className="w-full h-full object-cover"
-            />
+            <img src={image1} className="w-full h-full object-cover" />
           </div>
 
           <div
-            className="absolute top-1/2 -right-4 w-10 h-10 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
+            className="absolute top-1/2 -right-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
             style={{ animationDelay: "1s" }}
           >
-            <img
-              src={image2}
-              alt="Profile 3"
-              className="w-full h-full object-cover"
-            />
+            <img src={image2} className="w-full h-full object-cover" />
           </div>
 
           <div
-            className="absolute bottom-20 -left-4 w-10 h-10 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
+            className="absolute bottom-20 -left-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
             style={{ animationDelay: "1.5s" }}
           >
-            <img
-              src={image1}
-              alt="Profile 4"
-              className="w-full h-full object-cover"
-            />
+            <img src={image1} className="w-full h-full object-cover" />
           </div>
 
+          {/* STATS */}
           <div
             key={`stats-${activeSlide}`}
             className="absolute bottom-4 right-4 md:right-20 bg-white px-6 py-4 rounded-xl shadow-lg animate-slideUp"
@@ -210,21 +179,10 @@ const HeroSection = () => {
             </p>
             <p className="text-sm text-gray-600">{currentSlide.stats.label}</p>
           </div>
-
-          <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === activeSlide ? "bg-orange-500 w-8" : "bg-gray-300"
-                }`}
-              />
-            ))}
-          </div>
         </div>
       </div>
 
+      {/* ANIMATIONS */}
       <style jsx>{`
         @keyframes fadeIn {
           from {
@@ -269,18 +227,41 @@ const HeroSection = () => {
           }
         }
 
+        @keyframes highlight {
+          from {
+            opacity: 0;
+            transform: scale(0.8);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
         .animate-fadeIn {
           animation: fadeIn 0.6s ease-out;
         }
+
         .animate-slideIn {
           animation: slideIn 0.5s ease-out;
           animation-fill-mode: both;
         }
+
         .animate-slideUp {
           animation: slideUp 0.6s ease-out;
         }
+
         .animate-float {
           animation: float 3s ease-in-out infinite;
+        }
+
+        .highlight {
+          display: inline-block;
+          padding: 0.25rem 0.75rem;
+          margin: 0.15rem 0;
+          border-radius: 0.375rem;
+          color: white;
+          animation: highlight 0.6s ease-out;
         }
       `}</style>
     </div>

@@ -1,5 +1,3 @@
-
-
 export const CustomButton = ({
   className = "",
   icon,
@@ -24,16 +22,6 @@ export const CustomButton = ({
   );
 };
 
-const outlinedButtonStyles = `
-  !flex !items-center !justify-center !gap-2
-  !px-6 !py-3 !rounded-full
-  !font-semibold !text-base
-  !border !border-sky-400
-  !text-sky-700
-  hover:!bg-blue-50
-  !transition-all !duration-200 !ease-in-out
-`;
-
 export const CustomButtonTwin = ({
   className = "",
   icon,
@@ -46,7 +34,7 @@ export const CustomButtonTwin = ({
       type="text"
       htmlType={htmlType}
       onClick={onClick}
-      className={`${outlinedButtonStyles} ${className}`}
+      className={`${className}`}
     >
       {icon}
       {value}

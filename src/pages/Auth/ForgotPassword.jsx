@@ -87,7 +87,7 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-200">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 relative ">
         <div className="rounded-xl p-6">
           <div className="flex justify-center mb-6">

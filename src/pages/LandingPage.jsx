@@ -9,6 +9,7 @@ import BusinessCommunicationServices from "../ui/BusinessComunicationService";
 import HeroSection from "../ui/HeroSection";
 import BrandName from "../ui/BrandName";
 import Testominals from "../ui/Testominals";
+import { CustomButton, CustomButtonTwin } from "../ui/CustomButton";
 
 const LandingPage = () => {
   return (
@@ -25,34 +26,33 @@ const LandingPage = () => {
       <div className="container mx-auto px-4 sm:px-6 py-10 sm:py-14 lg:py-16">
         <div className="bg-white rounded-3xl overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div className="relative p-6 sm:p-8 md:p-10 lg:p-12">
-              <div className="w-24 sm:w-28 md:w-32">
+            {/* Left Column with Image */}
+            <div className="relative p-6 sm:p-8 md:p-10 lg:p-12 flex justify-center">
+              {/* Headphones Logo */}
+              <div className="w-16 sm:w-28 md:w-32 mb-4">
                 <img src={HeadPhones} alt="logo" />
               </div>
 
-              <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6">
+              {/* Decorative Dots */}
+              <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-28">
                 <div className="w-20 sm:w-24 md:w-32">
                   <img src={Dots} alt="dots" />
                 </div>
               </div>
 
-              <div className="relative z-10 flex justify-center items-end h-64 sm:h-72 md:h-80 lg:h-96">
-                <div className="w-64 sm:w-72 md:w-80">
+              {/* Call Center Image - Centered and Bigger */}
+              <div className="relative z-10 flex justify-center items-center h-72 sm:h-80 md:h-96 lg:h-[28rem]">
+                <div className="w-80 sm:w-96 md:w-[28rem]">
                   <img
                     src={CallCenter}
-                    alt="Main User"
-                    className="w-full h-full object-cover"
+                    alt="Call Center"
+                    className="w-full h-full object-cover rounded-xl"
                   />
                 </div>
               </div>
 
-              <div
-                className="absolute 
-          bottom-6 right-4 
-          sm:bottom-8 sm:right-6 
-          md:bottom-10 md:right-10
-          bg-white rounded-2xl p-4 sm:p-5 md:p-6 shadow-xl z-19"
-              >
+              {/* Experience Badge */}
+              <div className="absolute bottom-6 right-4 sm:bottom-8 sm:right-6 md:bottom-10 md:right-10 bg-white rounded-2xl p-4 sm:p-5 md:p-6 shadow-xl z-20">
                 <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-orange-500">
                   20+
                 </div>
@@ -85,18 +85,20 @@ const LandingPage = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-3 rounded-full font-medium shadow-lg transition-all">
-                  Explore Services
-                </button>
-
-                <button className="border-2 border-orange-500 text-orange-500 hover:bg-orange-50 px-6 sm:px-8 py-3 rounded-full font-medium transition-all">
-                  Get Started
-                </button>
+                <CustomButtonTwin
+                  className="cursor-pointer shadow-md bg-orange-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-orange-600 transition"
+                  value="Explore Services"
+                />
+                <CustomButton
+                  className="cursor-pointer shadow-md border border-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-50 transition"
+                  value="Get Started"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <div className="w-full bg-white flex items-center justify-center px-4 sm:px-6 py-10 sm:py-14">
         <div className="max-w-7xl w-full bg-white rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div className="p-6 sm:p-8 md:p-10 flex flex-col justify-center text-center lg:text-left">
@@ -136,13 +138,14 @@ const LandingPage = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center lg:justify-start">
-              <button className="bg-orange-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-orange-600 transition">
-                Get Pricing
-              </button>
-
-              <button className="border border-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-50 transition">
-                Contact Sales
-              </button>
+              <CustomButtonTwin
+                className={`cursor-pointer shadow-md bg-orange-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-orange-600 transition`}
+                value={"Get Pricing"}
+              />
+              <CustomButton
+                className={`cursor-pointer shadow-md border border-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-50 transition`}
+                value={"Contact Sales"}
+              />
 
               <span className="text-gray-400 text-xs sm:text-sm">
                 No credit card required
