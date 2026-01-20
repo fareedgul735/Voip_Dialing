@@ -20,21 +20,22 @@ const About = () => {
   return (
     <>
       <div className="w-full bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
-        <div className="container mx-auto px-4 sm:px-6 py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 text-center lg:text-left">
+        <div className="max-w-8xl mx-auto px-6 lg:px-16 xl:px-24 py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-16 items-center">
+            {/* ================= LEFT CONTENT ================= */}
+            <div className="space-y-6 max-w-xl text-center lg:text-left">
               <div className="inline-flex items-center gap-2 bg-orange-100 rounded-full px-4 py-2 mx-auto lg:mx-0">
-                <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
                 <span className="text-orange-600 font-medium text-sm">
                   About Us
                 </span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
                 A Smarter Communication Platform for Growing Businesses
               </h1>
 
-              <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
                 At VoIPDialing, our focus is on helping businesses communicate
                 smarter. We deliver reliable, high-quality VoIP solutions built
                 on advanced technology and clean, efficient workflows so every
@@ -42,31 +43,32 @@ const About = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full transition-colors">
+                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full transition">
                   See Pricing
                 </button>
-                <button className="bg-orange-50 hover:bg-orange-100 text-orange-600 font-semibold px-8 py-3 rounded-full transition-colors">
-                  Talk to sales
+                <button className="bg-white shadow hover:shadow-md text-orange-600 font-semibold px-8 py-3 rounded-full transition">
+                  Talk to Sales
                 </button>
               </div>
             </div>
 
-            {/* ================= RIGHT CARD ================= */}
-            <div className="relative flex justify-center">
-              <div className="bg-gradient-to-br from-blue-200/50 to-purple-200/50 rounded-3xl p-6 sm:p-8 backdrop-blur-sm w-full max-w-md sm:max-w-lg">
-                <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-xl relative">
+            {/* ================= RIGHT IMAGE ================= */}
+            <div className="relative flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-md lg:max-w-lg">
+                {/* soft glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-200/40 to-purple-200/40 rounded-3xl blur-2xl"></div>
+
+                <div className="relative bg-white rounded-3xl p-6 shadow-2xl">
                   {/* Reviews */}
-                  <div className="flex items-center justify-center mb-4">
-                    <div className="flex items-center gap-3 bg-gray-50 rounded-full px-4 py-2">
+                  <div className="flex justify-center mb-4">
+                    <div className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow">
                       <div className="flex -space-x-2">
-                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-blue-400 to-purple-400"></div>
-                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-purple-400 to-pink-400"></div>
-                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-pink-400 to-orange-400"></div>
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-400 to-purple-400"></div>
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-400 to-pink-400"></div>
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pink-400 to-orange-400"></div>
                       </div>
-                      <div className="text-left">
-                        <div className="flex text-yellow-400 text-xs">
-                          ★★★★★
-                        </div>
+                      <div>
+                        <div className="text-yellow-400 text-xs">★★★★★</div>
                         <div className="text-xs text-gray-600">
                           10,000+ Reviews
                         </div>
@@ -75,33 +77,20 @@ const About = () => {
                   </div>
 
                   {/* Image */}
-                  <div className="bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl h-52 sm:h-64 flex items-center justify-center overflow-hidden">
+                  <div className="relative rounded-2xl overflow-hidden h-60">
                     <img
                       src={CallCenter}
-                      alt="Main User"
+                      alt="Call Center"
                       className="w-full h-full object-cover"
                     />
                   </div>
 
-                  {/* ===== EXPERIENCE BADGE ===== */}
-                  <div
-                    className="
-                absolute 
-                bg-white rounded-2xl shadow-xl p-3 sm:p-4 text-center
-
-                /* SM & MD → top center */
-                top-3 left-1/2 -translate-x-1/2
-
-                /* LG → original position */
-                lg:top-auto lg:bottom-4 lg:right-4 lg:translate-x-0
-              "
-                  >
-                    <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-500">
-                      20+
-                    </div>
-                    <div className="text-xs sm:text-sm text-gray-600 font-medium">
+                  {/* Experience Badge */}
+                  <div className="absolute -bottom-6 right-6 bg-white rounded-2xl shadow-xl px-5 py-3 text-center">
+                    <p className="text-4xl font-bold text-orange-500">20+</p>
+                    <p className="text-sm text-gray-600 font-medium">
                       Years Experience
-                    </div>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -109,7 +98,8 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-6 py-16">
+
+      <div className="w-full mx-auto px-6 py-16">
         <h2 className="text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-4">
           Why us?
         </h2>
@@ -121,22 +111,25 @@ const About = () => {
           reducing costs.
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* GRID WRAPPER CENTERED */}
+        <div className="grid max-w-7xl mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
           {features.map((feature, index) => (
             <div
               key={index}
               className="bg-white border-2 border-orange-100 rounded-2xl p-6 hover:border-orange-300 transition-colors hover:shadow-lg"
             >
-              <div className="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+              <div className="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mb-4 mx-auto lg:mx-0">
                 <Check className="w-6 h-6 text-orange-500" strokeWidth={3} />
               </div>
-              <p className="text-gray-800 font-medium leading-snug">
+
+              <p className="text-gray-800 font-medium leading-snug text-center lg:text-left">
                 {feature}
               </p>
             </div>
           ))}
         </div>
       </div>
+
       <div className="w-full  bg-white flex items-center justify-center p-6">
         <div className="max-w-7xl w-full bg-white rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="relative p-6 flex items-center justify-center">

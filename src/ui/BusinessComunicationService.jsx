@@ -19,6 +19,8 @@ const BusinessCommunicationServices = () => {
         "Don't buy expensive equipment",
         "Advanced Class 5 PBX features",
         "Geographic flexibility for remote teams",
+        "Complete cloud-based communication services",
+        "Easily scalable as your business grows",
       ],
       stats: { years: "20+", calls: "509+" },
     },
@@ -97,29 +99,31 @@ const BusinessCommunicationServices = () => {
   }, []);
 
   const currentService = services[activeService];
-  const Icon = currentService.icon;
 
   return (
     <div className="p-4 sm:p-6 md:p-8">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 mb-10 sm:mb-12 text-center md:text-left">
+        {/* HEADER */}
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 mb-10 text-center md:text-left">
           <div>
             <p className="text-orange-500 flex items-center gap-2 mb-3 justify-center md:justify-start">
               <Settings className="w-5 h-5" />
               Our Services
             </p>
-            <h1 className="text-2xl sm:text-3xl md:text-3xl font-bold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
               Business Communication Services We Offer
             </h1>
           </div>
 
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold transition-colors self-center md:self-auto">
+          <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold">
             Schedule Demo
           </button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12">
-          <div className="space-y-6">
+        {/* MAIN GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {/* LEFT SIDEBAR */}
+          <div className="space-y-4">
             {services.map((service, index) => {
               const ServiceIcon = service.icon;
               const isActive = index === activeService;
@@ -127,31 +131,31 @@ const BusinessCommunicationServices = () => {
               return (
                 <div
                   key={index}
-                  className={`flex gap-4 transition-all duration-500 ${
-                    isActive ? "opacity-100" : "opacity-40"
-                  }`}
+                  onClick={() => setActiveService(index)}
+                  className={`flex gap-4 p-3 rounded-md cursor-pointer transition-all duration-300
+                    ${isActive ? "bg-white opacity-100" : "opacity-40"}`}
                 >
                   <div
-                    className={`w-1 rounded-full transition-all duration-500 ${
+                    className={`w-1 rounded-full ${
                       isActive ? "bg-orange-500" : "bg-transparent"
                     }`}
                   />
 
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
+                    <div className="flex items-center gap-3 mb-1">
                       <div
-                        className={`p-2 rounded-lg transition-colors duration-500 ${
+                        className={`p-2 rounded-lg ${
                           isActive ? "bg-orange-100" : "bg-gray-100"
                         }`}
                       >
                         <ServiceIcon
-                          className={`w-5 h-5 sm:w-6 sm:h-6 transition-colors duration-500 ${
+                          className={`w-5 h-5 ${
                             isActive ? "text-orange-500" : "text-gray-400"
                           }`}
                         />
                       </div>
                       <h3
-                        className={`text-lg sm:text-xl font-bold transition-colors duration-500 ${
+                        className={`text-lg font-bold ${
                           isActive ? "text-gray-900" : "text-gray-500"
                         }`}
                       >
@@ -160,7 +164,7 @@ const BusinessCommunicationServices = () => {
                     </div>
 
                     <p
-                      className={`text-sm leading-relaxed transition-colors duration-500 ${
+                      className={`text-sm ${
                         isActive ? "text-gray-600" : "text-gray-400"
                       }`}
                     >
@@ -172,75 +176,58 @@ const BusinessCommunicationServices = () => {
             })}
           </div>
 
-          <div className="text-center lg:text-left">
-            <div className="mb-6">
-              <p className="text-orange-500 flex items-center gap-2 mb-2 justify-center lg:justify-start">
-                <Settings className="w-4 h-4" />
-                How We Work
-              </p>
+          {/* RIGHT CONTENT */}
+          <div>
+            <p className="text-orange-500 flex items-center gap-2 mb-2">
+              <Settings className="w-4 h-4" />
+              How We Work
+            </p>
 
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 transition-opacity duration-500">
-                {currentService.mainTitle}
-              </h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
+              {currentService.mainTitle}
+            </h2>
+            <h3 className="text-lg text-gray-600 mb-4">
+              {currentService.mainSubtitle}
+            </h3>
 
-              <h3 className="text-lg sm:text-xl text-gray-600 transition-opacity duration-500">
-                {currentService.mainSubtitle}
-              </h3>
-            </div>
-
-            <p className="text-gray-600 text-sm sm:text-base mb-6 transition-opacity duration-500">
+            <p className="text-gray-600 mb-6">
               {currentService.mainDescription}
             </p>
 
-            <div className="space-y-3 mb-8 text-left">
-              {currentService.features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-3 transition-all duration-500"
-                  style={{
-                    opacity: 0,
-                    animation: `fadeIn 0.5s ease-in ${index * 0.1}s forwards`,
-                  }}
-                >
-                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="grid sm:grid-cols-2 gap-3 mb-6">
+              {currentService.features.map((feature, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center">
                     <svg
-                      className="w-4 h-4 text-white"
+                      className="w-3 h-3 text-white"
                       fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
                       stroke="currentColor"
+                      strokeWidth="3"
+                      viewBox="0 0 24 24"
                     >
                       <path d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-gray-700 text-sm sm:text-base">
-                    {feature}
-                  </span>
+                  <span className="text-sm text-gray-700">{feature}</span>
                 </div>
               ))}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-              <div className="flex items-center gap-3 justify-start lg:justify-start">
-                <div className="p-3 bg-orange-100 rounded-full">
-                  <Settings className="w-6 h-6 text-orange-500" />
-                </div>
+            <div className="grid grid-cols-2 gap-6 mb-8">
+              <div className="flex items-center gap-3">
+                <Settings className="w-8 h-8 text-orange-500" />
                 <div>
-                  <p className="text-2xl sm:text-3xl font-bold text-orange-500">
+                  <p className="text-2xl font-bold text-orange-500">
                     {currentService.stats.years}
                   </p>
                   <p className="text-sm text-gray-600">Years of Experience</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 justify-start lg:justify-start">
-                <div className="p-3 bg-orange-100 rounded-full">
-                  <Phone className="w-6 h-6 text-orange-500" />
-                </div>
+              <div className="flex items-center gap-3">
+                <Phone className="w-8 h-8 text-orange-500" />
                 <div>
-                  <p className="text-2xl sm:text-3xl font-bold text-orange-500">
+                  <p className="text-2xl font-bold text-orange-500">
                     {currentService.stats.calls}
                   </p>
                   <p className="text-sm text-gray-600">Calls Per Day</p>
@@ -248,36 +235,23 @@ const BusinessCommunicationServices = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex gap-4">
               <CustomButtonTwin
-                className={`cursor-pointer shadow-md bg-orange-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-orange-600 transition`}
-                value={"Get Pricing"}
+                className="bg-orange-500 cursor-pointer shadow-md text-white px-6 py-3 rounded-full"
+                value="Get Pricing"
               />
               <CustomButton
-                className={`cursor-pointer shadow-md border border-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-50 transition`}
-                value={"Contact Sales"}
+                className="border border-gray-300 cursor-pointer px-6 py-3 rounded-full shadow-md"
+                value="Contact Sales"
               />
             </div>
 
-            <p className="text-xs sm:text-sm text-gray-500 mt-4 text-center lg:text-left">
+            <p className="text-xs text-gray-500 mt-4">
               No credit card required
             </p>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 };

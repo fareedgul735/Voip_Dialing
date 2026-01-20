@@ -267,129 +267,48 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <div className="w-full p-[28px]">
-        <div className="bg-white rounded-2xl p-8">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+      <div className="w-full px-6 py-10">
+        <div className="bg-white rounded-2xl p-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            {/* LEFT CONTENT */}
             <div>
               <p className="text-orange-500 text-md font-semibold mb-2">
                 Benefits
               </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Why move to the Cloud?
               </h2>
-              <div className="w-full py-12 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-8">
-                <div>
-                  <h4 className="text-md flex gap-2  text-orange-400 font-semibold text-gray-800 mb-1">
-                    <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
-                      <Check size={14} />
-                    </span>
-                    Lorem
-                  </h4>
-                  <p className="text-sm text-gray-600">
-                    Deliver first-in-call and stay connected with all your
-                    customers.
-                  </p>
-                </div>
 
-                <div>
-                  <h4 className="text-md flex gap-2  text-orange-400 font-semibold text-gray-800 mb-1">
-                    <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
-                      <Check size={14} />
-                    </span>
-                    Lorem
-                  </h4>
-                  <p className="text-sm flex gap-2 text-gray-600">
-                    Deliver first-in-call and stay connected with all your
-                    customers.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="text-md flex gap-2  text-orange-400 font-semibold text-gray-800 mb-1">
-                    <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
-                      <Check size={14} />
-                    </span>
-                    Lorem
-                  </h4>
-                  <p className="text-sm text-gray-600">
-                    Deliver first-in-call and stay connected with all your
-                    customers.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="text-md flex gap-2  text-orange-400 font-semibold text-gray-800 mb-1">
-                    <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
-                      <Check size={14} />
-                    </span>
-                    Lorem
-                  </h4>
-                  <p className="text-sm text-gray-600">
-                    Deliver first-in-call and stay connected with all your
-                    customers.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="text-md flex gap-2  text-orange-400 font-semibold text-gray-800 mb-1">
-                    <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
-                      <Check size={14} />
-                    </span>
-                    Lorem
-                  </h4>
-                  <p className="text-sm text-gray-600">
-                    Deliver first-in-call and stay connected with all your
-                    customers.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="text-md flex gap-2  text-orange-400 font-semibold text-gray-800 mb-1">
-                    <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
-                      <Check size={14} />
-                    </span>
-                    Lorem
-                  </h4>
-                  <p className="text-sm text-gray-600">
-                    Deliver first-in-call and stay connected with all your
-                    customers.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="text-md flex gap-2  text-orange-400 font-semibold text-gray-800 mb-1">
-                    <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
-                      <Check size={14} />
-                    </span>
-                    Lorem
-                  </h4>
-                  <p className="text-sm text-gray-600">
-                    Deliver first-in-call and stay connected with all your
-                    customers.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="text-md flex gap-2  text-orange-400 font-semibold text-gray-800 mb-1">
-                    <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
-                      <Check size={14} />
-                    </span>
-                    Lorem
-                  </h4>
-                  <p className="text-sm text-gray-600">
-                    Deliver first-in-call and stay connected with all your
-                    customers.
-                  </p>
-                </div>
+              <div className="w-full py-6 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                {Array(8)
+                  .fill("")
+                  .map((_, index) => (
+                    <div key={index}>
+                      <h4 className="text-md flex gap-2 font-semibold text-gray-800 mb-1">
+                        <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
+                          <Check size={14} />
+                        </span>
+                        Lorem
+                      </h4>
+                      <p className="text-sm text-gray-600">
+                        Deliver first-in-call and stay connected with all your
+                        customers.
+                      </p>
+                    </div>
+                  ))}
               </div>
             </div>
-            <div className="relative">
+
+            {/* RIGHT IMAGE */}
+            <div className="relative flex justify-center">
               <img
                 src={lady1}
                 alt="Happy Client"
-                className="rounded-lg w-150"
+                className="rounded-lg w-[450px]"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-xl p-6">
+
+              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-lg shadow-xl p-6 text-center">
                 <p className="text-4xl font-bold text-orange-500">12K+</p>
                 <p className="text-sm text-gray-600">Happy Client</p>
               </div>
@@ -397,6 +316,7 @@ const Products = () => {
           </div>
         </div>
       </div>
+
       <div className="w-full p-[28px] h-60 flex justify-end mt-20 mb-4 px-4">
         <BrandName />
       </div>

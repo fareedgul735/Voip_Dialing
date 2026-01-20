@@ -14,10 +14,10 @@ const HeroSection = () => {
   const slides = [
     {
       badge: "No term or usage commitment",
-      image: image1,
+      image: image5,
       title: (
         <>
-          Boost Your <span className="highlight bg-orange-500">Business</span>
+          Boost Your <span className="highlight bg-blue-500">Business</span>
           <br />
           <span className="highlight bg-blue-500">Communication</span> with{" "}
           <br />
@@ -35,11 +35,11 @@ const HeroSection = () => {
 
     {
       badge: "24/7 Customer Support",
-      image: image2,
+      image: image4,
       title: (
         <>
           Transform Your{" "}
-          <span className="highlight bg-green-500">Business</span>
+          <span className="highlight bg-purple-500">Business</span>
           <br />
           with <span className="highlight bg-purple-500">Cloud PBX</span>
           <br />
@@ -60,7 +60,7 @@ const HeroSection = () => {
       image: image3,
       title: (
         <>
-          Reach <span className="highlight bg-red-500">Customers</span>
+          Reach <span className="highlight bg-orange-500">Customers</span>
           <br />
           <span className="highlight bg-orange-500">Instantly</span> with Our{" "}
           <br />
@@ -144,32 +144,35 @@ const HeroSection = () => {
             />
           </div>
 
-          <div className="absolute -top-4 -left-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float">
-            <img src={image2} className="w-full h-full object-cover" />
-          </div>
+          {activeSlide === 2 && (
+            <>
+              <div className="absolute -top-4 -left-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float">
+                <img src={image2} className="w-full h-full object-cover" />
+              </div>
 
-          <div
-            className="absolute top-10 -right-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
-            style={{ animationDelay: "0.5s" }}
-          >
-            <img src={image1} className="w-full h-full object-cover" />
-          </div>
+              <div
+                className="absolute top-10 -right-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
+                style={{ animationDelay: "0.5s" }}
+              >
+                <img src={image1} className="w-full h-full object-cover" />
+              </div>
 
-          <div
-            className="absolute top-1/2 -right-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
-            style={{ animationDelay: "1s" }}
-          >
-            <img src={image2} className="w-full h-full object-cover" />
-          </div>
+              <div
+                className="absolute top-1/2 -right-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
+                style={{ animationDelay: "1s" }}
+              >
+                <img src={image2} className="w-full h-full object-cover" />
+              </div>
 
-          <div
-            className="absolute bottom-20 -left-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
-            style={{ animationDelay: "1.5s" }}
-          >
-            <img src={image1} className="w-full h-full object-cover" />
-          </div>
+              <div
+                className="absolute bottom-20 -left-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
+                style={{ animationDelay: "1.5s" }}
+              >
+                <img src={image1} className="w-full h-full object-cover" />
+              </div>
+            </>
+          )}
 
-          {/* STATS */}
           <div
             key={`stats-${activeSlide}`}
             className="absolute bottom-4 right-4 md:right-20 bg-white px-6 py-4 rounded-xl shadow-lg animate-slideUp"
@@ -182,7 +185,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* ANIMATIONS */}
       <style jsx>{`
         @keyframes fadeIn {
           from {
