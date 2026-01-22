@@ -55,7 +55,7 @@ const VoIPPricingInterface = () => {
     setSelectedNumbers((prev) =>
       prev.includes(number)
         ? prev.filter((n) => n !== number)
-        : [...prev, number]
+        : [...prev, number],
     );
   };
 
@@ -65,8 +65,23 @@ const VoIPPricingInterface = () => {
 
   return (
     <div className="w-full p-6">
+      <style>{`
+        .orange-scrollbar::-webkit-scrollbar {
+          width: 8px;
+        }
+        .orange-scrollbar::-webkit-scrollbar-track {
+          background: #fed7aa;
+          border-radius: 4px;
+        }
+        .orange-scrollbar::-webkit-scrollbar-thumb {
+          background: #f97316;
+          border-radius: 4px;
+        }
+        .orange-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: #ea580c;
+        }
+      `}</style>
       <div className="max-w-7xl mx-auto">
-
         <div className="flex items-center mb-8">
           {steps.map((step, index) => (
             <div
@@ -75,7 +90,7 @@ const VoIPPricingInterface = () => {
                 setActiveStep(step.id);
                 setOpenCollapse(collapseItems[step.id]?.id);
               }}
-              className={`flex justify-center items-center py-1 px-19 text-center font-medium cursor-pointer transition-colors
+              className={`flex justify-center items-center py-1 px-20 text-center font-medium cursor-pointer transition-colors
                 ${
                   activeStep === step.id
                     ? "bg-orange-500 text-white"
@@ -88,15 +103,12 @@ const VoIPPricingInterface = () => {
                 zIndex: steps.length - index,
               }}
             >
-              <span className="text-[12px]">
-                {step.label}
-              </span>
+              <span className="text-[12px]">{step.label}</span>
             </div>
           ))}
         </div>
 
         <div className="flex gap-6">
-
           <div className="flex-1 space-y-3">
             {collapseItems.map((item) => (
               <div
@@ -126,9 +138,8 @@ const VoIPPricingInterface = () => {
 
                 {openCollapse === item.id && (
                   <div className="px-5 py-4 bg-orange-50 border-t border-orange-400">
-                    {item.id === "phone" ? (
+                    {item.id === "phone" && (
                       <div className="flex gap-8">
-
                         <div className="flex-1">
                           <h3 className="text-sm font-semibold mb-3">
                             Search For Local or Toll Free Numbers
@@ -137,9 +148,7 @@ const VoIPPricingInterface = () => {
                           <div className="relative mb-4">
                             <input
                               value={searchValue}
-                              onChange={(e) =>
-                                setSearchValue(e.target.value)
-                              }
+                              onChange={(e) => setSearchValue(e.target.value)}
                               className="w-full px-4 py-2.5 border border-orange-400 rounded-md text-center font-semibold"
                             />
                             <button
@@ -211,18 +220,164 @@ const VoIPPricingInterface = () => {
                           </div>
 
                           <button
-                            onClick={() =>
-                              setShowAllNumbers(!showAllNumbers)
-                            }
+                            onClick={() => setShowAllNumbers(!showAllNumbers)}
                             className="mt-2 text-sm text-orange-500"
                           >
-                            {showAllNumbers
-                              ? "− Show less"
-                              : "+ Expand more"}
+                            {showAllNumbers ? "− Show less" : "+ Expand more"}
                           </button>
                         </div>
                       </div>
-                    ) : (
+                    )}
+
+                    {item.id === "cloud" && (
+                      <div className="space-y-6">
+                        <div className="border border-orange-300 rounded-md p-4">
+                          <h3 className="font-semibold text-orange-500 mb-4 border-b border-orange-200 pb-2">
+                            Dedicated Hosted Phone System
+                          </h3>
+
+                          {[
+                            {
+                              name: "HostedPBX Basic",
+                              desc: "Up to 20 Extensions",
+                              price: "$49.99/month",
+                            },
+                            {
+                              name: "HostedPBX Professional",
+                              desc: "Up to 2 Extensions",
+                              price: "$49.99/month",
+                            },
+                            {
+                              name: "HostedPBX Call Center",
+                              desc: "Up to 60 Extensions with Active Agent Panel",
+                              price: "$49.99/month",
+                            },
+                          ].map((plan, i) => (
+                            <div
+                              key={i}
+                              className="flex justify-between items-center py-3 border-b border-gray-100 last:border-0"
+                            >
+                              <div className="flex items-center gap-2">
+                                <span className="text-orange-500 text-lg">●</span>
+                                <span className="text-sm font-medium text-gray-800">
+                                  {plan.name}
+                                </span>
+                              </div>
+                              <span className="text-xs text-gray-600">
+                                {plan.desc}
+                              </span>
+                              <span className="font-semibold text-gray-800">
+                                {plan.price}
+                              </span>
+                              <label className="relative inline-block w-10 h-5">
+                                <input
+                                  type="checkbox"
+                                  className="sr-only peer"
+                                />
+                                <span className="absolute inset-0 bg-gray-300 rounded-full peer-checked:bg-orange-500"></span>
+                                <span className="absolute left-1 top-0.5 w-4 h-4 bg-white rounded-full peer-checked:translate-x-5 transition-transform"></span>
+                              </label>
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="border border-orange-300 rounded-md p-4">
+                          <h3 className="font-semibold text-orange-500 mb-4 border-b border-orange-200 pb-2">
+                            Optional Add-On Features
+                          </h3>
+
+                          {[
+                            { name: "Call Recording", desc: "All calls, Per system", price: "$20/month" },
+                            { name: "Active Agent Panel", desc: "$99 (one time fee)", price: "Ineligible" },
+                            { name: "Do-It-Yourself Configuration", desc: "FREE", price: "" },
+                            { name: "Initial Cloud/PBX Configuration", desc: "$199 (one time fee)", price: "Waived with all qualified packages" },
+                            { name: "Hourly Remote Support/Config", desc: "$95/hour", price: "Minimum 60 min, then every 30 min" },
+                            { name: "Optional support plan", desc: "$250/month", price: "Monthly plan with 12 month Commitment" },
+                            { name: "Onsite Labor", desc: "$120/hour+travel cost & time", price: "Minimum 2 hours, in hourly increments" },
+                          ].map((addon, i) => (
+                            <div
+                              key={i}
+                              className="flex justify-between items-center py-3 border-b border-gray-100 last:border-0"
+                            >
+                              <div className="flex items-center gap-2 flex-1">
+                                <span className="text-orange-500 text-lg">●</span>
+                                <span className="text-sm font-medium text-gray-800">
+                                  {addon.name}
+                                </span>
+                              </div>
+                              <span className="text-xs text-gray-600 flex-1 text-center">
+                                {addon.desc}
+                              </span>
+                              <span className="font-semibold text-gray-800 flex-1 text-right mr-4">
+                                {addon.price}
+                              </span>
+                              <label className="relative inline-block w-10 h-5">
+                                <input
+                                  type="checkbox"
+                                  className="sr-only peer"
+                                />
+                                <span className="absolute inset-0 bg-gray-300 rounded-full peer-checked:bg-orange-500"></span>
+                                <span className="absolute left-1 top-0.5 w-4 h-4 bg-white rounded-full peer-checked:translate-x-5 transition-transform"></span>
+                              </label>
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-6">
+                          <div className="border border-orange-300 rounded-md p-4">
+                            <h4 className="font-semibold mb-3 flex items-center gap-2">
+                              <span className="text-orange-500">●</span>
+                              PBX Features
+                            </h4>
+                            {[
+                              "Call Transfer / Forwarding",
+                              "Voicemail/VM to Email",
+                              "Follow Me",
+                              "Auto-Attendant/IVR",
+                              "Do Not Disturb",
+                              "Ext. to Ext. calling",
+                              "Custom Music On Hold",
+                              "Office Hours",
+                              "Remote Users",
+                              "Multiple Offices",
+                            ].map((f, i) => (
+                              <div key={i} className="text-sm py-1 flex items-center gap-2">
+                                <span className="text-orange-500">✓</span>
+                                {f}
+                              </div>
+                            ))}
+                          </div>
+
+                          <div className="border border-orange-300 rounded-md p-4">
+                            <h4 className="font-semibold mb-3 flex items-center gap-2">
+                              <span className="text-orange-500">●</span>
+                              Key Advantages
+                            </h4>
+                            {[
+                              "Easily scalable as you grow",
+                              "Geographical Flexibility",
+                              "Complete Cloud Services",
+                              "Don't buy expensive equipment",
+                              "Easy to Use",
+                              "Quick, turnkey setup",
+                              "Works with all VoIP Phones",
+                            ].map((a, i) => (
+                              <div key={i} className="text-sm py-1 flex items-center gap-2">
+                                <span className="text-orange-500">✓</span>
+                                {a}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* NOTE */}
+                        <div className="text-xs text-gray-600 italic">
+                          * PBX orders are processed within 1 to 3 business days from the time placed, varied by the speed we collect the desired specs from you.
+                        </div>
+                      </div>
+                    )}
+
+                    {item.id !== "phone" && item.id !== "cloud" && (
                       <p className="text-sm text-gray-600">
                         Dummy content for {item.label}
                       </p>
@@ -235,9 +390,7 @@ const VoIPPricingInterface = () => {
 
           <div className="w-80 bg-orange-50 border border-orange-200 rounded-lg p-5 h-fit">
             <h2 className="font-semibold mb-6">Shopping Cart Totals</h2>
-            <div className="text-center text-gray-400 py-12">
-              No Item Added
-            </div>
+            <div className="text-center text-gray-400 py-12">No Item Added</div>
             <div className="border-t pt-4">
               <div className="flex justify-between mb-4">
                 <span>Total Price</span>
@@ -253,7 +406,6 @@ const VoIPPricingInterface = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -261,4 +413,3 @@ const VoIPPricingInterface = () => {
 };
 
 export default VoIPPricingInterface;
-

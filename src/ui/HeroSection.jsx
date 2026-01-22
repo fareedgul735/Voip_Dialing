@@ -93,7 +93,7 @@ const HeroSection = () => {
 
   return (
     <div className="p-6 sm:p-7 md:p-[28px]">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-7xl mx-auto">
+      <div className="grid max-w-7xl mx-auto grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-7xl mx-auto">
         <div className="space-y-6 text-center md:text-left">
           <div
             key={`badge-${activeSlide}`}
@@ -144,7 +144,9 @@ const HeroSection = () => {
             <img
               src={currentSlide.image}
               alt="Business Communication"
-              className="w-full h-auto object-cover "
+              className={`w-full h-auto object-cover ${
+                activeSlide === 1 ? "rounded-2xl" : ""
+              }`}
             />
           </div>
 
@@ -197,15 +199,16 @@ const HeroSection = () => {
             </>
           )}
 
-          <div
-            key={`stats-${activeSlide}`}
-            className="absolute w-[150px] flex-col flex justify-center items-center bottom-4 left-4 md:right-20 bg-white px-6 py-4 rounded-xl shadow-lg animate-slideUp"
-          >
-            <p className="text-orange-500 text-2xl font-bold">
-              {currentSlide.stats.count}
-            </p>
-            <p className="text-sm text-gray-600 text-center">{currentSlide.stats.label}</p>
-          </div>
+          {activeSlide !== 0 && (
+            <div className="absolute w-[150px] bottom-4 left-4 bg-white px-6 py-4 rounded-xl shadow-lg animate-slideUp">
+              <p className="text-orange-500 text-2xl font-bold">
+                {currentSlide.stats.count}
+              </p>
+              <p className="text-sm text-gray-600 text-center">
+                {currentSlide.stats.label}
+              </p>
+            </div>
+          )}
         </div>
       </div>
 

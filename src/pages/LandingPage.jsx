@@ -23,9 +23,9 @@ const LandingPage = () => {
       <div className="w-full bg-[#FAF9F6]">
         <BusinessCommunicationServices />
       </div>
-      <div className="container mx-auto px-4 sm:px-6 py-10 sm:py-14 lg:py-16">
+      <div className="w-full mx-auto px-4 sm:px-6 py-10 sm:py-14 lg:py-16">
         <div className="bg-white rounded-3xl overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div className="grid max-w-7xl mx-auto grid-cols-1 md:grid-cols-2 gap-10 items-center">
             {/* Left Column with Image */}
             <div className="relative p-6 sm:p-8 md:p-10 lg:p-12 flex justify-center">
               {/* Headphones Logo */}
@@ -99,7 +99,7 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="w-full bg-white flex items-center justify-center px-4 sm:px-6 py-10 sm:py-14">
-        <div className="max-w-7xl w-full bg-white rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="max-w-7xl mx-auto bg-white rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div className="p-6 sm:p-8 md:p-10 flex flex-col justify-center text-center lg:text-left">
             <p className="uppercase tracking-widest text-orange-500 font-semibold mb-2 text-xs sm:text-sm">
               Benefits
@@ -173,16 +173,18 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="w-full bg-[#FAF9F6] flex flex-col">
-        <div className="text-center py-3 text-xs tracking-widest text-orange-400 font-semibold">
-          SOFTWARE DEMO
-        </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center py-3 text-xs tracking-widest text-orange-400 font-semibold">
+            SOFTWARE DEMO
+          </div>
 
-        <h1 className="text-2xl md:text-3xl font-semibold text-center text-slate-800 mb-4">
-          Get up and running in minutes
-        </h1>
+          <h1 className="text-2xl md:text-3xl font-semibold text-center text-slate-800 mb-4">
+            Get up and running in minutes
+          </h1>
 
-        <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-xl shadow-orange-300 border border-orange-100 p-2 md:p-4 flex-1">
-          <img src={Detailed} />
+          <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-xl shadow-orange-300 border border-orange-100 p-2 md:p-4 flex-1">
+            <img src={Detailed} />
+          </div>
         </div>
       </div>
       <div className="w-full bg-gradient-to-b from-orange-50 to-white">
