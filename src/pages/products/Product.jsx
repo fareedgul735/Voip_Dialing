@@ -39,7 +39,7 @@ const Products = () => {
   return (
     <>
       <div className="w-full p-4 sm:p-6 md:p-[28px] bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
-        <div className="mx-auto py-12">
+        <div className="py-12">
           <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-center justify-between">
             <div className="text-center lg:text-left max-w-xl">
               <p className="text-blue-500 text-sm font-semibold mb-2">
@@ -230,19 +230,21 @@ const Products = () => {
         </div>
       </div>
       <div className="w-full bg-[#FAF9F6] flex flex-col">
-        <div className="text-center py-3 text-xs tracking-widest text-orange-400 font-semibold">
-          SOFTWARE DEMO
-        </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center py-3 text-xs tracking-widest text-orange-400 font-semibold">
+            SOFTWARE DEMO
+          </div>
 
-        <h1 className="text-2xl md:text-3xl font-semibold text-center text-slate-800 mb-4">
-          Get up and running in minutes
-        </h1>
+          <h1 className="text-2xl md:text-3xl font-semibold text-center text-slate-800 mb-4">
+            Get up and running in minutes
+          </h1>
 
-        <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-xl shadow-orange-300 border border-orange-100 p-2 md:p-4 flex-1">
-          <img src={Detailed} />
+          <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-xl shadow-orange-300 border border-orange-100 p-2 md:p-4 flex-1">
+            <img src={Detailed} />
+          </div>
         </div>
       </div>
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-16 px-4">
+      <div className="bg-gradient-to-br from-gray-50 to-gray-100 py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-orange-400 text-sm font-semibold tracking-wider uppercase mb-2">
@@ -267,56 +269,95 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <div className="w-full px-6 py-10">
-        <div className="bg-white rounded-2xl p-8 max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
+      <div className="w-full py-16 flex justify-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* LEFT CONTENT */}
             <div>
-              <p className="text-orange-500 text-md font-semibold mb-2">
-                Benefits
+              <p className="text-orange-500 text-sm font-semibold mb-3 uppercase tracking-wide">
+                BENEFITS
               </p>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12">
                 Why move to the Cloud?
               </h2>
 
-              <div className="w-full py-6 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                {Array(8)
-                  .fill("")
-                  .map((_, index) => (
-                    <div key={index}>
-                      <h4 className="text-md flex gap-2 font-semibold text-gray-800 mb-1">
-                        <span className="w-6 h-6 text-white bg-orange-400 rounded-full flex justify-center items-center">
-                          <Check size={14} />
-                        </span>
-                        Lorem
-                      </h4>
-                      <p className="text-sm text-gray-600">
-                        Deliver first-in-call and stay connected with all your
-                        customers.
-                      </p>
-                    </div>
-                  ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                {[
+                  {
+                    title: "No expensive equipment to buy",
+                    description:
+                      "Consistent performance ensures your calls are always connected. Just smooth communication.",
+                  },
+                  {
+                    title: "Geographical Flexibility",
+                    description:
+                      "Consistent performance ensures your calls are always connected. Just smooth communication.",
+                  },
+                  {
+                    title: "Complete Cloud Services",
+                    description:
+                      "Consistent performance ensures your calls are always connected. Just smooth communication.",
+                  },
+                  {
+                    title: "Works with most VoIP Phones",
+                    description:
+                      "Consistent performance ensures your calls are always connected. Just smooth communication.",
+                  },
+                  {
+                    title: "Cutting Edge Features",
+                    description:
+                      "Consistent performance ensures your calls are always connected. Just smooth communication.",
+                  },
+                  {
+                    title: "Quick, turnkey setup",
+                    description:
+                      "Consistent performance ensures your calls are always connected. Just smooth communication.",
+                  },
+                  {
+                    title: "Easily scalable as you grow",
+                    description:
+                      "Consistent performance ensures your calls are always connected. Just smooth communication.",
+                  },
+                  {
+                    title: "Easy to Use",
+                    description:
+                      "Consistent performance ensures your calls are always connected. Just smooth communication.",
+                  },
+                ].map((item, index) => (
+                  <div key={index}>
+                    <h4 className="text-base flex gap-3 items-start font-semibold text-gray-900 mb-2">
+                      <span className="w-6 h-6 min-w-6 text-white bg-orange-500 rounded-full flex justify-center items-center mt-0.5">
+                        <Check size={14} strokeWidth={3} />
+                      </span>
+                      {item.title}
+                    </h4>
+                    <p className="text-sm text-gray-500 leading-relaxed ml-9">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* RIGHT IMAGE */}
-            <div className="relative flex justify-center">
+            {/* RIGHT CONTENT */}
+            <div className="relative flex flex-col items-center justify-start pt-8">
               <img
                 src={lady1}
                 alt="Happy Client"
-                className="rounded-lg w-[450px]"
+                className="w-full max-w-[658px] rounded-2xl shadow-lg"
               />
 
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-lg shadow-xl p-6 text-center">
-                <p className="text-4xl font-bold text-orange-500">12K+</p>
-                <p className="text-sm text-gray-600">Happy Client</p>
+              <div className="absolute -bottom-8 left-8 bg-white rounded-xl shadow-2xl px-10 py-6 text-center">
+                <p className="text-5xl font-bold text-orange-500 mb-1">12K+</p>
+                <p className="text-sm text-gray-700 font-medium">
+                  Happy Client
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <div className="w-full p-[28px] h-60 flex justify-end mt-20 mb-4 px-4">
         <BrandName />
       </div>

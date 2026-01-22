@@ -62,7 +62,7 @@ const Solution = () => {
               <img
                 src={animate1}
                 alt="VoIP Technology"
-                className="rounded-lg w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl object-contain"
+                className="rounded-lg w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-1xl object-contain"
               />
 
               <div
@@ -90,8 +90,8 @@ const Solution = () => {
         </div>
       </div>
       <div className="w-full p-[28px]">
-        <div className="bg-white rounded-2xl p-8">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="bg-white mx-auto rounded-2xl p-8">
+          <div className="grid mx-auto max-w-7xl md:grid-cols-2 gap-8 items-center">
             <div className="relative">
               <img
                 src={lady1}
@@ -151,7 +151,7 @@ const Solution = () => {
         </div>
       </div>
       <div className="w-full p-[58px]">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid max-w-7xl mx-auto md:grid-cols-2 gap-8 items-center">
           <div>
             <p className="text-orange-500 text-sm font-semibold mb-2">
               BUSINESS GROWTH
@@ -190,9 +190,9 @@ const Solution = () => {
           </div>
         </div>
       </div>
-      <div>
-        <div className="container mx-auto px-4 py-16">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="w-full">
+        <div className="mx-auto px-4 py-16">
+          <div className="grid max-w-7xl mx-auto md:grid-cols-2 gap-12 items-center">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <img
@@ -267,8 +267,8 @@ const Solution = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="w-full mx-auto px-4 py-16">
+        <div className="grid max-w-7xl mx-auto max-w-7xl md:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <img
               src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&h=500&fit=crop"
@@ -345,8 +345,8 @@ const Solution = () => {
           </div>
         </div>
       </div>
-      <div className="bg-white py-20">
-        <div className="container mx-auto px-4">
+      <div className="bg-white w-full py-20">
+        <div className="container max-w-7xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-16">
             Comprehensive features
           </h2>
@@ -429,11 +429,12 @@ const Solution = () => {
           </div>
         </div>
       </div>
-      <div className="w-full mx-auto px-4 py-16 sm:py-20">
+      <div className="w-full px-4 py-16 sm:py-20">
         <div
           className="
       relative 
-      w-full 
+      max-w-7xl
+      mx-auto 
       min-h-[420px] sm:min-h-[480px] lg:min-h-[500px]
       rounded-2xl 
       shadow-2xl 
@@ -447,7 +448,6 @@ const Solution = () => {
             backgroundImage: "url('/audio_1.jpg')",
           }}
         >
-          {/* ================= CONTENT CARD ================= */}
           <div
             className="
         bg-white 

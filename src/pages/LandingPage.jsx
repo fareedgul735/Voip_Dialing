@@ -98,7 +98,6 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-
       <div className="w-full bg-white flex items-center justify-center px-4 sm:px-6 py-10 sm:py-14">
         <div className="max-w-7xl w-full bg-white rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div className="p-6 sm:p-8 md:p-10 flex flex-col justify-center text-center lg:text-left">

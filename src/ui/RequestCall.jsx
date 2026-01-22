@@ -21,7 +21,7 @@ const RequestCall = () => {
     });
   };
   return (
-    <div className="w-full max-w-5xl bg-[#FBF7F4] rounded-3xl shadow-2xl overflow-hidden">
+    <div className="w-full max-w-7xl bg-[#FBF7F4] rounded-3xl shadow-2xl overflow-hidden">
       <div className="flex flex-col md:flex-row">
         <div className="bg-[#F26722] p-8 md:p-12 text-white md:w-2/5 relative overflow-hidden">
           <div className="relative z-10">

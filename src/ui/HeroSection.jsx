@@ -5,6 +5,10 @@ import image2 from "../../public/image2.jpg";
 import image3 from "../../public/image3.png";
 import image4 from "../../public/image4.jpg";
 import image5 from "../../public/image5.png";
+import image6 from "../../public/image6.jpg";
+import image7 from "../../public/image7.jpg";
+import image8 from "../../public/iimage8.jpg";
+import image9 from "../../public/image9.jpg";
 
 import { CustomButton, CustomButtonTwin } from "./CustomButton";
 
@@ -140,32 +144,52 @@ const HeroSection = () => {
             <img
               src={currentSlide.image}
               alt="Business Communication"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover "
             />
           </div>
 
+          {activeSlide === 1 && (
+            <>
+              <div className="absolute -top-6 left-1/2 w-14 h-14 rounded-full bg-white overflow-hidden">
+                <img src={image6} className="w-full h-full object-cover" />
+              </div>
+
+              <div className="absolute top-10 -left-6 w-14 h-14 rounded-full bg-white overflow-hidden">
+                <img src={image7} className="w-full h-full object-cover" />
+              </div>
+
+              <div className="absolute top-10 -right-6 w-14 h-14 rounded-full bg-white overflow-hidden">
+                <img src={image8} className="w-full h-full object-cover" />
+              </div>
+
+              <div className="absolute bottom-24 right-10 w-14 h-14 rounded-full bg-white overflow-hidden">
+                <img src={image9} className="w-full h-full object-cover" />
+              </div>
+            </>
+          )}
+
           {activeSlide === 2 && (
             <>
-              <div className="absolute -top-4 -left-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float">
+              <div className="absolute -top-4 -left-4 w-12 h-12 bg-white rounded-full overflow-hidden animate-float">
                 <img src={image2} className="w-full h-full object-cover" />
               </div>
 
               <div
-                className="absolute top-10 -right-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
+                className="absolute top-10 -right-4 w-12 h-12 bg-white rounded-full overflow-hidden animate-float"
                 style={{ animationDelay: "0.5s" }}
               >
                 <img src={image1} className="w-full h-full object-cover" />
               </div>
 
               <div
-                className="absolute top-1/2 -right-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
+                className="absolute top-1/2 -right-4 w-12 h-12 bg-white rounded-full overflow-hidden animate-float"
                 style={{ animationDelay: "1s" }}
               >
                 <img src={image2} className="w-full h-full object-cover" />
               </div>
 
               <div
-                className="absolute bottom-20 -left-4 w-12 h-12 bg-white border-2 border-white rounded-full shadow-lg overflow-hidden animate-float"
+                className="absolute bottom-20 -left-4 w-12 h-12 bg-white rounded-full overflow-hidden animate-float"
                 style={{ animationDelay: "1.5s" }}
               >
                 <img src={image1} className="w-full h-full object-cover" />
@@ -175,12 +199,12 @@ const HeroSection = () => {
 
           <div
             key={`stats-${activeSlide}`}
-            className="absolute bottom-4 right-4 md:right-20 bg-white px-6 py-4 rounded-xl shadow-lg animate-slideUp"
+            className="absolute w-[150px] flex-col flex justify-center items-center bottom-4 left-4 md:right-20 bg-white px-6 py-4 rounded-xl shadow-lg animate-slideUp"
           >
             <p className="text-orange-500 text-2xl font-bold">
               {currentSlide.stats.count}
             </p>
-            <p className="text-sm text-gray-600">{currentSlide.stats.label}</p>
+            <p className="text-sm text-gray-600 text-center">{currentSlide.stats.label}</p>
           </div>
         </div>
       </div>

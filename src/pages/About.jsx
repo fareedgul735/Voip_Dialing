@@ -20,9 +20,8 @@ const About = () => {
   return (
     <>
       <div className="w-full bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
-        <div className="max-w-8xl mx-auto px-6 lg:px-16 xl:px-24 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-16 items-center">
-            {/* ================= LEFT CONTENT ================= */}
+        <div className="px-6 lg:px-16 xl:px-24 py-20">
+          <div className="grid max-w-7xl mx-auto grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-16 items-center">
             <div className="space-y-6 max-w-xl text-center lg:text-left">
               <div className="inline-flex items-center gap-2 bg-orange-100 rounded-full px-4 py-2 mx-auto lg:mx-0">
                 <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
@@ -52,7 +51,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* ================= RIGHT IMAGE ================= */}
             <div className="relative flex justify-center lg:justify-end">
               <div className="relative w-full max-w-md lg:max-w-lg">
                 {/* soft glow */}
@@ -100,7 +98,7 @@ const About = () => {
       </div>
 
       <div className="w-full mx-auto px-6 py-16">
-        <h2 className="text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-4">
+        <h2 className="text-4xl lg:text-7xl font-bold text-center text-gray-900 mb-4">
           Why us?
         </h2>
 
@@ -254,7 +252,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
       <div className="w-full h-60 flex justify-end mt-20 mb-4 px-4">
         <BrandName />
       </div>
