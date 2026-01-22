@@ -145,7 +145,9 @@ const HeroSection = () => {
               src={currentSlide.image}
               alt="Business Communication"
               className={`w-full h-auto object-cover ${
-                activeSlide === 1 ? "rounded-2xl" : ""
+                activeSlide === 1
+                  ? "rounded-2xl"
+                  : "" 
               }`}
             />
           </div>
@@ -200,7 +202,7 @@ const HeroSection = () => {
           )}
 
           {activeSlide !== 0 && (
-            <div className="absolute w-[150px] bottom-4 left-4 bg-white px-6 py-4 rounded-xl shadow-lg animate-slideUp">
+            <div className="absolute bg-red-400 w-[150px] bottom-4 left-4 bg-white px-6 py-4 rounded-xl shadow-lg animate-slideUp">
               <p className="text-orange-500 text-2xl font-bold">
                 {currentSlide.stats.count}
               </p>
