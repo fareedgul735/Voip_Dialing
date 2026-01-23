@@ -102,7 +102,12 @@ const Navbar = () => {
 
                       {!Array.isArray(item.submenu) && (
                         <div className="grid grid-cols-4 gap-8">
-                          <div className="rounded-2xl p-6 text-white bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-500">
+                          <div
+                            className="rounded-2xl p-6 text-white bg-cover bg-center"
+                            style={{
+                              backgroundImage: "url('/bluebg.png')",
+                            }}
+                          >
                             <h3 className="text-2xl font-bold mb-4">
                               Get VOIP UNIFIED
                             </h3>

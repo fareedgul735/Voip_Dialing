@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import BrandName from "../ui/BrandName";
 
 const VoIPPricingInterface = () => {
   const [activeStep, setActiveStep] = useState(null);
-  const [openCollapse, setOpenCollapse] = useState("phone");
+  const [openCollapse, setOpenCollapse] = useState(null);
   const [searchValue, setSearchValue] = useState("72");
   const [selectedNumbers, setSelectedNumbers] = useState([]);
   const [showAllNumbers, setShowAllNumbers] = useState(false);
@@ -21,11 +22,11 @@ const VoIPPricingInterface = () => {
   const areaCodes = ["720", "722", "726", "727"];
 
   const steps = [
-    { id: 0, label: "Phone#s" },
-    { id: 1, label: "Cloud PBX" },
-    { id: 2, label: "Dialing Plans" },
-    { id: 3, label: "SMS" },
-    { id: 4, label: "IP Phones" },
+    { id: 0, label: "Phone#s", collapseId: "phone" },
+    { id: 1, label: "Cloud PBX", collapseId: "cloud" },
+    { id: 2, label: "Dialing Plans", collapseId: "dialing" },
+    { id: 3, label: "SMS", collapseId: "sms" },
+    { id: 4, label: "IP Phones", collapseId: "equipment" },
   ];
 
   const collapseItems = [
@@ -88,7 +89,7 @@ const VoIPPricingInterface = () => {
               key={step.id}
               onClick={() => {
                 setActiveStep(step.id);
-                setOpenCollapse(collapseItems[step.id]?.id);
+                setOpenCollapse(step.collapseId);
               }}
               className={`flex justify-center items-center py-1 px-20 text-center font-medium cursor-pointer transition-colors
                 ${
@@ -116,9 +117,14 @@ const VoIPPricingInterface = () => {
                 className="bg-white rounded-md border border-orange-400 overflow-hidden"
               >
                 <div
-                  onClick={() =>
-                    setOpenCollapse(openCollapse === item.id ? null : item.id)
-                  }
+                  onClick={() => {
+                    const stepIndex = steps.findIndex(
+                      (s) => s.collapseId === item.id,
+                    );
+
+                    setActiveStep(stepIndex !== -1 ? stepIndex : null);
+                    setOpenCollapse(openCollapse === item.id ? null : item.id);
+                  }}
                   className="flex items-center justify-between px-4 py-2.5 cursor-pointer hover:bg-orange-50"
                 >
                   <div className="flex items-center gap-3">
@@ -258,7 +264,9 @@ const VoIPPricingInterface = () => {
                               className="flex justify-between items-center py-3 border-b border-gray-100 last:border-0"
                             >
                               <div className="flex items-center gap-2">
-                                <span className="text-orange-500 text-lg">●</span>
+                                <span className="text-orange-500 text-lg">
+                                  ●
+                                </span>
                                 <span className="text-sm font-medium text-gray-800">
                                   {plan.name}
                                 </span>
@@ -287,20 +295,50 @@ const VoIPPricingInterface = () => {
                           </h3>
 
                           {[
-                            { name: "Call Recording", desc: "All calls, Per system", price: "$20/month" },
-                            { name: "Active Agent Panel", desc: "$99 (one time fee)", price: "Ineligible" },
-                            { name: "Do-It-Yourself Configuration", desc: "FREE", price: "" },
-                            { name: "Initial Cloud/PBX Configuration", desc: "$199 (one time fee)", price: "Waived with all qualified packages" },
-                            { name: "Hourly Remote Support/Config", desc: "$95/hour", price: "Minimum 60 min, then every 30 min" },
-                            { name: "Optional support plan", desc: "$250/month", price: "Monthly plan with 12 month Commitment" },
-                            { name: "Onsite Labor", desc: "$120/hour+travel cost & time", price: "Minimum 2 hours, in hourly increments" },
+                            {
+                              name: "Call Recording",
+                              desc: "All calls, Per system",
+                              price: "$20/month",
+                            },
+                            {
+                              name: "Active Agent Panel",
+                              desc: "$99 (one time fee)",
+                              price: "Ineligible",
+                            },
+                            {
+                              name: "Do-It-Yourself Configuration",
+                              desc: "FREE",
+                              price: "",
+                            },
+                            {
+                              name: "Initial Cloud/PBX Configuration",
+                              desc: "$199 (one time fee)",
+                              price: "Waived with all qualified packages",
+                            },
+                            {
+                              name: "Hourly Remote Support/Config",
+                              desc: "$95/hour",
+                              price: "Minimum 60 min, then every 30 min",
+                            },
+                            {
+                              name: "Optional support plan",
+                              desc: "$250/month",
+                              price: "Monthly plan with 12 month Commitment",
+                            },
+                            {
+                              name: "Onsite Labor",
+                              desc: "$120/hour+travel cost & time",
+                              price: "Minimum 2 hours, in hourly increments",
+                            },
                           ].map((addon, i) => (
                             <div
                               key={i}
                               className="flex justify-between items-center py-3 border-b border-gray-100 last:border-0"
                             >
                               <div className="flex items-center gap-2 flex-1">
-                                <span className="text-orange-500 text-lg">●</span>
+                                <span className="text-orange-500 text-lg">
+                                  ●
+                                </span>
                                 <span className="text-sm font-medium text-gray-800">
                                   {addon.name}
                                 </span>
@@ -341,7 +379,10 @@ const VoIPPricingInterface = () => {
                               "Remote Users",
                               "Multiple Offices",
                             ].map((f, i) => (
-                              <div key={i} className="text-sm py-1 flex items-center gap-2">
+                              <div
+                                key={i}
+                                className="text-sm py-1 flex items-center gap-2"
+                              >
                                 <span className="text-orange-500">✓</span>
                                 {f}
                               </div>
@@ -362,7 +403,10 @@ const VoIPPricingInterface = () => {
                               "Quick, turnkey setup",
                               "Works with all VoIP Phones",
                             ].map((a, i) => (
-                              <div key={i} className="text-sm py-1 flex items-center gap-2">
+                              <div
+                                key={i}
+                                className="text-sm py-1 flex items-center gap-2"
+                              >
                                 <span className="text-orange-500">✓</span>
                                 {a}
                               </div>
@@ -372,7 +416,9 @@ const VoIPPricingInterface = () => {
 
                         {/* NOTE */}
                         <div className="text-xs text-gray-600 italic">
-                          * PBX orders are processed within 1 to 3 business days from the time placed, varied by the speed we collect the desired specs from you.
+                          * PBX orders are processed within 1 to 3 business days
+                          from the time placed, varied by the speed we collect
+                          the desired specs from you.
                         </div>
                       </div>
                     )}
@@ -407,6 +453,9 @@ const VoIPPricingInterface = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="w-full p-[28px] h-60 flex justify-end mt-20 mb-4 px-4">
+        <BrandName />
       </div>
     </div>
   );
