@@ -130,7 +130,7 @@ const HeroSection = () => {
               value="Talk to Sales"
             />
             <CustomButton
-              className="shadow-md border border-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-50 transition"
+              className="bg-white shadow-md border border-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-50 transition"
               value="Get Pricing"
             />
           </div>
