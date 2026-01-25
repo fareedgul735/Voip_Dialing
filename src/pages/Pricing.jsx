@@ -434,24 +434,35 @@ const VoIPPricingInterface = () => {
             ))}
           </div>
 
-          <div className="w-80 bg-orange-50 border border-orange-200 rounded-lg p-5 h-fit">
-            <h2 className="font-semibold mb-6">Shopping Cart Totals</h2>
-            <div className="text-center text-gray-400 py-12">No Item Added</div>
-            <div className="border-t pt-4">
-              <div className="flex justify-between mb-4">
-                <span>Total Price</span>
-                <span className="text-xl font-bold">$0.00</span>
-              </div>
-              <div className="flex gap-3">
-                <button className="flex-1 bg-orange-500 text-white py-2 rounded-md">
-                  Next
-                </button>
-                <button className="flex-1 border border-orange-300 text-orange-500 py-2 rounded-md">
-                  Checkout
-                </button>
-              </div>
-            </div>
+          <div className="flex items-center justify-center p-4">
+      <div className="w-full max-w-xl bg-white rounded-2xl border-1 border-orange-400 overflow-hidden shadow-sm">
+        <div className="bg-orange-100 border-b-1 border-orange-400 px-6 py-3">
+          <h1 className="text-xl font-bold text-gray-900">Shopping Cart Totals</h1>
+        </div>
+
+        <div className="px-6 py-16">
+          <div className="text-center text-gray-900 text-lg font-medium">
+            No Item Added
           </div>
+        </div>
+
+        {/* Footer with Buttons */}
+        <div className="p-[12px] shadow-md pb-6 flex items-center gap-3">
+          <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-10 py-3 rounded-full transition-colors">
+            Next
+          </button>
+
+          <button className="bg-white hover:bg-orange-50 text-orange-500 font-semibold px-8 py-3 rounded-full border-2 border-orange-500 transition-colors">
+            Checkout
+          </button>
+
+          <div className="ml-auto text-right">
+            <div className="text-sm text-gray-700 mb-0.5">Total Price</div>
+            <div className="text-3xl font-bold text-gray-900">0.00</div>
+          </div>
+        </div>
+      </div>
+    </div>
         </div>
       </div>
       <div className="w-full p-[28px] h-60 flex justify-end mt-20 mb-4 px-4">
