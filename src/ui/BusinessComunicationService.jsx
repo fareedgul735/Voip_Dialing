@@ -102,8 +102,7 @@ const BusinessCommunicationServices = () => {
 
   return (
     <div className="p-4 sm:p-6 md:p-8">
-      <div className="max-w-7xl mx-auto">
-        {/* HEADER */}
+      <div className="mx-12">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 mb-10 text-center md:text-left">
           <div>
             <p className="text-orange-500 flex items-center gap-2 mb-3 justify-center md:justify-start">
@@ -115,14 +114,12 @@ const BusinessCommunicationServices = () => {
             </h1>
           </div>
 
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold">
+          <button className="bg-orange-500 hover:text-white cursor-pointer  hover:bg-blue-500 text-white px-6 py-3 rounded-full font-semibold">
             Schedule Demo
           </button>
         </div>
 
-        {/* MAIN GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* LEFT SIDEBAR */}
+        <div className="grid grid-cols-1 lg:grid-cols-[25%_75%] gap-10">
           <div className="space-y-4">
             {services.map((service, index) => {
               const ServiceIcon = service.icon;
@@ -133,11 +130,11 @@ const BusinessCommunicationServices = () => {
                   key={index}
                   onClick={() => setActiveService(index)}
                   className={`flex gap-4 p-3 rounded-md cursor-pointer transition-all duration-300
-                    ${isActive ? "bg-white opacity-100" : "opacity-40"}`}
+                    ${isActive ? "bg-white" : ""}`}
                 >
                   <div
                     className={`w-1 rounded-full ${
-                      isActive ? "bg-orange-500" : "bg-transparent"
+                      isActive ? "bg-orange-500" : ""
                     }`}
                   />
 
@@ -145,7 +142,7 @@ const BusinessCommunicationServices = () => {
                     <div className="flex items-center gap-3 mb-1">
                       <div
                         className={`p-2 rounded-lg ${
-                          isActive ? "bg-orange-100" : "bg-gray-100"
+                          isActive ? "bg-orange-100" : ""
                         }`}
                       >
                         <ServiceIcon
@@ -176,8 +173,7 @@ const BusinessCommunicationServices = () => {
             })}
           </div>
 
-          {/* RIGHT CONTENT */}
-          <div>
+          <div className="space-y-4 ml-2">
             <p className="text-orange-500 flex items-center gap-2 mb-2">
               <Settings className="w-4 h-4" />
               How We Work
@@ -237,12 +233,12 @@ const BusinessCommunicationServices = () => {
 
             <div className="flex gap-4">
               <CustomButtonTwin
-                className="bg-orange-500 cursor-pointer shadow-md text-white px-6 py-3 rounded-full"
-                value="Get Pricing"
+                className="bg-orange-500 cursor-pointer hover:bg-blue-500  shadow-md text-white px-6 py-3 rounded-full"
+                value={<span>Get Pricing</span>}
               />
               <CustomButton
-                className="border border-gray-300 cursor-pointer px-6 py-3 rounded-full shadow-md"
-                value="Contact Sales"
+                className="border border-gray-200 hover:bg-blue-500 hover:text-white text-orange-400 cursor-pointer px-6 py-3 rounded-full shadow-md"
+                value={<span>Contact Sales</span>}
               />
             </div>
 

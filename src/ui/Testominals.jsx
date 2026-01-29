@@ -1,5 +1,10 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+import M1 from "../../public/M1.png";
+import M2 from "../../public/M2.png";
+import M3 from "../../public/M3.png";
+import M4 from "../../public/M4.png";
+
 import Doctor1 from "../../public/Doctor 1.png";
 import Doctor2 from "../../public/Doctor 2.png";
 import Doctor3 from "../../public/Doctor 3.png";
@@ -9,6 +14,19 @@ import { useState } from "react";
 
 const Testominals = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [direction, setDirection] = useState("right"); 
+
+  const handleNext = () => {
+    setDirection("right");
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const handlePrev = () => {
+    setDirection("left");
+    setCurrentTestimonial(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
+    );
+  };
 
   const testimonials = [
     {
@@ -23,25 +41,26 @@ const Testominals = () => {
       title: "Cloud PBX Service",
       description:
         "The system allows for precise campaign starting enabling marketers to plan.",
-      image: "desktop",
+      image: M4,
     },
     {
       title: "Cloud PBX Service",
       description:
         "The system allows for precise campaign starting enabling marketers to plan.",
-      image: "mobile",
+      image: M2,
     },
     {
       title: "Cloud PBX Service",
       description:
         "The system allows for precise campaign starting enabling marketers to plan.",
-      image: "tablet",
+      image: M2,
     },
   ];
+
   return (
-    <div className="w-full bg-gradient-to-b from-orange-50 to-white">
+    <div className="w-full  bg-gradient-to-b from-orange-50 to-white">
       <div className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="mx-12">
           <div className="text-center mb-4">
             <p className="text-orange-400 uppercase tracking-wider text-1xl ">
               Testimonials
@@ -53,24 +72,24 @@ const Testominals = () => {
           </h2>
 
           <div className="relative flex items-center justify-center">
-            <div className="absolute -left-6 top-2 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-orange-400 to-pink-400 overflow-hidden shadow-lg z-19">
-              <img src={Doctor1} className="w-full h-full object-cover" />
-            </div>
-
-            <div className="absolute -left-4 bottom-10 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 overflow-hidden shadow-lg z-19">
+            <div className="absolute left-12 top-2 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-30 lg:h-30 rounded-full  overflow-hidden shadow-lg z-19">
               <img src={Doctor5} className="w-full h-full object-cover" />
             </div>
 
-            <div className="absolute -right-6 top-4 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 overflow-hidden shadow-lg z-19">
+            <div className="absolute left-40 bottom-4 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-20 lg:h-20 rounded-full overflow-hidden shadow-lg z-19">
+              <img src={Doctor1} className="w-full h-full object-cover" />
+            </div>
+
+            <div className="absolute right-22 top-8 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-28 lg:h-28 rounded-full overflow-hidden shadow-lg z-19">
+              <img src={Doctor4} className="w-full h-full object-cover" />
+            </div>
+
+            <div className="absolute right-44 bottom-18 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full overflow-hidden shadow-lg z-19">
               <img src={Doctor2} className="w-full h-full object-cover" />
             </div>
 
-            <div className="absolute -right-4 bottom-8 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-purple-300 to-purple-400 overflow-hidden shadow-lg z-19">
+            <div className="absolute right-22 bottom-2 w-7 h-7 sm:w-9 sm:h-9 md:w-12 md:h-12 lg:w-20 lg:h-20 rounded-full overflow-hidden shadow-lg z-19">
               <img src={Doctor3} className="w-full h-full object-cover" />
-            </div>
-
-            <div className="absolute right-1/3 bottom-2 w-7 h-7 sm:w-9 sm:h-9 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full bg-gradient-to-br from-orange-300 to-orange-400 overflow-hidden shadow-lg z-19">
-              <img src={Doctor4} className="w-full h-full object-cover" />
             </div>
 
             <div className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl mx-auto relative z-10 border border-gray-100">
@@ -102,10 +121,17 @@ const Testominals = () => {
           </div>
 
           <div className="flex justify-center gap-4 mt-8">
-            <button className="w-10 h-10 bg-orange-500 hover:bg-orange-600 rounded-full flex items-center justify-center text-white shadow-lg">
+            <button
+              onClick={handlePrev}
+              className="w-10 h-10 bg-orange-500 hover:bg-orange-600 rounded-full flex items-center justify-center text-white shadow-lg"
+            >
               <ChevronLeft className="w-5 h-5" />
             </button>
-            <button className="w-10 h-10 bg-orange-500 hover:bg-orange-600 rounded-full flex items-center justify-center text-white shadow-lg">
+
+            <button
+              onClick={handleNext}
+              className="w-10 h-10 bg-orange-500 hover:bg-orange-600 rounded-full flex items-center justify-center text-white shadow-lg"
+            >
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
@@ -115,7 +141,7 @@ const Testominals = () => {
       <div className="py-16 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-4">
-            <p className="text-orange-400 uppercase tracking-wider text-sm font-semibold">
+            <p className="text-orange-400 uppercase tracking-wider text-lg">
               VOIP BLOGS
             </p>
           </div>
@@ -126,19 +152,21 @@ const Testominals = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <div key={index} className="group cursor-pointer">
-                <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-orange-300 via-pink-300 to-blue-500 p-8 h-80 flex items-center justify-center shadow-xl hover:shadow-2xl transition-shadow">
-                  <div className="relative w-full h-full flex items-center justify-center">
-                    {index === 0 && (
-                      <div className="bg-gray-800 rounded-lg p-4 w-48 h-32 shadow-2xl" />
-                    )}
-                    {index === 1 && (
-                      <div className="bg-white rounded-2xl p-4 w-32 h-56 shadow-2xl" />
-                    )}
-                    {index === 2 && (
-                      <div className="bg-gray-800 rounded-xl p-4 w-56 h-40 shadow-2xl" />
-                    )}
-                  </div>
+              <div key={index} className="cursor-pointer">
+                <div
+                  className="rounded-3xl overflow-hidden p-6 h-80 shadow-xl flex items-center justify-center"
+                  style={{
+                    backgroundImage: `url(${M3})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  <img
+                    src={service.image}
+                    alt="service"
+                    className={`object-contain transition-all duration-300
+    ${index === 1 ? "w-[316px] h-[380px] rounded-2xl" : "w-[316px] h-[331px]"}`}
+                  />
                 </div>
 
                 <div className="mt-6">

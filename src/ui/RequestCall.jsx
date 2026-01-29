@@ -34,7 +34,7 @@ const RequestCall = () => {
               With Us
             </h1>
 
-            <button className="bg-white text-orange-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg mb-12">
+            <button className="bg-white text-orange-600 px-8 py-3 rounded-full cursor-pointer hover:text-white hover:bg-blue-500 transition-all duration-300 shadow-lg mb-12">
               See Pricing
             </button>
 
@@ -74,7 +74,7 @@ const RequestCall = () => {
                   placeholder="Name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
                 />
               </div>
 
@@ -85,7 +85,7 @@ const RequestCall = () => {
                   placeholder="Phone #"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 bg-gray-50 border rounded-full border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
                 />
               </div>
 
@@ -96,7 +96,7 @@ const RequestCall = () => {
                   placeholder="Email(optional)"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 bg-gray-50 border rounded-full border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
                 />
               </div>
 
@@ -105,7 +105,7 @@ const RequestCall = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all text-gray-600"
+                  className="w-full px-4 py-3 bg-gray-50 border rounded-full border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all text-gray-600"
                 >
                   <option value="">Subject</option>
                   <option value="sales">Sales Inquiry</option>
@@ -117,7 +117,7 @@ const RequestCall = () => {
 
               <button
                 onClick={handleSubmit}
-                className="w-full bg-[#F26722] text-white py-3 rounded-full font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                className="w-full bg-[#F26722] text-white py-3 rounded-full font-semibold hover:bg-blue-500 cursor-pointer transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 Request a Call
               </button>

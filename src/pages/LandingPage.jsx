@@ -10,8 +10,12 @@ import HeroSection from "../ui/HeroSection";
 import BrandName from "../ui/BrandName";
 import Testominals from "../ui/Testominals";
 import { CustomButton, CustomButtonTwin } from "../ui/CustomButton";
+import { useRef, useState } from "react";
 
 const LandingPage = () => {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
     <>
       <div className="p-[28px] bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
@@ -23,24 +27,20 @@ const LandingPage = () => {
       <div className="w-full bg-[#FAF9F6]">
         <BusinessCommunicationServices />
       </div>
-      <div className="w-full mx-auto px-4 sm:px-6 py-10 sm:py-14 lg:py-16">
+      <div className="w-full px-4 sm:px-6 py-10 sm:py-14 lg:py-16">
         <div className="bg-white rounded-3xl overflow-hidden">
-          <div className="grid max-w-7xl mx-auto grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            {/* Left Column with Image */}
+          <div className="grid mx-12 grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="relative p-6 sm:p-8 md:p-10 lg:p-12 flex justify-center">
-              {/* Headphones Logo */}
               <div className="w-16 sm:w-28 md:w-32 mb-4">
                 <img src={HeadPhones} alt="logo" />
               </div>
 
-              {/* Decorative Dots */}
               <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-28">
                 <div className="w-20 sm:w-24 md:w-32">
                   <img src={Dots} alt="dots" />
                 </div>
               </div>
 
-              {/* Call Center Image - Centered and Bigger */}
               <div className="relative z-10 flex justify-center items-center h-72 sm:h-80 md:h-96 lg:h-[28rem]">
                 <div className="w-80 sm:w-96 md:w-[28rem]">
                   <img
@@ -51,7 +51,6 @@ const LandingPage = () => {
                 </div>
               </div>
 
-              {/* Experience Badge */}
               <div className="absolute bottom-6 right-4 sm:bottom-8 sm:right-6 md:bottom-10 md:right-10 bg-white rounded-2xl p-4 sm:p-5 md:p-6 shadow-xl z-20">
                 <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-orange-500">
                   20+
@@ -62,9 +61,9 @@ const LandingPage = () => {
               </div>
             </div>
 
-            <div className="p-6 sm:p-8 md:p-10 lg:p-12 text-center md:text-left">
-              <div className="text-orange-500 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-3 sm:mb-4">
-                BUSINESS GROWTH
+            <div className="py-2 sm:p-8 md:p-10 lg:p-12 text-center md:text-left">
+              <div className="text-orange-500 text-xs sm:text-sm  tracking-wider uppercase mb-3 sm:mb-4">
+                <span> BUSINESS GROWTH</span>
               </div>
 
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4 sm:mb-6">
@@ -86,12 +85,12 @@ const LandingPage = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <CustomButtonTwin
-                  className="cursor-pointer shadow-md bg-orange-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-orange-600 transition"
-                  value="Explore Services"
+                  className="cursor-pointer shadow-md bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition"
+                  value={<span>Explore Services</span>}
                 />
                 <CustomButton
-                  className="cursor-pointer shadow-md border border-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-50 transition"
-                  value="Get Started"
+                  className="cursor-pointer shadow-md border border-gray-200 text-gray-800 px-6 py-3  hover:text-white rounded-full hover:bg-blue-500 transition"
+                  value={<span>Get Started</span>}
                 />
               </div>
             </div>
@@ -99,9 +98,9 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="w-full bg-white flex items-center justify-center px-4 sm:px-6 py-10 sm:py-14">
-        <div className="max-w-7xl mx-auto bg-white rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="mx-12 bg-white rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div className="p-6 sm:p-8 md:p-10 flex flex-col justify-center text-center lg:text-left">
-            <p className="uppercase tracking-widest text-orange-500 font-semibold mb-2 text-xs sm:text-sm">
+            <p className="uppercase tracking-widest text-orange-500 mb-2 text-xs sm:text-sm">
               Benefits
             </p>
 
@@ -128,7 +127,7 @@ const LandingPage = () => {
                 "No term or usage commitment",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2">
-                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 mt-1" />
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 mt-1" />
                   <span className="text-gray-800 text-sm font-medium">
                     {item}
                   </span>
@@ -138,12 +137,12 @@ const LandingPage = () => {
 
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center lg:justify-start">
               <CustomButtonTwin
-                className={`cursor-pointer shadow-md bg-orange-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-orange-600 transition`}
-                value={"Get Pricing"}
+                className={`cursor-pointer shadow-md bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition`}
+                value={<span>Get Pricing</span>}
               />
               <CustomButton
-                className={`cursor-pointer shadow-md border border-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-50 transition`}
-                value={"Contact Sales"}
+                className={`cursor-pointer shadow-md border border-gray-200 text-gray-800 px-6 py-3 rounded-full hover:bg-blue-500 hover:text-white transition`}
+                value={<span>Contact Sales</span>}
               />
 
               <span className="text-gray-400 text-xs sm:text-sm">
@@ -173,8 +172,8 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="w-full bg-[#FAF9F6] flex flex-col">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center py-3  tracking-widest text-orange-400">
+        <div className="mx-12">
+          <div className="text-center py-3 tracking-widest text-orange-400">
             <span className="text-lg"> SOFTWARE DEMO</span>
           </div>
 
@@ -182,8 +181,37 @@ const LandingPage = () => {
             Get up and running in minutes
           </h1>
 
-          <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-xl shadow-orange-300 border border-orange-100 p-2 md:p-4 flex-1">
-            <img src={Detailed} />
+          <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-xl shadow-orange-300 border border-orange-100 p-2 md:p-4 flex-1 relative overflow-hidden">
+            <video
+              ref={videoRef}
+              // src={demoVideo}
+              poster={Detailed}
+              className="w-full rounded-xl"
+            />
+
+            {!isPlaying && (
+              <button
+                onClick={() => {
+                  videoRef.current.play();
+                  setIsPlaying(true);
+                }}
+                className="absolute inset-0 flex items-center justify-center group"
+                aria-label="Play Video"
+              >
+                <div
+                  className="w-16 h-16 md:w-20 md:h-20 bg-orange-500/90 rounded-full flex items-center justify-center
+                      group-hover:scale-110 transition-transform duration-300 shadow-lg"
+                >
+                  <svg
+                    className="w-6 h-6 md:w-8 md:h-8 text-white ml-1"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </button>
+            )}
           </div>
         </div>
       </div>
