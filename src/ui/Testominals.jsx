@@ -43,7 +43,7 @@ const Testominals = () => {
       <div className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-4">
-            <p className="text-orange-400 uppercase tracking-wider text-sm font-semibold">
+            <p className="text-orange-400 uppercase tracking-wider text-1xl ">
               Testimonials
             </p>
           </div>

@@ -40,7 +40,7 @@ const Products = () => {
     <>
       <div className="w-full p-4 sm:p-6 md:p-[28px] bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
         <div className="py-12">
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-center justify-between">
+          <div className="mx-12 flex flex-col lg:flex-row gap-12 items-center justify-between">
             <div className="text-center lg:text-left max-w-xl">
               <p className="text-blue-500 text-sm font-semibold mb-2">
                 Dont Buy Expesnive Equipment
@@ -73,10 +73,10 @@ const Products = () => {
               </ul>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold transition">
+                <button className="bg-orange-500 shadow-sm hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold transition">
                   See Pricing
                 </button>
-                <button className="text-orange-500 hover:text-orange-600 px-6 py-3 font-semibold transition">
+                <button className="bg-white shadow-sm rounded-full text-orange-500 hover:text-orange-600 px-6 py-3 font-semibold transition">
                   Talk Sales
                 </button>
               </div>

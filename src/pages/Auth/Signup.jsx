@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { User, Building2, Phone, Mail, Lock, MapPin, Home } from "lucide-react";
+import { User, Building2, Phone, Mail, Lock, MapPin, Home, X } from "lucide-react";
 import logo from "../../../public/logo.png";
 import { Link } from "react-router";
 
@@ -31,6 +31,12 @@ const Signup = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
+      <Link
+        to="/home"
+        className="absolute top-12 right-12 p-4 rounded bg-gray-100 hover:bg-gray-200 transition"
+      >
+        <X className="w-7 h-7 text-gray-600" />
+      </Link>
       <div className="w-full max-w-4xl bg-white rounded-3xl shadow-2xl p-8 relative">
         <div className="flex justify-center mb-6">
           <Link to={"/home"}>

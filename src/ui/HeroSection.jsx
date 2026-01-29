@@ -21,11 +21,12 @@ const HeroSection = () => {
       image: image5,
       title: (
         <>
-          Boost Your <span className="highlight bg-blue-500">Business</span>
+          Transform Your{" "}
+          <span className="highlight bg-purple-500">Business</span>
           <br />
-          <span className="highlight bg-blue-500">Communication</span> with{" "}
+          with <span className="highlight bg-purple-500">Cloud PBX</span>
           <br />
-          Reliable VoIP Solutions
+          Phone Systems
         </>
       ),
       features: [
@@ -36,18 +37,17 @@ const HeroSection = () => {
       ],
       stats: { count: "12K+", label: "Happy Clients" },
     },
-
     {
       badge: "24/7 Customer Support",
       image: image4,
       title: (
         <>
-          Transform Your{" "}
-          <span className="highlight bg-purple-500">Business</span>
+          Boost Your <span className="highlight bg-orange-500">Business</span>
           <br />
-          with <span className="highlight bg-purple-500">Cloud PBX</span>
-          <br />
-          Phone Systems
+          <span className="highlight bg-orange-500">
+            Communication
+          </span> with <br />
+          Reliable VoIP Solutions
         </>
       ),
       features: [
@@ -56,17 +56,16 @@ const HeroSection = () => {
         "Easy to manage dashboard",
         "Enterprise-grade security",
       ],
-      stats: { count: "500+", label: "Daily Calls" },
+      stats: { count: "12K+", label: "Happy Clients World Widw" },
     },
-
     {
       badge: "High Delivery Rates",
       image: image3,
       title: (
         <>
-          Reach <span className="highlight bg-orange-500">Customers</span>
+          Reach <span className="highlight bg-purple-500">Customers</span>
           <br />
-          <span className="highlight bg-orange-500">Instantly</span> with Our{" "}
+          <span className="highlight bg-purple-500">Instantly</span> with Our{" "}
           <br />
           Bulk SMS Solutions
         </>
@@ -84,7 +83,7 @@ const HeroSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % slides.length);
-    }, 3000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);
@@ -93,11 +92,11 @@ const HeroSection = () => {
 
   return (
     <div className="p-6 sm:p-7 md:p-[28px]">
-      <div className="grid max-w-7xl mx-auto grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-7xl mx-auto">
+      <div className="grid mx-12 grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="space-y-6 text-center md:text-left">
           <div
             key={`badge-${activeSlide}`}
-            className="inline-flex items-center bg-white px-6 py-2 rounded-[18px] shadow-md animate-fadeIn"
+            className="inline-flex items-center bg-white px-12 py-2 rounded-[18px] shadow-md animate-fadeIn"
           >
             <span className="text-orange-600 font-medium">
               {currentSlide.badge}
@@ -116,7 +115,7 @@ const HeroSection = () => {
               <li
                 key={`${activeSlide}-${index}`}
                 className="flex items-center gap-3 animate-slideIn"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${index * 0.3}s` }}
               >
                 <div className="w-2 h-2 bg-orange-500 rounded-full" />
                 <span>{feature}</span>
@@ -126,12 +125,12 @@ const HeroSection = () => {
 
           <div className="flex flex-wrap gap-4 pt-4 justify-center md:justify-start">
             <CustomButtonTwin
-              className="shadow-md bg-orange-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-orange-600 transition"
-              value="Talk to Sales"
+              className="shadow-md bg-orange-500 text-white font-semibold px-6 py-3 rounded-full cursor-pointer hover:bg-blue-500 transition"
+              value={<span className="text-[14px]">Talk to Sales</span>}
             />
             <CustomButton
-              className="bg-white shadow-md border border-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-50 transition"
-              value="Get Pricing"
+              className="bg-white shadow-md border hover:text-white border-gray-200 text-gray-800 font-semibold cursor-pointer px-6 py-3 rounded-full hover:bg-blue-500 transition"
+              value={<span className="text-[14px]">Get Pricing</span>}
             />
           </div>
         </div>
@@ -139,16 +138,25 @@ const HeroSection = () => {
         <div className="relative h-[400px] sm:h-[450px] md:h-[500px] flex items-center justify-center">
           <div
             key={`main-image-${activeSlide}`}
-            className="w-full max-w-md animate-fadeIn"
+            className={`w-full animate-fadeIn flex justify-center
+    ${activeSlide === 0 ? "max-w-7xl" : "max-w-md"}
+  `}
           >
             <img
               src={currentSlide.image}
               alt="Business Communication"
-              className={`w-full h-auto object-cover ${
-                activeSlide === 1
-                  ? "rounded-2xl"
-                  : "" 
-              }`}
+              className={`transition-all duration-500 object-cover
+
+      ${
+        activeSlide === 0
+          ? "rounded-lg w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl object-contain"
+          : ""
+      }
+
+      ${activeSlide === 1 ? "rounded-2xl scale-110 h-[420px]" : ""}
+
+      ${activeSlide === 2 ? "rounded-xl h-[460px] md:h-[520px]" : ""}
+    `}
             />
           </div>
 
@@ -202,8 +210,8 @@ const HeroSection = () => {
           )}
 
           {activeSlide !== 0 && (
-            <div className="absolute bg-red-400 w-[150px] bottom-4 left-4 bg-white px-6 py-4 rounded-xl shadow-lg animate-slideUp">
-              <p className="text-orange-500 text-2xl font-bold">
+            <div className="absolute flex gap-2 flex-col justify-center items-center w-[217px] h-[127px] bottom-8 -left-12 bg-white px-6 py-4 rounded-xl shadow-lg animate-slideUp">
+              <p className="text-orange-500 text-4xl font-bold">
                 {currentSlide.stats.count}
               </p>
               <p className="text-sm text-gray-600 text-center">

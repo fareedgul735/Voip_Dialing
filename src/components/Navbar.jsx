@@ -12,9 +12,6 @@ import { Drawer } from "antd";
 import logo from "../../public/logo.png";
 import { navLinks } from "../lib/Constant";
 import {
-  activeStyle,
-  baseBtn,
-  inactiveStyle,
   navActive,
   navBase,
   navInactive,
@@ -42,7 +39,7 @@ const Navbar = () => {
 
   return (
     <header className="bg-white shadow sticky top-0 z-50 w-full">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
+      <div className="mx-12 flex justify-between items-center px-4 py-4">
         <div className="flex gap-12 justify-center items-center">
           <img src={logo} alt="logo" className="w-20" />
           <ul className="hidden lg:flex gap-2 items-center ">
@@ -189,8 +186,8 @@ const Navbar = () => {
           <Link to="/signin">
             <CustomButton
               onClick={() => setActiveBtn("login")}
-              className={`cursor-pointer shadow-md border border-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-50 transition`}
-              value={"Login"}
+              className={`cursor-pointer transition`}
+              value={<span className="text-[14px]">Login</span>}
             />
           </Link>
 
@@ -198,7 +195,7 @@ const Navbar = () => {
             <CustomButtonTwin
               onClick={() => setActiveBtn("signup")}
               className={`cursor-pointer shadow-md bg-orange-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-orange-600 transition`}
-              value={"Get Started"}
+              value={<span className="text-[12px]">Get Started</span>}
             />
           </Link>
         </div>

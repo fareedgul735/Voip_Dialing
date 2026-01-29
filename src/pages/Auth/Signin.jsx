@@ -1,12 +1,19 @@
 import { Link } from "react-router";
-import { Mail, Lock } from "lucide-react";
+import { Mail, Lock, X } from "lucide-react";
 
 import logo from "../../../public/logo.png";
 
 const Signin = () => {
   return (
     <div className="min-h-screen p-[12px] w-full flex items-center justify-center bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)] relative overflow-hidden">
-      <div className="relative bg-white w-[380px] rounded-2xl shadow-xl p-8">
+      <Link
+        to="/home"
+        className="absolute top-12 right-12 p-4 rounded bg-gray-100 hover:bg-gray-200 transition"
+      >
+        <X className="w-7 h-7 text-gray-600" />
+      </Link>
+
+      <div className="relative bg-white w-[480px] rounded-2xl shadow-xl p-8">
         <div className="flex justify-center mb-6">
           <Link to={"/home"}>
             <div className="w-32">

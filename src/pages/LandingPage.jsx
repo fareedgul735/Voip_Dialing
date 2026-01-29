@@ -17,7 +17,7 @@ const LandingPage = () => {
       <div className="p-[28px] bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
         <HeroSection />
       </div>
-      <div className="w-full p-[28px] h-60 flex justify-end mt-20 mb-4 px-4">
+      <div className="w-full p-[8px] h-70 flex justify-end mt-30 mb-4 px-4">
         <BrandName />
       </div>
       <div className="w-full bg-[#FAF9F6]">
@@ -174,11 +174,11 @@ const LandingPage = () => {
       </div>
       <div className="w-full bg-[#FAF9F6] flex flex-col">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center py-3 text-xs tracking-widest text-orange-400 font-semibold">
-            SOFTWARE DEMO
+          <div className="text-center py-3  tracking-widest text-orange-400">
+            <span className="text-lg"> SOFTWARE DEMO</span>
           </div>
 
-          <h1 className="text-2xl md:text-3xl font-semibold text-center text-slate-800 mb-4">
+          <h1 className="text-3xl md:text-4xl font-semibold text-center text-slate-800 mb-4">
             Get up and running in minutes
           </h1>
 
