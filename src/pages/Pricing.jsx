@@ -82,7 +82,7 @@ const VoIPPricingInterface = () => {
           background: #ea580c;
         }
       `}</style>
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-12">
         <div className="flex items-center mb-8">
           {steps.map((step, index) => (
             <div
@@ -91,15 +91,13 @@ const VoIPPricingInterface = () => {
                 setActiveStep(step.id);
                 setOpenCollapse(step.collapseId);
               }}
-              className={`flex justify-center items-center py-1 px-20 text-center font-medium cursor-pointer transition-colors
+              className={`flex justify-center items-center py-1 px-17 text-center font-medium cursor-pointer transition-colors
                 ${
                   activeStep === step.id
                     ? "bg-orange-500 text-white"
                     : "bg-[#027DB6] text-white hover:bg-[#027DB7]"
                 }`}
               style={{
-                clipPath:
-                  "polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%, 20px 50%)",
                 marginLeft: index === 0 ? "0" : "-20px",
                 zIndex: steps.length - index,
               }}
@@ -414,7 +412,6 @@ const VoIPPricingInterface = () => {
                           </div>
                         </div>
 
-                        {/* NOTE */}
                         <div className="text-xs text-gray-600 italic">
                           * PBX orders are processed within 1 to 3 business days
                           from the time placed, varied by the speed we collect
@@ -434,38 +431,42 @@ const VoIPPricingInterface = () => {
             ))}
           </div>
 
-          <div className="flex items-center justify-center p-4">
-      <div className="w-full max-w-xl bg-white rounded-2xl border-1 border-orange-400 overflow-hidden shadow-sm">
-        <div className="bg-orange-100 border-b-1 border-orange-400 px-6 py-3">
-          <h1 className="text-xl font-bold text-gray-900">Shopping Cart Totals</h1>
-        </div>
+          <div className="w-[420px] sticky top-6 self-start">
+            <div className="w-full bg-white rounded-2xl border-1 border-orange-400 overflow-hidden">
+              <div className="bg-orange-100 border-b-1 border-orange-400 px-6 py-3">
+                <h1 className="text-md font-bold text-gray-900">
+                  Shopping Cart Totals
+                </h1>
+              </div>
 
-        <div className="px-6 py-16">
-          <div className="text-center text-gray-900 text-lg font-medium">
-            No Item Added
-          </div>
-        </div>
+              <div className="px-6 py-28">
+                <div className="text-center text-gray-800 text-lg font-medium">
+                  No Item Added
+                </div>
+              </div>
 
-        {/* Footer with Buttons */}
-        <div className="p-[12px] shadow-md pb-6 flex items-center gap-3">
-          <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-10 py-3 rounded-full transition-colors">
-            Next
-          </button>
+              {/* Footer with Buttons */}
+              <div className="p-[12px] shadow-md pb-6 flex items-center gap-3">
+                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-10 py-3 rounded-full transition-colors">
+                  Next
+                </button>
 
-          <button className="bg-white hover:bg-orange-50 text-orange-500 font-semibold px-8 py-3 rounded-full border-2 border-orange-500 transition-colors">
-            Checkout
-          </button>
+                <button className="bg-white hover:bg-orange-50 text-orange-500 font-semibold px-8 py-3 rounded-full border-2 border-orange-500 transition-colors">
+                  Checkout
+                </button>
 
-          <div className="ml-auto text-right">
-            <div className="text-sm text-gray-700 mb-0.5">Total Price</div>
-            <div className="text-3xl font-bold text-gray-900">0.00</div>
+                <div className="ml-auto text-right">
+                  <div className="text-sm text-gray-700 mb-0.5">
+                    Total Price
+                  </div>
+                  <div className="text-3xl font-bold text-gray-900">0.00</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-        </div>
-      </div>
-      <div className="w-full p-[28px] h-60 flex justify-end mt-20 mb-4 px-4">
+      <div className="w-full p-[8px] h-70 flex justify-end mt-30 mb-4 px-4">
         <BrandName />
       </div>
     </div>

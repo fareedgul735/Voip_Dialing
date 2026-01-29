@@ -241,7 +241,7 @@ const Blogs = () => {
 
         {renderContent()}
       </div>
-      <div className="w-full p-[28px] h-60 flex justify-end mt-20 mb-4 px-4">
+       <div className="w-full p-[8px] h-70 flex justify-end mt-30 mb-4 px-4">
         <BrandName />
       </div>
     </div>

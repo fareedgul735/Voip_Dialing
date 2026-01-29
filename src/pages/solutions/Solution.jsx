@@ -13,15 +13,17 @@ const Solution = () => {
   return (
     <>
       <div className="w-full p-4 sm:p-6 md:p-[28px] bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
-        <div className="mx-auto py-12">
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-center justify-between">
-            <div className="text-center lg:text-left max-w-xl">
-              <p className="text-orange-500 text-sm font-semibold mb-2">
-                © VOIP For Small Businesses
+        <div className="py-6">
+          <div className="mx-12 max-w-7xl flex flex-col lg:flex-row gap-12 items-center justify-between">
+            <div className="text-center lg:text-left">
+              <p className="text-sm mb-2">
+                <span className="text-orange-500 font-bold">©</span>{" "}
+                <span>VOIP For Small Businesses</span>
               </p>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                The small business Flexible Trusted Affordable PBX by businesses
+                The small business Flexible Trusted Affordable{" "}
+                <span className="text-orange-600">PBX by businesses</span>
               </h1>
 
               <ul className="space-y-3 mb-8 text-gray-700">
@@ -49,10 +51,10 @@ const Solution = () => {
               </ul>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold transition">
+                <button className="bg-orange-500 cursor-pointer shadow-md hover:bg-blue-600 text-white px-6 py-3 rounded-full transition">
                   Contact Sales
                 </button>
-                <button className="text-orange-500 hover:text-orange-600 px-6 py-3 font-semibold transition">
+                <button className="bg-white cursor-pointer hover:bg-blue-600 shadow-md rounded-full text-orange-500 hover:text-white px-6 py-3 transition">
                   See Pricing
                 </button>
               </div>
@@ -68,17 +70,13 @@ const Solution = () => {
               <div
                 className="
             absolute 
-            bg-white rounded-lg shadow-lg px-4 py-2 text-center
+            bg-white rounded-lg shadow-lg px-2 py-4 text-center
             text-sm
-
-            /* SM & MD → top center */
             top-2 left-1/2 -translate-x-1/2
-
-            /* LG → original position */
-            lg:top-auto lg:bottom-10 lg:-left-18 lg:translate-x-0
+            lg:top-auto lg:bottom-10 lg:-left-22 lg:translate-x-0
           "
               >
-                <p className="text-2xl sm:text-3xl font-bold text-orange-500">
+                <p className="text-2xl sm:text-4xl font-bold text-orange-500">
                   20+
                 </p>
                 <p className="text-xs sm:text-sm text-gray-600">
@@ -91,7 +89,7 @@ const Solution = () => {
       </div>
       <div className="w-full p-[28px]">
         <div className="bg-white mx-auto rounded-2xl p-8">
-          <div className="grid mx-auto max-w-7xl md:grid-cols-2 gap-8 items-center">
+          <div className="grid mx-12 md:grid-cols-2 gap-8 items-center">
             <div className="relative">
               <img
                 src={lady1}
@@ -104,9 +102,7 @@ const Solution = () => {
               </div>
             </div>
             <div>
-              <p className="text-orange-500 text-sm font-semibold mb-2">
-                BUSINESS GROWTH
-              </p>
+              <p className="text-orange-500 text-sm  mb-2">BUSINESS GROWTH</p>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 The small business phone system with big benefits
               </h2>
@@ -119,7 +115,7 @@ const Solution = () => {
                 business phone today. All in less than 10 minutes.
               </p>
 
-              <div className="bg-blue-50 rounded-lg p-4 mb-6">
+              <div className="rounded-lg p-4 mb-6 border-t border-gray-200">
                 <h3 className="font-bold text-gray-900 mb-2 flex items-center">
                   <span className="text-blue-500 mr-2">📱</span>
                   Stay connected in one reliable app
@@ -131,7 +127,7 @@ const Solution = () => {
                 </p>
               </div>
 
-              <div className="bg-purple-50 rounded-lg p-4 mb-6">
+              <div className="rounded-lg p-4 mb-6 border-t border-gray-200">
                 <h3 className="font-bold text-gray-900 mb-2 flex items-center">
                   <span className="text-purple-500 mr-2">🎯</span>
                   Create attached brand
@@ -143,7 +139,7 @@ const Solution = () => {
                 </p>
               </div>
 
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold transition">
+              <button className="bg-orange-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition shadow-md cursor-pointer">
                 Learn More
               </button>
             </div>
@@ -151,11 +147,9 @@ const Solution = () => {
         </div>
       </div>
       <div className="w-full p-[58px]">
-        <div className="grid max-w-7xl mx-auto md:grid-cols-2 gap-8 items-center">
+        <div className="grid mx-12 md:grid-cols-2 gap-8 items-center">
           <div>
-            <p className="text-orange-500 text-sm font-semibold mb-2">
-              BUSINESS GROWTH
-            </p>
+            <p className="text-orange-500 text-sm mb-2">BUSINESS GROWTH</p>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Customize your business calling with our VOIP APIs
             </h2>
@@ -177,7 +171,7 @@ const Solution = () => {
               VOIP solution across apps to automate and make collaboration
               easier.
             </p>
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold transition">
+            <button className="bg-orange-500 hover:bg-blue-600 text-white px-6 py-3 cursor-pointer rounded-full transition">
               Explore More
             </button>
           </div>
@@ -191,8 +185,8 @@ const Solution = () => {
         </div>
       </div>
       <div className="w-full">
-        <div className="mx-auto px-4 py-16">
-          <div className="grid max-w-7xl mx-auto md:grid-cols-2 gap-12 items-center">
+        <div className="px-4 py-16">
+          <div className="grid mx-12 md:grid-cols-2 gap-12 items-center">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <img
@@ -221,7 +215,7 @@ const Solution = () => {
             </div>
 
             <div>
-              <p className="text-orange-500 text-sm font-semibold mb-3 uppercase tracking-wide">
+              <p className="text-orange-500 text-sm mb-3 uppercase tracking-wide">
                 Business Growth
               </p>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
@@ -260,15 +254,15 @@ const Solution = () => {
                 </div>
               </div>
 
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold transition shadow-lg">
+              <button className="bg-orange-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full cursor-pointer transition shadow-lg">
                 Explore More
               </button>
             </div>
           </div>
         </div>
       </div>
-      <div className="w-full mx-auto px-4 py-16">
-        <div className="grid max-w-7xl mx-auto max-w-7xl md:grid-cols-2 gap-12 items-center">
+      <div className="w-full px-4 py-16">
+        <div className="grid mx-12 md:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <img
               src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&h=500&fit=crop"
@@ -282,7 +276,7 @@ const Solution = () => {
           </div>
 
           <div>
-            <p className="text-orange-500 text-sm font-semibold mb-3 uppercase tracking-wide">
+            <p className="text-orange-500 text-sm mb-3 uppercase tracking-wide">
               Business Growth
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
@@ -306,7 +300,7 @@ const Solution = () => {
                 </div>
               </div>
 
-              <div className="flex items-start">
+              <div className="flex items-start border-t border-gray-100 mt-1 p-2">
                 <div className="flex-shrink-0 mr-4">
                   <CheckCircle className="w-6 h-6 text-orange-500" />
                 </div>
@@ -322,7 +316,7 @@ const Solution = () => {
                 </div>
               </div>
 
-              <div className="flex items-start">
+              <div className="flex items-start border-t border-gray-100 p-2">
                 <div className="flex-shrink-0 mr-4">
                   <CheckCircle className="w-6 h-6 text-orange-500" />
                 </div>
@@ -339,7 +333,7 @@ const Solution = () => {
               </div>
             </div>
 
-            <button className="mt-8 bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold transition shadow-lg">
+            <button className="mt-8 bg-orange-500 hover:bg-blue-600 cursor-pointer text-white px-8 py-3 rounded-full transition shadow-lg">
               Explore more
             </button>
           </div>
@@ -352,7 +346,7 @@ const Solution = () => {
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-orange-50 rounded-lg p-6 hover:shadow-lg transition">
+            <div className="rounded-lg p-6 hover:shadow-lg transition">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <Users className="w-6 h-6 text-orange-500" />
               </div>
@@ -365,7 +359,7 @@ const Solution = () => {
               </p>
             </div>
 
-            <div className="bg-orange-50 rounded-lg p-6 hover:shadow-lg transition relative">
+            <div className="rounded-lg p-6 hover:shadow-lg transition relative">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <TrendingUp className="w-6 h-6 text-orange-500" />
               </div>
@@ -377,7 +371,7 @@ const Solution = () => {
               </p>
             </div>
 
-            <div className="bg-orange-50 rounded-lg p-6 hover:shadow-lg transition">
+            <div className="rounded-lg p-6 hover:shadow-lg transition">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <MessageSquare className="w-6 h-6 text-orange-500" />
               </div>
@@ -389,7 +383,7 @@ const Solution = () => {
               </p>
             </div>
 
-            <div className="bg-orange-50 rounded-lg p-6 hover:shadow-lg transition">
+            <div className="rounded-lg p-6 hover:shadow-lg transition">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <ClipboardList className="w-6 h-6 text-orange-500" />
               </div>
@@ -401,7 +395,7 @@ const Solution = () => {
               </p>
             </div>
 
-            <div className="bg-orange-50 rounded-lg p-6 hover:shadow-lg transition">
+            <div className="rounded-lg p-6 hover:shadow-lg transition">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <Zap className="w-6 h-6 text-orange-500" />
               </div>
@@ -414,7 +408,7 @@ const Solution = () => {
               </p>
             </div>
 
-            <div className="bg-orange-50 rounded-lg p-6 hover:shadow-lg transition">
+            <div className="rounded-lg p-6 hover:shadow-lg transition">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <Plug className="w-6 h-6 text-orange-500" />
               </div>
@@ -433,8 +427,7 @@ const Solution = () => {
         <div
           className="
       relative 
-      max-w-7xl
-      mx-auto 
+      mx-12 
       min-h-[420px] sm:min-h-[480px] lg:min-h-[500px]
       rounded-2xl 
       shadow-2xl 
@@ -475,7 +468,7 @@ const Solution = () => {
               always connected when it matters most.
             </p>
 
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 sm:py-4 rounded-full font-semibold transition shadow-lg uppercase">
+            <button className="bg-orange-500 hover:bg-blue-600 cursor-pointer text-white px-8 py-3 sm:py-4 rounded-full font-semibold transition shadow-lg uppercase">
               Contact Us
             </button>
           </div>

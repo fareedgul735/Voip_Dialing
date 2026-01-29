@@ -16,7 +16,7 @@ const Layout = () => {
       <div className="bg-[#FBF7F4] flex items-center justify-center p-4" id="requestCall">
         <RequestCall />
       </div>
-      <div className="award-winners w-full px-4 md:px-12 py-8">
+      <div className="award-winnerw-full px-4 md:px-12 py-8">
         <h1 className="text-orange-400 text-xl md:text-2xl font-bold text-center mb-8">
           Award Winners
         </h1>

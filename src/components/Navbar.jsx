@@ -194,7 +194,7 @@ const Navbar = () => {
           <Link to="/signup">
             <CustomButtonTwin
               onClick={() => setActiveBtn("signup")}
-              className={`cursor-pointer shadow-md bg-orange-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-orange-600 transition`}
+              className={`cursor-pointer shadow-md bg-orange-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-600 transition`}
               value={<span className="text-[12px]">Get Started</span>}
             />
           </Link>

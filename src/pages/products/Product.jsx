@@ -7,12 +7,15 @@ import { Check } from "lucide-react";
 import { CheckCircle2, Award, Phone } from "lucide-react";
 import { Card, features, services } from "../../lib/Constant.jsx";
 import Testominals from "../../ui/Testominals.jsx";
+import { useRef, useState } from "react";
 
 const column1 = features.filter((f) => f.column === 1);
 const column2 = features.filter((f) => f.column === 2);
 const column3 = features.filter((f) => f.column === 3);
 
 const Products = () => {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
   const CloudServiceCard = ({
     image,
     icon: Icon,
@@ -22,7 +25,7 @@ const Products = () => {
   }) => (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform hover:scale-105 hover:shadow-xl">
       <div className="aspect-video w-full overflow-hidden bg-gray-100">
-        <img src={image} alt={title} className="w-full h-full object-cover" />
+        <img src={image} alt={title} className="w-auto h-auto object-cover" />
       </div>
       <div className="p-6">
         <div className="flex items-center gap-2 mb-3">
@@ -42,12 +45,15 @@ const Products = () => {
         <div className="py-12">
           <div className="mx-12 flex flex-col lg:flex-row gap-12 items-center justify-between">
             <div className="text-center lg:text-left max-w-xl">
-              <p className="text-blue-500 text-sm font-semibold mb-2">
-                Dont Buy Expesnive Equipment
-              </p>
+              <div className="inline-flex items-center bg-white px-7 py-2 mb-4 rounded-[18px] shadow-md animate-fadeIn">
+                <span className="text-blue-500 font-medium">
+                  Dont Buy Expesnive Equipment
+                </span>
+              </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Reliable Cloud PBX for Growing Businesses
+                Reliable <span className="text-blue-600">Cloud PBX</span> for{" "}
+                <span className="text-blue-600">Growing</span> Businesses
               </h1>
 
               <p className="text-gray-700 mb-6">
@@ -73,10 +79,10 @@ const Products = () => {
               </ul>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button className="bg-orange-500 shadow-sm hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold transition">
+                <button className="bg-orange-500 shadow-sm  text-white px-6 py-3 rounded-full hover:bg-blue-500 transition">
                   See Pricing
                 </button>
-                <button className="bg-white shadow-sm rounded-full text-orange-500 hover:text-orange-600 px-6 py-3 font-semibold transition">
+                <button className="bg-white shadow-sm rounded-full text-orange-500 hover:text-white px-6 py-3 hover:bg-blue-500 transition">
                   Talk Sales
                 </button>
               </div>
@@ -93,7 +99,7 @@ const Products = () => {
         </div>
       </div>
       <div className="w-full bg-[#FAF9F6] py-16 px-4">
-        <div className="max-w-7xl mx-auto">
+        <div className="mx-12">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Cloud PBX Phone System for Modern Businesses
@@ -137,18 +143,17 @@ const Products = () => {
               available to buy or lease, perfectly integrated with our cloud PBX
               platform.
             </p>
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+            <button className="bg-orange-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
               See Pricing
             </button>
           </div>
         </div>
       </div>
       <div className="w-full px-4 sm:px-6 md:px-10 py-12">
-        <div className="max-w-7xl mx-auto">
+        <div className="mx-12">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 mb-14">
-            {/* TEXT */}
             <div className="text-center lg:text-left max-w-4xl">
-              <div className="text-orange-500 text-sm font-semibold tracking-wider uppercase mb-4">
+              <div className="text-orange-500 text-sm tracking-wider uppercase mb-4">
                 FEATURES
               </div>
 
@@ -230,24 +235,53 @@ const Products = () => {
         </div>
       </div>
       <div className="w-full bg-[#FAF9F6] flex flex-col">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center py-3 text-xs tracking-widest text-orange-400 font-semibold">
-            SOFTWARE DEMO
+        <div className="mx-12">
+          <div className="text-center py-3 tracking-widest text-orange-400">
+            <span className="text-lg"> SOFTWARE DEMO</span>
           </div>
 
-          <h1 className="text-2xl md:text-3xl font-semibold text-center text-slate-800 mb-4">
+          <h1 className="text-3xl md:text-4xl font-semibold text-center text-slate-800 mb-4">
             Get up and running in minutes
           </h1>
 
-          <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-xl shadow-orange-300 border border-orange-100 p-2 md:p-4 flex-1">
-            <img src={Detailed} />
+          <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-xl shadow-orange-300 border border-orange-100 p-2 md:p-4 flex-1 relative overflow-hidden">
+            <video
+              ref={videoRef}
+              // src={demoVideo}
+              poster={Detailed}
+              className="w-full rounded-xl"
+            />
+
+            {!isPlaying && (
+              <button
+                onClick={() => {
+                  videoRef.current.play();
+                  setIsPlaying(true);
+                }}
+                className="absolute inset-0 flex items-center justify-center group"
+                aria-label="Play Video"
+              >
+                <div
+                  className="w-16 h-16 md:w-20 md:h-20 bg-orange-500/90 rounded-full flex items-center justify-center
+                           group-hover:scale-110 transition-transform duration-300 shadow-lg"
+                >
+                  <svg
+                    className="w-6 h-6 md:w-8 md:h-8 text-white ml-1"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </button>
+            )}
           </div>
         </div>
       </div>
       <div className="bg-gradient-to-br from-gray-50 to-gray-100 py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-orange-400 text-sm font-semibold tracking-wider uppercase mb-2">
+            <p className="text-orange-400 text-sm tracking-wider uppercase mb-2">
               CLOUD SERVICE
             </p>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
@@ -270,9 +304,8 @@ const Products = () => {
         </div>
       </div>
       <div className="w-full py-16 flex justify-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-12 px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-start">
-            {/* LEFT CONTENT */}
             <div>
               <p className="text-orange-500 text-sm font-semibold mb-3 uppercase tracking-wide">
                 BENEFITS
@@ -340,7 +373,6 @@ const Products = () => {
               </div>
             </div>
 
-            {/* RIGHT CONTENT */}
             <div className="relative flex flex-col items-center justify-start pt-8">
               <img
                 src={lady1}
@@ -358,7 +390,7 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <div className="w-full p-[28px] h-60 flex justify-end mt-20 mb-4 px-4">
+      <div className="w-full p-[8px] h-70 flex justify-end mt-30 mb-4 px-4">
         <BrandName />
       </div>
       <div className="w-full bg-gradient-to-b from-orange-50 to-white">
