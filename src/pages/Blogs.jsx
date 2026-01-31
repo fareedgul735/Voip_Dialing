@@ -84,7 +84,7 @@ const Blogs = () => {
   const renderContent = () => {
     if (activeTab === "Blog") {
       return (
-        <div className="space-y-8 w-[1400px]">
+        <div className="space-y-8">
           <div className="bg-white rounded-2xl shadow-sm p-8 border border-gray-100">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-1">

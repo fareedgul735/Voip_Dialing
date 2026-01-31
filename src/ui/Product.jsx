@@ -18,7 +18,7 @@ const Card = ({}) => {
 
 export default function Downloads() {
   return (
-    <div className="py-12 bg-white">
+    <div className="py-12">
       <div className="mx-auto space-y-16">
         <section>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
