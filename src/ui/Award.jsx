@@ -7,7 +7,7 @@ const Badge = ({ children }) => (
 );
 
 const AwardCard = ({ year }) => (
-  <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 sm:p-8 flex flex-col md:flex-row gap-6">
+  <div className="w-full bg-white rounded-xl shadow-sm border border-gray-100 py-12 sm:p-8 flex flex-col md:flex-row gap-6">
     <div className="flex-1">
       <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3 mb-3">
         <Badge>Featured</Badge>
@@ -47,8 +47,8 @@ const AwardCard = ({ year }) => (
 
 export default function AwardsNews() {
   return (
-    <div className="bg-[#fffaf7] px-4 sm:px-6 lg:px-12 py-10 sm:py-12 lg:py-16">
-      <div className="max-w-5xl mx-auto space-y-10">
+    <div>
+      <div className="mx-auto space-y-10">
         <AwardCard year="2023" />
         <AwardCard year="2021" />
 

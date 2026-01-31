@@ -3,7 +3,7 @@ import FAQAccordion from "../ui/FaqsUi";
 
 const Faqs = () => {
   return (
-    <div className="w-full">
+    <div className="w-full bg-gradient-to-b from-red-50 via-white to-white">
       <div className="faqs">
         <FAQAccordion />
       </div>

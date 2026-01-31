@@ -11,11 +11,7 @@ import {
 import { Drawer } from "antd";
 import logo from "../../public/logo.png";
 import { navLinks } from "../lib/Constant";
-import {
-  navActive,
-  navBase,
-  navInactive,
-} from "../lib/styles";
+import { navActive, navBase, navInactive } from "../lib/styles";
 import { CustomButton, CustomButtonTwin } from "../ui/CustomButton";
 
 const Navbar = () => {
@@ -74,25 +70,27 @@ const Navbar = () => {
                       {Array.isArray(item.submenu) && (
                         <div className="grid grid-cols-5 gap-6">
                           {item.submenu.map((sub, i) => (
-                            <NavLink
-                              key={i}
-                              to={sub.link}
-                              className={({ isActive }) =>
-                                `p-5 rounded-xl transition
+                            <>
+                              <NavLink
+                                key={i}
+                                to={sub.link}
+                                className={({ isActive }) =>
+                                  `p-5 rounded-xl transition
                               ${
                                 isActive
                                   ? "bg-orange-100 ring-2 ring-orange-400"
                                   : "bg-orange-50 hover:bg-orange-100 hover:shadow-md"
                               }`
-                              }
-                            >
-                              <h4 className="font-semibold text-lg mb-2">
-                                {sub.label}
-                              </h4>
-                              <p className="text-sm text-gray-600">
-                                Everything your business needs
-                              </p>
-                            </NavLink>
+                                }
+                              >
+                                <h4 className="font-semibold text-lg mb-2">
+                                  {sub.label}
+                                </h4>
+                                <p className="text-sm text-gray-600">
+                                  Everything your business needs
+                                </p>
+                              </NavLink>
+                            </>
                           ))}
                         </div>
                       )}

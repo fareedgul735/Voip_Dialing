@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router";
 import Loader from "../../ui/Loader";
+import BlogDetail from "../../pages/BlogDeatiled.jsx";
 
 // Layouts
 const Layout = lazy(() => import("../../layout/Layout"));
@@ -40,6 +41,7 @@ const routes = createBrowserRouter([
       { path: "about", element: withSuspense(About) },
       { path: "faqs", element: withSuspense(Faqs) },
       { path: "blogs", element: withSuspense(Blogs) },
+      { path: "/blogs/:id", element: <BlogDetail /> },
       { path: "pricing", element: withSuspense(Pricing) },
       { path: "contact", element: withSuspense(Contact) },
       { path: "solutions/smallbusiness", element: withSuspense(Solution) },

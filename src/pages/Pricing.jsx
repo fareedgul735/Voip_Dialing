@@ -65,7 +65,7 @@ const VoIPPricingInterface = () => {
     : availableNumbers.slice(0, 5);
 
   return (
-    <div className="w-full p-6">
+    <div className="w-full p-6 bg-gradient-to-b from-red-50 via-white to-white">
       <style>{`
         .orange-scrollbar::-webkit-scrollbar {
           width: 8px;

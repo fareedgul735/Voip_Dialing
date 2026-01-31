@@ -14,27 +14,71 @@ import { useState } from "react";
 
 const Testominals = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const [direction, setDirection] = useState("right"); 
-
-  const handleNext = () => {
-    setDirection("right");
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const handlePrev = () => {
-    setDirection("left");
-    setCurrentTestimonial(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
-    );
-  };
+  const [direction, setDirection] = useState("right");
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const testimonials = [
     {
-      text: "VoIPDialing has completely upgraded our communication. The call quality is excellent, uptime is consistent, and their support team is always quick to help. It's been a reliable solution for our growing business.",
+      text: "VoIPDialing has completely upgraded our communication. The call quality is excellent, uptime is consistent, and their support team is always quick.",
       author: "Alex Hales",
       position: "Operations Manager",
+      images: {
+        topLeft: "https://randomuser.me/api/portraits/men/1.jpg",
+        bottomLeft: "https://randomuser.me/api/portraits/women/1.jpg",
+        topRight: "https://randomuser.me/api/portraits/men/2.jpg",
+        middleRight: "https://randomuser.me/api/portraits/women/2.jpg",
+        bottomRight: "https://randomuser.me/api/portraits/men/3.jpg",
+      },
+    },
+    {
+      text: "The integration was seamless and the features are exactly what we needed. Customer support is outstanding and always available when we need them.",
+      author: "Sarah Johnson",
+      position: "IT Director",
+      images: {
+        topLeft: "https://randomuser.me/api/portraits/women/3.jpg",
+        bottomLeft: "https://randomuser.me/api/portraits/men/4.jpg",
+        topRight: "https://randomuser.me/api/portraits/women/4.jpg",
+        middleRight: "https://randomuser.me/api/portraits/men/5.jpg",
+        bottomRight: "https://randomuser.me/api/portraits/women/5.jpg",
+      },
+    },
+    {
+      text: "Best decision we made for our company communications. The ROI has been incredible and our team loves the user-friendly interface available need them.",
+      author: "Michael Chen",
+      position: "CEO",
+      images: {
+        topLeft: "https://randomuser.me/api/portraits/men/6.jpg",
+        bottomLeft: "https://randomuser.me/api/portraits/women/6.jpg",
+        topRight: "https://randomuser.me/api/portraits/men/7.jpg",
+        middleRight: "https://randomuser.me/api/portraits/women/7.jpg",
+        bottomRight: "https://randomuser.me/api/portraits/men/8.jpg",
+      },
     },
   ];
+
+  const handleNext = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setDirection("right");
+    setTimeout(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+      setIsAnimating(false);
+    }, 300);
+  };
+
+  const handlePrev = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setDirection("left");
+    setTimeout(() => {
+      setCurrentTestimonial(
+        (prev) => (prev - 1 + testimonials.length) % testimonials.length,
+      );
+      setIsAnimating(false);
+    }, 300);
+  };
+
+  const currentImages = testimonials[currentTestimonial].images;
 
   const services = [
     {
@@ -62,7 +106,7 @@ const Testominals = () => {
       <div className="py-16 px-4">
         <div className="mx-12">
           <div className="text-center mb-4">
-            <p className="text-orange-400 uppercase tracking-wider text-1xl ">
+            <p className="text-orange-400 uppercase tracking-wider text-1xl">
               Testimonials
             </p>
           </div>
@@ -72,50 +116,96 @@ const Testominals = () => {
           </h2>
 
           <div className="relative flex items-center justify-center">
-            <div className="absolute left-12 top-2 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-30 lg:h-30 rounded-full  overflow-hidden shadow-lg z-19">
-              <img src={Doctor5} className="w-full h-full object-cover" />
+            <div className="absolute left-12 top-2 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-30 lg:h-30 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
+              <img
+                key={`topLeft-${currentTestimonial}`}
+                src={currentImages.topLeft}
+                className={`w-full h-full object-cover transition-opacity duration-300 ${
+                  isAnimating ? "opacity-0" : "opacity-100"
+                }`}
+                alt="Client"
+              />
             </div>
 
-            <div className="absolute left-40 bottom-4 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-20 lg:h-20 rounded-full overflow-hidden shadow-lg z-19">
-              <img src={Doctor1} className="w-full h-full object-cover" />
+            <div className="absolute left-40 bottom-4 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-20 lg:h-20 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
+              <img
+                key={`bottomLeft-${currentTestimonial}`}
+                src={currentImages.bottomLeft}
+                className={`w-full h-full object-cover transition-opacity duration-300 ${
+                  isAnimating ? "opacity-0" : "opacity-100"
+                }`}
+                alt="Client"
+              />
             </div>
 
-            <div className="absolute right-22 top-8 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-28 lg:h-28 rounded-full overflow-hidden shadow-lg z-19">
-              <img src={Doctor4} className="w-full h-full object-cover" />
+            <div className="absolute right-22 top-8 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-28 lg:h-28 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
+              <img
+                key={`topRight-${currentTestimonial}`}
+                src={currentImages.topRight}
+                className={`w-full h-full object-cover transition-opacity duration-300 ${
+                  isAnimating ? "opacity-0" : "opacity-100"
+                }`}
+                alt="Client"
+              />
             </div>
 
-            <div className="absolute right-44 bottom-18 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full overflow-hidden shadow-lg z-19">
-              <img src={Doctor2} className="w-full h-full object-cover" />
+            <div className="absolute right-44 bottom-18 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
+              <img
+                key={`middleRight-${currentTestimonial}`}
+                src={currentImages.middleRight}
+                className={`w-full h-full object-cover transition-opacity duration-300 ${
+                  isAnimating ? "opacity-0" : "opacity-100"
+                }`}
+                alt="Client"
+              />
             </div>
 
-            <div className="absolute right-22 bottom-2 w-7 h-7 sm:w-9 sm:h-9 md:w-12 md:h-12 lg:w-20 lg:h-20 rounded-full overflow-hidden shadow-lg z-19">
-              <img src={Doctor3} className="w-full h-full object-cover" />
+            <div className="absolute right-22 bottom-2 w-7 h-7 sm:w-9 sm:h-9 md:w-12 md:h-12 lg:w-20 lg:h-20 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
+              <img
+                key={`bottomRight-${currentTestimonial}`}
+                src={currentImages.bottomRight}
+                className={`w-full h-full object-cover transition-opacity duration-300 ${
+                  isAnimating ? "opacity-0" : "opacity-100"
+                }`}
+                alt="Client"
+              />
             </div>
 
-            <div className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl mx-auto relative z-10 border border-gray-100">
-              <div className="flex justify-center mb-6">
-                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
+            {/* Testimonial Card - with slide animation */}
+            <div className="overflow-hidden max-w-2xl mx-auto relative z-10">
+              <div
+                className={`bg-white rounded-2xl shadow-xl p-8 border border-gray-100 transition-all duration-300 ease-in-out ${
+                  isAnimating
+                    ? direction === "right"
+                      ? "translate-x-full opacity-0"
+                      : "-translate-x-full opacity-0"
+                    : "translate-x-0 opacity-100"
+                }`}
+              >
+                <div className="flex justify-center mb-6">
+                  <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                    </svg>
+                  </div>
                 </div>
-              </div>
 
-              <p className="text-gray-600 text-center mb-6 leading-relaxed">
-                {testimonials[currentTestimonial].text}
-              </p>
+                <p className="text-gray-600 text-center mb-6 leading-relaxed">
+                  {testimonials[currentTestimonial].text}
+                </p>
 
-              <div className="text-center">
-                <p className="text-orange-500 font-semibold">
-                  {testimonials[currentTestimonial].author}
-                </p>
-                <p className="text-gray-400 text-sm">
-                  {testimonials[currentTestimonial].position}
-                </p>
+                <div className="text-center">
+                  <p className="text-orange-500 font-semibold">
+                    {testimonials[currentTestimonial].author}
+                  </p>
+                  <p className="text-gray-400 text-sm">
+                    {testimonials[currentTestimonial].position}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -123,14 +213,16 @@ const Testominals = () => {
           <div className="flex justify-center gap-4 mt-8">
             <button
               onClick={handlePrev}
-              className="w-10 h-10 bg-orange-500 hover:bg-orange-600 rounded-full flex items-center justify-center text-white shadow-lg"
+              disabled={isAnimating}
+              className="w-10 h-10 cursor-pointer bg-orange-500 hover:bg-blue-600 disabled:bg-orange-300 rounded-full flex items-center justify-center text-white shadow-lg transition-colors"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
 
             <button
               onClick={handleNext}
-              className="w-10 h-10 bg-orange-500 hover:bg-orange-600 rounded-full flex items-center justify-center text-white shadow-lg"
+              disabled={isAnimating}
+              className="w-10 h-10 bg-orange-500 cursor-pointer hover:bg-blue-600 disabled:bg-orange-300 rounded-full flex items-center justify-center text-white shadow-lg transition-colors"
             >
               <ChevronRight className="w-5 h-5" />
             </button>

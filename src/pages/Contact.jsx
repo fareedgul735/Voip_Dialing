@@ -4,7 +4,7 @@ import BrandName from "../ui/BrandName";
 
 export default function Contact() {
   return (
-    <div className="p-[48px] flex flex-col items-center justify-center bg-[white] px-6">
+    <div className="w-full p-[48px] flex flex-col items-center justify-center bg-gradient-to-b from-red-50 via-white to-white px-6">
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-16">
         <div className="flex flex-col justify-start">
           <div>
@@ -90,7 +90,7 @@ export default function Contact() {
           </form>
         </div>
       </div>
-      <div>
+      <div className="w-full">
         <FAQAccordion />
       </div>
       <div className="w-full p-[8px] h-70 flex justify-end mt-30 mb-4 px-4">

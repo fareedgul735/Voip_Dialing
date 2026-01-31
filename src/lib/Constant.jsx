@@ -148,3 +148,46 @@ export const navLinks = [
   { id: 6, label: "About", link: "/about" },
   { id: 7, label: "Contact", link: "/contact" },
 ];
+
+export const blogDeatiledPosts = [
+  {
+    id: "1",
+    isFeatured: true,
+    category: "AI & VOIP",
+    date: "June 24, 2025",
+    title: "Why Businesses Choose VOIP for AI Chatbots and CRM Success",
+    shortDesc:
+      "Learn how VOIP solutions are transforming AI chatbots and CRM platforms for modern businesses.",
+    fullDesc:
+      "This is full detailed content for VOIP and AI Chatbots. Yeh text sirf blog detail page par show hoga.",
+  },
+  {
+    id: "2",
+    isFeatured: false,
+    category: "AI Automation",
+    date: "June 20, 2025",
+    title: "Transforming Customer Relationships with AI",
+    shortDesc:
+      "AI-powered chatbots are reshaping customer engagement and retention strategies.",
+    fullDesc:
+      "This is full content for Transforming Customer Relationships with AI.",
+  },
+  {
+    id: "3",
+    isFeatured: false,
+    category: "Business Growth",
+    date: "June 18, 2025",
+    title: "Scalability and Efficiency for Growing Businesses",
+    shortDesc: "How AI-driven platforms help businesses scale efficiently.",
+    fullDesc: "This is full content for Scalability and Efficiency blog.",
+  },
+  {
+    id: "4",
+    isFeatured: false,
+    category: "Productivity",
+    date: "June 15, 2025",
+    title: "Enhancing Collaboration and Productivity with AI",
+    shortDesc: "AI tools that improve collaboration across teams.",
+    fullDesc: "This is full content for Enhancing Collaboration blog.",
+  },
+];
