@@ -1,5 +1,5 @@
 import { CheckCircle } from "lucide-react";
-
+import video1 from "../../public/video1.mp4";
 import HeadPhones from "../../public/HeadPhone.png";
 import CallCenter from "../../public/CallCenter.png";
 import Dots from "../../public/Dots.png";
@@ -184,9 +184,11 @@ const LandingPage = () => {
           <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-xl shadow-orange-300 border border-orange-100 p-2 md:p-4 flex-1 relative overflow-hidden">
             <video
               ref={videoRef}
-              // src={demoVideo}
+              src={video1}
               poster={Detailed}
               className="w-full rounded-xl"
+              controls
+              onEnded={() => setIsPlaying(false)}
             />
 
             {!isPlaying && (
@@ -199,7 +201,7 @@ const LandingPage = () => {
                 aria-label="Play Video"
               >
                 <div
-                  className="w-16 h-16 md:w-20 md:h-20 bg-orange-500/90 rounded-full flex items-center justify-center
+                  className="w-16 cursor-pointer h-16 md:w-20 md:h-20 bg-orange-500/90 rounded-full flex items-center justify-center
                       group-hover:scale-110 transition-transform duration-300 shadow-lg"
                 >
                   <svg

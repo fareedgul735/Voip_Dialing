@@ -96,12 +96,6 @@ const BrandName = () => {
               ))}
             </div>
           </div>
-
-          {isHovering && (
-            <div className="text-center mt-3 text-sm text-gray-500 animate-pulse">
-              <span>Scrolling paused</span>
-            </div>
-          )}
         </div>
       </div>
     </div>

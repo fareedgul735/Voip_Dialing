@@ -21,12 +21,15 @@ const HeroSection = () => {
       image: image5,
       title: (
         <>
-          Transform Your{" "}
-          <span className="highlight bg-purple-500">Business</span>
-          <br />
-          with <span className="highlight bg-purple-500">Cloud PBX</span>
-          <br />
-          Phone Systems
+          <span>
+            Reliable
+            <span className="highlight bg-purple-500">Cloud PBX</span>
+            for
+          </span>
+          <span>
+            <span className="highlight bg-purple-500">Growing</span>
+            Bussiness
+          </span>
         </>
       ),
       features: [
@@ -51,10 +54,10 @@ const HeroSection = () => {
         </>
       ),
       features: [
-        "Advanced call management",
-        "Multi-location support",
-        "Easy to manage dashboard",
-        "Enterprise-grade security",
+        "Crystal-clear conversational VoIP routes",
+        "Stable dialer & SIP connectivity worldwide",
+        "Low latency with high ASR & ACD",
+        "Flexible, scalable, and cost-effective VoIP plans",
       ],
       stats: { count: "12K+", label: "Happy Clients World Widw" },
     },
@@ -96,7 +99,7 @@ const HeroSection = () => {
         <div className="space-y-6 text-center md:text-left">
           <div
             key={`badge-${activeSlide}`}
-            className="inline-flex items-center bg-white px-12 py-2 rounded-[18px] shadow-md animate-fadeIn"
+            className="inline-flex items-center bg-white px-7 py-2 rounded-[18px] shadow-md animate-fadeIn"
           >
             <span className="text-orange-600 font-medium">
               {currentSlide.badge}
@@ -105,7 +108,7 @@ const HeroSection = () => {
 
           <h1
             key={`title-${activeSlide}`}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1C2D] leading-tight animate-fadeIn"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-[#0B1C2D] leading-tight animate-fadeIn"
           >
             {currentSlide.title}
           </h1>
