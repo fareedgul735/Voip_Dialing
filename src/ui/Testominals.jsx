@@ -102,8 +102,8 @@ const Testominals = () => {
   ];
 
   return (
-    <div className="w-full  bg-gradient-to-b from-orange-50 to-white">
-      <div className="py-16 px-4">
+    <div className="w-full bg-gradient-to-b from-orange-50 to-white py-12">
+      <div className="py-16">
         <div className="mx-12">
           <div className="text-center mb-4">
             <p className="text-orange-400 uppercase tracking-wider text-1xl">
@@ -171,10 +171,9 @@ const Testominals = () => {
               />
             </div>
 
-            {/* Testimonial Card - with slide animation */}
             <div className="overflow-hidden max-w-2xl mx-auto relative z-10">
               <div
-                className={`bg-white rounded-2xl shadow-xl p-8 border border-gray-100 transition-all duration-300 ease-in-out ${
+                className={`bg-white  rounded-2xl shadow-xl p-8 border border-gray-100 transition-all duration-300 ease-in-out ${
                   isAnimating
                     ? direction === "right"
                       ? "translate-x-full opacity-0"
@@ -182,7 +181,7 @@ const Testominals = () => {
                     : "translate-x-0 opacity-100"
                 }`}
               >
-                <div className="flex justify-center mb-6">
+                <div className="flex justify-center mb-6 ">
                   <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
                     <svg
                       className="w-6 h-6 text-white"
@@ -230,8 +229,8 @@ const Testominals = () => {
         </div>
       </div>
 
-      <div className="py-16 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <div className="py-16 bg-white">
+        <div className="mx-12">
           <div className="text-center mb-4">
             <p className="text-orange-400 uppercase tracking-wider text-lg">
               VOIP BLOGS

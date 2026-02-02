@@ -94,7 +94,7 @@ const HeroSection = () => {
   const currentSlide = slides[activeSlide];
 
   return (
-    <div className="p-6 sm:p-7 md:p-[28px]">
+    <div className="md:p-[8px]">
       <div className="grid mx-12 grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="space-y-6 text-center md:text-left">
           <div

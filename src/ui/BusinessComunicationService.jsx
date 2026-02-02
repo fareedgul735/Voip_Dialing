@@ -101,7 +101,7 @@ const BusinessCommunicationServices = () => {
   const currentService = services[activeService];
 
   return (
-    <div className="p-4 sm:p-6 md:p-8">
+    <div className="container">
       <div className="mx-12">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 mb-10 text-center md:text-left">
           <div>

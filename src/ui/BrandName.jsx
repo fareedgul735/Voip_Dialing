@@ -51,16 +51,16 @@ const BrandName = () => {
 
   return (
     <div
-      className="relative mx-12 w-full lg:w-[85%] mb-8  sm:p-8
+      className="relative mx-12 w-full lg:w-[85%] sm:p-8
       bg-[linear-gradient(180deg,_#E2C8B5_0%,_rgba(255,224,208,0.8)_20%,_rgba(226,200,181,0)_100%)]
       rounded-4xl shadow-sm"
     >
       <div
-        className="absolute w-[232px] h-[224px] bg-orange-500 text-white rounded-2xl flex flex-col justify-center items-center gap-2 text-center shadow-lg z-10
+        className="absolute w-[212px] h-[204px] bg-orange-500 text-white rounded-2xl flex flex-col justify-center items-center gap-2 text-center shadow-lg z-10
         px-6 py-4 sm:px-8 sm:py-6
         -top-8 left-1/2 -translate-x-1/2
         md:top-6
-        lg:top-12 lg:-left-28 lg:translate-x-0"
+        lg:top-8 lg:-left-40 lg:translate-x-0"
       >
         <h2 className="text-2xl sm:text-3xl lg:text-6xl font-bold">200+</h2>
         <p className="mt-2 text-[14px] leading-snug">
