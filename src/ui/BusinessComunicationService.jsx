@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Cloud, MessageSquare, Phone, Hash, Settings } from "lucide-react";
 import { CustomButton, CustomButtonTwin } from "./CustomButton";
+import { Link } from "react-router";
 
 const BusinessCommunicationServices = () => {
   const [activeService, setActiveService] = useState(0);
@@ -232,14 +233,18 @@ const BusinessCommunicationServices = () => {
             </div>
 
             <div className="flex gap-4">
-              <CustomButtonTwin
-                className="bg-orange-500 cursor-pointer hover:bg-blue-500  shadow-md text-white px-6 py-3 rounded-full"
-                value={<span>Get Pricing</span>}
-              />
-              <CustomButton
-                className="border border-gray-200 hover:bg-blue-500 hover:text-white text-orange-400 cursor-pointer px-6 py-3 rounded-full shadow-md"
-                value={<span>Contact Sales</span>}
-              />
+              <Link to={"/pricing"}>
+                <CustomButtonTwin
+                  className="bg-orange-500 cursor-pointer hover:bg-blue-500  shadow-md text-white px-6 py-3 rounded-full"
+                  value={<span>Get Pricing</span>}
+                />
+              </Link>
+              <Link to={"/contact"}>
+                <CustomButton
+                  className="border border-gray-200 hover:bg-blue-500 hover:text-white text-orange-400 cursor-pointer px-6 py-3 rounded-full shadow-md"
+                  value={<span>Contact Sales</span>}
+                />
+              </Link>
             </div>
 
             <p className="text-xs text-gray-500 mt-4">

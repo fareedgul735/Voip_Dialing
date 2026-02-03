@@ -7,11 +7,12 @@ import Blog from "../../public/blog.png";
 import { Link } from "react-router";
 
 const Blogs = () => {
+  // const id = 2;
   const [activeTab, setActiveTab] = useState("Blog");
 
   const blogPosts = [
     {
-      id: 1,
+      id: "1",
       category: "Featured",
       date: "June 24, 2025",
       title: "Why Businesses Choose VOIP for AI Chatbots and CRM Success",
@@ -20,7 +21,7 @@ const Blogs = () => {
       isFeatured: true,
     },
     {
-      id: 2,
+      id: "2",
       category: "Resource",
       date: "June 24, 2025",
       title: "Your Ultimate AI-Driven Partner for Business Growth",
@@ -28,7 +29,7 @@ const Blogs = () => {
       isFeatured: false,
     },
     {
-      id: 3,
+      id: "3",
       category: "Resource",
       date: "June 24, 2025",
       title: "Why Biotix is the Future of form Customer Management",
@@ -36,7 +37,7 @@ const Blogs = () => {
       isFeatured: false,
     },
     {
-      id: 4,
+      id: "4",
       category: "Resource",
       date: "June 24, 2025",
       title: "Sales and Support with Biotix's AI Powered CRM Solution",
@@ -45,7 +46,7 @@ const Blogs = () => {
     },
 
     {
-      id: 1,
+      id: "1",
       category: "Featured",
       date: "June 24, 2025",
       title: "Why Businesses Choose VOIP for AI Chatbots and CRM Success",
@@ -54,7 +55,7 @@ const Blogs = () => {
       isFeatured: true,
     },
     {
-      id: 2,
+      id: "2",
       category: "Resource",
       date: "June 24, 2025",
       title: "Your Ultimate AI-Driven Partner for Business Growth",
@@ -62,7 +63,7 @@ const Blogs = () => {
       isFeatured: false,
     },
     {
-      id: 3,
+      id: "3",
       category: "Resource",
       date: "June 24, 2025",
       title: "Why Biotix is the Future of form Customer Management",
@@ -70,7 +71,7 @@ const Blogs = () => {
       isFeatured: false,
     },
     {
-      id: 4,
+      id: "4",
       category: "Resource",
       date: "June 24, 2025",
       title: "Sales and Support with Biotix's AI Powered CRM Solution",
@@ -110,7 +111,7 @@ const Blogs = () => {
                   Blvd.
                 </p>
                 <Link
-                  // to={`blog/:${id}`}
+                  // to={`/blogs/${id}`}
                   className="text-gray-500 font-semibold hover:text-orange-600 transition-colors"
                 >
                   Read more
@@ -164,7 +165,7 @@ const Blogs = () => {
                       </h4>
 
                       <Link
-                        // to={`/blog/${post.id}`}
+                        to={`/blogs/${post.id}`}
                         className="text-sm font-semibold text-gray-500 hover:text-orange-600 transition-colors"
                       >
                         Read more
@@ -229,8 +230,8 @@ const Blogs = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-red-50 via-white to-white">
-      <div className="mx-12 px-14 py-12">
+    <div className="bg-gradient-to-b from-red-50 via-white to-white p-[12px] py-12">
+      <div className="mx-12">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Blog</h1>
           <p className="text-gray-600 mb-6">Read our latest articles</p>
@@ -254,7 +255,7 @@ const Blogs = () => {
 
         {renderContent()}
       </div>
-      <div className="w-full p-[8px] h-70 flex justify-end mt-30 mb-4 px-4">
+      <div className="w-full flex justify-end mt-12 mb-12">
         <BrandName />
       </div>
     </div>

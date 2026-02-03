@@ -41,7 +41,7 @@ const Products = () => {
 
   return (
     <>
-      <div className="w-full p-4 sm:p-6 md:p-[28px] bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
+      <div className="w-full p-[12px] py-12 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
         <div className="py-12">
           <div className="mx-12 flex flex-col lg:flex-row gap-12 items-center justify-between">
             <div className="text-center lg:text-left max-w-xl">
@@ -98,7 +98,7 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-[#FAF9F6] py-16 px-4">
+      <div className="w-full bg-[#FAF9F6] p-[12px] py-12">
         <div className="mx-12">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -149,7 +149,7 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <div className="w-full px-4 sm:px-6 md:px-10 py-12">
+      <div className="w-full p-[12px] py-12">
         <div className="mx-12">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 mb-14">
             <div className="text-center lg:text-left max-w-4xl">
@@ -234,7 +234,7 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-[#FAF9F6] flex flex-col">
+      <div className="w-full bg-[#FAF9F6] flex flex-col p-[12px] py-12">
         <div className="mx-12">
           <div className="text-center py-3 tracking-widest text-orange-400">
             <span className="text-lg"> SOFTWARE DEMO</span>
@@ -278,8 +278,8 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gradient-to-br from-gray-50 to-gray-100 py-16 px-4">
-        <div className="max-w-7xl mx-auto">
+      <div className="p-[12px] py-12 mt-12 mb-12">
+        <div className="mx-12">
           <div className="text-center mb-12">
             <p className="text-orange-400 text-sm tracking-wider uppercase mb-2">
               CLOUD SERVICE
@@ -303,8 +303,8 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <div className="w-full py-16 flex justify-center">
-        <div className="mx-12 px-4 sm:px-6 lg:px-8">
+      <div className="w-full p-[12px] py-12 flex justify-center">
+        <div className="mx-12">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
               <p className="text-orange-500 text-sm font-semibold mb-3 uppercase tracking-wide">
@@ -390,13 +390,13 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <div className="w-full p-[8px] h-70 flex justify-end mt-30 mb-4 px-4">
+      <div className="w-full p-[12px] py-12 h-70 flex justify-end mt-12 mb-12">
         <BrandName />
       </div>
-      <div className="w-full bg-gradient-to-b from-orange-50 to-white">
+      <div className="w-full bg-gradient-to-b from-orange-50 to-white p-[12px] py-12">
         <Testominals />
       </div>
-      <div className="faqs">
+      <div className="faqs p-[12px] py-12">
         <FAQAccordion />
       </div>
     </>

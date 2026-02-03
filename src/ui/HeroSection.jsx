@@ -11,6 +11,7 @@ import image8 from "../../public/iimage8.jpg";
 import image9 from "../../public/image9.jpg";
 
 import { CustomButton, CustomButtonTwin } from "./CustomButton";
+import { Link } from "react-router";
 
 const HeroSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -131,10 +132,12 @@ const HeroSection = () => {
               className="shadow-md bg-orange-500 text-white font-semibold px-6 py-3 rounded-full cursor-pointer hover:bg-blue-500 transition"
               value={<span className="text-[14px]">Talk to Sales</span>}
             />
+            <Link to={"/pricing"}>
             <CustomButton
               className="bg-white shadow-md border hover:text-white border-gray-200 text-gray-800 font-semibold cursor-pointer px-6 py-3 rounded-full hover:bg-blue-500 transition"
               value={<span className="text-[14px]">Get Pricing</span>}
             />
+            </Link>
           </div>
         </div>
 

@@ -20,17 +20,17 @@ const About = () => {
 
   return (
     <>
-      <div className="w-full bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
-        <div className="py-6">
+      <div className="w-full bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)] p-[12px] py-12">
+        <div>
           <div className="grid mx-12 grid-cols-1 lg:grid-cols-2 items-center">
-            <div className="space-y-6 lg:text-left">
-              <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 lg:mx-0">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 rounded-full lg:mx-0">
                 <span className="text-orange-500 font-bold">©</span>
                 <span className="text-gray-600 font-medium text-sm">
                   About Us
                 </span>
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-[38px] font-bold text-gray-900 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold text-gray-900 leading-tight">
                 A Smarter Communication Platform for Growing Businesses
               </h1>
 
@@ -102,7 +102,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-[#FAF9F6] mx-auto px-6 py-16">
+      <div className="w-full bg-[#FAF9F6] p-[12px] py-12">
         <h2 className="text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-4">
           Why us?
         </h2>
@@ -134,10 +134,10 @@ const About = () => {
           ))}
         </div>
       </div>
-      <div className="w-full bg-white flex items-center justify-center p-6">
-        <div className="max-12 rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <div className="relative p-6 flex items-center justify-center">
-            <div className="relative w-[626px] h-[421px]">
+      <div className="w-full bg-white flex items-center justify-center p-[12px] py-12">
+        <div className="mx-12 rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="relative flex items-center justify-center">
+            <div className="relative w-[634px] h-[548px]">
               <img
                 src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1200&auto=format&fit=crop"
                 alt="Happy client using VoIP"
@@ -150,7 +150,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="p-8 flex flex-col justify-center">
+          <div className="flex flex-col justify-center">
             <p className="uppercase tracking-widest text-orange-500 font-semibold mb-2">
               Mission
             </p>
@@ -175,7 +175,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-white flex items-center justify-center px-4 sm:px-6 py-12">
+      <div className="w-full bg-white flex items-center justify-center p-[12px] py-12">
         <div className="mx-12 rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="p-6 sm:p-8 flex flex-col justify-center text-center lg:text-left">
             <p className="uppercase tracking-widest text-orange-500 mb-2">
@@ -237,13 +237,13 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="w-full p-[8px] h-70 flex justify-end mt-30 mb-4 px-4">
+      <div className="w-full p-[12px] py-12 h-70 flex justify-end mt-12 mb-12">
         <BrandName />
       </div>
-      <div className="w-full bg-gradient-to-b from-orange-50 to-white">
+      <div className="w-full bg-gradient-to-b from-orange-50 to-white p-[12px] py-12">
         <Testominals />
       </div>
-      <div className="w-full mx-auto px-4 py-8">
+      <div className="w-full p-[12px] py-12 mt-8 mb-8">
         <FAQAccordion />
       </div>
     </>

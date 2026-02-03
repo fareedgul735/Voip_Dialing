@@ -18,19 +18,19 @@ const LandingPage = () => {
 
   return (
     <>
-      <div className="py-12 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
+      <div className="p-[12px] py-12 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
         <HeroSection />
       </div>
-      <div className="w-full p-[12px] h-70 flex justify-end mt-12 mb-12">
+      <div className="w-fullp-[12px] py-12 h-70 flex justify-end mt-12 mb-12">
         <BrandName />
       </div>
-      <div className="w-full bg-[#FAF9F6] py-12">
+      <div className="w-full bg-[#FAF9F6] p-[12px] py-12">
         <BusinessCommunicationServices />
       </div>
-      <div className="w-full py-12">
+      <div className="w-full p-[12px] py-12">
         <div className="bg-white rounded-3xl overflow-hidden">
           <div className="grid mx-12 grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div className="relative p-6 sm:p-8 md:p-10 lg:p-12 flex justify-center">
+            <div className="relative flex justify-center">
               <div className="w-16 sm:w-28 md:w-32 mb-4">
                 <img src={HeadPhones} alt="logo" />
               </div>
@@ -61,7 +61,7 @@ const LandingPage = () => {
               </div>
             </div>
 
-            <div className="py-12 text-center md:text-left">
+            <div className="text-center md:text-left">
               <div className="text-orange-500 text-xs sm:text-sm  tracking-wider uppercase mb-3 sm:mb-4">
                 <span> BUSINESS GROWTH</span>
               </div>
@@ -97,7 +97,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-white flex items-center justify-center py-12">
+      <div className="w-full bg-white flex items-center justify-center p-[12px] py-12">
         <div className="mx-12 bg-white rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div className="flex flex-col justify-center text-center lg:text-left">
             <p className="uppercase tracking-widest text-orange-500 mb-2 text-xs sm:text-sm">
@@ -171,7 +171,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-[#FAF9F6] flex flex-col py-12">
+      <div className="w-full bg-[#FAF9F6] flex flex-col p-[12px] py-12">
         <div className="mx-12">
           <div className="text-center py-3 tracking-widest text-orange-400">
             <span className="text-lg"> SOFTWARE DEMO</span>
@@ -217,7 +217,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-gradient-to-b from-orange-50 to-white mt-18 mb-18">
+      <div className="w-full bg-gradient-to-b from-orange-50 to-white p-[12px] py-12 mt-18 mb-18">
         <Testominals />
       </div>
     </>

@@ -102,7 +102,7 @@ const Testominals = () => {
   ];
 
   return (
-    <div className="w-full bg-gradient-to-b from-orange-50 to-white py-12">
+    <div className="w-full bg-gradient-to-b from-orange-50 to-white">
       <div className="py-16">
         <div className="mx-12">
           <div className="text-center mb-4">

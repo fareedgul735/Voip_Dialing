@@ -13,7 +13,10 @@ const Layout = () => {
       <AnnoucementBar />
       <Navbar />
       <Outlet />
-      <div className="bg-[#FBF7F4] flex items-center justify-center py-18" id="requestCall">
+      <div
+        className="bg-[#FBF7F4] flex items-center justify-center p-[12px] py-12"
+        id="requestCall"
+      >
         <RequestCall />
       </div>
       <div className="award-winnerw-full px-4 md:px-12 py-8">

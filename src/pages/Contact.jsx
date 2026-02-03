@@ -4,9 +4,9 @@ import BrandName from "../ui/BrandName";
 
 export default function Contact() {
   return (
-    <div className="w-full p-[48px] flex flex-col items-center justify-center bg-gradient-to-b from-red-50 via-white to-white px-6">
-      <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-16">
-        <div className="flex flex-col justify-start">
+    <div className="w-full p-[12px] py-12 flex flex-col items-center justify-center bg-gradient-to-b from-red-50 via-white to-white">
+      <div className="mx-12 grid grid-cols-1 md:grid-cols-2 gap-16 mt-2 mb-42">
+        <div className="flex flex-col justify-start ">
           <div>
             <h1 className="text-4xl font-bold mb-4">Contact us</h1>
             <p className="text-gray-500 max-w-md mb-10">
@@ -90,10 +90,10 @@ export default function Contact() {
           </form>
         </div>
       </div>
-      <div className="w-full">
+      <div className="w-full mb-12">
         <FAQAccordion />
       </div>
-      <div className="w-full p-[8px] h-70 flex justify-end mt-30 mb-4 px-4">
+      <div className="w-full p-[12px] py-12 h-70 flex justify-end">
         <BrandName />
       </div>
     </div>

@@ -3,11 +3,11 @@ import FAQAccordion from "../ui/FaqsUi";
 
 const Faqs = () => {
   return (
-    <div className="w-full bg-gradient-to-b from-red-50 via-white to-white">
-      <div className="faqs">
+    <div className="w-full bg-gradient-to-b from-red-50 via-white to-white p-[12px] py-12">
+      <div className="faqs mb-22">
         <FAQAccordion />
       </div>
-      <div className="w-full p-[8px] h-70 flex justify-end mt-30 mb-4 px-4">
+      <div className="w-full h-70 flex justify-end mt-12 mb-12">
         <BrandName />
       </div>
     </div>

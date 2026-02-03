@@ -1,5 +1,6 @@
 import lady1 from "../../../public/lady_1.jpg";
 import animate1 from "../../../public/animate_1.png";
+import Dmj from "../../../public/Dm.jpg";
 import {
   CheckCircle,
   ClipboardList,
@@ -12,9 +13,9 @@ import {
 const Solution = () => {
   return (
     <>
-      <div className="w-full p-4 sm:p-6 md:p-[28px] bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
-        <div className="py-6">
-          <div className="mx-12 max-w-7xl flex flex-col lg:flex-row gap-12 items-center justify-between">
+      <div className="w-full p-[12px] py-28 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
+        <div>
+          <div className="mx-12 flex flex-col lg:flex-row gap-12 items-center justify-between">
             <div className="text-center lg:text-left">
               <p className="text-sm mb-2">
                 <span className="text-orange-500 font-bold">©</span>{" "}
@@ -87,9 +88,9 @@ const Solution = () => {
           </div>
         </div>
       </div>
-      <div className="w-full p-[28px]">
-        <div className="bg-white mx-auto rounded-2xl p-8">
-          <div className="grid mx-12 md:grid-cols-2 gap-8 items-center">
+      <div className="w-full p-[12px] py-12">
+        <div className="bg-white mx-12 rounded-2xl">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative">
               <img
                 src={lady1}
@@ -146,7 +147,7 @@ const Solution = () => {
           </div>
         </div>
       </div>
-      <div className="w-full p-[58px]">
+      <div className="w-full p-[12px] py-12">
         <div className="grid mx-12 md:grid-cols-2 gap-8 items-center">
           <div>
             <p className="text-orange-500 text-sm mb-2">BUSINESS GROWTH</p>
@@ -184,8 +185,8 @@ const Solution = () => {
           </div>
         </div>
       </div>
-      <div className="w-full">
-        <div className="px-4 py-16">
+      <div className="w-full p-[12px] py-12">
+        <div className="py-16">
           <div className="grid mx-12 md:grid-cols-2 gap-12 items-center">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
@@ -261,13 +262,13 @@ const Solution = () => {
           </div>
         </div>
       </div>
-      <div className="w-full px-4 py-16">
+      <div className="w-full p-[12px] py-12">
         <div className="grid mx-12 md:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&h=500&fit=crop"
+              src={Dmj}
               alt="Office Environment"
-              className="rounded-2xl shadow-2xl w-full h-96 object-cover"
+              className="rounded-2xl shadow-2xl w-full h-[624px] object-cover"
             />
             <div className="absolute -bottom-0 -left-0 bg-white rounded-xl shadow-2xl p-6">
               <p className="text-5xl font-bold text-orange-500">12K+</p>
@@ -275,15 +276,15 @@ const Solution = () => {
             </div>
           </div>
 
-          <div>
-            <p className="text-orange-500 text-sm mb-3 uppercase tracking-wide">
+          <div className="h-[650px]">
+            <p className="text-orange-500 text-sm uppercase tracking-wide">
               Business Growth
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+            <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-8">
               Optimize your end-to-end voice communication
             </h2>
 
-            <div className="space-y-6">
+            <div className="space-y-18">
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-4">
                   <CheckCircle className="w-6 h-6 text-orange-500" />
@@ -339,13 +340,13 @@ const Solution = () => {
           </div>
         </div>
       </div>
-      <div className="bg-white w-full py-20">
-        <div className="container max-w-7xl mx-auto px-4">
+      <div className="bg-white w-full p-[12px] py-12">
+        <div className="mx-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-16">
             Comprehensive features
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 mx-12">
             <div className="rounded-lg p-6 hover:shadow-lg transition">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <Users className="w-6 h-6 text-orange-500" />
@@ -423,12 +424,12 @@ const Solution = () => {
           </div>
         </div>
       </div>
-      <div className="w-full px-4 py-16 sm:py-20">
+      <div className="w-full p-[12px] py-12">
         <div
           className="
       relative 
       mx-12 
-      min-h-[420px] sm:min-h-[480px] lg:min-h-[500px]
+      min-h-[420px] sm:min-h-[480px] lg:min-h-[490px]
       rounded-2xl 
       shadow-2xl 
       bg-cover bg-center bg-no-repeat 
