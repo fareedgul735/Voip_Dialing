@@ -1,4 +1,7 @@
-import { DollarSign, Phone, Shield, Users, Cloud } from "lucide-react";
+import { DollarSign, Phone, Shield, Users } from "lucide-react";
+import { Cloud, MessageCircle, PhoneCall, Hash, HardDrive } from "lucide-react";
+import Blog from "../../public/blog.png";
+import Voiping from "../../public/Voiping.png";
 
 import cloudService1 from "../../public/72972799ae5aa340804da7288e49224fbde304c5.png";
 import cloudService2 from "../../public/e5beb8c37329203becb3c099b277e7c2c6a04de0.png";
@@ -100,11 +103,36 @@ export const navLinks = [
     id: 2,
     label: "Products",
     submenu: [
-      { label: "Cloud PBX", link: "/products/cloud-pbx" },
-      { label: "Bulk SMS", link: "/products/bulk-sms" },
-      { label: "VOIP Lines", link: "/products/voip-lines" },
-      { label: "Phone Numbers", link: "/products/phone-numbers" },
-      { label: "Equipment", link: "/products/equipment" },
+      {
+        label: "Cloud PBX",
+        link: "/products/cloud-pbx",
+        icon: <Cloud />,
+        description: "Cloud PBX Everything your Bussiness need.",
+      },
+      {
+        label: "Bulk SMS",
+        link: "/products/bulk-sms",
+        icon: <MessageCircle />,
+        description: "Cloud PBX Everything your Bussiness need.",
+      },
+      {
+        label: "VOIP Lines",
+        link: "/products/voip-lines",
+        icon: <PhoneCall />,
+        description: "Cloud PBX Everything your Bussiness need.",
+      },
+      {
+        label: "Phone Numbers",
+        link: "/products/phone-numbers",
+        icon: <Hash />,
+        description: "Cloud PBX Everything your Bussiness need.",
+      },
+      {
+        label: "Equipment",
+        link: "/products/equipment",
+        icon: <HardDrive />,
+        description: "Cloud PBX Everything your Bussiness need.",
+      },
     ],
   },
 
@@ -121,25 +149,28 @@ export const navLinks = [
         { label: "Enterprise", link: "solutions/Enterprise" },
       ],
       industry: [
-        "Healthcare",
-        "Hospitality",
-        "Internet and Telco",
-        "Insurance",
-        "Constructions",
-        "Real Estate",
-        "Marketing",
-        "Education",
-        "Transportation",
+        { label: "Healthcare", link: "solutions/healthcare" },
+        { label: "Hospitality", link: "solutions/hospitality" },
+        { label: "Internet and Telco", link: "solutions/internetTelco" },
+        { label: "Insurance", link: "solutions/insurance" },
+        { label: "Constructions", link: "solutions/constructions" },
+        { label: "Real Estate", link: "solutions/RealEstate" },
+        { label: "Marketing", link: "solutions/marketing" },
+        { label: "Education", link: "solutions/education" },
+        { label: "Transportation", link: "solutions/transportation" },
       ],
       solution: [
-        "Sip Trunks",
-        "Cloud Phone System",
-        "SMS",
-        "Dialers",
-        "Global",
-        "Multi-location",
-        "Unified Communication",
-        "Fax",
+        { label: "Sip Trunks", link: "solutions/SipTrunks" },
+        { label: "Cloud Phone System", link: "solutions/CloudPhoneSystem" },
+        { label: "SMS", link: "solutions/SMS" },
+        { label: "Dialers", link: "solutions/Dialers" },
+        { label: "Global", link: "solutions/Global" },
+        { label: "Multi-location", link: "solutions/Multi-location" },
+        {
+          label: "Unified Communication",
+          link: "solutions/UnifiedCommunication",
+        },
+        { label: "Fax", link: "solutions/Fax" },
       ],
     },
   },
@@ -153,41 +184,183 @@ export const blogDeatiledPosts = [
   {
     id: "1",
     isFeatured: true,
-    category: "AI & VOIP",
-    date: "June 24, 2025",
+    image_1: Blog,
     title: "Why Businesses Choose VOIP for AI Chatbots and CRM Success",
     shortDesc:
-      "Learn how VOIP solutions are transforming AI chatbots and CRM platforms for modern businesses.",
+      "VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd. VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.",
     fullDesc:
-      "This is full detailed content for VOIP and AI Chatbots. Yeh text sirf blog detail page par show hoga.",
+      "VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd. VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.",
+    head_1: "Transforming Customer Relationships with AI.",
+    desc_1:
+      "Biotix combines the power of AI chatbots and advanced CRM capabilities to create a seamless customer experience. Its AI-driven approach ensures every customer interaction is personalized and efficient, whether it’s resolving a query, nurturing a lead, or closing a sale. By automating repetitive tasks, Biotix allows your team to focus on strategic efforts that drive growth.",
+    head_2: "Intelligent Insights for Better Decision-Making",
+    desc_2:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
+    image_2: Voiping,
+    head_3: "Scalability and Efficiency for Growing Businesses",
+    desc_3:
+      "Whether you’re a startup or an established enterprise, Biotix scales with your business. Its AI chatbot integration streamlines operations, reduces response times, and enhances customer satisfaction. Additionally, the platform’s automated workflows help businesses save time and resources.",
+    head_4: "Intelligent Insights for Better Decision-Making",
+    desc_4:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
+    head_5: "Intelligent Insights for Better Decision-Making",
+    desc_6:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
   },
   {
     id: "2",
-    isFeatured: false,
-    category: "AI Automation",
-    date: "June 20, 2025",
-    title: "Transforming Customer Relationships with AI",
+    isFeatured: true,
+    image_1: Blog,
+    title: "Why Businesses Choose VOIP for AI Chatbots and CRM Success",
     shortDesc:
-      "AI-powered chatbots are reshaping customer engagement and retention strategies.",
+      "VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd. VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.",
     fullDesc:
-      "This is full content for Transforming Customer Relationships with AI.",
+      "VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd. VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.",
+    head_1: "Transforming Customer Relationships with AI.",
+    desc_1:
+      "Biotix combines the power of AI chatbots and advanced CRM capabilities to create a seamless customer experience. Its AI-driven approach ensures every customer interaction is personalized and efficient, whether it’s resolving a query, nurturing a lead, or closing a sale. By automating repetitive tasks, Biotix allows your team to focus on strategic efforts that drive growth.",
+    head_2: "Intelligent Insights for Better Decision-Making",
+    desc_2:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
+    image_2: Voiping,
+    head_3: "Scalability and Efficiency for Growing Businesses",
+    desc_3:
+      "Whether you’re a startup or an established enterprise, Biotix scales with your business. Its AI chatbot integration streamlines operations, reduces response times, and enhances customer satisfaction. Additionally, the platform’s automated workflows help businesses save time and resources.",
+    head_4: "Intelligent Insights for Better Decision-Making",
+    desc_4:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
+    head_5: "Intelligent Insights for Better Decision-Making",
+    desc_6:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
   },
   {
     id: "3",
-    isFeatured: false,
-    category: "Business Growth",
-    date: "June 18, 2025",
-    title: "Scalability and Efficiency for Growing Businesses",
-    shortDesc: "How AI-driven platforms help businesses scale efficiently.",
-    fullDesc: "This is full content for Scalability and Efficiency blog.",
+    isFeatured: true,
+    image_1: Blog,
+    title: "Why Businesses Choose VOIP for AI Chatbots and CRM Success",
+    shortDesc:
+      "VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd. VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.",
+    fullDesc:
+      "VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd. VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.",
+    head_1: "Transforming Customer Relationships with AI.",
+    desc_1:
+      "Biotix combines the power of AI chatbots and advanced CRM capabilities to create a seamless customer experience. Its AI-driven approach ensures every customer interaction is personalized and efficient, whether it’s resolving a query, nurturing a lead, or closing a sale. By automating repetitive tasks, Biotix allows your team to focus on strategic efforts that drive growth.",
+    head_2: "Intelligent Insights for Better Decision-Making",
+    desc_2:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
+    image_2: Voiping,
+    head_3: "Scalability and Efficiency for Growing Businesses",
+    desc_3:
+      "Whether you’re a startup or an established enterprise, Biotix scales with your business. Its AI chatbot integration streamlines operations, reduces response times, and enhances customer satisfaction. Additionally, the platform’s automated workflows help businesses save time and resources.",
+    head_4: "Intelligent Insights for Better Decision-Making",
+    desc_4:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
+    head_5: "Intelligent Insights for Better Decision-Making",
+    desc_6:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
   },
   {
     id: "4",
-    isFeatured: false,
-    category: "Productivity",
-    date: "June 15, 2025",
-    title: "Enhancing Collaboration and Productivity with AI",
-    shortDesc: "AI tools that improve collaboration across teams.",
-    fullDesc: "This is full content for Enhancing Collaboration blog.",
+    isFeatured: true,
+    image_1: Blog,
+    title: "Why Businesses Choose VOIP for AI Chatbots and CRM Success",
+    shortDesc:
+      "VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd. VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.",
+    fullDesc:
+      "VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd. VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.",
+    head_1: "Transforming Customer Relationships with AI.",
+    desc_1:
+      "Biotix combines the power of AI chatbots and advanced CRM capabilities to create a seamless customer experience. Its AI-driven approach ensures every customer interaction is personalized and efficient, whether it’s resolving a query, nurturing a lead, or closing a sale. By automating repetitive tasks, Biotix allows your team to focus on strategic efforts that drive growth.",
+    head_2: "Intelligent Insights for Better Decision-Making",
+    desc_2:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
+    image_2: Voiping,
+    head_3: "Scalability and Efficiency for Growing Businesses",
+    desc_3:
+      "Whether you’re a startup or an established enterprise, Biotix scales with your business. Its AI chatbot integration streamlines operations, reduces response times, and enhances customer satisfaction. Additionally, the platform’s automated workflows help businesses save time and resources.",
+    head_4: "Intelligent Insights for Better Decision-Making",
+    desc_4:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
+    head_5: "Intelligent Insights for Better Decision-Making",
+    desc_6:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
+  },
+  {
+    id: "5",
+    isFeatured: true,
+    image_1: Blog,
+    title: "Why Businesses Choose VOIP for AI Chatbots and CRM Success",
+    shortDesc:
+      "VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd. VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.",
+    fullDesc:
+      "VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd. VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.",
+    head_1: "Transforming Customer Relationships with AI.",
+    desc_1:
+      "Biotix combines the power of AI chatbots and advanced CRM capabilities to create a seamless customer experience. Its AI-driven approach ensures every customer interaction is personalized and efficient, whether it’s resolving a query, nurturing a lead, or closing a sale. By automating repetitive tasks, Biotix allows your team to focus on strategic efforts that drive growth.",
+    head_2: "Intelligent Insights for Better Decision-Making",
+    desc_2:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
+    image_2: Voiping,
+    head_3: "Scalability and Efficiency for Growing Businesses",
+    desc_3:
+      "Whether you’re a startup or an established enterprise, Biotix scales with your business. Its AI chatbot integration streamlines operations, reduces response times, and enhances customer satisfaction. Additionally, the platform’s automated workflows help businesses save time and resources.",
+    head_4: "Intelligent Insights for Better Decision-Making",
+    desc_4:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
+    head_5: "Intelligent Insights for Better Decision-Making",
+    desc_6:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
+  },
+  {
+    id: "6",
+    isFeatured: true,
+    image_1: Blog,
+    title: "Why Businesses Choose VOIP for AI Chatbots and CRM Success",
+    shortDesc:
+      "VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd. VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.",
+    fullDesc:
+      "VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd. VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.",
+    head_1: "Transforming Customer Relationships with AI.",
+    desc_1:
+      "Biotix combines the power of AI chatbots and advanced CRM capabilities to create a seamless customer experience. Its AI-driven approach ensures every customer interaction is personalized and efficient, whether it’s resolving a query, nurturing a lead, or closing a sale. By automating repetitive tasks, Biotix allows your team to focus on strategic efforts that drive growth.",
+    head_2: "Intelligent Insights for Better Decision-Making",
+    desc_2:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
+    image_2: Voiping,
+    head_3: "Scalability and Efficiency for Growing Businesses",
+    desc_3:
+      "Whether you’re a startup or an established enterprise, Biotix scales with your business. Its AI chatbot integration streamlines operations, reduces response times, and enhances customer satisfaction. Additionally, the platform’s automated workflows help businesses save time and resources.",
+    head_4: "Intelligent Insights for Better Decision-Making",
+    desc_4:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
+    head_5: "Intelligent Insights for Better Decision-Making",
+    desc_6:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
+  },
+  {
+    id: "7",
+    isFeatured: true,
+    image_1: Blog,
+    title: "Why Businesses Choose VOIP for AI Chatbots and CRM Success",
+    shortDesc:
+      "VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd. VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.",
+    fullDesc:
+      "VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd. VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.VoIP Dialing Inc., CEO & Founder, Ben Navon announces the ribbon cutting ceremony celebrating the expansion of their VoIP solutions at their offices located at 5940 South Rainbow Blvd.",
+    head_1: "Transforming Customer Relationships with AI.",
+    desc_1:
+      "Biotix combines the power of AI chatbots and advanced CRM capabilities to create a seamless customer experience. Its AI-driven approach ensures every customer interaction is personalized and efficient, whether it’s resolving a query, nurturing a lead, or closing a sale. By automating repetitive tasks, Biotix allows your team to focus on strategic efforts that drive growth.",
+    head_2: "Intelligent Insights for Better Decision-Making",
+    desc_2:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
+    image_2: Voiping,
+    head_3: "Scalability and Efficiency for Growing Businesses",
+    desc_3:
+      "Whether you’re a startup or an established enterprise, Biotix scales with your business. Its AI chatbot integration streamlines operations, reduces response times, and enhances customer satisfaction. Additionally, the platform’s automated workflows help businesses save time and resources.",
+    head_4: "Intelligent Insights for Better Decision-Making",
+    desc_4:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
+    head_5: "Intelligent Insights for Better Decision-Making",
+    desc_6:
+      "INTERNET TELEPHONY has been the IP Communications Authority since 1998™. Beginning with the first issue, INTERNET TELEPHONY magazine has been providing unbiased views of the complicated converged communications space. For more information, please visit www.itmag.com. Follow INTERNET TELEPHONY magazine on Twitter or join our Linked In group. Subscribe or visit www.itmag.com.",
   },
 ];

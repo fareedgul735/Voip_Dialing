@@ -46,7 +46,7 @@ const Blogs = () => {
     },
 
     {
-      id: "1",
+      id: "5",
       category: "Featured",
       date: "June 24, 2025",
       title: "Why Businesses Choose VOIP for AI Chatbots and CRM Success",
@@ -55,7 +55,7 @@ const Blogs = () => {
       isFeatured: true,
     },
     {
-      id: "2",
+      id: "6",
       category: "Resource",
       date: "June 24, 2025",
       title: "Your Ultimate AI-Driven Partner for Business Growth",
@@ -63,7 +63,7 @@ const Blogs = () => {
       isFeatured: false,
     },
     {
-      id: "3",
+      id: "7",
       category: "Resource",
       date: "June 24, 2025",
       title: "Why Biotix is the Future of form Customer Management",
@@ -71,7 +71,7 @@ const Blogs = () => {
       isFeatured: false,
     },
     {
-      id: "4",
+      id: "8",
       category: "Resource",
       date: "June 24, 2025",
       title: "Sales and Support with Biotix's AI Powered CRM Solution",
@@ -79,6 +79,7 @@ const Blogs = () => {
       isFeatured: false,
     },
   ];
+  const featuredBlog = blogPosts[0];
 
   const tabs = ["Blog", "Product Data Sheet", "Press Release", "Advertisement"];
 
@@ -111,20 +112,22 @@ const Blogs = () => {
                   Blvd.
                 </p>
                 <Link
-                  // to={`/blogs/${id}`}
+                  to={`/blogs/${featuredBlog.id}`}
                   className="text-gray-500 font-semibold hover:text-orange-600 transition-colors"
                 >
                   Read more
                 </Link>
               </div>
               <div className="lg:w-[740px]">
-                <div className="rounded-xl p-8 h-full flex items-center justify-center">
-                  <img
-                    src={Blog}
-                    alt="Blog laptop"
-                    className="w-full  rounded-lg shadow-lg"
-                  />
-                </div>
+                <Link to={`/blogs/${featuredBlog.id}`}>
+                  <div className="rounded-xl p-8 h-full flex items-center justify-center">
+                    <img
+                      src={Blog}
+                      alt="Blog laptop"
+                      className="w-full  rounded-lg shadow-lg"
+                    />
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -143,11 +146,13 @@ const Blogs = () => {
                     className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
                   >
                     <div className="p-6">
-                      <img
-                        src={Blog}
-                        alt="Blog"
-                        className="w-full rounded-lg shadow-md"
-                      />
+                      <Link to={`/blogs/${post.id}`}>
+                        <img
+                          src={Blog}
+                          alt="Blog"
+                          className="w-full rounded-lg shadow-md"
+                        />
+                      </Link>
                     </div>
 
                     <div className="p-6">

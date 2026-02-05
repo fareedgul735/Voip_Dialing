@@ -66,31 +66,53 @@ const Navbar = () => {
                   opacity-0 invisible group-hover:visible group-hover:opacity-100
                   transition-all duration-200 z-50"
                   >
-                    <div className="w-[1200px] bg-white rounded-2xl shadow-2xl p-8">
+                    <div className="w-[1400px] bg-white rounded-2xl shadow-2xl p-8">
                       {Array.isArray(item.submenu) && (
-                        <div className="grid grid-cols-5 gap-6">
-                          {item.submenu.map((sub, i) => (
-                            <>
+                        <div className="grid grid-cols-4 md:grid-cols-5 gap-6">
+                          {item.submenu.slice(0, 8).map((sub, i) => (
+                            <div key={i}>
                               <NavLink
-                                key={i}
                                 to={sub.link}
                                 className={({ isActive }) =>
-                                  `p-5 rounded-xl transition
-                              ${
-                                isActive
-                                  ? "bg-orange-100 ring-2 ring-orange-400"
-                                  : "bg-orange-50 hover:bg-orange-100 hover:shadow-md"
-                              }`
+                                  `flex flex-col items-start p-5 rounded-xl transition
+            ${isActive ? "bg-orange-100 ring-2 ring-orange-400" : "bg-orange-50 hover:bg-orange-100 hover:shadow-md"}`
                                 }
                               >
-                                <h4 className="font-semibold text-lg mb-2">
-                                  {sub.label}
-                                </h4>
+                                <div className="flex items-center mb-3 space-x-3">
+                                  <div className="text-orange-500">
+                                    {sub.icon}
+                                  </div>
+                                  <h4 className="font-semibold text-lg">
+                                    {sub.label}
+                                  </h4>
+                                </div>
                                 <p className="text-sm text-gray-600">
-                                  Everything your business needs
+                                  {sub.description}
                                 </p>
                               </NavLink>
-                            </>
+
+                              <div className="mt-4 space-y-6">
+                                {(
+                                  sub.enterpriseNames || [
+                                    `Enterprise`,
+                                    `Enterprise`,
+                                    `Enterprise`,
+                                    `Enterprise`,
+                                    `Enterprise`,
+                                    `Enterprise`,
+                                    `Enterprise`,
+                                    `Enterprise`,
+                                  ]
+                                ).map((name, idx) => (
+                                  <p
+                                    key={idx}
+                                    className="text-sm hover:bg-orange-50 py-1 px-1 rounded-sm text-gray-800 hover:text-orange-600 transition cursor-pointer"
+                                  >
+                                    {name}
+                                  </p>
+                                ))}
+                              </div>
+                            </div>
                           ))}
                         </div>
                       )}
@@ -146,9 +168,18 @@ const Navbar = () => {
                           <div>
                             <h4 className="font-semibold mb-3">By Industry</h4>
                             <ul className="space-y-2 text-sm">
-                              {item.submenu.industry?.map((b, i) => (
-                                <li key={i} className="hover:text-orange-600">
-                                  {b}
+                              {item.submenu.industry.map((b, i) => (
+                                <li key={i}>
+                                  <NavLink
+                                    to={`/${b.link}`}
+                                    className={({ isActive }) =>
+                                      isActive
+                                        ? "text-orange-600 font-semibold"
+                                        : "hover:text-orange-600"
+                                    }
+                                  >
+                                    {b.label}
+                                  </NavLink>
                                 </li>
                               ))}
                             </ul>
@@ -157,9 +188,18 @@ const Navbar = () => {
                           <div>
                             <h4 className="font-semibold mb-3">By Solution</h4>
                             <ul className="space-y-2 text-sm">
-                              {item.submenu.solution?.map((b, i) => (
-                                <li key={i} className="hover:text-orange-600">
-                                  {b}
+                              {item.submenu.solution.map((b, i) => (
+                                <li key={i}>
+                                  <NavLink
+                                    to={`/${b.link}`}
+                                    className={({ isActive }) =>
+                                      isActive
+                                        ? "text-orange-600 font-semibold"
+                                        : "hover:text-orange-600"
+                                    }
+                                  >
+                                    {b.label}
+                                  </NavLink>
                                 </li>
                               ))}
                             </ul>
