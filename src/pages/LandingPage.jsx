@@ -21,7 +21,7 @@ const LandingPage = () => {
       <div className="p-[12px] py-12 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
         <HeroSection />
       </div>
-      <div className="w-fullp-[12px] py-12 h-70 flex justify-end mt-12 mb-12">
+      <div className="w-full p-[12px] py-12 h-70 flex justify-end mt-12 mb-12">
         <BrandName />
       </div>
       <div className="w-full bg-[#FAF9F6] p-[12px] py-12">

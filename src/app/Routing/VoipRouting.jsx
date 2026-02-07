@@ -28,6 +28,8 @@ import BulkSMS from "../../pages/products/BulkSms.jsx";
 import VoipLines from "../../pages/products/VoipLines.jsx";
 import PhoneNumbers from "../../pages/products/PhoneNumbers.jsx";
 import Equipement from "../../pages/products/Equipement.jsx";
+import Checkcout from "../../pages/Checkcout.jsx";
+import ShoppingCart from "../../pages/ShoppingCart.jsx";
 
 // Layouts
 const Layout = lazy(() => import("../../layout/Layout"));
@@ -69,6 +71,8 @@ const routes = createBrowserRouter([
       { path: "blogs", element: withSuspense(Blogs) },
       { path: "/blogs/:id", element: <BlogDetail /> },
       { path: "pricing", element: withSuspense(Pricing) },
+      { path: "checkout", element: <Checkcout /> },
+      { path: "shoppingCart", element: <ShoppingCart /> },
       { path: "contact", element: withSuspense(Contact) },
       { path: "solutions/smallbusiness", element: withSuspense(Solution) },
       { path: "solutions/retails", element: <Retail /> },

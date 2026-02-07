@@ -52,13 +52,13 @@ const BulkSMS = () => {
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Reliable <span className="text-blue-600">Cloud PBX</span> for{" "}
-                <span className="text-blue-600">Growing</span> Businesses
+                VoIP Dialing <span className="text-blue-600">Bulk SMS</span>{" "}
+                <span className="text-blue-600">Like</span> No Other SMS
               </h1>
 
               <p className="text-gray-700 mb-6">
-                A modern cloud-based phone system that keeps your team connected
-                anytime, anywhere.
+                Our Business SMS is an easy and cost-effective way to
+                communicate with your opted-in customers.
               </p>
 
               <ul className="space-y-3 mb-8 text-gray-700">
@@ -81,9 +81,6 @@ const BulkSMS = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button className="bg-orange-500 shadow-sm  text-white px-6 py-3 rounded-full hover:bg-blue-500 transition">
                   See Pricing
-                </button>
-                <button className="bg-white shadow-sm rounded-full text-orange-500 hover:text-white px-6 py-3 hover:bg-blue-500 transition">
-                  Talk Sales
                 </button>
               </div>
             </div>

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import BrandName from "../ui/BrandName";
+import { Link } from "react-router";
 
 const VoIPPricingInterface = () => {
   const [activeStep, setActiveStep] = useState(null);
@@ -7,6 +8,46 @@ const VoIPPricingInterface = () => {
   const [searchValue, setSearchValue] = useState("72");
   const [selectedNumbers, setSelectedNumbers] = useState([]);
   const [showAllNumbers, setShowAllNumbers] = useState(false);
+
+  const equipmentBrands = [
+    {
+      brand: "Grandstream",
+      products: [
+        { name: "GXP1628 Small Business HD IP Phone", price: "$85" },
+        {
+          name: "GXP2130v2 3-Line Enterprise HD IP Phone with Bluetooth (Includes Power Supply)",
+          price: "$99",
+        },
+        { name: "GXP2135 Multi-line High Performance IP Phone", price: "$115" },
+        { name: "GXP2140 Enterprise 4-Line IP Phone", price: "$139" },
+        { name: "GXP2160 Enterprise 6-Line IP Phone", price: "$159" },
+      ],
+    },
+    {
+      brand: "Yealink",
+      products: [
+        { name: "T31P Entry Level IP Phone", price: "$79" },
+        { name: "T43U Gigabit Business IP Phone", price: "$129" },
+        { name: "T46U Executive IP Phone", price: "$179" },
+      ],
+    },
+    {
+      brand: "Polycom",
+      products: [
+        { name: "VVX 250 Business IP Phone", price: "$139" },
+        { name: "VVX 350 Mid-Range IP Phone", price: "$179" },
+        { name: "VVX 450 Color Display IP Phone", price: "$229" },
+      ],
+    },
+    {
+      brand: "Cisco",
+      products: [
+        { name: "Cisco 7821 IP Phone", price: "$149" },
+        { name: "Cisco 8841 Business IP Phone", price: "$249" },
+        { name: "Cisco 8861 Video IP Phone", price: "$329" },
+      ],
+    },
+  ];
 
   const availableNumbers = [
     "7205908898",
@@ -92,6 +133,7 @@ const VoIPPricingInterface = () => {
                 setOpenCollapse(step.collapseId);
               }}
               className={`flex justify-center items-center py-1 px-17 text-center font-medium cursor-pointer transition-colors
+                border border-r border-white
                 ${
                   activeStep === step.id
                     ? "bg-orange-500 text-white"
@@ -112,7 +154,7 @@ const VoIPPricingInterface = () => {
             {collapseItems.map((item) => (
               <div
                 key={item.id}
-                className="bg-white rounded-md border border-orange-400 overflow-hidden"
+                className="bg-orange-50 rounded-md border border-orange-400 overflow-hidden"
               >
                 <div
                   onClick={() => {
@@ -234,9 +276,9 @@ const VoIPPricingInterface = () => {
                     )}
 
                     {item.id === "cloud" && (
-                      <div className="space-y-6">
+                      <div className="space-y-6 bg-orange-50">
                         <div className="border border-orange-300 rounded-md p-4">
-                          <h3 className="font-semibold text-orange-500 mb-4 border-b border-orange-200 pb-2">
+                          <h3 className="font-semibold text-black mb-4 border-b border-orange-200 pb-2">
                             Dedicated Hosted Phone System
                           </h3>
 
@@ -287,8 +329,8 @@ const VoIPPricingInterface = () => {
                           ))}
                         </div>
 
-                        <div className="border border-orange-300 rounded-md p-4">
-                          <h3 className="font-semibold text-orange-500 mb-4 border-b border-orange-200 pb-2">
+                        <div className="bg-orange-50 border border-orange-300 rounded-md p-4">
+                          <h3 className="font-semibold text-black mb-4 border-b border-orange-200 pb-2">
                             Optional Add-On Features
                           </h3>
 
@@ -359,7 +401,7 @@ const VoIPPricingInterface = () => {
                           ))}
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="bg-orange-50 grid grid-cols-2 gap-6">
                           <div className="border border-orange-300 rounded-md p-4">
                             <h4 className="font-semibold mb-3 flex items-center gap-2">
                               <span className="text-orange-500">●</span>
@@ -420,10 +462,354 @@ const VoIPPricingInterface = () => {
                       </div>
                     )}
 
-                    {item.id !== "phone" && item.id !== "cloud" && (
-                      <p className="text-sm text-gray-600">
-                        Dummy content for {item.label}
-                      </p>
+                    {item.id === "dialing" && (
+                      <div className="space-y-6 bg-orange-50">
+                        <div className="border border-orange-300 rounded-md overflow-hidden">
+                          <div className="bg-orange-100 px-4 py-2 flex justify-between items-center">
+                            <h3 className="font-semibold text-gray-800 text-sm">
+                              Extensions with Unlimited In & Out Minutes
+                            </h3>
+                            <label className="relative inline-block w-10 h-5">
+                              <input type="checkbox" className="sr-only peer" />
+                              <span className="absolute inset-0 bg-gray-300 rounded-full peer-checked:bg-orange-500"></span>
+                              <span className="absolute left-1 top-0.5 w-4 h-4 bg-white rounded-full peer-checked:translate-x-5 transition-transform"></span>
+                            </label>
+                          </div>
+
+                          <div className="p-4 text-sm text-gray-700">
+                            <p className="italic mb-4">
+                              * 1 to 4 Extensions = <b>$24.99/month</b>, 5 or
+                              more = <b>$19.99/month</b>
+                            </p>
+
+                            <div className="flex items-center justify-end gap-3">
+                              <button className="px-3 py-1 border border-orange-400 rounded text-orange-500">
+                                −
+                              </button>
+                              <span className="px-4 py-1 border border-orange-400 rounded bg-yellow-100 font-semibold">
+                                Quantity
+                              </span>
+                              <button className="px-3 py-1 border border-orange-400 rounded text-orange-500">
+                                +
+                              </button>
+                            </div>
+
+                            <div className="text-right mt-3 font-semibold">
+                              $0.00 / month
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="border border-orange-300 rounded-md overflow-hidden">
+                          <div className="bg-orange-100 px-4 py-2">
+                            <h3 className="font-semibold text-gray-800 text-sm">
+                              Metered Usage – SIP Trunks (Unlimited Concurrent
+                              Calls)
+                            </h3>
+                          </div>
+
+                          <div className="p-4 space-y-4 text-sm">
+                            <p className="italic text-gray-600">
+                              * Incoming: Local $0.007/min, TF $0.015/min
+                            </p>
+
+                            {[
+                              {
+                                name: "Pay As You Go",
+                                rate: "$0.03/min in & out",
+                                price: "$10.00/month",
+                              },
+                              {
+                                name: "Outbound Small Office",
+                                rate: "$0.0150/min*",
+                                price: "$150.00/month",
+                              },
+                              {
+                                name: "Outbound Saving",
+                                rate: "$0.0099/min*",
+                                price: "$250.00/month",
+                              },
+                              {
+                                name: "Outbound Pro",
+                                rate: "$0.0079/min*",
+                                price: "$500.00/month",
+                              },
+                            ].map((plan, i) => (
+                              <div
+                                key={i}
+                                className="flex justify-between items-center border-b border-orange-200 pb-3"
+                              >
+                                <div>
+                                  <div className="font-medium text-gray-800">
+                                    {plan.name}
+                                  </div>
+                                  <div className="text-xs text-gray-600">
+                                    {plan.rate}
+                                  </div>
+                                </div>
+
+                                <div className="flex items-center gap-4">
+                                  <span className="font-semibold">
+                                    {plan.price}
+                                  </span>
+                                  <label className="relative inline-block w-10 h-5">
+                                    <input
+                                      type="checkbox"
+                                      className="sr-only peer"
+                                    />
+                                    <span className="absolute inset-0 bg-gray-300 rounded-full peer-checked:bg-orange-500"></span>
+                                    <span className="absolute left-1 top-0.5 w-4 h-4 bg-white rounded-full peer-checked:translate-x-5 transition-transform"></span>
+                                  </label>
+                                </div>
+                              </div>
+                            ))}
+
+                            <div className="pt-4 space-y-3">
+                              {[
+                                {
+                                  name: "Outbound – Dialer Flat",
+                                  rate: "$0.0079/min*",
+                                  price: "$100.00/month",
+                                },
+                                {
+                                  name: "Outbound – Dialer Max",
+                                  rate: "Blended* (Download Rates)",
+                                  price: "$500.00/month",
+                                },
+                              ].map((plan, i) => (
+                                <div
+                                  key={i}
+                                  className="flex justify-between items-center"
+                                >
+                                  <div>
+                                    <div className="font-medium text-gray-800">
+                                      {plan.name}
+                                    </div>
+                                    <div className="text-xs text-gray-600">
+                                      {plan.rate}
+                                    </div>
+                                  </div>
+
+                                  <div className="flex items-center gap-4">
+                                    <span className="font-semibold">
+                                      {plan.price}
+                                    </span>
+                                    <label className="relative inline-block w-10 h-5">
+                                      <input
+                                        type="checkbox"
+                                        className="sr-only peer"
+                                      />
+                                      <span className="absolute inset-0 bg-gray-300 rounded-full peer-checked:bg-orange-500"></span>
+                                      <span className="absolute left-1 top-0.5 w-4 h-4 bg-white rounded-full peer-checked:translate-x-5 transition-transform"></span>
+                                    </label>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                    {item.id === "sms" && (
+                      <div className="space-y-6 bg-orange-50">
+                        {/* Conversational SMS */}
+                        <div className="border border-orange-300 rounded-md overflow-hidden">
+                          <div className="bg-orange-100 px-4 py-2 flex justify-between items-center">
+                            <h3 className="font-semibold text-sm text-gray-800">
+                              Conversational SMS{" "}
+                              <span className="font-normal">
+                                $4.99 / number each
+                              </span>
+                            </h3>
+                            <span className="text-xs text-gray-600 cursor-pointer">
+                              Click to Select
+                            </span>
+                          </div>
+
+                          <div className="p-6 bg-white">
+                            <div className="flex items-center gap-4 bg-orange-50 border-l-4 border-orange-400 px-6 py-4 text-center w-full justify-center">
+                              <div>
+                                <div className="font-medium text-gray-800">
+                                  No phone number was selected
+                                </div>
+                                <div className="text-sm text-gray-600">
+                                  You can go to above <b>'Phone Number'</b> tab
+                                  to add numbers.
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="border border-orange-300 rounded-md overflow-hidden">
+                          <div className="bg-orange-100 px-4 py-2">
+                            <h3 className="font-semibold text-sm text-gray-800">
+                              Conversational & Campaign SMS – Metered
+                              <span className="font-normal">
+                                {" "}
+                                (1 credit = 1 message)
+                              </span>
+                            </h3>
+                          </div>
+
+                          <div className="p-6 bg-white">
+                            <table className="w-full text-sm">
+                              <thead>
+                                <tr className="bg-orange-50 text-gray-700">
+                                  <th className="text-left px-4 py-2">
+                                    SMS Count
+                                  </th>
+                                  <th className="text-center px-4 py-2">
+                                    Price Per Month
+                                  </th>
+                                  <th className="text-right px-4 py-2">
+                                    Selected Count
+                                  </th>
+                                </tr>
+                              </thead>
+
+                              <tbody>
+                                {[
+                                  { count: "2,500 msgs/month", price: "$15" },
+                                  { count: "10,000 msgs/month", price: "$55" },
+                                  {
+                                    count: "100,000 msgs/month",
+                                    price: "$470",
+                                  },
+                                  {
+                                    count: "1,000,000 msgs/month",
+                                    price: "$4,000",
+                                  },
+                                ].map((row, i) => (
+                                  <tr
+                                    key={i}
+                                    className="border-b last:border-0 hover:bg-orange-50"
+                                  >
+                                    <td className="px-4 py-4">{row.count}</td>
+                                    <td className="px-4 py-4 text-center font-medium">
+                                      {row.price}
+                                    </td>
+                                    <td className="px-4 py-4">
+                                      <div className="flex justify-end items-center gap-2">
+                                        <button className="w-7 h-7 border border-orange-400 rounded text-orange-500">
+                                          −
+                                        </button>
+                                        <div className="w-10 h-7 border border-orange-400 rounded text-center text-sm flex items-center justify-center">
+                                          0
+                                        </div>
+                                        <button className="w-7 h-7 border border-orange-400 rounded text-orange-500">
+                                          +
+                                        </button>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+
+                            <div className="text-xs text-gray-600 italic text-center mt-6">
+                              * Conversational SMS & Campaign SMS for all
+                              eligible phone numbers are included with the
+                              selected metered plan above
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="bg-orange-50 border-l-4 border-orange-400 px-6 py-5 text-center">
+                          <div className="font-medium text-gray-800">
+                            No Package was selected
+                          </div>
+                          <div className="text-sm text-gray-600 mt-1">
+                            In the table above, select an Unlimited 1 to 1
+                            Conversational SMS to the number/s you wish, or
+                            choose a metered package which will apply to all
+                            eligible numbers on your account and enable A2P
+                            functions.
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                    {item.id === "equipment" && (
+                      <div className="space-y-4 bg-orange-50">
+                        <div className="text-sm text-gray-700">
+                          <div className="font-medium">Need to buy phones?</div>
+                          <div className="text-xs text-gray-600">
+                            <u>Limited Time Offer:</u> Up to 10% of equipment
+                            purchase is credited back against 2nd month MRC
+                            billing
+                          </div>
+                        </div>
+
+                        {equipmentBrands.map((section, idx) => (
+                          <details
+                            key={idx}
+                            className="border border-orange-400 rounded-md bg-white"
+                          >
+                            {/* Header */}
+                            <summary className="cursor-pointer list-none flex justify-between items-center bg-orange-100 px-4 py-2 font-medium text-gray-800">
+                              <span>{section.brand}</span>
+                              <span className="text-sm text-gray-600">
+                                Open
+                              </span>
+                            </summary>
+
+                            {/* Body */}
+                            <div className="p-4">
+                              <table className="w-full text-sm">
+                                <thead>
+                                  <tr className="bg-orange-50 text-gray-700">
+                                    <th className="text-left px-3 py-2">
+                                      Image
+                                    </th>
+                                    <th className="text-left px-3 py-2">
+                                      Name
+                                    </th>
+                                    <th className="text-center px-3 py-2">
+                                      Price
+                                    </th>
+                                    <th className="text-right px-3 py-2">
+                                      Qty
+                                    </th>
+                                  </tr>
+                                </thead>
+
+                                <tbody>
+                                  {section.products.map((p, i) => (
+                                    <tr
+                                      key={i}
+                                      className="border-b last:border-0 hover:bg-orange-50"
+                                    >
+                                      <td className="px-3 py-3">
+                                        <div className="w-12 h-12 bg-gray-100 rounded" />
+                                      </td>
+
+                                      <td className="px-3 py-3">{p.name}</td>
+
+                                      <td className="px-3 py-3 text-center font-medium">
+                                        {p.price}
+                                      </td>
+
+                                      <td className="px-3 py-3">
+                                        <div className="flex justify-end items-center gap-2">
+                                          <button className="w-7 h-7 border border-orange-400 rounded text-orange-500">
+                                            −
+                                          </button>
+                                          <div className="px-3 py-1 border border-orange-400 rounded text-xs">
+                                            Quantity
+                                          </div>
+                                          <button className="w-7 h-7 border border-orange-400 rounded text-orange-500">
+                                            +
+                                          </button>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
+                            </div>
+                          </details>
+                        ))}
+                      </div>
                     )}
                   </div>
                 )}
@@ -445,15 +831,15 @@ const VoIPPricingInterface = () => {
                 </div>
               </div>
 
-              {/* Footer with Buttons */}
               <div className="p-[12px] shadow-md pb-6 flex items-center gap-3">
                 <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-10 py-3 rounded-full transition-colors">
                   Next
                 </button>
-
-                <button className="bg-white hover:bg-orange-50 text-orange-500 font-semibold px-8 py-3 rounded-full border-2 border-orange-500 transition-colors">
-                  Checkout
-                </button>
+                <Link to={"/shoppingcart"}>
+                  <button className="bg-white hover:bg-orange-50 text-orange-500 font-semibold px-8 py-3 rounded-full border-2 border-orange-500 transition-colors">
+                    Checkout
+                  </button>
+                </Link>
 
                 <div className="ml-auto text-right">
                   <div className="text-sm text-gray-700 mb-0.5">

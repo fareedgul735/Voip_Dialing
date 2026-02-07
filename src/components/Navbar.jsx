@@ -216,7 +216,7 @@ const Navbar = () => {
 
         <div className="hidden lg:flex items-center gap-4">
           <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
-            <Link to={"/pricing"}>
+            <Link to={"/shoppingCart"}>
               <ShoppingCart size={18} />
             </Link>
           </div>
