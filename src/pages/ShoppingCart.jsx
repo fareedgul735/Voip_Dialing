@@ -29,10 +29,14 @@ export default function ShoppingCart() {
   return (
     <div className="w-full bg-gradient-to-b from-red-50 via-white to-white p-[12px] py-12">
       <div className="mx-12 grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 bg-orange-50 rounded-2xl border-1 border-orange-300 p-6">
-          <h2 className="text-xl font-semibold mb-6">Shopping Cart</h2>
+        <div className="lg:col-span-2 bg-orange-50 rounded-2xl border-1 border-orange-300">
+          <div className="bg-orange-100 border-b-2 border-orange-400 px-6 py-3">
+            <h1 className="text-md font-bold text-gray-900">
+              Shopping Cart
+            </h1>
+          </div>
 
-          <div className="space-y-2">
+          <div className="space-y-2 p-6">
             {cartItems.map((item) => (
               <div
                 key={item.id}
