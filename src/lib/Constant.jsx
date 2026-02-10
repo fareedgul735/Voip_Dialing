@@ -1,4 +1,11 @@
 import { DollarSign, Phone, Shield, Users } from "lucide-react";
+import {
+  ShieldCheck,
+  RefreshCw,
+  TrendingUp,
+  MapPin,
+} from "lucide-react";
+
 import { Cloud, MessageCircle, PhoneCall, Hash, HardDrive } from "lucide-react";
 import Blog from "../../public/blog.png";
 import Voiping from "../../public/Voiping.png";
@@ -30,16 +37,16 @@ export const Card = [
 ];
 
 export const features = [
-  { text: "Smart Auto Attendant (IVR)", column: 1 },
-  { text: "Built-in Conference Rooms", column: 1 },
-  { text: "Call Tracking & Analytics", column: 1 },
-  { text: "Fast, Turnkey Deployment", column: 1 },
-  { text: "Call Queues & Ring Groups", column: 1 },
-  { text: "Easy Phone Number Porting", column: 1 },
-  { text: "Fast, Turnkey Deployment", column: 2 },
-  { text: "Holiday & Custom Greetings", column: 2 },
-  { text: "Follow-Me & Find-Me Routing", column: 2 },
-  { text: "Agent Monitoring & Call Whispering", column: 2 },
+  { text: "Auto Attendant (IVR)", column: 1 },
+  { text: "Call Queues & Intelligent Call Routing", column: 1 },
+  { text: "Ring Groups & Hunt Groups", column: 1 },
+  { text: "Voicemail to Email", column: 1 },
+  { text: "Call Recording & Call Logs", column: 1 },
+  { text: "Conference Calling", column: 1 },
+  { text: "Time-Based Routing", column: 2 },
+  { text: "Caller ID & Call Blocking", column: 2 },
+  { text: "Mobile & Desktop Softphones", column: 2 },
+  { text: "Number Porting (Keep your Las Vegas numbers)", column: 2 },
   { text: "Voicemail & Voicemail-to-Email", column: 3 },
   { text: "Custom Music on Hold", column: 3 },
   { text: "Flexible Call Recording Options", column: 3 },
@@ -53,45 +60,54 @@ export const services = [
     id: 1,
     image: cloudService2,
     icon: Users,
-    title: "Cloud Service",
+    title: "Local & Remote Team Connectivity",
     description:
-      "These tools consolidate data from various touchpoints, offering.",
+      "Connect in-office and remote teams across Las Vegas with one unified Cloud PBX system that works on desk phones, mobiles, and desktops.",
     iconColor: "bg-orange-500",
   },
   {
     id: 2,
     image: cloudService1,
-    icon: Phone,
-    title: "Cloud Service",
+    icon: PhoneCall,
+    title: "Crystal-Clear Business Calling",
     description:
-      "These tools consolidate data from various touchpoints, offering.",
+      "Enjoy reliable, low-latency VoIP calling optimized for Las Vegas businesses, delivering professional voice quality for every customer interaction.",
     iconColor: "bg-orange-500",
   },
   {
     id: 3,
     image: cloudService1,
-    icon: Cloud,
-    title: "Cloud Service",
+    icon: ShieldCheck,
+    title: "Secure Cloud PBX Infrastructure",
     description:
-      "These tools consolidate data from various touchpoints, offering.",
+      "Protect your business communications with encrypted voice traffic, secure access, and redundant cloud infrastructure built for Las Vegas enterprises.",
     iconColor: "bg-orange-500",
   },
   {
     id: 4,
     image: cloudService1,
-    icon: Phone,
-    title: "Cloud Service",
+    icon: RefreshCw,
+    title: "Always-On Business Continuity",
     description:
-      "These tools consolidate data from various touchpoints, offering.",
+      "Keep your Las Vegas business reachable during outages with automatic call rerouting, failover, and disaster recovery support.",
     iconColor: "bg-orange-500",
   },
   {
     id: 5,
     image: cloudService1,
-    icon: Cloud,
-    title: "Cloud Service",
+    icon: TrendingUp,
+    title: "Instant Scalability for Business Growth",
     description:
-      "These tools consolidate data from various touchpoints, offering.",
+      "Scale your Cloud PBX instantly by adding users, extensions, or numbers—ideal for growing Las Vegas companies and seasonal demand.",
+    iconColor: "bg-orange-500",
+  },
+  {
+    id: 6,
+    image: cloudService1,
+    icon: MapPin,
+    title: "Las Vegas Local Number Presence",
+    description:
+      "Build trust with customers using local Las Vegas phone numbers while managing calls centrally through a powerful Cloud PBX platform.",
     iconColor: "bg-orange-500",
   },
 ];

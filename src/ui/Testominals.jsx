@@ -1,5 +1,5 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
+import { FileText, BookOpen, LifeBuoy } from "lucide-react";
 import M1 from "../../public/M1.png";
 import M2 from "../../public/M2.png";
 import M3 from "../../public/M3.png";
@@ -82,22 +82,28 @@ const Testominals = () => {
 
   const services = [
     {
-      title: "Cloud PBX Service",
+      id: 1,
+      icon: M2,
+      title: "Cloud PBX Service in Las Vegas",
       description:
-        "The system allows for precise campaign starting enabling marketers to plan.",
-      image: M4,
+        "Learn how Cloud PBX phone systems help Las Vegas businesses improve call handling, reduce costs, and deliver a professional customer experience.",
+      iconColor: "bg-orange-500",
     },
     {
-      title: "Cloud PBX Service",
+      id: 2,
+      icon: M2,
+      title: "VoIP Solutions for Growing Businesses",
       description:
-        "The system allows for precise campaign starting enabling marketers to plan.",
-      image: M2,
+        "Explore how scalable VoIP and Cloud PBX services support fast-growing Las Vegas companies, remote teams, and multi-location offices.",
+      iconColor: "bg-orange-500",
     },
     {
-      title: "Cloud PBX Service",
+      id: 3,
+      icon: M2,
+      title: "Cloud PBX Support & Best Practices",
       description:
-        "The system allows for precise campaign starting enabling marketers to plan.",
-      image: M2,
+        "Discover best practices, setup tips, and support insights to get the most out of your Cloud PBX phone system in Las Vegas.",
+      iconColor: "bg-orange-500",
     },
   ];
 
@@ -253,7 +259,7 @@ const Testominals = () => {
                   }}
                 >
                   <img
-                    src={service.image}
+                    src={service.icon}
                     alt="service"
                     className={`object-contain transition-all duration-300
     ${index === 1 ? "w-[316px] h-[380px] rounded-2xl" : "w-[316px] h-[331px]"}`}
