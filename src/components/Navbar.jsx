@@ -35,7 +35,7 @@ const Navbar = () => {
 
   return (
     <header className="bg-white shadow sticky top-0 z-50 w-full">
-      <div className="mx-12 flex justify-between items-center px-4 py-4">
+      <div className="mx-0 lg:mx-12 flex justify-between items-center px-4 py-4">
         <div className="flex gap-12 justify-center items-center">
           <img src={logo} alt="logo" className="w-20" />
           <ul className="hidden lg:flex gap-2 items-center ">
@@ -244,11 +244,14 @@ const Navbar = () => {
         >
           <Menu size={22} />
         </button>
-
         <Drawer placement="left" onClose={() => setOpen(false)} open={open}>
-          <img src={logo} alt="logo" className="w-32 mx-auto mb-6" />
+          {/* Logo */}
+          <div className="border-b pb-6 mb-6">
+            <img src={logo} alt="logo" className="w-36 mx-auto" />
+          </div>
 
-          <ul className="flex flex-col gap-4">
+          {/* Navigation */}
+          <ul className="flex flex-col gap-6">
             {navLinks.map((item) => (
               <li key={item.id}>
                 {!item.submenu ? (
@@ -256,25 +259,29 @@ const Navbar = () => {
                     to={item.link}
                     onClick={() => setOpen(false)}
                     className={({ isActive }) =>
-                      isActive
-                        ? "text-orange-600 font-semibold"
-                        : "text-gray-700 hover:text-orange-600 transition-colors"
+                      `block text-[15px] font-medium transition-all ${
+                        isActive
+                          ? "text-blue-600"
+                          : "text-gray-800 hover:text-blue-600"
+                      }`
                     }
                   >
                     {item.label}
                   </NavLink>
                 ) : (
                   <>
+                    {/* Main Section Label */}
                     <p
-                      className={`font-semibold mb-2 ${
+                      className={`text-[15px] font-semibold mb-3 ${
                         isSubmenuActive(item.submenu)
-                          ? "text-orange-600"
-                          : "text-gray-700"
+                          ? "text-blue-600"
+                          : "text-gray-900"
                       }`}
                     >
                       {item.label}
                     </p>
 
+                    {/* Array Submenu */}
                     {Array.isArray(item.submenu) &&
                       item.submenu.map((sub, i) => (
                         <NavLink
@@ -282,10 +289,10 @@ const Navbar = () => {
                           to={sub.link}
                           onClick={() => setOpen(false)}
                           className={({ isActive }) =>
-                            `block text-sm pl-4 mb-1 transition-colors ${
+                            `block text-[14px] pl-4 mb-2 transition-all ${
                               isActive
-                                ? "text-orange-600 font-medium"
-                                : "text-gray-600 hover:text-orange-500"
+                                ? "text-blue-600 font-medium"
+                                : "text-gray-600 hover:text-blue-500"
                             }`
                           }
                         >
@@ -293,13 +300,15 @@ const Navbar = () => {
                         </NavLink>
                       ))}
 
+                    {/* Object Submenu (Grouped like RingCentral mega style) */}
                     {typeof item.submenu === "object" &&
                       !Array.isArray(item.submenu) &&
                       Object.entries(item.submenu).map(([key, arr], idx) => (
-                        <div key={idx} className="pl-4 mb-2">
-                          <p className="text-gray-400 uppercase text-xs mb-1">
+                        <div key={idx} className="pl-4 mb-4">
+                          <p className="text-gray-400 uppercase text-xs tracking-wider mb-2">
                             {key.replace(/([A-Z])/g, " $1")}
                           </p>
+
                           {arr.map((sub, i) =>
                             sub.link ? (
                               <NavLink
@@ -307,10 +316,10 @@ const Navbar = () => {
                                 to={sub.link}
                                 onClick={() => setOpen(false)}
                                 className={({ isActive }) =>
-                                  `block text-sm pl-4 mb-1 transition-colors ${
+                                  `block text-[14px] mb-2 transition-all ${
                                     isActive
-                                      ? "text-orange-600 font-medium"
-                                      : "text-gray-600 hover:text-orange-500"
+                                      ? "text-blue-600 font-medium"
+                                      : "text-gray-600 hover:text-blue-500"
                                   }`
                                 }
                               >
@@ -319,7 +328,7 @@ const Navbar = () => {
                             ) : (
                               <span
                                 key={i}
-                                className="block text-sm pl-4 mb-1 text-gray-400"
+                                className="block text-[14px] mb-2 text-gray-400"
                               >
                                 {sub}
                               </span>
@@ -333,19 +342,37 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <div className="mt-6 flex flex-col gap-3 items-center">
-            <Link to="/signin" className="text-gray-700 hover:text-orange-600">
+          {/* Divider */}
+          <div className="border-t my-6"></div>
+
+          {/* Auth Buttons (RingCentral Style) */}
+          <div className="flex flex-col gap-3">
+            <Link
+              to="/signin"
+              className="w-full text-center border border-gray-300 py-2 rounded-lg text-gray-700 font-medium hover:border-blue-600 hover:text-blue-600 transition-all"
+            >
               Login
             </Link>
-            <Link to="/signup" className="text-gray-700 hover:text-orange-600">
+
+            <Link
+              to="/signup"
+              className="w-full text-center bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition-all"
+            >
               Get Started
             </Link>
           </div>
 
-          <div className="mt-6 flex justify-center gap-3 text-white">
-            <Facebook size={16} className="hover:text-orange-500" />
-            <Twitter size={16} className="hover:text-orange-500" />
-            <Linkedin size={16} className="hover:text-orange-500" />
+          {/* Social Icons */}
+          <div className="mt-8 flex justify-center gap-5 text-gray-500">
+            <Facebook
+              size={18}
+              className="hover:text-blue-600 transition-all"
+            />
+            <Twitter size={18} className="hover:text-blue-600 transition-all" />
+            <Linkedin
+              size={18}
+              className="hover:text-blue-600 transition-all"
+            />
           </div>
         </Drawer>
       </div>

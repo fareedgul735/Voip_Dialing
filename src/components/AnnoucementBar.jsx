@@ -4,7 +4,7 @@ import { Mail, Phone, Facebook, Twitter, Linkedin } from "lucide-react";
 const AnnouncementBar = () => {
   return (
     <div className="bg-sky-600 text-white text-sm">
-      <div className="mx-12 px-8 py-2 overflow-x-auto scrollbar-hide">
+      <div className="mx-0 lg:mx-12 px-8 py-2 overflow-x-auto scrollbar-hide">
         <div className="flex justify-start lg:justify-between items-center gap-6 px-4 lg:px-0">
           <div className="flex gap-8 flex-shrink-0">
             <span className="flex justify-center items-center gap-2">

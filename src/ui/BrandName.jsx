@@ -51,46 +51,59 @@ const BrandName = () => {
 
   return (
     <div
-      className="relative mx-12 w-full lg:w-[85%] sm:p-8
-      bg-[linear-gradient(180deg,_#E2C8B5_0%,_rgba(255,224,208,0.8)_20%,_rgba(226,200,181,0)_100%)]
-      rounded-4xl shadow-sm"
+      className="relative mx-0 md:mx-0 lg:mx-12 w-full lg:w-[85%] p-4 sm:p-6 lg:p-8
+    bg-[linear-gradient(180deg,_#E2C8B5_0%,_rgba(255,224,208,0.8)_20%,_rgba(226,200,181,0)_100%)]
+    rounded-4xl shadow-sm"
     >
       <div
-        className="absolute w-[212px] h-[204px] bg-orange-500 text-white rounded-2xl flex flex-col justify-center items-center gap-2 text-center shadow-lg z-10
-        px-6 py-4 sm:px-8 sm:py-6
-        -top-8 left-1/2 -translate-x-1/2
-        md:top-6
-        lg:top-8 lg:-left-40 lg:translate-x-0"
+        className="absolute 
+      w-[150px] h-[150px]
+      sm:w-[120px] sm:h-[100px]
+      md:w-[190px] md:h-[190px]
+      lg:w-[212px] lg:h-[204px]
+
+      bg-orange-500 text-white rounded-2xl 
+      flex flex-col justify-center items-center 
+      gap-1 sm:gap-2 text-center shadow-lg z-10
+      
+      px-4 sm:px-6 lg:px-8 
+      py-3 sm:py-4 lg:py-6
+      
+      -top-10 left-1/2 -translate-x-1/2
+      md:-top-12 md:left-1/2 md:-translate-x-1/2
+      lg:top-8 lg:-left-40 lg:translate-x-0"
       >
-        <h2 className="text-2xl sm:text-3xl lg:text-6xl font-bold">200+</h2>
-        <p className="mt-2 text-[14px] leading-snug">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-6xl font-bold">
+          200+
+        </h2>
+        <p className="text-[11px] sm:text-xs md:text-sm leading-snug">
           Certified & <br />
           Authorized <br />
           Reseller / Integrator
         </p>
       </div>
 
-      <div className="pt-12 sm:pt-28 lg:pt-0 lg:pl-16">
+      <div className="pt-20 sm:pt-24 md:pt-28 lg:pt-0 lg:pl-16">
         <div
-          className="relative mt-12"
+          className="relative mt-10 md:mt-12"
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
         >
           <div className="overflow-hidden rounded-xl">
             <div
               ref={scrollContainerRef}
-              className="flex gap-16 py-2 px-6"
+              className="flex gap-8 sm:gap-12 md:gap-14 lg:gap-16 py-2 px-4 sm:px-6"
               style={{ willChange: "transform" }}
             >
               {duplicatedLogos.map((logo, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 flex items-center justify-center px-8"
+                  className="flex-shrink-0 flex items-center justify-center px-4 sm:px-6 md:px-8"
                 >
                   <img
                     src={logo.image}
                     alt={logo.name}
-                    className="h-20 w-auto object-contain"
+                    className="h-10 sm:h-14 md:h-16 lg:h-20 w-auto object-contain transition-all duration-300"
                   />
                 </div>
               ))}

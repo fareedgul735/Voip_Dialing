@@ -7,7 +7,6 @@ import Blog from "../../public/blog.png";
 import { Link } from "react-router";
 
 const Blogs = () => {
-  // const id = 2;
   const [activeTab, setActiveTab] = useState("Blog");
 
   const blogPosts = [
@@ -236,7 +235,7 @@ const Blogs = () => {
 
   return (
     <div className="bg-gradient-to-b from-red-50 via-white to-white p-[12px] py-12">
-      <div className="mx-12">
+      <div className="mx-4 md:mx-8 lg:mx-12">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Blog</h1>
           <p className="text-gray-600 mb-6">Read our latest articles</p>

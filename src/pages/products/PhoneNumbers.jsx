@@ -8,12 +8,13 @@ import { CheckCircle2, Award, Phone } from "lucide-react";
 import { Card, features, services } from "../../lib/Constant.jsx";
 import Testominals from "../../ui/Testominals.jsx";
 import { useRef, useState } from "react";
+import video1 from "../../../public/video1.mp4";
 
 const column1 = features.filter((f) => f.column === 1);
 const column2 = features.filter((f) => f.column === 2);
 const column3 = features.filter((f) => f.column === 3);
 
-const PhoneNumbers = () => {
+const PhoneNumber = () => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const CloudServiceCard = ({
@@ -41,27 +42,33 @@ const PhoneNumbers = () => {
 
   return (
     <>
-      <div className="w-full p-[12px] py-12 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
+      <div className="w-full p-3 sm:p-6 py-12 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
         <div className="py-12">
-          <div className="mx-12 flex flex-col lg:flex-row gap-12 items-center justify-between">
-            <div className="text-center lg:text-left max-w-xl">
-              <div className="inline-flex items-center bg-white px-7 py-2 mb-4 rounded-[18px] shadow-md animate-fadeIn">
-                <span className="text-blue-500 font-medium">
+          <div className="mx-4 sm:mx-8 lg:mx-12 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-between">
+            <div className="text-left w-full sm:w-[90%] md:w-[700px] lg:w-[758px]">
+              <div className="inline-flex items-center bg-white px-4 sm:px-6 py-2 mb-4 rounded-[18px] shadow-md animate-fadeIn">
+                <span className="text-blue-500 font-medium text-sm sm:text-base">
                   Dont Buy Expesnive Equipment
                 </span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Reliable <span className="text-blue-600">Cloud PBX</span> for{" "}
-                <span className="text-blue-600">Growing</span> Businesses
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Reliable{" "}
+                <span className="text-blue-600">Scalable Enterprise</span> Ready
+                VoIP for <span className="text-blue-600">Las Vegas</span>{" "}
+                Companies
               </h1>
 
-              <p className="text-gray-700 mb-6">
-                A modern cloud-based phone system that keeps your team connected
-                anytime, anywhere.
+              <p className="text-gray-700 mb-6 text-sm sm:text-base md:text-lg">
+                Upgrade your business communications with a Cloud PBX phone
+                system in Las Vegas built for speed, flexibility, and growth.
+                VoIP Dialing delivers a powerful hosted PBX solution that
+                eliminates on-premise hardware while providing crystal-clear
+                calls, advanced call management, and enterprise-grade
+                reliability — all backed by local expertise.
               </p>
 
-              <ul className="space-y-3 mb-8 text-gray-700">
+              <ul className="space-y-2 mb-6 text-gray-700 text-sm sm:text-base">
                 <li className="flex flex-col sm:flex-row sm:items-start gap-2">
                   <span className="text-orange-500">•</span>
                   <span className="text-black">
@@ -72,43 +79,43 @@ const PhoneNumbers = () => {
                 <li className="flex flex-col sm:flex-row sm:items-start gap-2">
                   <span className="text-orange-500">•</span>
                   <span className="text-black">
-                    Set up in minutes, and run your business from anywhere, on
-                    any device.
+                    Trusted by Las Vegas businesses to reduce phone costs,
+                    support remote teams, and scale effortlessly as they grow.
                   </span>
                 </li>
               </ul>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button className="bg-orange-500 shadow-sm  text-white px-6 py-3 rounded-full hover:bg-blue-500 transition">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                <button className="bg-orange-500 shadow-sm text-white px-4 py-2 sm:px-5 sm:py-3 rounded-full hover:bg-blue-500 transition text-sm sm:text-base">
                   See Pricing
                 </button>
-                <button className="bg-white shadow-sm rounded-full text-orange-500 hover:text-white px-6 py-3 hover:bg-blue-500 transition">
+                <button className="bg-white shadow-sm rounded-full text-orange-500 hover:text-white px-4 py-2 sm:px-5 sm:py-3 hover:bg-blue-500 transition text-sm sm:text-base">
                   Talk Sales
                 </button>
               </div>
             </div>
 
-            <div className="relative flex justify-center w-full lg:w-auto">
+            <div className="relative flex justify-center w-full lg:w-auto mt-6 lg:mt-0">
               <img
                 src={heroLogo}
                 alt="VoIP Technology"
-                className="rounded-lg w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl object-contain"
+                className="rounded-lg w-full max-w-[200px] sm:max-w-xs md:max-w-md lg:max-w-xl object-contain"
               />
             </div>
           </div>
         </div>
       </div>
       <div className="w-full bg-[#FAF9F6] p-[12px] py-12">
-        <div className="mx-12">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Cloud PBX Phone System for Modern Businesses
+        <div className="mx-4 sm:mx-8 lg:mx-12">
+          <div className="text-left lg:text-center mb-12">
+            <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+              Modern Business Communication Starts in the Cloud
             </h1>
-            <p className="text-gray-600 text-lg max-w-4xl mx-auto leading-relaxed">
-              Our Cloud PBX system delivers secure, high-quality VoIP calling
-              for businesses of all sizes. Designed for remote teams and
-              multi-location offices, it's easy to set up, cost-effective, and
-              built to grow with your business.
+            <p className="text-gray-600 text-md lg:text-lg max-w-4xl mx-auto leading-relaxed">
+              Traditional phone systems can’t keep up with today’s fast-moving
+              businesses. Our Cloud PBX solution empowers Las Vegas
+              organizations with a fully hosted VoIP phone system that works
+              anywhere, on any device.
             </p>
           </div>
 
@@ -134,8 +141,8 @@ const PhoneNumbers = () => {
             })}
           </div>
 
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-left lg:text-center">
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
               Affordable VoIP Phones & Cloud PBX Plans
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-8">
@@ -150,9 +157,9 @@ const PhoneNumbers = () => {
         </div>
       </div>
       <div className="w-full p-[12px] py-12">
-        <div className="mx-12">
+        <div className="mx-4 sm:mx-8 lg:mx-12">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 mb-14">
-            <div className="text-center lg:text-left max-w-4xl">
+            <div className="text-left max-w-4xl">
               <div className="text-orange-500 text-sm tracking-wider uppercase mb-4">
                 FEATURES
               </div>
@@ -162,14 +169,12 @@ const PhoneNumbers = () => {
               </h1>
 
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                Power your business communications with a robust VoIP dialing
-                platform built for performance, flexibility, and scale. Our
-                Class 5 Cloud PBX features give you complete control over call
-                flow, agent productivity, and customer experience.
+                Our Cloud PBX platform includes carrier-grade Class 5 switching
+                features, giving Las Vegas businesses the same power used by
+                large telecom providers — without the complexity.
               </p>
             </div>
 
-            {/* STATS */}
             <div className="flex flex-col sm:flex-row gap-8 justify-center lg:justify-end">
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 sm:w-16 sm:h-16 bg-orange-100 rounded-full flex items-center justify-center">
@@ -235,7 +240,7 @@ const PhoneNumbers = () => {
         </div>
       </div>
       <div className="w-full bg-[#FAF9F6] flex flex-col p-[12px] py-12">
-        <div className="mx-12">
+        <div className="mx-4 md:mx-8 lg:mx-12">
           <div className="text-center py-3 tracking-widest text-orange-400">
             <span className="text-lg"> SOFTWARE DEMO</span>
           </div>
@@ -244,12 +249,14 @@ const PhoneNumbers = () => {
             Get up and running in minutes
           </h1>
 
-          <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-xl shadow-orange-300 border border-orange-100 p-2 md:p-4 flex-1 relative overflow-hidden">
+          <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-md shadow-orange-200 border border-orange-100 p-2 md:p-4 flex-1 relative overflow-hidden">
             <video
               ref={videoRef}
-              // src={demoVideo}
+              src={video1}
               poster={Detailed}
               className="w-full rounded-xl"
+              controls
+              onEnded={() => setIsPlaying(false)}
             />
 
             {!isPlaying && (
@@ -262,8 +269,8 @@ const PhoneNumbers = () => {
                 aria-label="Play Video"
               >
                 <div
-                  className="w-16 h-16 md:w-20 md:h-20 bg-orange-500/90 rounded-full flex items-center justify-center
-                           group-hover:scale-110 transition-transform duration-300 shadow-lg"
+                  className="w-16 cursor-pointer h-16 md:w-20 md:h-20 bg-orange-500/90 rounded-full flex items-center justify-center
+                            group-hover:scale-110 transition-transform duration-300 shadow-lg"
                 >
                   <svg
                     className="w-6 h-6 md:w-8 md:h-8 text-white ml-1"
@@ -279,14 +286,20 @@ const PhoneNumbers = () => {
         </div>
       </div>
       <div className="p-[12px] py-12 mt-12 mb-12">
-        <div className="mx-12">
-          <div className="text-center mb-12">
+        <div className="mx-4 sm:mx-8 lg:mx-12">
+          <div className="text-left lg:text-center mb-12">
             <p className="text-orange-400 text-sm tracking-wider uppercase mb-2">
               CLOUD SERVICE
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Cloud Service of VOIP
+            <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
+              Cloud Service of VoIP Dialing
             </h1>
+            <p className="mt-4 text-gray-400">
+              VoIP Dialing’s cloud-hosted PBX infrastructure is designed for
+              maximum uptime and performance. Our system runs in secure data
+              centers with redundancy and failover — ensuring your Las Vegas
+              business never misses an important call.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -304,58 +317,58 @@ const PhoneNumbers = () => {
         </div>
       </div>
       <div className="w-full p-[12px] py-12 flex justify-center">
-        <div className="mx-12">
+        <div className="mx-4 sm:mx-8 lg:mx-12">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
               <p className="text-orange-500 text-sm font-semibold mb-3 uppercase tracking-wide">
                 BENEFITS
               </p>
 
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12">
                 Why move to the Cloud?
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                 {[
                   {
-                    title: "No expensive equipment to buy",
+                    title: "Lower Monthly Phone Costs",
                     description:
-                      "Consistent performance ensures your calls are always connected. Just smooth communication.",
+                      "Reduce telecom expenses by eliminating legacy phone lines and PBX hardware.",
                   },
                   {
-                    title: "Geographical Flexibility",
+                    title: "Work From Anywhere",
                     description:
-                      "Consistent performance ensures your calls are always connected. Just smooth communication.",
+                      "Employees can make and receive business calls from anywhere using mobile or desktop apps.",
                   },
                   {
-                    title: "Complete Cloud Services",
+                    title: "Instant Scalability",
                     description:
-                      "Consistent performance ensures your calls are always connected. Just smooth communication.",
+                      "Add or remove users in minutes as your business grows.",
                   },
                   {
-                    title: "Works with most VoIP Phones",
+                    title: "Professional Call Handling",
                     description:
-                      "Consistent performance ensures your calls are always connected. Just smooth communication.",
+                      "Auto attendants and call routing create a polished customer experience.",
                   },
                   {
-                    title: "Cutting Edge Features",
+                    title: "Business Continuity",
                     description:
-                      "Consistent performance ensures your calls are always connected. Just smooth communication.",
+                      "Keep calls flowing during outages with cloud failover and call forwarding.",
                   },
                   {
-                    title: "Quick, turnkey setup",
+                    title: "Advanced Call Management",
                     description:
-                      "Consistent performance ensures your calls are always connected. Just smooth communication.",
+                      "Monitor calls, recordings, and analytics in real time.",
                   },
                   {
-                    title: "Easily scalable as you grow",
+                    title: "Easy Integration",
                     description:
-                      "Consistent performance ensures your calls are always connected. Just smooth communication.",
+                      "Works with IP phones, softphones, and CRM platforms.",
                   },
                   {
-                    title: "Easy to Use",
+                    title: "Local & Nationwide Coverage",
                     description:
-                      "Consistent performance ensures your calls are always connected. Just smooth communication.",
+                      "Support customers across Las Vegas and beyond with local and toll-free numbers.",
                   },
                 ].map((item, index) => (
                   <div key={index}>
@@ -403,4 +416,4 @@ const PhoneNumbers = () => {
   );
 };
 
-export default PhoneNumbers;
+export default PhoneNumber;

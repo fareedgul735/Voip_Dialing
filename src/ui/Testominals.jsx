@@ -110,19 +110,19 @@ const Testominals = () => {
   return (
     <div className="w-full bg-gradient-to-b from-orange-50 to-white">
       <div className="py-16">
-        <div className="mx-12">
+        <div className="mx-4 md:mx-8 lg:mx-12">
           <div className="text-center mb-4">
             <p className="text-orange-400 uppercase tracking-wider text-1xl">
               Testimonials
             </p>
           </div>
 
-          <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 text-center mb-12">
             What Our Clients are Saying
           </h2>
 
           <div className="relative flex items-center justify-center">
-            <div className="absolute left-12 top-2 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-30 lg:h-30 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
+            <div className="absolute left-2 top-2 lg:left-12 lg:top-2 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-30 lg:h-30 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
               <img
                 key={`topLeft-${currentTestimonial}`}
                 src={currentImages.topLeft}
@@ -133,7 +133,7 @@ const Testominals = () => {
               />
             </div>
 
-            <div className="absolute left-40 bottom-4 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-20 lg:h-20 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
+            <div className="absolute left-10 bottom-2 lg:left-40 lg:bottom-4 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-20 lg:h-20 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
               <img
                 key={`bottomLeft-${currentTestimonial}`}
                 src={currentImages.bottomLeft}
@@ -144,7 +144,7 @@ const Testominals = () => {
               />
             </div>
 
-            <div className="absolute right-22 top-8 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-28 lg:h-28 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
+            <div className="absolute right-12 top-4 lg:right-22 lg:top-8 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-28 lg:h-28 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
               <img
                 key={`topRight-${currentTestimonial}`}
                 src={currentImages.topRight}
@@ -155,7 +155,7 @@ const Testominals = () => {
               />
             </div>
 
-            <div className="absolute right-44 bottom-18 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
+            <div className="absolute right-14 bottom-8 lg:right-44 lg:bottom-18 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
               <img
                 key={`middleRight-${currentTestimonial}`}
                 src={currentImages.middleRight}
@@ -166,7 +166,7 @@ const Testominals = () => {
               />
             </div>
 
-            <div className="absolute right-22 bottom-2 w-7 h-7 sm:w-9 sm:h-9 md:w-12 md:h-12 lg:w-20 lg:h-20 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
+            <div className="absolute right-2 -bottom-4 lg:right-22 lg:bottom-2 w-7 h-7 sm:w-9 sm:h-9 md:w-12 md:h-12 lg:w-20 lg:h-20 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
               <img
                 key={`bottomRight-${currentTestimonial}`}
                 src={currentImages.bottomRight}
@@ -236,14 +236,14 @@ const Testominals = () => {
       </div>
 
       <div className="py-16 bg-white">
-        <div className="mx-12">
+        <div className="mx-4 md:mx-8 lg:mx-12">
           <div className="text-center mb-4">
             <p className="text-orange-400 uppercase tracking-wider text-lg">
               VOIP BLOGS
             </p>
           </div>
 
-          <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 text-center mb-12">
             The Services you really need for growing fast
           </h2>
 

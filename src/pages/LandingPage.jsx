@@ -29,7 +29,7 @@ const LandingPage = () => {
       </div>
       <div className="w-full p-[12px] py-12">
         <div className="bg-white rounded-3xl overflow-hidden">
-          <div className="grid mx-12 grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div className="grid mx-4 md:mx-8 lg:mx-12 grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="relative flex justify-center">
               <div className="w-16 sm:w-28 md:w-32 mb-4">
                 <img src={HeadPhones} alt="logo" />
@@ -61,8 +61,8 @@ const LandingPage = () => {
               </div>
             </div>
 
-            <div className="text-center md:text-left">
-              <div className="text-orange-500 text-xs sm:text-sm  tracking-wider uppercase mb-3 sm:mb-4">
+            <div className="text-left ">
+              <div className="text-orange-500 text-xs sm:text-sm tracking-wider uppercase mb-3 sm:mb-4">
                 <span> BUSINESS GROWTH</span>
               </div>
 
@@ -98,7 +98,7 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="w-full bg-white flex items-center justify-center p-[12px] py-12">
-        <div className="mx-12 bg-white rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="mx-4 md:mx-8 lg:mx-12 bg-white rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div className="flex flex-col justify-center text-center lg:text-left">
             <p className="uppercase tracking-widest text-orange-500 mb-2 text-xs sm:text-sm">
               Benefits
@@ -135,7 +135,7 @@ const LandingPage = () => {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row items-start lg:items-center gap-4 sm:gap-6 justify-center lg:justify-start">
               <CustomButtonTwin
                 className={`cursor-pointer shadow-md bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition`}
                 value={<span>Get Pricing</span>}
@@ -151,8 +151,8 @@ const LandingPage = () => {
             </div>
           </div>
 
-          <div className="relative p-4 sm:p-6 flex items-center justify-center">
-            <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-full">
+          <div className="relative  flex items-center justify-center">
+            <div className="relative w-full h-74 sm:h-80 md:h-96 lg:h-full">
               <img
                 src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1200&auto=format&fit=crop"
                 alt="Happy client using VoIP"
@@ -172,7 +172,7 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="w-full bg-[#FAF9F6] flex flex-col p-[12px] py-12">
-        <div className="mx-12">
+        <div className="mx-4 md:mx-8 lg:mx-12">
           <div className="text-center py-3 tracking-widest text-orange-400">
             <span className="text-lg"> SOFTWARE DEMO</span>
           </div>

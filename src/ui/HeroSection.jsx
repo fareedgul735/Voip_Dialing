@@ -95,92 +95,100 @@ const HeroSection = () => {
   const currentSlide = slides[activeSlide];
 
   return (
-    <div className="md:p-[8px]">
-      <div className="grid mx-12 grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        <div className="space-y-6 text-center md:text-left">
+    <div className="px-4 md:px-6">
+      <div className="grid mx-4 md:mx-8 lg:mx-12 grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
+        <div className="space-y-5 text-left">
           <div
             key={`badge-${activeSlide}`}
-            className="inline-flex items-center bg-white px-7 py-2 rounded-[18px] shadow-md animate-fadeIn"
+            className="inline-flex items-center bg-white px-5 py-2 rounded-[18px] shadow-md animate-fadeIn"
           >
-            <span className="text-orange-600 font-medium">
+            <span className="text-orange-600 text-sm md:text-base font-medium">
               {currentSlide.badge}
             </span>
           </div>
 
           <h1
             key={`title-${activeSlide}`}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-[#0B1C2D] leading-tight animate-fadeIn"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-6xl font-bold text-[#0B1C2D] leading-snug animate-fadeIn"
           >
             {currentSlide.title}
           </h1>
 
-          <ul className="space-y-3 text-gray-700">
+          <ul className="space-y-2 text-sm md:text-base text-gray-700">
             {currentSlide.features.map((feature, index) => (
               <li
                 key={`${activeSlide}-${index}`}
-                className="flex items-center gap-3 animate-slideIn"
+                className="flex items-start gap-2 animate-slideIn"
                 style={{ animationDelay: `${index * 0.3}s` }}
               >
-                <div className="w-2 h-2 bg-orange-500 rounded-full" />
+                <div className="w-2 h-2 mt-2 bg-orange-500 rounded-full" />
                 <span>{feature}</span>
               </li>
             ))}
           </ul>
 
-          <div className="flex flex-wrap gap-4 pt-4 justify-center md:justify-start">
+          <div className="flex flex-row flex-wrap gap-3 pt-3">
             <CustomButtonTwin
-              className="shadow-md bg-orange-500 text-white font-semibold px-6 py-3 rounded-full cursor-pointer hover:bg-blue-500 transition"
-              value={<span className="text-[14px]">Talk to Sales</span>}
+              className="shadow-md bg-orange-500 text-white text-sm md:text-base font-semibold px-5 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-500 transition"
+              value={<span>Talk to Sales</span>}
             />
+
             <Link to={"/pricing"}>
-            <CustomButton
-              className="bg-white shadow-md border hover:text-white border-gray-200 text-gray-800 font-semibold cursor-pointer px-6 py-3 rounded-full hover:bg-blue-500 transition"
-              value={<span className="text-[14px]">Get Pricing</span>}
-            />
+              <CustomButton
+                className="bg-white shadow-md border text-sm md:text-base border-gray-200 text-gray-800 font-semibold px-5 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-500 hover:text-white transition"
+                value={<span>Get Pricing</span>}
+              />
             </Link>
           </div>
         </div>
-
-        <div className="relative h-[400px] sm:h-[450px] md:h-[500px] flex items-center justify-center">
+        <div className="relative h-[320px] sm:h-[380px] md:h-[450px] lg:h-[500px] flex items-center justify-center px-4 md:px-0">
           <div
             key={`main-image-${activeSlide}`}
             className={`w-full animate-fadeIn flex justify-center
-    ${activeSlide === 0 ? "max-w-7xl" : "max-w-md"}
-  `}
+      ${activeSlide === 0 ? "max-w-7xl" : "max-w-md"}
+    `}
           >
             <img
               src={currentSlide.image}
               alt="Business Communication"
-              className={`transition-all duration-500 object-cover
+              className={`transition-all duration-500 object-contain mx-auto
 
       ${
         activeSlide === 0
-          ? "rounded-lg w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl object-contain"
+          ? "rounded-lg w-full max-w-[220px] sm:max-w-xs md:max-w-md lg:max-w-xl"
           : ""
       }
 
-      ${activeSlide === 1 ? "rounded-2xl scale-110 h-[420px]" : ""}
+      ${
+        activeSlide === 1
+          ? "rounded-2xl scale-100 md:scale-105 lg:scale-110 h-[300px] md:h-[380px] lg:h-[420px]"
+          : ""
+      }
 
-      ${activeSlide === 2 ? "rounded-xl h-[460px] md:h-[520px]" : ""}
+      ${
+        activeSlide === 2
+          ? "rounded-xl h-[320px] md:h-[420px] lg:h-[520px]"
+          : ""
+      }
     `}
             />
           </div>
 
           {activeSlide === 1 && (
             <>
-              <div className="absolute -top-6 left-1/2 w-14 h-14 rounded-full bg-white overflow-hidden">
+              <div className="absolute -top-4 left-[45%] md:left-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white overflow-hidden">
                 <img src={image6} className="w-full h-full object-cover" />
               </div>
 
-              <div className="absolute top-10 -left-6 w-14 h-14 rounded-full bg-white overflow-hidden">
+              <div className="absolute top-8 left-2 md:-left-6 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white overflow-hidden">
                 <img src={image7} className="w-full h-full object-cover" />
               </div>
 
-              <div className="absolute top-10 -right-6 w-14 h-14 rounded-full bg-white overflow-hidden">
+              <div className="absolute top-8 right-2 md:-right-6 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white overflow-hidden">
                 <img src={image8} className="w-full h-full object-cover" />
               </div>
 
-              <div className="absolute bottom-24 right-10 w-14 h-14 rounded-full bg-white overflow-hidden">
+              <div className="absolute bottom-16 right-6 md:right-10 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white overflow-hidden">
                 <img src={image9} className="w-full h-full object-cover" />
               </div>
             </>
@@ -188,26 +196,26 @@ const HeroSection = () => {
 
           {activeSlide === 2 && (
             <>
-              <div className="absolute -top-4 -left-4 w-12 h-12 bg-white rounded-full overflow-hidden animate-float">
+              <div className="absolute -top-2 left-2 md:-left-4 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full overflow-hidden animate-float">
                 <img src={image2} className="w-full h-full object-cover" />
               </div>
 
               <div
-                className="absolute top-10 -right-4 w-12 h-12 bg-white rounded-full overflow-hidden animate-float"
+                className="absolute top-8 right-2 md:-right-4 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full overflow-hidden animate-float"
                 style={{ animationDelay: "0.5s" }}
               >
                 <img src={image1} className="w-full h-full object-cover" />
               </div>
 
               <div
-                className="absolute top-1/2 -right-4 w-12 h-12 bg-white rounded-full overflow-hidden animate-float"
+                className="absolute top-1/2 right-2 md:-right-4 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full overflow-hidden animate-float"
                 style={{ animationDelay: "1s" }}
               >
                 <img src={image2} className="w-full h-full object-cover" />
               </div>
 
               <div
-                className="absolute bottom-20 -left-4 w-12 h-12 bg-white rounded-full overflow-hidden animate-float"
+                className="absolute bottom-16 left-2 md:-left-4 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full overflow-hidden animate-float"
                 style={{ animationDelay: "1.5s" }}
               >
                 <img src={image1} className="w-full h-full object-cover" />
@@ -216,11 +224,28 @@ const HeroSection = () => {
           )}
 
           {activeSlide !== 0 && (
-            <div className="absolute flex gap-2 flex-col justify-center items-center w-[217px] h-[127px] bottom-8 -left-12 bg-white px-6 py-4 rounded-xl shadow-lg animate-slideUp">
-              <p className="text-orange-500 text-4xl font-bold">
+            <div
+              className="absolute flex gap-1 md:gap-2 flex-col justify-center items-center 
+    w-[160px] h-[95px] 
+    sm:w-[180px] sm:h-[105px]
+    md:w-[200px] md:h-[115px]
+    lg:w-[217px] lg:h-[127px]
+    
+    bottom-4 sm:bottom-4 md:bottom-8 lg:bottom-8
+    
+    left-1/2 -translate-x-1/2
+    md:left-auto md:translate-x-0
+    lg:-left-12
+    
+    bg-white px-3 sm:px-4 md:px-5 lg:px-6 
+    py-2 sm:py-3 md:py-3 lg:py-4 
+    rounded-xl shadow-lg animate-slideUp"
+            >
+              <p className="text-orange-500 text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold">
                 {currentSlide.stats.count}
               </p>
-              <p className="text-sm text-gray-600 text-center">
+
+              <p className="text-[11px] sm:text-xs md:text-sm text-gray-600 text-center">
                 {currentSlide.stats.label}
               </p>
             </div>

@@ -103,7 +103,7 @@ const BusinessCommunicationServices = () => {
 
   return (
     <div className="container">
-      <div className="mx-12">
+      <div className="mx-4 md:mx-8 lg:mx-12">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 mb-10 text-center md:text-left">
           <div>
             <p className="text-orange-500 flex items-center gap-2 mb-3 justify-center md:justify-start">
@@ -115,9 +115,14 @@ const BusinessCommunicationServices = () => {
             </h1>
           </div>
 
-          <button className="bg-orange-500 hover:text-white cursor-pointer  hover:bg-blue-500 text-white px-6 py-3 rounded-full font-semibold">
-            Schedule Demo
-          </button>
+          <div className="flex gap-3 justify-center md:justify-end mt-4 md:mt-0">
+            <Link>
+              <CustomButtonTwin
+                className="bg-orange-500 cursor-pointer hover:bg-blue-500 shadow-md text-white px-4 py-2 sm:px-5 sm:py-2 rounded-full text-sm sm:text-base"
+                value={<span>Schedule Demo</span>}
+              />
+            </Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[25%_75%] gap-10">
@@ -131,40 +136,30 @@ const BusinessCommunicationServices = () => {
                   key={index}
                   onClick={() => setActiveService(index)}
                   className={`flex gap-4 p-3 rounded-md cursor-pointer transition-all duration-300
-                    ${isActive ? "bg-white" : ""}`}
+                  ${isActive ? "bg-white" : ""}`}
                 >
                   <div
-                    className={`w-1 rounded-full ${
-                      isActive ? "bg-orange-500" : ""
-                    }`}
+                    className={`w-1 rounded-full ${isActive ? "bg-orange-500" : ""}`}
                   />
 
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-1">
                       <div
-                        className={`p-2 rounded-lg ${
-                          isActive ? "bg-orange-100" : ""
-                        }`}
+                        className={`p-2 rounded-lg ${isActive ? "bg-orange-100" : ""}`}
                       >
                         <ServiceIcon
-                          className={`w-5 h-5 ${
-                            isActive ? "text-orange-500" : "text-gray-400"
-                          }`}
+                          className={`w-5 h-5 ${isActive ? "text-orange-500" : "text-gray-400"}`}
                         />
                       </div>
                       <h3
-                        className={`text-lg font-bold ${
-                          isActive ? "text-gray-900" : "text-gray-500"
-                        }`}
+                        className={`text-lg font-bold ${isActive ? "text-gray-900" : "text-gray-500"}`}
                       >
                         {service.title}
                       </h3>
                     </div>
 
                     <p
-                      className={`text-sm ${
-                        isActive ? "text-gray-600" : "text-gray-400"
-                      }`}
+                      className={`text-sm ${isActive ? "text-gray-600" : "text-gray-400"}`}
                     >
                       {service.description}
                     </p>
@@ -232,22 +227,22 @@ const BusinessCommunicationServices = () => {
               </div>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 justify-start mb-4">
               <Link to={"/pricing"}>
                 <CustomButtonTwin
-                  className="bg-orange-500 cursor-pointer hover:bg-blue-500  shadow-md text-white px-6 py-3 rounded-full"
+                  className="bg-orange-500 cursor-pointer hover:bg-blue-500 shadow-md text-white px-4 py-2 sm:px-5 sm:py-2 rounded-full text-sm sm:text-base"
                   value={<span>Get Pricing</span>}
                 />
               </Link>
               <Link to={"/contact"}>
                 <CustomButton
-                  className="border border-gray-200 hover:bg-blue-500 hover:text-white text-orange-400 cursor-pointer px-6 py-3 rounded-full shadow-md"
+                  className="border border-gray-200 hover:bg-blue-500 hover:text-white text-orange-400 cursor-pointer px-4 py-2 sm:px-5 sm:py-2 rounded-full shadow-md text-sm sm:text-base"
                   value={<span>Contact Sales</span>}
                 />
               </Link>
             </div>
 
-            <p className="text-xs text-gray-500 mt-4">
+            <p className="text-xs text-gray-500 mt-2">
               No credit card required
             </p>
           </div>

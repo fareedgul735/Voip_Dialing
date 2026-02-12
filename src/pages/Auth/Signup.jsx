@@ -33,7 +33,7 @@ const Signup = () => {
     <div className="min-h-screen flex items-center justify-center p-4 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
       <Link
         to="/home"
-        className="absolute top-12 right-12 p-4 rounded bg-gray-100 hover:bg-gray-200 transition"
+        className="absolute z-99999999 top-12 right-12 p-4 rounded bg-gray-100 hover:bg-gray-200 transition"
       >
         <X className="w-7 h-7 text-gray-600" />
       </Link>

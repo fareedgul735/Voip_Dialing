@@ -5,7 +5,7 @@ import BrandName from "../ui/BrandName";
 export default function Contact() {
   return (
     <div className="w-full p-[12px] py-12 flex flex-col items-center justify-center bg-gradient-to-b from-red-50 via-white to-white">
-      <div className="mx-12 grid grid-cols-1 md:grid-cols-2 gap-16 mt-2 mb-42">
+      <div className="mx-4 md:mx-8 lg:mx-12 grid grid-cols-1 md:grid-cols-2 gap-16 mt-2 mb-42">
         <div className="flex flex-col justify-start ">
           <div>
             <h1 className="text-4xl font-bold mb-4">Contact us</h1>

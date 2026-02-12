@@ -15,8 +15,8 @@ const Trunks = () => {
     <>
       <div className="w-full p-[12px] py-28 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
         <div>
-          <div className="mx-12 flex flex-col lg:flex-row gap-12 items-center justify-between">
-            <div className="text-center lg:text-left">
+          <div className="mx-4 sm:mx-8 lg:mx-12 flex flex-col lg:flex-row gap-12 items-center justify-between">
+            <div className="text-left">
               <p className="text-sm mb-2">
                 <span className="text-orange-500 font-bold">©</span>{" "}
                 <span>VOIP For Small Businesses</span>
@@ -89,7 +89,7 @@ const Trunks = () => {
         </div>
       </div>
       <div className="w-full p-[12px] py-12">
-        <div className="bg-white mx-12 rounded-2xl">
+        <div className="bg-white mx-4 sm:mx-8 lg:mx-12 rounded-2xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative">
               <img
@@ -102,7 +102,7 @@ const Trunks = () => {
                 <p className="text-sm text-gray-600">Happy Client</p>
               </div>
             </div>
-            <div>
+            <div className="p-4">
               <p className="text-orange-500 text-sm  mb-2">BUSINESS GROWTH</p>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 The small business phone system with big benefits
@@ -148,7 +148,7 @@ const Trunks = () => {
         </div>
       </div>
       <div className="w-full p-[12px] py-12">
-        <div className="grid mx-12 md:grid-cols-2 gap-8 items-center">
+        <div className="grid mx-4 sm:mx-8 lg:mx-12 md:grid-cols-2 gap-8 items-center">
           <div>
             <p className="text-orange-500 text-sm mb-2">BUSINESS GROWTH</p>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -187,7 +187,7 @@ const Trunks = () => {
       </div>
       <div className="w-full p-[12px] py-12">
         <div className="py-16">
-          <div className="grid mx-12 md:grid-cols-2 gap-12 items-center">
+          <div className="grid mx-4 sm:mx-8 lg:mx-12 md:grid-cols-2 gap-12 items-center">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <img
@@ -262,8 +262,8 @@ const Trunks = () => {
           </div>
         </div>
       </div>
-      <div className="w-full p-[12px] py-12">
-        <div className="grid mx-12 md:grid-cols-2 gap-12 items-center">
+      <div className="w-full p-[12px] py-12 mb-52 lg:mb-12">
+        <div className="grid mx-4 sm:mx-8 lg:mx-12 md:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <img
               src={Dmj}
@@ -341,13 +341,13 @@ const Trunks = () => {
         </div>
       </div>
       <div className="bg-white w-full p-[12px] py-12">
-        <div className="mx-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-16">
+        <div className="mx-4 sm:mx-8 lg:mx-12">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 text-left lg:text-center mb-16">
             Comprehensive features
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8 mx-12">
-            <div className="rounded-lg p-6 hover:shadow-lg transition">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="rounded-lg p-6 shadow hover:shadow-lg transition">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <Users className="w-6 h-6 text-orange-500" />
               </div>
@@ -360,7 +360,7 @@ const Trunks = () => {
               </p>
             </div>
 
-            <div className="rounded-lg p-6 hover:shadow-lg transition relative">
+            <div className="rounded-lg p-6 shadow hover:shadow-lg transition relative">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <TrendingUp className="w-6 h-6 text-orange-500" />
               </div>
@@ -372,7 +372,7 @@ const Trunks = () => {
               </p>
             </div>
 
-            <div className="rounded-lg p-6 hover:shadow-lg transition">
+            <div className="rounded-lg p-6 shadow hover:shadow-lg transition">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <MessageSquare className="w-6 h-6 text-orange-500" />
               </div>
@@ -384,7 +384,7 @@ const Trunks = () => {
               </p>
             </div>
 
-            <div className="rounded-lg p-6 hover:shadow-lg transition">
+            <div className="rounded-lg p-6 shadow hover:shadow-lg transition">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <ClipboardList className="w-6 h-6 text-orange-500" />
               </div>
@@ -396,7 +396,7 @@ const Trunks = () => {
               </p>
             </div>
 
-            <div className="rounded-lg p-6 hover:shadow-lg transition">
+            <div className="rounded-lg p-6  shadow hover:shadow-lg transition">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <Zap className="w-6 h-6 text-orange-500" />
               </div>
@@ -409,7 +409,7 @@ const Trunks = () => {
               </p>
             </div>
 
-            <div className="rounded-lg p-6 hover:shadow-lg transition">
+            <div className="rounded-lg p-6 shadow hover:shadow-lg transition">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <Plug className="w-6 h-6 text-orange-500" />
               </div>
@@ -428,7 +428,7 @@ const Trunks = () => {
         <div
           className="
       relative 
-      mx-12 
+      mx-0 sm:mx-8 lg:mx-12 
       min-h-[420px] sm:min-h-[480px] lg:min-h-[490px]
       rounded-2xl 
       shadow-2xl 

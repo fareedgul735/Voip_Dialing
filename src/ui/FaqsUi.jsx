@@ -64,9 +64,9 @@ export default function FAQAccordion() {
 
   return (
     <div className="w-full">
-      <div className="mx-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-3">
+      <div className="mx-4 sm:mx-8 lg:mx-12">
+        <div className="text-left lg:text-center mb-12">
+          <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-3">
             Frequently Asked Questions
           </h1>
           <p className="text-gray-500 text-sm">
