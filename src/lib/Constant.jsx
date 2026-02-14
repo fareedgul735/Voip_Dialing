@@ -1,10 +1,7 @@
 import { DollarSign, Phone, Shield, Users } from "lucide-react";
-import {
-  ShieldCheck,
-  RefreshCw,
-  TrendingUp,
-  MapPin,
-} from "lucide-react";
+import { ShieldCheck, RefreshCw, TrendingUp, MapPin } from "lucide-react";
+import { Send, MessageSquare, BarChart3 } from "lucide-react";
+import { Clock } from "lucide-react";
 
 import { Cloud, MessageCircle, PhoneCall, Hash, HardDrive } from "lucide-react";
 import Blog from "../../public/blog.png";
@@ -36,6 +33,52 @@ export const Card = [
   },
 ];
 
+export const BulkCard = [
+  {
+    icon: Send,
+    title: "Bulk SMS Campaigns",
+    desc: "Send thousands of promotional or transactional messages instantly to customers across Las Vegas with high delivery success rates.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Two-Way Business Messaging",
+    desc: "Enable real-time conversations with customers, allowing replies for bookings, support, confirmations, and inquiries.",
+  },
+  {
+    icon: BarChart3,
+    title: "SMS Analytics & Reporting",
+    desc: "Track delivery status, response rates, and campaign performance to measure ROI and optimize your SMS marketing strategy.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Secure & Reliable Messaging",
+    desc: "Our Las Vegas Business SMS platform ensures encrypted delivery, compliance standards, and enterprise-grade reliability.",
+  },
+];
+
+export const VoipCard = [
+  {
+    icon: PhoneCall,
+    title: "High-Quality VoIP Calls",
+    desc: "Enjoy crystal-clear voice quality on every call with our enterprise-grade VoIP lines in Las Vegas.",
+  },
+  {
+    icon: Clock,
+    title: "Instant Setup & Activation",
+    desc: "Get your VoIP lines up and running in minutes, without complex hardware installation or downtime.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Secure & Reliable Lines",
+    desc: "All VoIP lines are encrypted and backed by redundant cloud infrastructure for uninterrupted service.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Scalable for Any Business",
+    desc: "Add or remove lines quickly as your Las Vegas business grows — ideal for seasonal demand or expanding teams.",
+  },
+];
+
 export const features = [
   { text: "Auto Attendant (IVR)", column: 1 },
   { text: "Call Queues & Intelligent Call Routing", column: 1 },
@@ -53,6 +96,40 @@ export const features = [
   { text: "Detailed Call Reporting", column: 3 },
   { text: "Advanced Call Routing Rules", column: 3 },
   { text: "Caller ID Management & Prefix Control", column: 3 },
+];
+
+export const featuresBulk = [
+  { text: "Bulk SMS Campaign Broadcasting", column: 1 },
+  { text: "Scheduled & Automated Messaging", column: 1 },
+  { text: "Promotional & Transactional SMS", column: 1 },
+  { text: "Custom Sender ID Support", column: 1 },
+  { text: "Group & Contact List Management", column: 1 },
+
+  { text: "Two-Way Business Messaging", column: 2 },
+  { text: "Auto Replies & SMS Templates", column: 2 },
+  { text: "Appointment Reminders & Alerts", column: 2 },
+  { text: "OTP & Verification Messages", column: 2 },
+  { text: "Customer Feedback Collection", column: 2 },
+
+  { text: "Real-Time Delivery Reports", column: 3 },
+  { text: "Campaign Performance Analytics", column: 3 },
+  { text: "API Integration for Developers", column: 3 },
+  { text: "Secure & Encrypted SMS Routing", column: 3 },
+  { text: "Scalable Messaging Infrastructure", column: 3 },
+];
+
+export const featuresVoip = [
+  { text: "HD Voice Quality on Every Call", column: 1 },
+  { text: "Local Las Vegas Phone Numbers", column: 1 },
+  { text: "Multi-Device Support (Desktop, Mobile, Tablet)", column: 1 },
+
+  { text: "Call Forwarding & Auto Attendants", column: 2 },
+  { text: "Voicemail-to-Email Transcriptions", column: 2 },
+  { text: "Instant Line Provisioning & Scalability", column: 2 },
+
+  { text: "Call Forwarding & Auto Attendants", column: 3 },
+  { text: "Voicemail-to-Email Transcriptions", column: 3 },
+  { text: "Instant Line Provisioning & Scalability", column: 3 },
 ];
 
 export const services = [
@@ -112,6 +189,119 @@ export const services = [
   },
 ];
 
+export const BulkServices = [
+  {
+    id: 1,
+    image: cloudService2,
+    icon: Send,
+    title: "Bulk SMS Campaign Broadcasting",
+    description:
+      "Send promotional and transactional SMS campaigns instantly to thousands of customers across Las Vegas with high delivery success rates.",
+    iconColor: "bg-orange-500",
+  },
+  {
+    id: 2,
+    image: cloudService1,
+    icon: MessageSquare,
+    title: "Two-Way Business Messaging",
+    description:
+      "Engage customers in real-time with two-way SMS conversations for bookings, confirmations, support, and customer inquiries.",
+    iconColor: "bg-orange-500",
+  },
+  {
+    id: 3,
+    image: cloudService1,
+    icon: ShieldCheck,
+    title: "Secure & Compliant Messaging",
+    description:
+      "Our Las Vegas Business SMS platform ensures encrypted message routing, data protection, and compliance-ready communication.",
+    iconColor: "bg-orange-500",
+  },
+  {
+    id: 4,
+    image: cloudService1,
+    icon: BarChart3,
+    title: "Real-Time SMS Analytics",
+    description:
+      "Track delivery reports, response rates, and campaign performance to measure ROI and optimize your SMS marketing strategy.",
+    iconColor: "bg-orange-500",
+  },
+  {
+    id: 5,
+    image: cloudService1,
+    icon: Clock,
+    title: "Scheduled & Automated Messaging",
+    description:
+      "Schedule SMS campaigns, appointment reminders, alerts, and automated notifications for your Las Vegas customers.",
+    iconColor: "bg-orange-500",
+  },
+  {
+    id: 6,
+    image: cloudService1,
+    icon: MapPin,
+    title: "Las Vegas Local Business Reach",
+    description:
+      "Build stronger local customer relationships with targeted SMS marketing campaigns designed specifically for Las Vegas businesses.",
+    iconColor: "bg-orange-500",
+  },
+];
+
+export const VoipServices = [
+  {
+    id: 1,
+    image: cloudService2,
+    icon: Users,
+    title: "Connect Local & Remote Teams",
+    description:
+      "Keep your Las Vegas team connected with dedicated VoIP lines accessible from desktops, mobiles, and tablets.",
+    iconColor: "bg-orange-500",
+  },
+  {
+    id: 2,
+    image: cloudService1,
+    icon: PhoneCall,
+    title: "High-Quality VoIP Lines",
+    description:
+      "Experience crystal-clear voice calls optimized for Las Vegas businesses, ensuring professional communication.",
+    iconColor: "bg-orange-500",
+  },
+  {
+    id: 3,
+    image: cloudService1,
+    icon: ShieldCheck,
+    title: "Secure & Reliable Connectivity",
+    description:
+      "All VoIP lines are encrypted and hosted on redundant cloud infrastructure for uninterrupted business operations.",
+    iconColor: "bg-orange-500",
+  },
+  {
+    id: 4,
+    image: cloudService1,
+    icon: RefreshCw,
+    title: "Business Continuity & Failover",
+    description:
+      "Automatically reroute calls during outages or internet issues, keeping your Las Vegas business always reachable.",
+    iconColor: "bg-orange-500",
+  },
+  {
+    id: 5,
+    image: cloudService1,
+    icon: TrendingUp,
+    title: "Instant Scalability",
+    description:
+      "Add new lines, extensions, or numbers in minutes — ideal for growing Las Vegas businesses and seasonal demand.",
+    iconColor: "bg-orange-500",
+  },
+  {
+    id: 6,
+    image: cloudService1,
+    icon: MapPin,
+    title: "Local Las Vegas Presence",
+    description:
+      "Use local Las Vegas numbers to build trust with customers while managing calls centrally with cloud VoIP lines.",
+    iconColor: "bg-orange-500",
+  },
+];
 export const navLinks = [
   { id: 1, label: "Home", link: "/home" },
 

@@ -5,14 +5,19 @@ import Detailed from "../../../public/VoipDeatiling.png";
 import BrandName from "../../ui/BrandName";
 import { Check } from "lucide-react";
 import { CheckCircle2, Award, Phone } from "lucide-react";
-import { Card, features, services } from "../../lib/Constant.jsx";
+import {
+  featuresVoip,
+  services,
+  VoipCard,
+  VoipServices,
+} from "../../lib/Constant.jsx";
 import Testominals from "../../ui/Testominals.jsx";
 import { useRef, useState } from "react";
 import video1 from "../../../public/video1.mp4";
 
-const column1 = features.filter((f) => f.column === 1);
-const column2 = features.filter((f) => f.column === 2);
-const column3 = features.filter((f) => f.column === 3);
+const column1 = featuresVoip.filter((f) => f.column === 1);
+const column2 = featuresVoip.filter((f) => f.column === 2);
+const column3 = featuresVoip.filter((f) => f.column === 3);
 
 const VoipLines = () => {
   const videoRef = useRef(null);
@@ -48,49 +53,53 @@ const VoipLines = () => {
             <div className="text-left w-full sm:w-[90%] md:w-[700px] lg:w-[758px]">
               <div className="inline-flex items-center bg-white px-4 sm:px-6 py-2 mb-4 rounded-[18px] shadow-md animate-fadeIn">
                 <span className="text-blue-500 font-medium text-sm sm:text-base">
-                  Dont Buy Expesnive Equipment
+                  Affordable & Flexible VoIP Lines
                 </span>
               </div>
 
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Reliable{" "}
-                <span className="text-blue-600">Scalable Enterprise</span> Ready
-                VoIP for <span className="text-blue-600">Las Vegas</span>{" "}
-                Companies
+                Reliable <span className="text-blue-600">VoIP Lines</span> for{" "}
+                <span className="text-blue-600">Las Vegas</span> Businesses
               </h1>
 
               <p className="text-gray-700 mb-6 text-sm sm:text-base md:text-lg">
-                Upgrade your business communications with a Cloud PBX phone
-                system in Las Vegas built for speed, flexibility, and growth.
-                VoIP Dialing delivers a powerful hosted PBX solution that
-                eliminates on-premise hardware while providing crystal-clear
-                calls, advanced call management, and enterprise-grade
-                reliability — all backed by local expertise.
+                Upgrade your Las Vegas business communications with VoIP
+                Dialing’s dedicated VoIP lines. Get crystal-clear calls,
+                scalable extensions, and cost-effective phone connectivity
+                without traditional phone hardware. Perfect for growing
+                companies, remote teams, and multi-location offices in Las
+                Vegas.
               </p>
 
               <ul className="space-y-2 mb-6 text-gray-700 text-sm sm:text-base">
                 <li className="flex flex-col sm:flex-row sm:items-start gap-2">
                   <span className="text-orange-500">•</span>
                   <span className="text-black">
-                    Deliver first-in-call and stay connected with all your
-                    customers.
+                    Reliable, high-quality VoIP lines for business calls in Las
+                    Vegas.
                   </span>
                 </li>
                 <li className="flex flex-col sm:flex-row sm:items-start gap-2">
                   <span className="text-orange-500">•</span>
                   <span className="text-black">
-                    Trusted by Las Vegas businesses to reduce phone costs,
-                    support remote teams, and scale effortlessly as they grow.
+                    Easily scale your VoIP lines as your team and business grow.
+                  </span>
+                </li>
+                <li className="flex flex-col sm:flex-row sm:items-start gap-2">
+                  <span className="text-orange-500">•</span>
+                  <span className="text-black">
+                    Lower phone costs while maintaining professional, reliable
+                    service.
                   </span>
                 </li>
               </ul>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <button className="bg-orange-500 shadow-sm text-white px-4 py-2 sm:px-5 sm:py-3 rounded-full hover:bg-blue-500 transition text-sm sm:text-base">
-                  See Pricing
+                  View VoIP Line Pricing
                 </button>
                 <button className="bg-white shadow-sm rounded-full text-orange-500 hover:text-white px-4 py-2 sm:px-5 sm:py-3 hover:bg-blue-500 transition text-sm sm:text-base">
-                  Talk Sales
+                  Talk to Sales
                 </button>
               </div>
             </div>
@@ -109,18 +118,19 @@ const VoipLines = () => {
         <div className="mx-4 sm:mx-8 lg:mx-12">
           <div className="text-left lg:text-center mb-12">
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-              Modern Business Communication Starts in the Cloud
+              Modern Business Communication with VoIP Lines
             </h1>
             <p className="text-gray-600 text-md lg:text-lg max-w-4xl mx-auto leading-relaxed">
-              Traditional phone systems can’t keep up with today’s fast-moving
-              businesses. Our Cloud PBX solution empowers Las Vegas
-              organizations with a fully hosted VoIP phone system that works
-              anywhere, on any device.
+              Traditional phone systems are expensive and inflexible. VoIP
+              Dialing provides Las Vegas businesses with dedicated VoIP lines
+              that work anywhere, on any device. Our solution ensures
+              crystal-clear calls, reliable connectivity, and easy scalability —
+              perfect for small businesses, enterprises, and remote teams.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {Card.map((item, indx) => {
+            {VoipCard.map((item, indx) => {
               const Icon = item.icon;
               return (
                 <div
@@ -143,15 +153,16 @@ const VoipLines = () => {
 
           <div className="text-left lg:text-center">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
-              Affordable VoIP Phones & Cloud PBX Plans
+              Affordable VoIP Lines & Flexible Plans
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-8">
-              Choose from a wide range of VoIP desk phones and softphone options
-              available to buy or lease, perfectly integrated with our cloud PBX
-              platform.
+              Choose from a wide range of VoIP line packages designed for Las
+              Vegas businesses of all sizes. Our plans provide cost-effective,
+              reliable, and easy-to-manage phone connectivity — all backed by
+              local support.
             </p>
             <button className="bg-orange-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
-              See Pricing
+              View VoIP Line Plans
             </button>
           </div>
         </div>
@@ -165,13 +176,15 @@ const VoipLines = () => {
               </div>
 
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                Enterprise-Grade VoIP Dialing with Full Class 5 Features
+                Enterprise-Grade VoIP Lines with Advanced Business Features
               </h1>
 
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                Our Cloud PBX platform includes carrier-grade Class 5 switching
-                features, giving Las Vegas businesses the same power used by
-                large telecom providers — without the complexity.
+                Our VoIP lines provide Las Vegas businesses with reliable,
+                secure, and scalable phone connectivity. Enjoy features
+                typically used by large telecom providers — such as call
+                forwarding, auto attendants, and multi-device support — without
+                the complexity or high costs of traditional phone systems.
               </p>
             </div>
 
@@ -182,10 +195,10 @@ const VoipLines = () => {
                 </div>
                 <div>
                   <div className="text-3xl sm:text-4xl font-bold text-gray-900">
-                    20+
+                    15+
                   </div>
                   <div className="text-gray-600 text-sm">
-                    Years of Experience
+                    Years Serving Las Vegas
                   </div>
                 </div>
               </div>
@@ -196,9 +209,11 @@ const VoipLines = () => {
                 </div>
                 <div>
                   <div className="text-3xl sm:text-4xl font-bold text-gray-900">
-                    509+
+                    10K+
                   </div>
-                  <div className="text-gray-600 text-sm">Calls Per Day</div>
+                  <div className="text-gray-600 text-sm">
+                    Calls Per Day in Las Vegas
+                  </div>
                 </div>
               </div>
             </div>
@@ -289,21 +304,22 @@ const VoipLines = () => {
         <div className="mx-4 sm:mx-8 lg:mx-12">
           <div className="text-left lg:text-center mb-12">
             <p className="text-orange-400 text-sm tracking-wider uppercase mb-2">
-              CLOUD SERVICE
+              VOIP LINES SERVICE{" "}
             </p>
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
-              Cloud Service of VoIP Dialing
+              VoIP Lines & Cloud Services for Las Vegas Businesses
             </h1>
             <p className="mt-4 text-gray-400">
-              VoIP Dialing’s cloud-hosted PBX infrastructure is designed for
-              maximum uptime and performance. Our system runs in secure data
-              centers with redundancy and failover — ensuring your Las Vegas
-              business never misses an important call.
+              VoIP Dialing’s cloud-hosted VoIP lines deliver secure, reliable,
+              and scalable phone connectivity for Las Vegas companies. With
+              encrypted communications, automatic failover, and multi-device
+              support, your business stays connected without expensive hardware
+              or downtime.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service) => (
+            {VoipServices.map((service) => (
               <CloudServiceCard
                 key={service.id}
                 image={service.image}
@@ -325,50 +341,50 @@ const VoipLines = () => {
               </p>
 
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12">
-                Why move to the Cloud?
+                Why Choose VoIP Lines in Las Vegas?{" "}
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                 {[
                   {
-                    title: "Lower Monthly Phone Costs",
+                    title: "Lower Monthly Costs",
                     description:
-                      "Reduce telecom expenses by eliminating legacy phone lines and PBX hardware.",
+                      "Reduce telecom expenses by replacing legacy phone lines with affordable VoIP lines optimized for Las Vegas businesses.",
                   },
                   {
                     title: "Work From Anywhere",
                     description:
-                      "Employees can make and receive business calls from anywhere using mobile or desktop apps.",
+                      "Employees can make and receive calls from desktops, laptops, or mobile devices — perfect for remote teams.",
                   },
                   {
                     title: "Instant Scalability",
                     description:
-                      "Add or remove users in minutes as your business grows.",
+                      "Easily add or remove lines as your Las Vegas business grows or handles seasonal demand.",
                   },
                   {
-                    title: "Professional Call Handling",
+                    title: "Professional Call Management",
                     description:
-                      "Auto attendants and call routing create a polished customer experience.",
+                      "Auto attendants, call routing, and voicemail features create a polished customer experience.",
                   },
                   {
                     title: "Business Continuity",
                     description:
-                      "Keep calls flowing during outages with cloud failover and call forwarding.",
+                      "Keep your business reachable during power or internet outages with automatic call failover.",
                   },
                   {
-                    title: "Advanced Call Management",
+                    title: "Advanced Analytics",
                     description:
-                      "Monitor calls, recordings, and analytics in real time.",
+                      "Track call performance, logs, and reports to improve customer engagement and team efficiency.",
                   },
                   {
-                    title: "Easy Integration",
+                    title: "Easy CRM & Device Integration",
                     description:
-                      "Works with IP phones, softphones, and CRM platforms.",
+                      "Works seamlessly with IP phones, softphones, and your existing business software.",
                   },
                   {
-                    title: "Local & Nationwide Coverage",
+                    title: "Local & Nationwide Presence",
                     description:
-                      "Support customers across Las Vegas and beyond with local and toll-free numbers.",
+                      "Offer local Las Vegas numbers or toll-free lines to expand reach while maintaining a trusted presence.",
                   },
                 ].map((item, index) => (
                   <div key={index}>
@@ -394,9 +410,9 @@ const VoipLines = () => {
               />
 
               <div className="absolute -bottom-8 left-8 bg-white rounded-xl shadow-2xl px-10 py-6 text-center">
-                <p className="text-5xl font-bold text-orange-500 mb-1">12K+</p>
+                <p className="text-5xl font-bold text-orange-500 mb-1">6K+</p>
                 <p className="text-sm text-gray-700 font-medium">
-                  Happy Client
+                  Happy Clients in Las Vegas
                 </p>
               </div>
             </div>

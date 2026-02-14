@@ -5,14 +5,19 @@ import Detailed from "../../../public/VoipDeatiling.png";
 import BrandName from "../../ui/BrandName";
 import { Check } from "lucide-react";
 import { CheckCircle2, Award, Phone } from "lucide-react";
-import { Card, features, services } from "../../lib/Constant.jsx";
+import {
+  BulkCard,
+  BulkServices,
+  featuresBulk,
+  services,
+} from "../../lib/Constant.jsx";
 import Testominals from "../../ui/Testominals.jsx";
 import { useRef, useState } from "react";
 import video1 from "../../../public/video1.mp4";
 
-const column1 = features.filter((f) => f.column === 1);
-const column2 = features.filter((f) => f.column === 2);
-const column3 = features.filter((f) => f.column === 3);
+const column1 = featuresBulk.filter((f) => f.column === 1);
+const column2 = featuresBulk.filter((f) => f.column === 2);
+const column3 = featuresBulk.filter((f) => f.column === 3);
 
 const BulkSMS = () => {
   const videoRef = useRef(null);
@@ -48,49 +53,56 @@ const BulkSMS = () => {
             <div className="text-left w-full sm:w-[90%] md:w-[700px] lg:w-[758px]">
               <div className="inline-flex items-center bg-white px-4 sm:px-6 py-2 mb-4 rounded-[18px] shadow-md animate-fadeIn">
                 <span className="text-blue-500 font-medium text-sm sm:text-base">
-                  Dont Buy Expesnive Equipment
+                  Launch Powerful SMS Campaigns — No Extra Hardware Needed
                 </span>
               </div>
 
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Reliable{" "}
-                <span className="text-blue-600">Scalable Enterprise</span> Ready
-                VoIP for <span className="text-blue-600">Las Vegas</span>{" "}
-                Companies
+                Bulk SMS &{" "}
+                <span className="text-blue-600">Business Text Messaging</span>{" "}
+                for <span className="text-blue-600">Las Vegas</span> Companies
               </h1>
 
               <p className="text-gray-700 mb-6 text-sm sm:text-base md:text-lg">
-                Upgrade your business communications with a Cloud PBX phone
-                system in Las Vegas built for speed, flexibility, and growth.
-                VoIP Dialing delivers a powerful hosted PBX solution that
-                eliminates on-premise hardware while providing crystal-clear
-                calls, advanced call management, and enterprise-grade
-                reliability — all backed by local expertise.
+                Reach your customers instantly with VoIP Dialing’s Bulk SMS
+                service in Las Vegas. Send promotions, appointment reminders,
+                alerts, and marketing campaigns directly to mobile phones with
+                high open rates and real-time delivery. Our business SMS
+                platform is secure, scalable, and designed to help Las Vegas
+                businesses increase engagement, boost sales, and improve
+                customer communication.
               </p>
 
               <ul className="space-y-2 mb-6 text-gray-700 text-sm sm:text-base">
                 <li className="flex flex-col sm:flex-row sm:items-start gap-2">
                   <span className="text-orange-500">•</span>
                   <span className="text-black">
-                    Deliver first-in-call and stay connected with all your
-                    customers.
+                    Send thousands of promotional or transactional SMS messages
+                    in seconds.
                   </span>
                 </li>
                 <li className="flex flex-col sm:flex-row sm:items-start gap-2">
                   <span className="text-orange-500">•</span>
                   <span className="text-black">
-                    Trusted by Las Vegas businesses to reduce phone costs,
-                    support remote teams, and scale effortlessly as they grow.
+                    Perfect for Las Vegas retail, healthcare, hospitality, and
+                    service businesses.
+                  </span>
+                </li>
+                <li className="flex flex-col sm:flex-row sm:items-start gap-2">
+                  <span className="text-orange-500">•</span>
+                  <span className="text-black">
+                    Manage calls and SMS together with VoIP Dialing’s unified
+                    communication platform.
                   </span>
                 </li>
               </ul>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <button className="bg-orange-500 shadow-sm text-white px-4 py-2 sm:px-5 sm:py-3 rounded-full hover:bg-blue-500 transition text-sm sm:text-base">
-                  See Pricing
+                  Start SMS Campaign
                 </button>
                 <button className="bg-white shadow-sm rounded-full text-orange-500 hover:text-white px-4 py-2 sm:px-5 sm:py-3 hover:bg-blue-500 transition text-sm sm:text-base">
-                  Talk Sales
+                  Get Las Vegas Pricing
                 </button>
               </div>
             </div>
@@ -109,18 +121,18 @@ const BulkSMS = () => {
         <div className="mx-4 sm:mx-8 lg:mx-12">
           <div className="text-left lg:text-center mb-12">
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-              Modern Business Communication Starts in the Cloud
+              Powerful Bulk SMS Marketing for Las Vegas Businesses
             </h1>
             <p className="text-gray-600 text-md lg:text-lg max-w-4xl mx-auto leading-relaxed">
-              Traditional phone systems can’t keep up with today’s fast-moving
-              businesses. Our Cloud PBX solution empowers Las Vegas
-              organizations with a fully hosted VoIP phone system that works
-              anywhere, on any device.
+              Email and social media can’t match the speed of SMS. Our Bulk SMS
+              service helps Las Vegas businesses instantly connect with
+              customers through high-open-rate text messaging campaigns, alerts,
+              and automated notifications — all from one easy-to-use platform.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {Card.map((item, indx) => {
+            {BulkCard.map((item, indx) => {
               const Icon = item.icon;
               return (
                 <div
@@ -143,15 +155,16 @@ const BulkSMS = () => {
 
           <div className="text-left lg:text-center">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
-              Affordable VoIP Phones & Cloud PBX Plans
+              Affordable Bulk SMS Plans for Las Vegas Companies
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-8">
-              Choose from a wide range of VoIP desk phones and softphone options
-              available to buy or lease, perfectly integrated with our cloud PBX
-              platform.
+              Choose flexible Business SMS and Bulk SMS packages designed for
+              small businesses, enterprises, retail stores, healthcare
+              providers, and service companies in Las Vegas. Scale your
+              messaging as your customer base grows.
             </p>
             <button className="bg-orange-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
-              See Pricing
+              View SMS Pricing
             </button>
           </div>
         </div>
@@ -165,13 +178,15 @@ const BulkSMS = () => {
               </div>
 
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                Enterprise-Grade VoIP Dialing with Full Class 5 Features
+                Advanced Bulk SMS Features for Las Vegas Businesses
               </h1>
 
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                Our Cloud PBX platform includes carrier-grade Class 5 switching
-                features, giving Las Vegas businesses the same power used by
-                large telecom providers — without the complexity.
+                Our Business SMS platform provides enterprise-grade messaging
+                tools designed to help Las Vegas companies run effective SMS
+                marketing campaigns, send automated alerts, and manage two-way
+                customer communication — all from a secure, cloud-based
+                dashboard.
               </p>
             </div>
 
@@ -182,11 +197,9 @@ const BulkSMS = () => {
                 </div>
                 <div>
                   <div className="text-3xl sm:text-4xl font-bold text-gray-900">
-                    20+
+                    98%
                   </div>
-                  <div className="text-gray-600 text-sm">
-                    Years of Experience
-                  </div>
+                  <div className="text-gray-600 text-sm">SMS Open Rate</div>
                 </div>
               </div>
 
@@ -196,9 +209,9 @@ const BulkSMS = () => {
                 </div>
                 <div>
                   <div className="text-3xl sm:text-4xl font-bold text-gray-900">
-                    509+
+                    Instant
                   </div>
-                  <div className="text-gray-600 text-sm">Calls Per Day</div>
+                  <div className="text-gray-600 text-sm">Message Delivery</div>
                 </div>
               </div>
             </div>
@@ -289,21 +302,22 @@ const BulkSMS = () => {
         <div className="mx-4 sm:mx-8 lg:mx-12">
           <div className="text-left lg:text-center mb-12">
             <p className="text-orange-400 text-sm tracking-wider uppercase mb-2">
-              CLOUD SERVICE
+              BUSINESS SMS PLATFORM
             </p>
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
-              Cloud Service of VoIP Dialing
+              Secure & Scalable Bulk SMS Service in Las Vegas
             </h1>
             <p className="mt-4 text-gray-400">
-              VoIP Dialing’s cloud-hosted PBX infrastructure is designed for
-              maximum uptime and performance. Our system runs in secure data
-              centers with redundancy and failover — ensuring your Las Vegas
-              business never misses an important call.
+              VoIP Dialing’s cloud-based Bulk SMS platform is built for speed,
+              security, and high-volume messaging. Designed specifically for Las
+              Vegas businesses, our SMS infrastructure ensures instant delivery,
+              real-time tracking, and reliable performance for marketing
+              campaigns, alerts, reminders, and customer engagement.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service) => (
+            {BulkServices.map((service) => (
               <CloudServiceCard
                 key={service.id}
                 image={service.image}
@@ -325,50 +339,50 @@ const BulkSMS = () => {
               </p>
 
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12">
-                Why move to the Cloud?
+                Why Choose Bulk SMS for Your Las Vegas Business?
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                 {[
                   {
-                    title: "Lower Monthly Phone Costs",
+                    title: "Instant Customer Reach",
                     description:
-                      "Reduce telecom expenses by eliminating legacy phone lines and PBX hardware.",
+                      "Deliver marketing promotions, alerts, and notifications directly to your customers’ mobile phones in seconds.",
                   },
                   {
-                    title: "Work From Anywhere",
+                    title: "High Open & Response Rates",
                     description:
-                      "Employees can make and receive business calls from anywhere using mobile or desktop apps.",
+                      "SMS messages are read within minutes, ensuring your Las Vegas audience sees your message immediately.",
                   },
                   {
-                    title: "Instant Scalability",
+                    title: "Two-Way Communication",
                     description:
-                      "Add or remove users in minutes as your business grows.",
+                      "Enable replies for bookings, confirmations, inquiries, and feedback to improve engagement.",
                   },
                   {
-                    title: "Professional Call Handling",
+                    title: "Scheduled & Automated Campaigns",
                     description:
-                      "Auto attendants and call routing create a polished customer experience.",
+                      "Plan campaigns in advance and automate recurring messages to reach customers at optimal times.",
                   },
                   {
-                    title: "Business Continuity",
+                    title: "Cost-Effective Marketing",
                     description:
-                      "Keep calls flowing during outages with cloud failover and call forwarding.",
+                      "Reduce marketing spend compared to print, radio, or online ads while reaching a larger local audience.",
                   },
                   {
-                    title: "Advanced Call Management",
+                    title: "Local Las Vegas Presence",
                     description:
-                      "Monitor calls, recordings, and analytics in real time.",
+                      "Send messages from local phone numbers to increase trust and customer engagement in your area.",
                   },
                   {
-                    title: "Easy Integration",
+                    title: "Actionable Analytics",
                     description:
-                      "Works with IP phones, softphones, and CRM platforms.",
+                      "Track delivery, read rates, and responses to measure the ROI of your Bulk SMS campaigns.",
                   },
                   {
-                    title: "Local & Nationwide Coverage",
+                    title: "Secure & Reliable Messaging",
                     description:
-                      "Support customers across Las Vegas and beyond with local and toll-free numbers.",
+                      "Our platform ensures encrypted SMS delivery and enterprise-grade uptime for all campaigns.",
                   },
                 ].map((item, index) => (
                   <div key={index}>
@@ -394,9 +408,9 @@ const BulkSMS = () => {
               />
 
               <div className="absolute -bottom-8 left-8 bg-white rounded-xl shadow-2xl px-10 py-6 text-center">
-                <p className="text-5xl font-bold text-orange-500 mb-1">12K+</p>
+                <p className="text-5xl font-bold text-orange-500 mb-1">8K+</p>
                 <p className="text-sm text-gray-700 font-medium">
-                  Happy Client
+                  SMS Campaigns Sent
                 </p>
               </div>
             </div>

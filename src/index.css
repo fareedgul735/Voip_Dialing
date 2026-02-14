@@ -46,7 +46,6 @@
   }
 }
 
-
 /* Custom horizontal scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
   height: 4px; /* patla scrollbar */
@@ -72,4 +71,26 @@
 .custom-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: #d1d5db transparent;
+}
+
+/* Custom Orange Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* width of vertical scrollbar */
+  height: 8px; /* height of horizontal scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #fef3e4; /* light orange track */
+  border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #f97316; /* orange thumb */
+  border-radius: 8px;
+  border: 2px solid #fef3e4; /* space around thumb */
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #f97316 #fef3e4; /* thumb track */
 }

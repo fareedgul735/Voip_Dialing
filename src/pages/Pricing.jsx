@@ -123,8 +123,8 @@ const VoIPPricingInterface = () => {
           background: #ea580c;
         }
       `}</style>
-      <div className="mx-12">
-        <div className="flex items-center mb-8">
+      <div className="mx-4 sm:mx-6 md:mx-8 lg:mx-12">
+        <div className="flex items-center mb-6 lg:mb-8 overflow-x-auto">
           {steps.map((step, index) => (
             <div
               key={step.id}
@@ -132,24 +132,24 @@ const VoIPPricingInterface = () => {
                 setActiveStep(step.id);
                 setOpenCollapse(step.collapseId);
               }}
-              className={`flex justify-center items-center py-1 px-17 text-center font-medium cursor-pointer transition-colors
-                border border-r border-white
-                ${
-                  activeStep === step.id
-                    ? "bg-orange-500 text-white"
-                    : "bg-[#027DB6] text-white hover:bg-[#027DB7]"
-                }`}
+              className={`flex justify-center items-center py-1 px-8 lg:px-17 text-center font-medium cursor-pointer transition-colors whitespace-nowrap
+        border border-r border-white
+        ${
+          activeStep === step.id
+            ? "bg-orange-500 text-white"
+            : "bg-[#027DB6] text-white hover:bg-[#027DB7]"
+        }`}
               style={{
                 marginLeft: index === 0 ? "0" : "-20px",
                 zIndex: steps.length - index,
               }}
             >
-              <span className="text-[12px]">{step.label}</span>
+              <span className="text-[11px] sm:text-[12px]">{step.label}</span>
             </div>
           ))}
         </div>
 
-        <div className="flex gap-6">
+        <div className="flex flex-col lg:flex-row gap-6">
           <div className="flex-1 space-y-3">
             {collapseItems.map((item) => (
               <div
@@ -161,11 +161,10 @@ const VoIPPricingInterface = () => {
                     const stepIndex = steps.findIndex(
                       (s) => s.collapseId === item.id,
                     );
-
                     setActiveStep(stepIndex !== -1 ? stepIndex : null);
                     setOpenCollapse(openCollapse === item.id ? null : item.id);
                   }}
-                  className="flex items-center justify-between px-4 py-2.5 cursor-pointer hover:bg-orange-50"
+                  className="flex items-center justify-between px-4 py-3 cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
                     <span className="font-medium text-gray-700 text-sm">
@@ -185,7 +184,8 @@ const VoIPPricingInterface = () => {
                 {openCollapse === item.id && (
                   <div className="px-5 py-4 bg-orange-50 border-t border-orange-400">
                     {item.id === "phone" && (
-                      <div className="flex gap-8">
+                      <div className="flex flex-col md:flex-row gap-6 lg:gap-8">
+                        {/* Search Area */}
                         <div className="flex-1">
                           <h3 className="text-sm font-semibold mb-3">
                             Search For Local or Toll Free Numbers
@@ -205,7 +205,8 @@ const VoIPPricingInterface = () => {
                             </button>
                           </div>
 
-                          <div className="grid grid-cols-4 gap-2 mb-2">
+                          {/* Area Codes Grid */}
+                          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 mb-2">
                             {areaCodes.map((code) => (
                               <button
                                 key={code}
@@ -220,7 +221,7 @@ const VoIPPricingInterface = () => {
                             ))}
                           </div>
 
-                          <div className="grid grid-cols-4 gap-2">
+                          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
                             {areaCodes.map((code) => (
                               <button
                                 key={`${code}-2`}
@@ -232,6 +233,7 @@ const VoIPPricingInterface = () => {
                           </div>
                         </div>
 
+                        {/* Phone Numbers List */}
                         <div className="flex-1">
                           <div className="flex justify-between mb-3">
                             <h3 className="text-sm font-semibold text-orange-500">
@@ -276,7 +278,15 @@ const VoIPPricingInterface = () => {
                     )}
 
                     {item.id === "cloud" && (
-                      <div className="space-y-6 bg-orange-50">
+                      <div
+                        className="space-y-6 bg-orange-50 p-4 custom-scrollbar"
+                        style={{
+                          maxHeight: "80vh",
+                          overflowY: "auto",
+                          WebkitOverflowScrolling: "touch",
+                        }} // smooth swipe
+                      >
+                        {/* Hosted Phone System */}
                         <div className="border border-orange-300 rounded-md p-4">
                           <h3 className="font-semibold text-black mb-4 border-b border-orange-200 pb-2">
                             Dedicated Hosted Phone System
@@ -301,7 +311,7 @@ const VoIPPricingInterface = () => {
                           ].map((plan, i) => (
                             <div
                               key={i}
-                              className="flex justify-between items-center py-3 border-b border-gray-100 last:border-0"
+                              className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-3 border-b border-gray-100 last:border-0 gap-2"
                             >
                               <div className="flex items-center gap-2">
                                 <span className="text-orange-500 text-lg">
@@ -329,7 +339,8 @@ const VoIPPricingInterface = () => {
                           ))}
                         </div>
 
-                        <div className="bg-orange-50 border border-orange-300 rounded-md p-4">
+                        {/* Optional Add-ons */}
+                        <div className="border border-orange-300 rounded-md p-4 bg-orange-50">
                           <h3 className="font-semibold text-black mb-4 border-b border-orange-200 pb-2">
                             Optional Add-On Features
                           </h3>
@@ -373,7 +384,7 @@ const VoIPPricingInterface = () => {
                           ].map((addon, i) => (
                             <div
                               key={i}
-                              className="flex justify-between items-center py-3 border-b border-gray-100 last:border-0"
+                              className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-3 border-b border-gray-100 last:border-0 gap-2"
                             >
                               <div className="flex items-center gap-2 flex-1">
                                 <span className="text-orange-500 text-lg">
@@ -401,11 +412,12 @@ const VoIPPricingInterface = () => {
                           ))}
                         </div>
 
-                        <div className="bg-orange-50 grid grid-cols-2 gap-6">
+                        {/* PBX Features & Key Advantages */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="border border-orange-300 rounded-md p-4">
                             <h4 className="font-semibold mb-3 flex items-center gap-2">
-                              <span className="text-orange-500">●</span>
-                              PBX Features
+                              <span className="text-orange-500">●</span> PBX
+                              Features
                             </h4>
                             {[
                               "Call Transfer / Forwarding",
@@ -431,8 +443,8 @@ const VoIPPricingInterface = () => {
 
                           <div className="border border-orange-300 rounded-md p-4">
                             <h4 className="font-semibold mb-3 flex items-center gap-2">
-                              <span className="text-orange-500">●</span>
-                              Key Advantages
+                              <span className="text-orange-500">●</span> Key
+                              Advantages
                             </h4>
                             {[
                               "Easily scalable as you grow",
@@ -463,7 +475,15 @@ const VoIPPricingInterface = () => {
                     )}
 
                     {item.id === "dialing" && (
-                      <div className="space-y-6 bg-orange-50">
+                      <div
+                        className="space-y-6 bg-orange-50 p-4 custom-scrollbar"
+                        style={{
+                          maxHeight: "80vh",
+                          overflowY: "auto",
+                          WebkitOverflowScrolling: "touch",
+                        }}
+                      >
+                        {/* Extensions Section */}
                         <div className="border border-orange-300 rounded-md overflow-hidden">
                           <div className="bg-orange-100 px-4 py-2 flex justify-between items-center">
                             <h3 className="font-semibold text-gray-800 text-sm">
@@ -500,6 +520,7 @@ const VoIPPricingInterface = () => {
                           </div>
                         </div>
 
+                        {/* SIP Trunks Section */}
                         <div className="border border-orange-300 rounded-md overflow-hidden">
                           <div className="bg-orange-100 px-4 py-2">
                             <h3 className="font-semibold text-gray-800 text-sm">
@@ -513,6 +534,7 @@ const VoIPPricingInterface = () => {
                               * Incoming: Local $0.007/min, TF $0.015/min
                             </p>
 
+                            {/* Plans */}
                             {[
                               {
                                 name: "Pay As You Go",
@@ -537,7 +559,7 @@ const VoIPPricingInterface = () => {
                             ].map((plan, i) => (
                               <div
                                 key={i}
-                                className="flex justify-between items-center border-b border-orange-200 pb-3"
+                                className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-orange-200 pb-3 gap-2"
                               >
                                 <div>
                                   <div className="font-medium text-gray-800">
@@ -564,6 +586,7 @@ const VoIPPricingInterface = () => {
                               </div>
                             ))}
 
+                            {/* Dialer Plans */}
                             <div className="pt-4 space-y-3">
                               {[
                                 {
@@ -579,7 +602,7 @@ const VoIPPricingInterface = () => {
                               ].map((plan, i) => (
                                 <div
                                   key={i}
-                                  className="flex justify-between items-center"
+                                  className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2"
                                 >
                                   <div>
                                     <div className="font-medium text-gray-800">
@@ -611,7 +634,14 @@ const VoIPPricingInterface = () => {
                       </div>
                     )}
                     {item.id === "sms" && (
-                      <div className="space-y-6 bg-orange-50">
+                      <div
+                        className="space-y-6 bg-orange-50 p-4 custom-scrollbar"
+                        style={{
+                          maxHeight: "80vh",
+                          overflowY: "auto",
+                          WebkitOverflowScrolling: "touch",
+                        }}
+                      >
                         {/* Conversational SMS */}
                         <div className="border border-orange-300 rounded-md overflow-hidden">
                           <div className="bg-orange-100 px-4 py-2 flex justify-between items-center">
@@ -641,6 +671,7 @@ const VoIPPricingInterface = () => {
                           </div>
                         </div>
 
+                        {/* Conversational & Campaign SMS – Metered */}
                         <div className="border border-orange-300 rounded-md overflow-hidden">
                           <div className="bg-orange-100 px-4 py-2">
                             <h3 className="font-semibold text-sm text-gray-800">
@@ -652,8 +683,12 @@ const VoIPPricingInterface = () => {
                             </h3>
                           </div>
 
-                          <div className="p-6 bg-white">
-                            <table className="w-full text-sm">
+                          {/* Scrollable table wrapper */}
+                          <div
+                            className="p-6 bg-white overflow-x-auto custom-scrollbar"
+                            style={{ WebkitOverflowScrolling: "touch" }}
+                          >
+                            <table className="min-w-[600px] text-sm">
                               <thead>
                                 <tr className="bg-orange-50 text-gray-700">
                                   <th className="text-left px-4 py-2">
@@ -715,6 +750,7 @@ const VoIPPricingInterface = () => {
                           </div>
                         </div>
 
+                        {/* No Package Selected */}
                         <div className="bg-orange-50 border-l-4 border-orange-400 px-6 py-5 text-center">
                           <div className="font-medium text-gray-800">
                             No Package was selected
@@ -754,8 +790,11 @@ const VoIPPricingInterface = () => {
                             </summary>
 
                             {/* Body */}
-                            <div className="p-4">
-                              <table className="w-full text-sm">
+                            <div
+                              className="p-4 overflow-x-auto custom-scrollbar"
+                              style={{ WebkitOverflowScrolling: "touch" }}
+                            >
+                              <table className="min-w-[600px] text-sm">
                                 <thead>
                                   <tr className="bg-orange-50 text-gray-700">
                                     <th className="text-left px-3 py-2">
@@ -817,31 +856,32 @@ const VoIPPricingInterface = () => {
             ))}
           </div>
 
-          <div className="w-[420px] sticky top-6 self-start">
-            <div className="w-full bg-white rounded-2xl border-1 border-orange-400 overflow-hidden">
-              <div className="bg-orange-100 border-b-1 border-orange-400 px-6 py-3">
+          <div className="w-full lg:w-[420px] lg:sticky lg:top-6 self-start">
+            <div className="w-full bg-white rounded-2xl border border-orange-400 overflow-hidden">
+              <div className="bg-orange-100 border-b border-orange-400 px-6 py-3">
                 <h1 className="text-md font-bold text-gray-900">
                   Shopping Cart Totals
                 </h1>
               </div>
 
-              <div className="px-6 py-28">
+              <div className="px-4 sm:px-6 py-16 sm:py-20 lg:py-28">
                 <div className="text-center text-gray-800 text-lg font-medium">
                   No Item Added
                 </div>
               </div>
 
-              <div className="p-[12px] shadow-md pb-6 flex items-center gap-3">
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-10 py-3 rounded-full transition-colors">
+              <div className="p-4 shadow-md pb-6 flex flex-col sm:flex-row items-center gap-3">
+                <button className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-semibold px-10 py-3 rounded-full transition-colors">
                   Next
                 </button>
-                <Link to={"/shoppingcart"}>
-                  <button className="bg-white hover:bg-orange-50 text-orange-500 font-semibold px-8 py-3 rounded-full border-2 border-orange-500 transition-colors">
+
+                <Link to={"/shoppingcart"} className="w-full sm:w-auto">
+                  <button className="w-full bg-white hover:bg-orange-50 text-orange-500 font-semibold px-8 py-3 rounded-full border-2 border-orange-500 transition-colors">
                     Checkout
                   </button>
                 </Link>
 
-                <div className="ml-auto text-right">
+                <div className="sm:ml-auto text-center sm:text-right">
                   <div className="text-sm text-gray-700 mb-0.5">
                     Total Price
                   </div>
@@ -860,6 +900,3 @@ const VoIPPricingInterface = () => {
 };
 
 export default VoIPPricingInterface;
-
-
-

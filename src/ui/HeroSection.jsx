@@ -161,13 +161,13 @@ const HeroSection = () => {
 
       ${
         activeSlide === 1
-          ? "rounded-2xl scale-100 md:scale-105 lg:scale-110 h-[300px] md:h-[380px] lg:h-[420px]"
+          ? "rounded-lg scale-100 md:scale-105 lg:scale-110 h-[300px] md:h-[380px] lg:h-[420px]"
           : ""
       }
 
       ${
         activeSlide === 2
-          ? "rounded-xl h-[320px] md:h-[420px] lg:h-[520px]"
+          ? "rounded-lg h-[320px] md:h-[420px] lg:h-[520px]"
           : ""
       }
     `}
@@ -218,7 +218,7 @@ const HeroSection = () => {
                 className="absolute bottom-16 left-2 md:-left-4 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full overflow-hidden animate-float"
                 style={{ animationDelay: "1.5s" }}
               >
-                <img src={image1} className="w-full h-full object-cover" />
+                <img src={image1} className="w-full h-full object-cover " />
               </div>
             </>
           )}
