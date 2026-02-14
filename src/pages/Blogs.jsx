@@ -86,19 +86,23 @@ const Blogs = () => {
     if (activeTab === "Blog") {
       return (
         <div className="space-y-8">
-          <div className="bg-white rounded-2xl shadow-sm p-8 border border-gray-100">
-            <div className="flex flex-col lg:flex-row gap-8">
+          {/* Featured Blog */}
+          <div className="bg-white rounded-2xl shadow-sm p-6 md:p-8 border border-gray-100">
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+              {/* Text Content */}
               <div className="flex-1">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="bg-orange-100 text-gray-700 px-4 py-1.5 rounded-full text-sm font-medium">
+                <div className="flex flex-wrap items-center gap-2 mb-4">
+                  <span className="bg-orange-100 text-gray-700 px-3 py-1.5 rounded-full text-sm font-medium">
                     Featured
                   </span>
                   <span className="text-gray-500 text-sm">June 24, 2025</span>
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
                   Why Businesses Choose VOIP for AI Chatbots and CRM Success
                 </h2>
-                <p className="text-gray-600 leading-relaxed mb-6">
+
+                <p className="text-gray-600 leading-relaxed mb-6 max-h-48 md:max-h-60 overflow-y-auto custom-scrollbar">
                   VoIP Dialing Inc., CEO & Founder, Ben Navon announces the
                   ribbon cutting ceremony celebrating the expansion of their
                   VoIP solutions at their offices located at 5940 South Rainbow
@@ -110,6 +114,7 @@ const Blogs = () => {
                   VoIP solutions at their offices located at 5940 South Rainbow
                   Blvd.
                 </p>
+
                 <Link
                   to={`/blogs/${featuredBlog.id}`}
                   className="text-gray-500 font-semibold hover:text-orange-600 transition-colors"
@@ -117,13 +122,15 @@ const Blogs = () => {
                   Read more
                 </Link>
               </div>
-              <div className="lg:w-[740px]">
+
+              {/* Featured Image */}
+              <div className="w-full lg:w-[740px] flex-shrink-0">
                 <Link to={`/blogs/${featuredBlog.id}`}>
-                  <div className="rounded-xl p-8 h-full flex items-center justify-center">
+                  <div className="rounded-xl p-4 h-full flex items-center justify-center">
                     <img
                       src={Blog}
                       alt="Blog laptop"
-                      className="w-full  rounded-lg shadow-lg"
+                      className="w-full h-auto max-h-80 md:max-h-[360px] object-cover rounded-lg shadow-lg"
                     />
                   </div>
                 </Link>
@@ -131,12 +138,13 @@ const Blogs = () => {
             </div>
           </div>
 
+          {/* All Articles */}
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
               Read all articles
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {blogPosts
                 .filter((post) => !post.isFeatured)
                 .map((post) => (
@@ -144,18 +152,18 @@ const Blogs = () => {
                     key={post.id}
                     className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
                   >
-                    <div className="p-6">
+                    <div className="p-4 md:p-6">
                       <Link to={`/blogs/${post.id}`}>
                         <img
                           src={Blog}
                           alt="Blog"
-                          className="w-full rounded-lg shadow-md"
+                          className="w-full rounded-lg shadow-md object-cover max-h-60 sm:max-h-48 md:max-h-60"
                         />
                       </Link>
                     </div>
 
-                    <div className="p-6">
-                      <div className="flex items-center gap-3 mb-3">
+                    <div className="p-4 md:p-6">
+                      <div className="flex flex-wrap items-center gap-2 mb-3">
                         <span className="bg-orange-50 text-orange-600 px-3 py-1 rounded-full text-xs font-medium">
                           {post.category}
                         </span>
@@ -164,7 +172,7 @@ const Blogs = () => {
                         </span>
                       </div>
 
-                      <h4 className="text-lg font-bold text-gray-900 mb-4 leading-snug">
+                      <h4 className="text-lg font-bold text-gray-900 mb-3 leading-snug">
                         {post.title}
                       </h4>
 
@@ -240,20 +248,26 @@ const Blogs = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Blog</h1>
           <p className="text-gray-600 mb-6">Read our latest articles</p>
 
-          <div className="flex flex-wrap gap-3">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`cursor-pointer px-6 py-2.5 rounded-full font-medium transition-all ${
-                  activeTab === tab
-                    ? "bg-orange-500 text-white shadow-md"
-                    : "bg-orange-100 text-orange-400 border-2 border-orange-200 hover:border-orange-300 hover:bg-orange-100"
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
+          <div
+            className="overflow-x-auto w-full custom-scrollbar"
+            style={{ WebkitOverflowScrolling: "touch" }}
+          >
+            <div className="flex gap-3 min-w-max">
+              {tabs.map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`cursor-pointer px-6 py-2.5 rounded-full font-medium transition-all whitespace-nowrap
+          ${
+            activeTab === tab
+              ? "bg-orange-500 text-white shadow-md"
+              : "bg-orange-100 text-orange-400 border-2 border-orange-200 hover:border-orange-300 hover:bg-orange-100"
+          }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
