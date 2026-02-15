@@ -5,14 +5,18 @@ import Detailed from "../../../public/VoipDeatiling.png";
 import BrandName from "../../ui/BrandName";
 import { Check } from "lucide-react";
 import { CheckCircle2, Award, Phone } from "lucide-react";
-import { Card, features, services } from "../../lib/Constant.jsx";
+import {
+  CardPhone,
+  PhoneFeatures,
+  PhoneServices,
+} from "../../lib/Constant.jsx";
 import Testominals from "../../ui/Testominals.jsx";
 import { useRef, useState } from "react";
 import video1 from "../../../public/video1.mp4";
 
-const column1 = features.filter((f) => f.column === 1);
-const column2 = features.filter((f) => f.column === 2);
-const column3 = features.filter((f) => f.column === 3);
+const column1 = PhoneFeatures.filter((f) => f.column === 1);
+const column2 = PhoneFeatures.filter((f) => f.column === 2);
+const column3 = PhoneFeatures.filter((f) => f.column === 3);
 
 const PhoneNumber = () => {
   const videoRef = useRef(null);
@@ -48,46 +52,48 @@ const PhoneNumber = () => {
             <div className="text-left w-full sm:w-[90%] md:w-[700px] lg:w-[758px]">
               <div className="inline-flex items-center bg-white px-4 sm:px-6 py-2 mb-4 rounded-[18px] shadow-md animate-fadeIn">
                 <span className="text-blue-500 font-medium text-sm sm:text-base">
-                  Dont Buy Expesnive Equipment
+                  Local, Toll-Free & Vanity Numbers Available
                 </span>
               </div>
 
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Reliable{" "}
-                <span className="text-blue-600">Scalable Enterprise</span> Ready
-                VoIP for <span className="text-blue-600">Las Vegas</span>{" "}
-                Companies
+                Buy{" "}
+                <span className="text-blue-600">Business Phone Numbers</span> in{" "}
+                <span className="text-blue-600">Las Vegas</span>
               </h1>
 
               <p className="text-gray-700 mb-6 text-sm sm:text-base md:text-lg">
-                Upgrade your business communications with a Cloud PBX phone
-                system in Las Vegas built for speed, flexibility, and growth.
-                VoIP Dialing delivers a powerful hosted PBX solution that
-                eliminates on-premise hardware while providing crystal-clear
-                calls, advanced call management, and enterprise-grade
-                reliability — all backed by local expertise.
+                Get local Las Vegas phone numbers, toll-free numbers, and vanity
+                numbers for your business in minutes. VoIP Dialing provides
+                reliable, cloud-based business phone numbers that help you build
+                trust, improve customer reach, and establish a strong local
+                presence in Las Vegas.
               </p>
 
               <ul className="space-y-2 mb-6 text-gray-700 text-sm sm:text-base">
                 <li className="flex flex-col sm:flex-row sm:items-start gap-2">
                   <span className="text-orange-500">•</span>
                   <span className="text-black">
-                    Deliver first-in-call and stay connected with all your
-                    customers.
+                    Instantly activate Las Vegas local business phone numbers.
                   </span>
                 </li>
                 <li className="flex flex-col sm:flex-row sm:items-start gap-2">
                   <span className="text-orange-500">•</span>
                   <span className="text-black">
-                    Trusted by Las Vegas businesses to reduce phone costs,
-                    support remote teams, and scale effortlessly as they grow.
+                    Choose from toll-free, vanity, and virtual phone numbers.
+                  </span>
+                </li>
+                <li className="flex flex-col sm:flex-row sm:items-start gap-2">
+                  <span className="text-orange-500">•</span>
+                  <span className="text-black">
+                    Easily forward calls to any device or VoIP system.
                   </span>
                 </li>
               </ul>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <button className="bg-orange-500 shadow-sm text-white px-4 py-2 sm:px-5 sm:py-3 rounded-full hover:bg-blue-500 transition text-sm sm:text-base">
-                  See Pricing
+                  Browse Available Numbers
                 </button>
                 <button className="bg-white shadow-sm rounded-full text-orange-500 hover:text-white px-4 py-2 sm:px-5 sm:py-3 hover:bg-blue-500 transition text-sm sm:text-base">
                   Talk Sales
@@ -109,18 +115,19 @@ const PhoneNumber = () => {
         <div className="mx-4 sm:mx-8 lg:mx-12">
           <div className="text-left lg:text-center mb-12">
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-              Modern Business Communication Starts in the Cloud
+              Professional Business Phone Numbers in Las Vegas
             </h1>
             <p className="text-gray-600 text-md lg:text-lg max-w-4xl mx-auto leading-relaxed">
-              Traditional phone systems can’t keep up with today’s fast-moving
-              businesses. Our Cloud PBX solution empowers Las Vegas
-              organizations with a fully hosted VoIP phone system that works
-              anywhere, on any device.
+              Establish a strong local presence with Las Vegas business phone
+              numbers designed for growing companies. Whether you need local 702
+              or 725 area code numbers, toll-free numbers, or custom vanity
+              numbers, VoIP Dialing makes it simple to activate, manage, and
+              scale your communication system entirely in the cloud.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {Card.map((item, indx) => {
+            {CardPhone.map((item, indx) => {
               const Icon = item.icon;
               return (
                 <div
@@ -143,15 +150,15 @@ const PhoneNumber = () => {
 
           <div className="text-left lg:text-center">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
-              Affordable VoIP Phones & Cloud PBX Plans
+              Affordable Las Vegas Business Phone Numbers for Every Company
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-8">
-              Choose from a wide range of VoIP desk phones and softphone options
-              available to buy or lease, perfectly integrated with our cloud PBX
-              platform.
+              Whether you're a startup, small business, or enterprise in Las
+              Vegas, our flexible pricing plans make it easy to get the phone
+              numbers you need without expensive contracts or hardware.
             </p>
             <button className="bg-orange-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
-              See Pricing
+              Browse Available Numbers
             </button>
           </div>
         </div>
@@ -165,13 +172,14 @@ const PhoneNumber = () => {
               </div>
 
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                Enterprise-Grade VoIP Dialing with Full Class 5 Features
+                Enterprise-Grade Phone Number Solutions for Las Vegas Businesses
               </h1>
 
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                Our Cloud PBX platform includes carrier-grade Class 5 switching
-                features, giving Las Vegas businesses the same power used by
-                large telecom providers — without the complexity.
+                Our VoIP Dialing phone number platform empowers Las Vegas
+                businesses with local, toll-free, and vanity numbers. Enjoy
+                instant activation, SMS capability, call forwarding, and
+                seamless CRM integration — all without on-premise hardware.
               </p>
             </div>
 
@@ -182,7 +190,7 @@ const PhoneNumber = () => {
                 </div>
                 <div>
                   <div className="text-3xl sm:text-4xl font-bold text-gray-900">
-                    20+
+                    200
                   </div>
                   <div className="text-gray-600 text-sm">
                     Years of Experience
@@ -289,21 +297,23 @@ const PhoneNumber = () => {
         <div className="mx-4 sm:mx-8 lg:mx-12">
           <div className="text-left lg:text-center mb-12">
             <p className="text-orange-400 text-sm tracking-wider uppercase mb-2">
-              CLOUD SERVICE
+              BUSINESS PHONE NUMBERS
             </p>
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
-              Cloud Service of VoIP Dialing
+              Cloud-Powered Business Phone Numbers in Las Vegas
             </h1>
             <p className="mt-4 text-gray-400">
-              VoIP Dialing’s cloud-hosted PBX infrastructure is designed for
-              maximum uptime and performance. Our system runs in secure data
-              centers with redundancy and failover — ensuring your Las Vegas
-              business never misses an important call.
+              VoIP Dialing provides secure, cloud-based business phone numbers
+              for Las Vegas companies looking to scale without expensive
+              hardware. Instantly activate local 702 or 725 numbers, toll-free
+              numbers, or vanity numbers — all managed through our reliable
+              cloud platform with built-in redundancy and enterprise-grade
+              uptime.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service) => (
+            {PhoneServices.map((service) => (
               <CloudServiceCard
                 key={service.id}
                 image={service.image}
@@ -325,50 +335,50 @@ const PhoneNumber = () => {
               </p>
 
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12">
-                Why move to the Cloud?
+                Why Choose Las Vegas Business Phone Numbers?
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                 {[
                   {
-                    title: "Lower Monthly Phone Costs",
+                    title: "Local Las Vegas Numbers",
                     description:
-                      "Reduce telecom expenses by eliminating legacy phone lines and PBX hardware.",
+                      "Establish a trusted local presence with Las Vegas phone numbers (702 & 725) to build customer confidence.",
                   },
                   {
-                    title: "Work From Anywhere",
+                    title: "Toll-Free & Vanity Numbers",
                     description:
-                      "Employees can make and receive business calls from anywhere using mobile or desktop apps.",
+                      "Expand your reach with memorable toll-free and vanity numbers, perfect for marketing campaigns.",
                   },
                   {
-                    title: "Instant Scalability",
+                    title: "SMS-Enabled Lines",
                     description:
-                      "Add or remove users in minutes as your business grows.",
+                      "Communicate quickly with customers using business SMS-enabled numbers for promotions and updates.",
+                  },
+                  {
+                    title: "Instant Number Provisioning",
+                    description:
+                      "Activate new phone numbers instantly—no waiting for setup, ideal for fast-growing Las Vegas businesses.",
+                  },
+                  {
+                    title: "Multi-Device Support",
+                    description:
+                      "Receive calls on desktop, mobile, or tablet, ensuring you never miss an important customer call.",
+                  },
+                  {
+                    title: "Seamless CRM Integration",
+                    description:
+                      "Integrate your phone numbers with popular CRM and business tools to streamline customer management.",
                   },
                   {
                     title: "Professional Call Handling",
                     description:
-                      "Auto attendants and call routing create a polished customer experience.",
+                      "Advanced call routing, auto attendants, and voicemail features provide a professional experience.",
                   },
                   {
-                    title: "Business Continuity",
+                    title: "Reliable Business Continuity",
                     description:
-                      "Keep calls flowing during outages with cloud failover and call forwarding.",
-                  },
-                  {
-                    title: "Advanced Call Management",
-                    description:
-                      "Monitor calls, recordings, and analytics in real time.",
-                  },
-                  {
-                    title: "Easy Integration",
-                    description:
-                      "Works with IP phones, softphones, and CRM platforms.",
-                  },
-                  {
-                    title: "Local & Nationwide Coverage",
-                    description:
-                      "Support customers across Las Vegas and beyond with local and toll-free numbers.",
+                      "Keep your lines active during outages with cloud failover and automatic call forwarding.",
                   },
                 ].map((item, index) => (
                   <div key={index}>

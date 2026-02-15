@@ -118,7 +118,7 @@ const BusinessCommunicationServices = () => {
           <div className="flex gap-3 justify-center md:justify-end mt-4 md:mt-0">
             <Link>
               <CustomButtonTwin
-                className="bg-orange-500 cursor-pointer hover:bg-blue-500 shadow-md text-white px-4 py-2 sm:px-5 sm:py-2 rounded-full text-sm sm:text-base"
+                className="cursor-pointer shadow-md bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition"
                 value={<span>Schedule Demo</span>}
               />
             </Link>
@@ -230,13 +230,13 @@ const BusinessCommunicationServices = () => {
             <div className="flex flex-col sm:flex-row gap-3 justify-start mb-4">
               <Link to={"/pricing"}>
                 <CustomButtonTwin
-                  className="bg-orange-500 cursor-pointer hover:bg-blue-500 shadow-md text-white px-4 py-2 sm:px-5 sm:py-2 rounded-full text-sm sm:text-base"
+                  className="cursor-pointer shadow-md bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition"
                   value={<span>Get Pricing</span>}
                 />
               </Link>
               <Link to={"/contact"}>
                 <CustomButton
-                  className="border border-gray-200 hover:bg-blue-500 hover:text-white text-orange-400 cursor-pointer px-4 py-2 sm:px-5 sm:py-2 rounded-full shadow-md text-sm sm:text-base"
+                  className="cursor-pointer shadow-md border border-gray-200 text-gray-800 px-6 py-3  hover:text-white rounded-full hover:bg-blue-500 transition"
                   value={<span>Contact Sales</span>}
                 />
               </Link>

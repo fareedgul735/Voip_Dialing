@@ -48,49 +48,54 @@ const Equipement = () => {
             <div className="text-left w-full sm:w-[90%] md:w-[700px] lg:w-[758px]">
               <div className="inline-flex items-center bg-white px-4 sm:px-6 py-2 mb-4 rounded-[18px] shadow-md animate-fadeIn">
                 <span className="text-blue-500 font-medium text-sm sm:text-base">
-                  Dont Buy Expesnive Equipment
+                  Save on Premium VoIP Equipment
                 </span>
               </div>
 
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Reliable{" "}
-                <span className="text-blue-600">Scalable Enterprise</span> Ready
-                VoIP for <span className="text-blue-600">Las Vegas</span>{" "}
-                Companies
+                Top-Quality{" "}
+                <span className="text-blue-600">VoIP Equipment</span> for
+                <span className="text-blue-600"> Las Vegas Businesses</span>
               </h1>
 
               <p className="text-gray-700 mb-6 text-sm sm:text-base md:text-lg">
-                Upgrade your business communications with a Cloud PBX phone
-                system in Las Vegas built for speed, flexibility, and growth.
-                VoIP Dialing delivers a powerful hosted PBX solution that
-                eliminates on-premise hardware while providing crystal-clear
-                calls, advanced call management, and enterprise-grade
-                reliability — all backed by local expertise.
+                Equip your Las Vegas office with state-of-the-art VoIP phones,
+                headsets, and PBX hardware. VoIP Dialing provides reliable,
+                cost-effective equipment for businesses of all sizes, ensuring
+                crystal-clear communication and seamless integration with your
+                hosted PBX system.
               </p>
 
               <ul className="space-y-2 mb-6 text-gray-700 text-sm sm:text-base">
                 <li className="flex flex-col sm:flex-row sm:items-start gap-2">
                   <span className="text-orange-500">•</span>
                   <span className="text-black">
-                    Deliver first-in-call and stay connected with all your
-                    customers.
+                    Premium SIP phones and headsets designed for
+                    enterprise-grade clarity.
                   </span>
                 </li>
                 <li className="flex flex-col sm:flex-row sm:items-start gap-2">
                   <span className="text-orange-500">•</span>
                   <span className="text-black">
-                    Trusted by Las Vegas businesses to reduce phone costs,
-                    support remote teams, and scale effortlessly as they grow.
+                    Fully compatible with cloud PBX systems to support remote
+                    and in-office teams.
+                  </span>
+                </li>
+                <li className="flex flex-col sm:flex-row sm:items-start gap-2">
+                  <span className="text-orange-500">•</span>
+                  <span className="text-black">
+                    Local Las Vegas support and fast delivery to get your team
+                    connected quickly.
                   </span>
                 </li>
               </ul>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <button className="bg-orange-500 shadow-sm text-white px-4 py-2 sm:px-5 sm:py-3 rounded-full hover:bg-blue-500 transition text-sm sm:text-base">
-                  See Pricing
+                  Shop Equipment
                 </button>
                 <button className="bg-white shadow-sm rounded-full text-orange-500 hover:text-white px-4 py-2 sm:px-5 sm:py-3 hover:bg-blue-500 transition text-sm sm:text-base">
-                  Talk Sales
+                  Contact Sales
                 </button>
               </div>
             </div>
@@ -109,13 +114,13 @@ const Equipement = () => {
         <div className="mx-4 sm:mx-8 lg:mx-12">
           <div className="text-left lg:text-center mb-12">
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-              Modern Business Communication Starts in the Cloud
+              Equip Your Las Vegas Business with Reliable VoIP Hardware
             </h1>
             <p className="text-gray-600 text-md lg:text-lg max-w-4xl mx-auto leading-relaxed">
-              Traditional phone systems can’t keep up with today’s fast-moving
-              businesses. Our Cloud PBX solution empowers Las Vegas
-              organizations with a fully hosted VoIP phone system that works
-              anywhere, on any device.
+              From SIP phones to professional headsets, VoIP Dialing provides
+              top-quality equipment designed to integrate seamlessly with your
+              cloud PBX. Enhance productivity, reduce costs, and stay connected
+              anywhere in Las Vegas.
             </p>
           </div>
 
@@ -143,15 +148,16 @@ const Equipement = () => {
 
           <div className="text-left lg:text-center">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
-              Affordable VoIP Phones & Cloud PBX Plans
+              Affordable VoIP Phones, Headsets & PBX Hardware
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-8">
-              Choose from a wide range of VoIP desk phones and softphone options
-              available to buy or lease, perfectly integrated with our cloud PBX
-              platform.
+              Choose from a variety of high-quality VoIP phones, desk phones,
+              softphones, and accessories available to purchase or lease. Fully
+              compatible with our Las Vegas cloud PBX system for seamless
+              business communication.
             </p>
             <button className="bg-orange-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
-              See Pricing
+              Shop Equipment
             </button>
           </div>
         </div>
