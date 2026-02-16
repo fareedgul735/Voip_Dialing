@@ -4,6 +4,9 @@ import { CustomButton, CustomButtonTwin } from "./CustomButton";
 import { Link } from "react-router";
 
 const BusinessCommunicationServices = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [activeService, setActiveService] = useState(0);
 
   const services = [
@@ -92,12 +95,24 @@ const BusinessCommunicationServices = () => {
   ];
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
+
     const interval = setInterval(() => {
       setActiveService((prev) => (prev + 1) % services.length);
     }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isMobile]);
 
   const currentService = services[activeService];
 
@@ -126,48 +141,108 @@ const BusinessCommunicationServices = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[25%_75%] gap-10">
-          <div className="space-y-4">
-            {services.map((service, index) => {
-              const ServiceIcon = service.icon;
-              const isActive = index === activeService;
+          {isMobile ? (
+            <div className="relative mb-6">
+              <div
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="flex justify-between items-center px-5 py-4 
+                 rounded-full border-2 border-orange-500 
+                 bg-white shadow-md cursor-pointer"
+              >
+                <span className="font-semibold text-gray-800">
+                  {services[activeService].title}
+                </span>
 
-              return (
-                <div
-                  key={index}
-                  onClick={() => setActiveService(index)}
-                  className={`flex gap-4 p-3 rounded-md cursor-pointer transition-all duration-300
-                  ${isActive ? "bg-white" : ""}`}
+                <svg
+                  className={`w-5 h-5 transition-transform ${
+                    isDropdownOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
                 >
-                  <div
-                    className={`w-1 rounded-full ${isActive ? "bg-orange-500" : ""}`}
-                  />
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </div>
 
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-1">
+              {isDropdownOpen && (
+                <div
+                  className="absolute z-20 w-full mt-3 bg-white 
+                      rounded-3xl shadow-xl p-4 space-y-3"
+                >
+                  {services.map((service, index) => {
+                    const isActive = index === activeService;
+
+                    return (
                       <div
-                        className={`p-2 rounded-lg ${isActive ? "bg-orange-100" : ""}`}
-                      >
-                        <ServiceIcon
-                          className={`w-5 h-5 ${isActive ? "text-orange-500" : "text-gray-400"}`}
-                        />
-                      </div>
-                      <h3
-                        className={`text-lg font-bold ${isActive ? "text-gray-900" : "text-gray-500"}`}
+                        key={index}
+                        onClick={() => {
+                          setActiveService(index);
+                          setIsDropdownOpen(false);
+                        }}
+                        className={`px-4 py-3 rounded-full cursor-pointer transition
+                ${
+                  isActive
+                    ? "bg-orange-50 font-semibold"
+                    : "text-gray-600 hover:bg-gray-100"
+                }`}
                       >
                         {service.title}
-                      </h3>
-                    </div>
-
-                    <p
-                      className={`text-sm ${isActive ? "text-gray-600" : "text-gray-400"}`}
-                    >
-                      {service.description}
-                    </p>
-                  </div>
+                      </div>
+                    );
+                  })}
                 </div>
-              );
-            })}
-          </div>
+              )}
+            </div>
+          ) : (
+            <div
+              className="space-y-4"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              {services.map((service, index) => {
+                const ServiceIcon = service.icon;
+                const isActive = index === activeService;
+
+                return (
+                  <div
+                    key={index}
+                    onClick={() => setActiveService(index)}
+                    className={`flex gap-4 p-3 rounded-md cursor-pointer transition-all duration-300
+                  ${isActive ? "bg-white" : ""}`}
+                  >
+                    <div
+                      className={`w-1 rounded-full ${isActive ? "bg-orange-500" : ""}`}
+                    />
+
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-1">
+                        <div
+                          className={`p-2 rounded-lg ${isActive ? "bg-orange-100" : ""}`}
+                        >
+                          <ServiceIcon
+                            className={`w-5 h-5 ${isActive ? "text-orange-500" : "text-gray-400"}`}
+                          />
+                        </div>
+                        <h3
+                          className={`text-lg font-bold ${isActive ? "text-gray-900" : "text-gray-500"}`}
+                        >
+                          {service.title}
+                        </h3>
+                      </div>
+
+                      <p
+                        className={`text-sm ${isActive ? "text-gray-600" : "text-gray-400"}`}
+                      >
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
 
           <div className="space-y-4 ml-2">
             <p className="text-orange-500 flex items-center gap-2 mb-2">

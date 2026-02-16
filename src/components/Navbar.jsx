@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
+// import { FiX, FiChevronRight, FiArrowLeft } from "react-icons/fi";
+import { Home, Box, Layers, DollarSign, Info, Phone } from "lucide-react";
 import {
   ChevronDown,
   ShoppingCart,
@@ -15,7 +17,7 @@ import { navActive, navBase, navInactive } from "../lib/styles";
 import { CustomButton, CustomButtonTwin } from "../ui/CustomButton";
 
 const Navbar = () => {
-  // const [activeBtn, setActiveBtn] = useState("signup");
+  const [activeMenu, setActiveMenu] = useState(null);
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
@@ -245,67 +247,110 @@ const Navbar = () => {
           <Menu size={22} />
         </button>
         <Drawer placement="left" onClose={() => setOpen(false)} open={open}>
-          {/* Logo */}
-          <div className="border-b pb-6 mb-6">
-            <img src={logo} alt="logo" className="w-36 mx-auto" />
-          </div>
+          <div className="relative h-full overflow-hidden px-4">
+            <div
+              className={`absolute inset-0 transition-transform duration-300 ${
+                activeMenu ? "-translate-x-full" : "translate-x-0"
+              }`}
+            >
+              <div className="border-b border-gray-300 pb-6 mb-6">
+                <img src={logo} alt="logo" className="w-26 mx-2" />
+              </div>
 
-          {/* Navigation */}
-          <ul className="flex flex-col gap-6">
-            {navLinks.map((item) => (
-              <li key={item.id}>
-                {!item.submenu ? (
-                  <NavLink
-                    to={item.link}
-                    onClick={() => setOpen(false)}
-                    className={({ isActive }) =>
-                      `block text-[15px] font-medium transition-all ${
-                        isActive
-                          ? "text-blue-600"
-                          : "text-gray-800 hover:text-blue-600"
-                      }`
-                    }
-                  >
-                    {item.label}
-                  </NavLink>
-                ) : (
-                  <>
-                    {/* Main Section Label */}
-                    <p
-                      className={`text-[15px] font-semibold mb-3 ${
-                        isSubmenuActive(item.submenu)
-                          ? "text-blue-600"
-                          : "text-gray-900"
-                      }`}
-                    >
-                      {item.label}
-                    </p>
+              <ul className="flex flex-col space-y-3">
+                {navLinks.map((item) => {
+                  const isActive = location.pathname === item.link;
 
-                    {/* Array Submenu */}
-                    {Array.isArray(item.submenu) &&
-                      item.submenu.map((sub, i) => (
+                  const baseStyle =
+                    "flex items-center gap-3 px-3 py-2 text-[15px] transition-all rounded-xl border";
+
+                  const activeStyle = isActive
+                    ? "bg-orange-50 border-orange-500 text-gray-900"
+                    : "border-transparent hover:bg-orange-50 text-gray-800";
+
+                  return (
+                    <li key={item.id}>
+                      {!item.submenu ? (
                         <NavLink
-                          key={i}
-                          to={sub.link}
+                          to={item.link}
                           onClick={() => setOpen(false)}
-                          className={({ isActive }) =>
-                            `block text-[14px] pl-4 mb-2 transition-all ${
-                              isActive
-                                ? "text-blue-600 font-medium"
-                                : "text-gray-600 hover:text-blue-500"
-                            }`
-                          }
+                          className={`${baseStyle} ${activeStyle}`}
                         >
-                          {sub.label}
+                          {item.label === "Home" && <Home size={18} />}
+                          {item.label === "Pricing" && <DollarSign size={18} />}
+                          {item.label === "About" && <Info size={18} />}
+                          {item.label === "Contact" && <Phone size={18} />}
+                          {item.label}
                         </NavLink>
-                      ))}
+                      ) : (
+                        <button
+                          onClick={() => setActiveMenu(item)}
+                          className={`${baseStyle} ${activeStyle} w-full justify-between`}
+                        >
+                          <div className="flex items-center gap-3">
+                            {item.label === "Products" && <Box size={18} />}
+                            {item.label === "Solutions" && <Layers size={18} />}
+                            {item.label}
+                          </div>
+                          <span>›</span>
+                        </button>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
 
-                    {/* Object Submenu (Grouped like RingCentral mega style) */}
-                    {typeof item.submenu === "object" &&
-                      !Array.isArray(item.submenu) &&
-                      Object.entries(item.submenu).map(([key, arr], idx) => (
-                        <div key={idx} className="pl-4 mb-4">
-                          <p className="text-gray-400 uppercase text-xs tracking-wider mb-2">
+              <div className="border-t border-gray-300 my-6"></div>
+
+              <div className="flex flex-col gap-3">
+                <Link
+                  to="/signin"
+                  className="w-full text-center border border-gray-300 py-2 rounded-lg text-gray-700 hover:border-orange-500 hover:text-orange-500 transition-all"
+                >
+                  Login
+                </Link>
+
+                <Link
+                  to="/signup"
+                  className="w-full text-center bg-orange-500 text-white py-2 rounded-full font-medium hover:bg-orange-600 transition-all"
+                >
+                  Sign Up
+                </Link>
+              </div>
+            </div>
+
+            <div
+              className={`absolute inset-0 bg-white transition-transform duration-300 ${
+                activeMenu ? "translate-x-0" : "translate-x-full"
+              }`}
+            >
+              {activeMenu && (
+                <>
+                  <div className="flex items-center gap-3 border-b pb-4 mb-6">
+                    <button onClick={() => setActiveMenu(null)}>←</button>
+                    <h2 className="font-semibold text-lg">
+                      {activeMenu.label}
+                    </h2>
+                  </div>
+
+                  {Array.isArray(activeMenu.submenu) &&
+                    activeMenu.submenu.map((sub, i) => (
+                      <NavLink
+                        key={i}
+                        to={sub.link}
+                        onClick={() => setOpen(false)}
+                        className="block text-[14px] mb-6 text-gray-700 hover:text-blue-600"
+                      >
+                        {sub.label}
+                      </NavLink>
+                    ))}
+
+                  {typeof activeMenu.submenu === "object" &&
+                    !Array.isArray(activeMenu.submenu) &&
+                    Object.entries(activeMenu.submenu).map(
+                      ([key, arr], idx) => (
+                        <div key={idx} className="mb-6">
+                          <p className="text-gray-400 uppercase text-xs tracking-wider mb-3">
                             {key.replace(/([A-Z])/g, " $1")}
                           </p>
 
@@ -315,13 +360,7 @@ const Navbar = () => {
                                 key={i}
                                 to={sub.link}
                                 onClick={() => setOpen(false)}
-                                className={({ isActive }) =>
-                                  `block text-[14px] mb-2 transition-all ${
-                                    isActive
-                                      ? "text-blue-600 font-medium"
-                                      : "text-gray-600 hover:text-blue-500"
-                                  }`
-                                }
+                                className="block text-[14px] mb-2 text-gray-700 hover:text-blue-600 auto-scroll"
                               >
                                 {sub.label}
                               </NavLink>
@@ -335,44 +374,11 @@ const Navbar = () => {
                             ),
                           )}
                         </div>
-                      ))}
-                  </>
-                )}
-              </li>
-            ))}
-          </ul>
-
-          {/* Divider */}
-          <div className="border-t my-6"></div>
-
-          {/* Auth Buttons (RingCentral Style) */}
-          <div className="flex flex-col gap-3">
-            <Link
-              to="/signin"
-              className="w-full text-center border border-gray-300 py-2 rounded-lg text-gray-700 font-medium hover:border-blue-600 hover:text-blue-600 transition-all"
-            >
-              Login
-            </Link>
-
-            <Link
-              to="/signup"
-              className="w-full text-center bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition-all"
-            >
-              Get Started
-            </Link>
-          </div>
-
-          {/* Social Icons */}
-          <div className="mt-8 flex justify-center gap-5 text-gray-500">
-            <Facebook
-              size={18}
-              className="hover:text-blue-600 transition-all"
-            />
-            <Twitter size={18} className="hover:text-blue-600 transition-all" />
-            <Linkedin
-              size={18}
-              className="hover:text-blue-600 transition-all"
-            />
+                      ),
+                    )}
+                </>
+              )}
+            </div>
           </div>
         </Drawer>
       </div>
