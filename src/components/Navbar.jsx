@@ -1,7 +1,17 @@
 import { useState } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 // import { FiX, FiChevronRight, FiArrowLeft } from "react-icons/fi";
-import { Home, Box, Layers, DollarSign, Info, Phone } from "lucide-react";
+import {
+  Home,
+  Box,
+  Layers,
+  DollarSign,
+  Info,
+  Phone,
+  ArrowLeft,
+  Pointer,
+  ArrowRight,
+} from "lucide-react";
 import {
   ChevronDown,
   ShoppingCart,
@@ -54,7 +64,7 @@ const Navbar = () => {
                   </NavLink>
                 ) : (
                   <span
-                    className={`${navBase} flex items-center gap-1 cursor-default
+                    className={`${navBase} flex items-center gap-1 cursor-pointer
                   ${isSubmenuActive(item.submenu) ? navActive : navInactive}`}
                   >
                     {item.label}
@@ -64,9 +74,16 @@ const Navbar = () => {
 
                 {item.submenu && (
                   <div
-                    className="absolute left-1/2 top-full -translate-x-1/2 mt-4
-                  opacity-0 invisible group-hover:visible group-hover:opacity-100
-                  transition-all duration-200 z-50"
+                    className="absolute left-1/2 top-full -translate-x-1/2
+      mt-6
+      opacity-0 invisible
+      translate-y-6 scale-95
+      group-hover:opacity-100 
+      group-hover:visible 
+      group-hover:translate-y-0
+      group-hover:scale-100
+      transition-all duration-400 ease-out
+      z-50"
                   >
                     <div className="w-[1400px] bg-white rounded-2xl shadow-2xl p-8">
                       {Array.isArray(item.submenu) && (
@@ -242,12 +259,12 @@ const Navbar = () => {
 
         <button
           onClick={() => setOpen(true)}
-          className="lg:hidden bg-orange-500 text-white rounded-full w-12 h-12 flex items-center justify-center shadow"
+          className="lg:hidden cursor-pointer bg-orange-500 text-white rounded-full w-12 h-12 flex items-center justify-center shadow"
         >
           <Menu size={22} />
         </button>
         <Drawer placement="left" onClose={() => setOpen(false)} open={open}>
-          <div className="relative h-full overflow-hidden px-4">
+          <div className="relative h-full overflow-x-hidden px-4">
             <div
               className={`absolute inset-0 transition-transform duration-300 ${
                 activeMenu ? "-translate-x-full" : "translate-x-0"
@@ -259,40 +276,39 @@ const Navbar = () => {
 
               <ul className="flex flex-col space-y-3">
                 {navLinks.map((item) => {
-                  const isActive = location.pathname === item.link;
-
-                  const baseStyle =
-                    "flex items-center gap-3 px-3 py-2 text-[15px] transition-all rounded-xl border";
-
-                  const activeStyle = isActive
-                    ? "bg-orange-50 border-orange-500 text-gray-900"
-                    : "border-transparent hover:bg-orange-50 text-gray-800";
-
                   return (
                     <li key={item.id}>
                       {!item.submenu ? (
                         <NavLink
                           to={item.link}
                           onClick={() => setOpen(false)}
-                          className={`${baseStyle} ${activeStyle}`}
+                          className={({ isActive }) =>
+                            `flex items-center font-bold gap-3 px-3 py-2 text-[18px] rounded-full transition ${
+                              isActive
+                                ? "!bg-orange-500 !text-white"
+                                : "!text-gray-800 !hover:bg-orange-100"
+                            }`
+                          }
                         >
-                          {item.label === "Home" && <Home size={18} />}
-                          {item.label === "Pricing" && <DollarSign size={18} />}
-                          {item.label === "About" && <Info size={18} />}
-                          {item.label === "Contact" && <Phone size={18} />}
+                          {item.label === "Home" && <Home size={22} />}
+                          {item.label === "Pricing" && <DollarSign size={22} />}
+                          {item.label === "About" && <Info size={22} />}
+                          {item.label === "Contact" && <Phone size={22} />}
                           {item.label}
                         </NavLink>
                       ) : (
                         <button
                           onClick={() => setActiveMenu(item)}
-                          className={`${baseStyle} ${activeStyle} w-full justify-between`}
+                          className={`w-full justify-between flex items-center font-bold gap-3 px-3 py-2 text-[18px] cursor-pointer`}
                         >
                           <div className="flex items-center gap-3">
                             {item.label === "Products" && <Box size={18} />}
                             {item.label === "Solutions" && <Layers size={18} />}
                             {item.label}
                           </div>
-                          <span>›</span>
+                          <span>
+                            <ArrowRight />
+                          </span>
                         </button>
                       )}
                     </li>
@@ -301,34 +317,114 @@ const Navbar = () => {
               </ul>
 
               <div className="border-t border-gray-300 my-6"></div>
+              <div>
+                <div className="flex flex-col gap-4 items-start flex-shrink-0 p-[12px]">
+                  <div className="flex gap-2">
+                    <NavLink
+                      to="/blogs"
+                      onClick={() => setOpen(false)}
+                      className={({ isActive }) =>
+                        `text-sky-600 hover:text-orange-400 ${
+                          isActive ? "!text-orange-400" : ""
+                        }`
+                      }
+                    >
+                      Blogs
+                    </NavLink>
+
+                    <NavLink
+                      to="/pricing"
+                      onClick={() => setOpen(false)}
+                      className={({ isActive }) =>
+                        `text-sky-600 hover:text-orange-400 ${
+                          isActive ? "!text-orange-400" : ""
+                        }`
+                      }
+                    >
+                      Shops
+                    </NavLink>
+
+                    <NavLink
+                      to="/faqs"
+                      onClick={() => setOpen(false)}
+                      className={({ isActive }) =>
+                        `text-sky-600 hover:text-orange-400 ${
+                          isActive ? "!text-orange-400" : ""
+                        }`
+                      }
+                    >
+                      Faq`s
+                    </NavLink>
+                  </div>
+                  <div className="flex gap-8 flex-shrink-0 text-sky-600">
+                    <span className="flex justify-center items-center gap-2">
+                      <Phone size={16} />
+                      <span className="text-[12px]">+09271 8999 000</span>
+                    </span>
+                    <span className="flex justify-center items-center gap-2 text-[12px]">
+                      <span>(8899 7766 55 99000)</span>
+                    </span>
+                  </div>
+                  <span
+                    onClick={() => {
+                      document
+                        .getElementById("requestCall")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                      setOpen(false);
+                    }}
+                    className="!bg-orange-600 !text-white rounded p-[4px] hover:shadow shadow-orange-200 cursor-pointer flex-shrink-0"
+                  >
+                    <span className="text-[13px]">Request a Call</span>
+                  </span>
+
+                  <div className="flex gap-2">
+                    <span className="flex justify-center cursor-pointer items-center w-5 h-5 bg-orange-600 text-white rounded-full">
+                      <Facebook size={12} />
+                    </span>
+                    <span className="flex justify-center cursor-pointer items-center w-5 h-5 bg-orange-600 text-white rounded-full">
+                      <Twitter size={12} />
+                    </span>
+                    <span className="flex justify-center cursor-pointer items-center w-5 h-5 bg-orange-600 text-white rounded-full">
+                      <Linkedin size={12} />
+                    </span>
+                  </div>
+                </div>
+              </div>
 
               <div className="flex flex-col gap-3">
-                <Link
-                  to="/signin"
-                  className="w-full text-center border border-gray-300 py-2 rounded-lg text-gray-700 hover:border-orange-500 hover:text-orange-500 transition-all"
-                >
-                  Login
+                <Link to="/signin">
+                  <CustomButton
+                    onClick={() => setActiveBtn("login")}
+                    className={`w-full cursor-pointer transition shadow-md bg-orange-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-600 transition`}
+                    value={<span className="text-[12px]">Login</span>}
+                  />
                 </Link>
 
-                <Link
-                  to="/signup"
-                  className="w-full text-center bg-orange-500 text-white py-2 rounded-full font-medium hover:bg-orange-600 transition-all"
-                >
-                  Sign Up
+                <Link to="/signup">
+                  <CustomButtonTwin
+                    onClick={() => setActiveBtn("signup")}
+                    className={`w-full cursor-pointer shadow-md bg-orange-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-600 transition`}
+                    value={<span className="text-[12px]">Get Started</span>}
+                  />
                 </Link>
               </div>
             </div>
 
             <div
-              className={`absolute inset-0 bg-white transition-transform duration-300 ${
+              className={`absolute inset-0 bg-white transition-transform duration-300 overflow-y-auto ${
                 activeMenu ? "translate-x-0" : "translate-x-full"
               }`}
             >
               {activeMenu && (
                 <>
                   <div className="flex items-center gap-3 border-b pb-4 mb-6">
-                    <button onClick={() => setActiveMenu(null)}>←</button>
-                    <h2 className="font-semibold text-lg">
+                    <button
+                      className="cursor-pointer"
+                      onClick={() => setActiveMenu(null)}
+                    >
+                      <ArrowLeft />
+                    </button>
+                    <h2 className="font-semibold text-[22px]">
                       {activeMenu.label}
                     </h2>
                   </div>
@@ -339,7 +435,11 @@ const Navbar = () => {
                         key={i}
                         to={sub.link}
                         onClick={() => setOpen(false)}
-                        className="block text-[14px] mb-6 text-gray-700 hover:text-blue-600"
+                        className={({ isActive }) =>
+                          `block text-[14px] font-semibold mb-6 !text-black ${
+                            isActive ? "!text-orange-400" : ""
+                          }`
+                        }
                       >
                         {sub.label}
                       </NavLink>
@@ -350,7 +450,7 @@ const Navbar = () => {
                     Object.entries(activeMenu.submenu).map(
                       ([key, arr], idx) => (
                         <div key={idx} className="mb-6">
-                          <p className="text-gray-400 uppercase text-xs tracking-wider mb-3">
+                          <p className="text-gray-400 text-[16px] uppercase text-xs tracking-wider mb-3">
                             {key.replace(/([A-Z])/g, " $1")}
                           </p>
 
@@ -360,7 +460,11 @@ const Navbar = () => {
                                 key={i}
                                 to={sub.link}
                                 onClick={() => setOpen(false)}
-                                className="block text-[14px] mb-2 text-gray-700 hover:text-blue-600 auto-scroll"
+                                className={({ isActive }) =>
+                                  `block text-[14px] font-semibold mb-6 !text-black auto-scroll ${
+                                    isActive ? "!text-orange-400" : ""
+                                  }`
+                                }
                               >
                                 {sub.label}
                               </NavLink>
