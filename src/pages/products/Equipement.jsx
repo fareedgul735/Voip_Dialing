@@ -5,7 +5,12 @@ import Detailed from "../../../public/VoipDeatiling.png";
 import BrandName from "../../ui/BrandName";
 import { Check } from "lucide-react";
 import { CheckCircle2, Award, Phone } from "lucide-react";
-import { Card, features, services } from "../../lib/Constant.jsx";
+import {
+  Card,
+  EquipmentCard,
+  features,
+  services,
+} from "../../lib/Constant.jsx";
 import Testominals from "../../ui/Testominals.jsx";
 import { useRef, useState } from "react";
 import video1 from "../../../public/video1.mp4";
@@ -48,24 +53,29 @@ const Equipement = () => {
             <div className="text-left w-full sm:w-[90%] md:w-[700px] lg:w-[758px]">
               <div className="inline-flex items-center bg-white px-4 sm:px-6 py-2 mb-4 rounded-[18px] shadow-md animate-fadeIn">
                 <span className="text-blue-500 font-medium text-sm sm:text-base">
-                  Save on Premium VoIP Equipment
+                  Premium VoIP Equipment for Businesses in Las Vegas
                 </span>
               </div>
 
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Top-Quality{" "}
-                <span className="text-blue-600">VoIP Equipment</span> for
-                <span className="text-blue-600"> Las Vegas Businesses</span>
+                Professional VoIP{" "}
+                <span className="text-blue-600"> Phones and Cloud</span> PBX
+                <span className="text-blue-600">Hardware Built</span>
+                for Performance
               </h1>
-
               <p className="text-gray-700 mb-6 text-sm sm:text-base md:text-lg">
-                Equip your Las Vegas office with state-of-the-art VoIP phones,
-                headsets, and PBX hardware. VoIP Dialing provides reliable,
-                cost-effective equipment for businesses of all sizes, ensuring
-                crystal-clear communication and seamless integration with your
-                hosted PBX system.
+                In Las Vegas, your business phone system needs to keep up with
+                high call volumes, fast paced operations, and growing teams. The
+                right VoIP equipment plays a critical role in delivering clear
+                communication and a professional customer experience.
+                <br />
+                <br />
+                VoIP Dialing provides high quality VoIP phones, business
+                headsets, and cloud PBX hardware designed specifically for Las
+                Vegas companies. Whether you are upgrading your current system
+                or launching a new office, we deliver reliable equipment that
+                integrates seamlessly with your cloud phone platform
               </p>
-
               <ul className="space-y-2 mb-6 text-gray-700 text-sm sm:text-base">
                 <li className="flex flex-col sm:flex-row sm:items-start gap-2">
                   <span className="text-orange-500">•</span>
@@ -89,7 +99,6 @@ const Equipement = () => {
                   </span>
                 </li>
               </ul>
-
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <button className="bg-orange-500 shadow-sm text-white px-4 py-2 sm:px-5 sm:py-3 rounded-full hover:bg-blue-500 transition text-sm sm:text-base">
                   Shop Equipment
@@ -117,15 +126,14 @@ const Equipement = () => {
               Equip Your Las Vegas Business with Reliable VoIP Hardware
             </h1>
             <p className="text-gray-600 text-md lg:text-lg max-w-4xl mx-auto leading-relaxed">
-              From SIP phones to professional headsets, VoIP Dialing provides
-              top-quality equipment designed to integrate seamlessly with your
-              cloud PBX. Enhance productivity, reduce costs, and stay connected
-              anywhere in Las Vegas.
+              Choosing the right equipment ensures your communication system
+              runs smoothly every day. Our VoIP hardware is selected for
+              compatibility, performance, and ease of use.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {Card.map((item, indx) => {
+            {EquipmentCard.map((item, indx) => {
               const Icon = item.icon;
               return (
                 <div
@@ -151,10 +159,9 @@ const Equipement = () => {
               Affordable VoIP Phones, Headsets & PBX Hardware
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-8">
-              Choose from a variety of high-quality VoIP phones, desk phones,
-              softphones, and accessories available to purchase or lease. Fully
-              compatible with our Las Vegas cloud PBX system for seamless
-              business communication.
+              We offer flexible purchasing and leasing options for Las Vegas
+              businesses that want premium equipment without excessive upfront
+              costs.
             </p>
             <button className="bg-orange-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
               Shop Equipment
@@ -175,9 +182,7 @@ const Equipement = () => {
               </h1>
 
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                Our Cloud PBX platform includes carrier-grade Class 5 switching
-                features, giving Las Vegas businesses the same power used by
-                large telecom providers — without the complexity.
+                Enterprise Grade VoIP Dialing with Full Class 5 Features
               </p>
             </div>
 
@@ -301,10 +306,11 @@ const Equipement = () => {
               Cloud Service of VoIP Dialing
             </h1>
             <p className="mt-4 text-gray-400">
-              VoIP Dialing’s cloud-hosted PBX infrastructure is designed for
-              maximum uptime and performance. Our system runs in secure data
-              centers with redundancy and failover — ensuring your Las Vegas
-              business never misses an important call.
+              Our cloud hosted PBX infrastructure is designed to deliver
+              reliability, security, and consistent performance for Las Vegas
+              businesses. Instead of relying on outdated onsite hardware, your
+              phone system is securely managed in professional data centers with
+              built in redundancy.
             </p>
           </div>
 
@@ -331,18 +337,18 @@ const Equipement = () => {
               </p>
 
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12">
-                Why move to the Cloud?
+                Benefits of Purchasing Our Equipment
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                 {[
                   {
-                    title: "Lower Monthly Phone Costs",
+                    title: "Complete Compatibility",
                     description:
-                      "Reduce telecom expenses by eliminating legacy phone lines and PBX hardware.",
+                      "All equipment is pre configured and fully compatible with our VoIP and Cloud PBX services, reducing setup issues.",
                   },
                   {
-                    title: "Work From Anywhere",
+                    title: "Reliable Performance",
                     description:
                       "Employees can make and receive business calls from anywhere using mobile or desktop apps.",
                   },
@@ -352,9 +358,9 @@ const Equipement = () => {
                       "Add or remove users in minutes as your business grows.",
                   },
                   {
-                    title: "Professional Call Handling",
+                    title: "Local Support in Las Vegas",
                     description:
-                      "Auto attendants and call routing create a polished customer experience.",
+                      "Our team understands the local market and provides responsive assistance when you need it.",
                   },
                   {
                     title: "Business Continuity",
@@ -362,9 +368,9 @@ const Equipement = () => {
                       "Keep calls flowing during outages with cloud failover and call forwarding.",
                   },
                   {
-                    title: "Advanced Call Management",
+                    title: "Cost Efficiency",
                     description:
-                      "Monitor calls, recordings, and analytics in real time.",
+                      "Bundle equipment with your VoIP service to reduce overall communication expenses",
                   },
                   {
                     title: "Easy Integration",
@@ -372,9 +378,9 @@ const Equipement = () => {
                       "Works with IP phones, softphones, and CRM platforms.",
                   },
                   {
-                    title: "Local & Nationwide Coverage",
+                    title: "Future Ready Technology",
                     description:
-                      "Support customers across Las Vegas and beyond with local and toll-free numbers.",
+                      "Our hardware supports advanced features and integrations, ensuring your system remains scalable and modern.",
                   },
                 ].map((item, index) => (
                   <div key={index}>

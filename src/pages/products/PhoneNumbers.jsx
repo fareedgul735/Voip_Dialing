@@ -52,24 +52,28 @@ const PhoneNumber = () => {
             <div className="text-left w-full sm:w-[90%] md:w-[700px] lg:w-[758px]">
               <div className="inline-flex items-center bg-white px-4 sm:px-6 py-2 mb-4 rounded-[18px] shadow-md animate-fadeIn">
                 <span className="text-blue-500 font-medium text-sm sm:text-base">
-                  Local, Toll-Free & Vanity Numbers Available
+                  Business Phone Numbers in Las Vegas
                 </span>
               </div>
-
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Buy{" "}
-                <span className="text-blue-600">Business Phone Numbers</span> in{" "}
-                <span className="text-blue-600">Las Vegas</span>
+                Local, Toll Free, and Vanity{" "}
+                <span className="text-blue-600">Numbers Designed</span> for
+                Growing <span className="text-blue-600">Las Vegas</span>
+                Companies
               </h1>
-
               <p className="text-gray-700 mb-6 text-sm sm:text-base md:text-lg">
-                Get local Las Vegas phone numbers, toll-free numbers, and vanity
-                numbers for your business in minutes. VoIP Dialing provides
-                reliable, cloud-based business phone numbers that help you build
-                trust, improve customer reach, and establish a strong local
-                presence in Las Vegas.
+                Your phone number is more than just contact information. It
+                represents your brand, your credibility, and your connection to
+                customers. In a competitive market like Las Vegas, having the
+                right business phone number can make a measurable difference.
+                <br />
+                <br />
+                VoIP Dialing makes it simple to secure professional business
+                phone numbers in Las Vegas with instant activation and full
+                cloud management. Whether you need a 702 or 725 area code, a
+                nationwide toll free number, or a memorable vanity number, we
+                provide reliable solutions built for modern businesses.
               </p>
-
               <ul className="space-y-2 mb-6 text-gray-700 text-sm sm:text-base">
                 <li className="flex flex-col sm:flex-row sm:items-start gap-2">
                   <span className="text-orange-500">•</span>
@@ -90,7 +94,6 @@ const PhoneNumber = () => {
                   </span>
                 </li>
               </ul>
-
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <button className="bg-orange-500 shadow-sm text-white px-4 py-2 sm:px-5 sm:py-3 rounded-full hover:bg-blue-500 transition text-sm sm:text-base">
                   Browse Available Numbers
@@ -118,11 +121,9 @@ const PhoneNumber = () => {
               Professional Business Phone Numbers in Las Vegas
             </h1>
             <p className="text-gray-600 text-md lg:text-lg max-w-4xl mx-auto leading-relaxed">
-              Establish a strong local presence with Las Vegas business phone
-              numbers designed for growing companies. Whether you need local 702
-              or 725 area code numbers, toll-free numbers, or custom vanity
-              numbers, VoIP Dialing makes it simple to activate, manage, and
-              scale your communication system entirely in the cloud.
+              A professional phone number helps establish trust and strengthens
+              your local presence in Las Vegas. Customers are more likely to
+              answer and return calls from a familiar area code.
             </p>
           </div>
 
@@ -153,9 +154,11 @@ const PhoneNumber = () => {
               Affordable Las Vegas Business Phone Numbers for Every Company
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-8">
-              Whether you're a startup, small business, or enterprise in Las
-              Vegas, our flexible pricing plans make it easy to get the phone
-              numbers you need without expensive contracts or hardware.
+              We offer flexible and transparent pricing for Las Vegas business
+              phone numbers. There are no unnecessary contracts and no complex
+              installations. Add or remove numbers as your company grows and
+              only pay for what you need. Our solutions are designed for
+              startups, small businesses, and enterprise organizations alike.
             </p>
             <button className="bg-orange-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
               Browse Available Numbers
@@ -172,14 +175,12 @@ const PhoneNumber = () => {
               </div>
 
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                Enterprise-Grade Phone Number Solutions for Las Vegas Businesses
+                Enterprise Grade Phone Number Solutions for Las Vegas Businesses
               </h1>
 
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                Our VoIP Dialing phone number platform empowers Las Vegas
-                businesses with local, toll-free, and vanity numbers. Enjoy
-                instant activation, SMS capability, call forwarding, and
-                seamless CRM integration — all without on-premise hardware.
+                Our cloud powered platform delivers advanced capabilities that
+                go beyond basic call forwarding.
               </p>
             </div>
 
@@ -300,15 +301,19 @@ const PhoneNumber = () => {
               BUSINESS PHONE NUMBERS
             </p>
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
-              Cloud-Powered Business Phone Numbers in Las Vegas
+              Cloud Powered Business Phone Numbers in Las Vegas
             </h1>
             <p className="mt-4 text-gray-400">
-              VoIP Dialing provides secure, cloud-based business phone numbers
-              for Las Vegas companies looking to scale without expensive
-              hardware. Instantly activate local 702 or 725 numbers, toll-free
-              numbers, or vanity numbers — all managed through our reliable
-              cloud platform with built-in redundancy and enterprise-grade
-              uptime.
+              VoIP Dialing provides cloud based business phone numbers that
+              integrate directly with your VoIP and Cloud PBX services. There is
+              no onsite hardware required. Everything is managed securely
+              through an online dashboard.
+              <br />
+              <br />
+              Your Las Vegas business can receive calls on desk phones, mobile
+              devices, or laptops while maintaining one professional identity.
+              Built in redundancy and secure cloud hosting ensure your number
+              remains active and reliable at all times.
             </p>
           </div>
 
@@ -335,25 +340,25 @@ const PhoneNumber = () => {
               </p>
 
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12">
-                Why Choose Las Vegas Business Phone Numbers?
+                Why Choose Las Vegas Business Phone Numbers
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                 {[
                   {
-                    title: "Local Las Vegas Numbers",
+                    title: "Local Presence",
                     description:
-                      "Establish a trusted local presence with Las Vegas phone numbers (702 & 725) to build customer confidence.",
+                      "Build trust with customers using familiar 702 and 725 area code numbers.",
                   },
                   {
-                    title: "Toll-Free & Vanity Numbers",
+                    title: "Nationwide Coverage",
                     description:
-                      "Expand your reach with memorable toll-free and vanity numbers, perfect for marketing campaigns.",
+                      "Expand your reach with professional toll free numbers while staying rooted in Las Vegas.",
                   },
                   {
-                    title: "SMS-Enabled Lines",
+                    title: "Memorable Branding",
                     description:
-                      "Communicate quickly with customers using business SMS-enabled numbers for promotions and updates.",
+                      "Vanity numbers make your business easier to remember and improve marketing effectiveness.",
                   },
                   {
                     title: "Instant Number Provisioning",
@@ -376,9 +381,9 @@ const PhoneNumber = () => {
                       "Advanced call routing, auto attendants, and voicemail features provide a professional experience.",
                   },
                   {
-                    title: "Reliable Business Continuity",
+                    title: "Scalable Growth",
                     description:
-                      "Keep your lines active during outages with cloud failover and automatic call forwarding.",
+                      "Add new numbers as your business expands across Las Vegas and beyond.",
                   },
                 ].map((item, index) => (
                   <div key={index}>

@@ -48,32 +48,35 @@ const Products = () => {
             <div className="text-left w-full sm:w-[90%] md:w-[700px] lg:w-[758px]">
               <div className="inline-flex items-center bg-white px-4 sm:px-6 py-2 mb-4 rounded-[18px] shadow-md animate-fadeIn">
                 <span className="text-blue-500 font-medium text-sm sm:text-base">
-                  Dont Buy Expesnive Equipment
+                  Cloud PBX Phone System in Las Vegas
                 </span>
               </div>
-
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Reliable{" "}
-                <span className="text-blue-600">Scalable Enterprise</span> Ready
-                VoIP for <span className="text-blue-600">Las Vegas</span>{" "}
+                Enterprise Ready{" "}
+                <span className="text-blue-600">Business VoIP</span> Built for
+                Growing <span className="text-blue-600">Las Vegas</span>{" "}
                 Companies
               </h1>
-
-              <p className="text-gray-700 mb-6 text-sm sm:text-base md:text-lg">
-                Upgrade your business communications with a Cloud PBX phone
-                system in Las Vegas built for speed, flexibility, and growth.
-                VoIP Dialing delivers a powerful hosted PBX solution that
-                eliminates on-premise hardware while providing crystal-clear
-                calls, advanced call management, and enterprise-grade
-                reliability — all backed by local expertise.
+              <p className="text-gray-700 mb-6 text-sm sm:text-base md:text-md">
+                In a fast moving city like Las Vegas, your business phone system
+                cannot afford downtime. Whether you manage a busy office near
+                the Strip, operate multiple locations across the valley, or
+                support a remote team, your communication system must be
+                reliable and scalable.
+                <br />
+                <br /> VoIP Dialing delivers a powerful Cloud PBX phone system
+                designed specifically for Las Vegas businesses. Our hosted VoIP
+                solution provides crystal clear call quality, advanced call
+                management features, and secure cloud infrastructure without the
+                cost or complexity of traditional onsite PBX hardware.
               </p>
-
               <ul className="space-y-2 mb-6 text-gray-700 text-sm sm:text-base">
                 <li className="flex flex-col sm:flex-row sm:items-start gap-2">
                   <span className="text-orange-500">•</span>
                   <span className="text-black">
-                    Deliver first-in-call and stay connected with all your
-                    customers.
+                    With local support and competitive pricing, we help
+                    businesses across Las Vegas upgrade to a smarter, more
+                    flexible phone system.
                   </span>
                 </li>
                 <li className="flex flex-col sm:flex-row sm:items-start gap-2">
@@ -84,7 +87,6 @@ const Products = () => {
                   </span>
                 </li>
               </ul>
-
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <button className="bg-orange-500 shadow-sm text-white px-4 py-2 sm:px-5 sm:py-3 rounded-full hover:bg-blue-500 transition text-sm sm:text-base">
                   See Pricing
@@ -108,14 +110,16 @@ const Products = () => {
       <div className="w-full bg-[#FAF9F6] p-[12px] py-12">
         <div className="mx-4 sm:mx-8 lg:mx-12">
           <div className="text-left lg:text-center mb-12">
-            <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
               Modern Business Communication Starts in the Cloud
             </h1>
             <p className="text-gray-600 text-md lg:text-lg max-w-4xl mx-auto leading-relaxed">
-              Traditional phone systems can’t keep up with today’s fast-moving
-              businesses. Our Cloud PBX solution empowers Las Vegas
-              organizations with a fully hosted VoIP phone system that works
-              anywhere, on any device.
+              Today’s Las Vegas businesses need more than basic dial tone. They
+              need mobility, flexibility, and technology that adapts as they
+              grow.
+              <br />A cloud based PBX system allows your team to stay connected
+              from anywhere while maintaining a professional image with every
+              call.
             </p>
           </div>
 
@@ -143,12 +147,14 @@ const Products = () => {
 
           <div className="text-left lg:text-center">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
-              Affordable VoIP Phones & Cloud PBX Plans
+              Affordable VoIP Phones and Cloud PBX Plans
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-8">
-              Choose from a wide range of VoIP desk phones and softphone options
-              available to buy or lease, perfectly integrated with our cloud PBX
-              platform.
+              Get premium business VoIP in Las Vegas without enterprise level
+              pricing. Choose from flexible Cloud PBX plans and a wide selection
+              of VoIP desk phones, wireless IP devices, and softphone
+              applications. Purchase or lease equipment based on your business
+              needs, all fully compatible with our hosted PBX platform
             </p>
             <button className="bg-orange-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
               See Pricing
@@ -165,13 +171,13 @@ const Products = () => {
               </div>
 
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                Enterprise-Grade VoIP Dialing with Full Class 5 Features
+                Enterprise Grade VoIP Dialing Features
               </h1>
 
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                Our Cloud PBX platform includes carrier-grade Class 5 switching
-                features, giving Las Vegas businesses the same power used by
-                large telecom providers — without the complexity.
+                Our Cloud PBX platform includes carrier grade Class 5
+                functionality designed for high performance Las Vegas
+                businesses.
               </p>
             </div>
 
@@ -295,10 +301,10 @@ const Products = () => {
               Cloud Service of VoIP Dialing
             </h1>
             <p className="mt-4 text-gray-400">
-              VoIP Dialing’s cloud-hosted PBX infrastructure is designed for
-              maximum uptime and performance. Our system runs in secure data
-              centers with redundancy and failover — ensuring your Las Vegas
-              business never misses an important call.
+              Our Cloud PBX infrastructure is built for maximum uptime,
+              security, and performance for businesses in Las Vegas. We host
+              your entire phone system in secure, redundant data centers so you
+              never have to worry about hardware failures or downtime.
             </p>
           </div>
 
@@ -338,27 +344,27 @@ const Products = () => {
                   {
                     title: "Work From Anywhere",
                     description:
-                      "Employees can make and receive business calls from anywhere using mobile or desktop apps.",
+                      "Keep your team connected across offices, job sites, or home offices without sacrificing call quality.",
                   },
                   {
                     title: "Instant Scalability",
                     description:
-                      "Add or remove users in minutes as your business grows.",
+                      "Adjust your phone system as your company expands or adapts to seasonal demand.",
                   },
                   {
                     title: "Professional Call Handling",
                     description:
-                      "Auto attendants and call routing create a polished customer experience.",
+                      "Deliver a consistent and organized customer experience with auto attendants and smart call routing.",
                   },
                   {
-                    title: "Business Continuity",
+                    title: "Business Continuity Protection",
                     description:
-                      "Keep calls flowing during outages with cloud failover and call forwarding.",
+                      "Automatic rerouting and cloud redundancy ensure you never miss important calls.",
                   },
                   {
-                    title: "Advanced Call Management",
+                    title: "Real Time Call Insights",
                     description:
-                      "Monitor calls, recordings, and analytics in real time.",
+                      "Monitor call activity, recordings, and performance reports to improve efficiency and customer service.",
                   },
                   {
                     title: "Easy Integration",

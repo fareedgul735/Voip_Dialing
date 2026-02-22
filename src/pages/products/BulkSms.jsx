@@ -53,26 +53,29 @@ const BulkSMS = () => {
             <div className="text-left w-full sm:w-[90%] md:w-[700px] lg:w-[758px]">
               <div className="inline-flex items-center bg-white px-4 sm:px-6 py-2 mb-4 rounded-[18px] shadow-md animate-fadeIn">
                 <span className="text-blue-500 font-medium text-sm sm:text-base">
-                  Launch Powerful SMS Campaigns — No Extra Hardware Needed
+                  Bulk SMS Service in Las Vegas
                 </span>
               </div>
-
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Bulk SMS &{" "}
-                <span className="text-blue-600">Business Text Messaging</span>{" "}
-                for <span className="text-blue-600">Las Vegas</span> Companies
+                Reach Your{" "}
+                <span className="text-blue-600">Customers Instantly </span> With{" "}
+                <span className="text-blue-600">Business Text</span> Messaging
               </h1>
-
               <p className="text-gray-700 mb-6 text-sm sm:text-base md:text-lg">
-                Reach your customers instantly with VoIP Dialing’s Bulk SMS
-                service in Las Vegas. Send promotions, appointment reminders,
-                alerts, and marketing campaigns directly to mobile phones with
-                high open rates and real-time delivery. Our business SMS
-                platform is secure, scalable, and designed to help Las Vegas
-                businesses increase engagement, boost sales, and improve
-                customer communication.
+                In Las Vegas, businesses move fast and customer expectations are
+                even faster. Whether you run a medical office, restaurant,
+                retail store, real estate agency, or service company, your
+                customers want quick updates and simple communication. Text
+                messaging delivers exactly that.
+                <br />
+                <br />
+                VoIP Dialing provides a reliable Bulk SMS service built
+                specifically for Las Vegas businesses. Send promotions,
+                appointment reminders, alerts, and important updates directly to
+                your customers’ mobile phones within seconds. No complicated
+                setup. No extra hardware. Just a powerful and easy to use
+                business SMS platform designed to help you stay connected.
               </p>
-
               <ul className="space-y-2 mb-6 text-gray-700 text-sm sm:text-base">
                 <li className="flex flex-col sm:flex-row sm:items-start gap-2">
                   <span className="text-orange-500">•</span>
@@ -96,7 +99,6 @@ const BulkSMS = () => {
                   </span>
                 </li>
               </ul>
-
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <button className="bg-orange-500 shadow-sm text-white px-4 py-2 sm:px-5 sm:py-3 rounded-full hover:bg-blue-500 transition text-sm sm:text-base">
                   Start SMS Campaign
@@ -124,10 +126,9 @@ const BulkSMS = () => {
               Powerful Bulk SMS Marketing for Las Vegas Businesses
             </h1>
             <p className="text-gray-600 text-md lg:text-lg max-w-4xl mx-auto leading-relaxed">
-              Email and social media can’t match the speed of SMS. Our Bulk SMS
-              service helps Las Vegas businesses instantly connect with
-              customers through high-open-rate text messaging campaigns, alerts,
-              and automated notifications — all from one easy-to-use platform.
+              Bulk SMS marketing is one of the most effective ways to reach
+              customers in Las Vegas. With open rates significantly higher than
+              email, text messaging ensures your message gets seen.
             </p>
           </div>
 
@@ -158,10 +159,11 @@ const BulkSMS = () => {
               Affordable Bulk SMS Plans for Las Vegas Companies
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-8">
-              Choose flexible Business SMS and Bulk SMS packages designed for
-              small businesses, enterprises, retail stores, healthcare
-              providers, and service companies in Las Vegas. Scale your
-              messaging as your customer base grows.
+              Every Las Vegas business has different messaging needs. That is
+              why we offer flexible and affordable Bulk SMS plans that scale
+              with you. From small businesses sending weekly offers to larger
+              companies managing high volume campaigns, you get transparent
+              pricing and dependable local support.
             </p>
             <button className="bg-orange-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
               View SMS Pricing
@@ -182,11 +184,8 @@ const BulkSMS = () => {
               </h1>
 
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                Our Business SMS platform provides enterprise-grade messaging
-                tools designed to help Las Vegas companies run effective SMS
-                marketing campaigns, send automated alerts, and manage two-way
-                customer communication — all from a secure, cloud-based
-                dashboard.
+                Our enterprise grade SMS platform is built to support both
+                marketing and operational communication.
               </p>
             </div>
 
@@ -305,14 +304,12 @@ const BulkSMS = () => {
               BUSINESS SMS PLATFORM
             </p>
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
-              Secure & Scalable Bulk SMS Service in Las Vegas
+              Secure and Scalable Bulk SMS Service in Las Vegas
             </h1>
             <p className="mt-4 text-gray-400">
-              VoIP Dialing’s cloud-based Bulk SMS platform is built for speed,
-              security, and high-volume messaging. Designed specifically for Las
-              Vegas businesses, our SMS infrastructure ensures instant delivery,
-              real-time tracking, and reliable performance for marketing
-              campaigns, alerts, reminders, and customer engagement.
+              Security and reliability matter when you are communicating with
+              customers. Our cloud based SMS platform is built with performance
+              and compliance in mind.
             </p>
           </div>
 
@@ -339,7 +336,7 @@ const BulkSMS = () => {
               </p>
 
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12">
-                Why Choose Bulk SMS for Your Las Vegas Business?
+                Why Choose Bulk SMS for Your Las Vegas Business
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
@@ -347,17 +344,17 @@ const BulkSMS = () => {
                   {
                     title: "Instant Customer Reach",
                     description:
-                      "Deliver marketing promotions, alerts, and notifications directly to your customers’ mobile phones in seconds.",
+                      "Text messages are delivered within seconds, allowing you to communicate time sensitive information immediately.",
                   },
                   {
-                    title: "High Open & Response Rates",
+                    title: "Higher Engagement",
                     description:
-                      "SMS messages are read within minutes, ensuring your Las Vegas audience sees your message immediately.",
+                      "SMS messages are typically read within minutes, helping you generate faster responses and stronger engagement.",
                   },
                   {
-                    title: "Two-Way Communication",
+                    title: "Cost Effective Marketing",
                     description:
-                      "Enable replies for bookings, confirmations, inquiries, and feedback to improve engagement.",
+                      "Bulk SMS allows you to reach a targeted local audience in Las Vegas without the high costs of traditional advertising.",
                   },
                   {
                     title: "Scheduled & Automated Campaigns",
@@ -365,19 +362,19 @@ const BulkSMS = () => {
                       "Plan campaigns in advance and automate recurring messages to reach customers at optimal times.",
                   },
                   {
-                    title: "Cost-Effective Marketing",
+                    title: "Two Way Communication",
                     description:
-                      "Reduce marketing spend compared to print, radio, or online ads while reaching a larger local audience.",
+                      "Customers can reply directly to confirm appointments, ask questions, or request support.",
                   },
                   {
-                    title: "Local Las Vegas Presence",
+                    title: "Strong Local Presence",
                     description:
-                      "Send messages from local phone numbers to increase trust and customer engagement in your area.",
+                      "Send messages from Las Vegas phone numbers to build trust and familiarity with your audience.",
                   },
                   {
-                    title: "Actionable Analytics",
+                    title: "Measurable Results",
                     description:
-                      "Track delivery, read rates, and responses to measure the ROI of your Bulk SMS campaigns.",
+                      "Track delivery rates, responses, and campaign performance to continuously improve your messaging strategy.",
                   },
                   {
                     title: "Secure & Reliable Messaging",

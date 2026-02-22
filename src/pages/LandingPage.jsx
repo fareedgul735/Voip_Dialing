@@ -67,20 +67,22 @@ const LandingPage = () => {
               </div>
 
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4 sm:mb-6">
-                Grow your business stronger
+                Scale Faster with Unified Communications
               </h2>
 
               <p className="text-gray-600 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
-                VoipDailing delivers a powerful SIP-based Cloud PBX platform
-                that runs seamlessly across cloud, on-premise, and hybrid
-                environments. Our system supports IP phones, softphones, mobile
-                apps, and WebRTC clients.
+                VoipDialing provides a robust, SIP-powered Cloud PBX platform
+                designed to work perfectly wherever you are—in the cloud,
+                on-premise, or via a hybrid setup. Connect however your team
+                prefers: through physical desk IP phones, desktop softphones,
+                mobile apps, or directly from your browser using WebRTC.
               </p>
 
               <p className="text-gray-600 text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed">
-                VoipDailing integrates seamlessly with leading CRM and business
-                applications, helping you streamline workflows and maximize
-                productivity.
+                Stop toggling between screens. Our telephony system integrates
+                directly with your favorite CRM platforms and daily business
+                apps, cutting out manual data entry and keeping your sales and
+                support workflows highly productive..
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -105,26 +107,24 @@ const LandingPage = () => {
             </p>
 
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-4">
-              Benefits of working with
-              <br className="hidden sm:block" />
-              Voip Dialing
+              Why Partner With Voip Dialing®?
             </h1>
 
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
-              At Voip Dialing®, we go beyond basic calling to deliver
-              enterprise-grade communication you can rely on. Experience
-              crystal-clear voice quality, advanced security, and fast,
-              hassle-free implementation.
+              We provide more than just a dial tone. We deliver an
+              enterprise-ready telecommunications infrastructure built for
+              reliability. Expect superior audio fidelity, strict security
+              protocols, and an onboarding process that actually makes sense.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 sm:mb-8 text-left">
               {[
-                "99.9% Network Reliability",
-                "Crystal-Clear Voice Quality",
-                "Cost-Efficient Plans",
-                "Fast Setup & Expert Support",
-                "Unlimited outgoing concurrent calls",
-                "No term or usage commitment",
+                "99.99% Network Uptime",
+                "High-Definition Voice Quality",
+                "Transparent, Cost-Efficient Plans",
+                "Transparent, Cost-Efficient Plans",
+                "Unlimited Concurrent Outbound Calling",
+                "Zero Commitments",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 mt-1" />
@@ -181,7 +181,7 @@ const LandingPage = () => {
             Get up and running in minutes
           </h1>
 
-          <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-md shadow-orange-200 border border-orange-100 p-2 md:p-4 flex-1 relative overflow-hidden">
+          <div className="mx-auto w-full aspect-video bg-white/80 rounded-2xl shadow-md shadow-orange-200 border border-orange-100 p-2 md:p-4 flex-1 relative overflow-hidden">
             <video
               ref={videoRef}
               src={video1}

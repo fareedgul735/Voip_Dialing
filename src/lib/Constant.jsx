@@ -14,23 +14,46 @@ import cloudService2 from "../../public/e5beb8c37329203becb3c099b277e7c2c6a04de0
 export const Card = [
   {
     icon: Users,
-    title: "Multi-Location & Remote Workforce Ready",
-    desc: "One cloud PBX system connects all offices and remote teams, enabling seamless calling from anywhere.",
+    title: "Work From Anywhere",
+    desc: "Employees can make and receive business calls from desk phones, laptops, or mobile devices whether they are in the office or working remotely in Las Vegas.",
   },
   {
     icon: Shield,
-    title: "Reliable & Secure Cloud PBX",
-    desc: "High availability, enterprise security, call recording, and backups ensure uninterrupted business communication.",
+    title: "Scale as You Grow",
+    desc: "Add users, extensions, or departments in minutes. Perfect for expanding teams, seasonal demand, and high call volume businesses.",
   },
   {
     icon: Phone,
-    title: "Reduce Business Phone Costs",
-    desc: "Eliminate on-site hardware and maintenance with a cost-effective cloud VoIP phone system.",
+    title: "Reduce Telecom Costs",
+    desc: "Eliminate expensive PBX hardware, maintenance contracts, and outdated phone lines. Enjoy predictable monthly pricing.",
   },
   {
     icon: DollarSign,
-    title: "Affordable & Competitive Pricing",
-    desc: "Feature-rich Cloud PBX plans with nationwide calling at transparent, competitive rates.",
+    title: "Present a Professional Image",
+    desc: "Auto attendants, call routing, and voicemail to email ensure every caller experiences a polished and organized business.",
+  },
+];
+
+export const EquipmentCard = [
+  {
+    icon: Users,
+    title: "Crystal Clear Call Quality",
+    desc: "Enterprise grade SIP phones deliver HD voice clarity so every customer interaction sounds professional.",
+  },
+  {
+    icon: Shield,
+    title: "Seamless Cloud Integration",
+    desc: "All devices are fully compatible with our Cloud PBX platform, ensuring smooth setup and centralized management.",
+  },
+  {
+    icon: Phone,
+    title: "Remote and Hybrid Workforce Ready",
+    desc: "Support in office and remote employees with desk phones, wireless headsets, and softphone applications.",
+  },
+  {
+    icon: DollarSign,
+    title: "Scalable for Growing Teams",
+    desc: "Easily add new phones, extensions, or accessories as your Las Vegas business expands.",
   },
 ];
 
@@ -83,43 +106,58 @@ export const VoipCard = [
 export const CardPhone = [
   {
     icon: PhoneCall,
-    title: "Las Vegas Local Numbers",
-    desc: "Choose 702 or 725 area code numbers to build trust with local customers and increase answer rates for your business.",
+    title: "Strong Local Credibility",
+    desc: "Use 702 or 725 area code numbers to show customers you are part of the Las Vegas community.",
   },
   {
     icon: Clock,
-    title: "Toll-Free Business Numbers",
-    desc: "Get 800, 888, 877, and other toll-free numbers to expand nationwide while maintaining a professional image.",
+    title: "Expanded Reach",
+    desc: "Add toll free numbers to serve customers across Nevada and nationwide while maintaining a professional image.",
   },
   {
     icon: ShieldCheck,
-    title: "Vanity Phone Numbers",
-    desc: "Create a memorable branded phone number that improves marketing performance and customer recall.",
+    title: "Brand Recognition",
+    desc: "Choose vanity numbers that are easy to remember and reinforce your company name or service.",
   },
   {
     icon: TrendingUp,
-    title: "Instant Number Activation",
-    desc: "Activate your virtual business phone number within minutes and forward calls to any device or VoIP system.",
+    title: "Instant Activation",
+    desc: "Secure and activate your business phone number quickly without hardware or long setup times.",
   },
 ];
 
 export const features = [
-  { text: "Auto Attendant (IVR)", column: 1 },
-  { text: "Call Queues & Intelligent Call Routing", column: 1 },
-  { text: "Ring Groups & Hunt Groups", column: 1 },
+  { text: "Auto Attendant and IVR", column: 1 },
+  { text: "Call Queues and intelligent call routing", column: 1 },
+  { text: "Ring Groups and Hunt Groups", column: 1 },
   { text: "Voicemail to Email", column: 1 },
-  { text: "Call Recording & Call Logs", column: 1 },
+  { text: "Call Recording and detailed call logs", column: 1 },
   { text: "Conference Calling", column: 1 },
   { text: "Time-Based Routing", column: 2 },
   { text: "Caller ID & Call Blocking", column: 2 },
   { text: "Mobile & Desktop Softphones", column: 2 },
-  { text: "Number Porting (Keep your Las Vegas numbers)", column: 2 },
-  { text: "Voicemail & Voicemail-to-Email", column: 3 },
+  { text: "Number Porting for Las Vegas phone numbers", column: 2 },
   { text: "Custom Music on Hold", column: 3 },
-  { text: "Flexible Call Recording Options", column: 3 },
-  { text: "Detailed Call Reporting", column: 3 },
-  { text: "Advanced Call Routing Rules", column: 3 },
-  { text: "Caller ID Management & Prefix Control", column: 3 },
+  { text: "Advanced Call Reporting and analytics", column: 3 },
+  { text: "Flexible Call Routing Rules", column: 3 },
+  { text: "CRM and device integration", column: 3 },
+];
+
+export const EquipementFeatures = [
+  { text: "Auto Attendant and IVR", column: 1 },
+  { text: "Call Queues and intelligent call routing", column: 1 },
+  { text: "Ring Groups and Hunt Groups", column: 1 },
+  { text: "Voicemail to Email", column: 1 },
+  { text: "Call Recording and detailed call logs", column: 1 },
+  { text: "Conference Calling", column: 1 },
+  { text: "Time-Based Routing", column: 2 },
+  { text: "Caller ID & Call Blocking", column: 2 },
+  { text: "Mobile & Desktop Softphones", column: 2 },
+  { text: "Number Porting for Las Vegas phone numbers", column: 2 },
+  { text: "Custom Music on Hold", column: 3 },
+  { text: "Advanced Call Reporting and analytics", column: 3 },
+  { text: "Flexible Call Routing Rules", column: 3 },
+  { text: "CRM and device integration", column: 3 },
 ];
 
 export const featuresBulk = [
@@ -143,31 +181,37 @@ export const featuresBulk = [
 ];
 
 export const featuresVoip = [
-  { text: "HD Voice Quality on Every Call", column: 1 },
-  { text: "Local Las Vegas Phone Numbers", column: 1 },
-  { text: "Multi-Device Support (Desktop, Mobile, Tablet)", column: 1 },
+  { text: "HD voice quality for professional call clarity", column: 1 },
+  { text: "Auto Attendant and IVR", column: 1 },
+  { text: "Call forwarding and intelligent routing", column: 1 },
+  { text: "Ring groups and hunt groups", column: 1 },
 
-  { text: "Call Forwarding & Auto Attendants", column: 2 },
-  { text: "Voicemail-to-Email Transcriptions", column: 2 },
-  { text: "Instant Line Provisioning & Scalability", column: 2 },
+  { text: "Voicemail to email transcription", column: 2 },
+  { text: "Call recording and detailed call logs", column: 2 },
+  { text: "Time based routing", column: 2 },
+  { text: "Caller ID and call blocking", column: 2 },
 
-  { text: "Call Forwarding & Auto Attendants", column: 3 },
-  { text: "Voicemail-to-Email Transcriptions", column: 3 },
-  { text: "Instant Line Provisioning & Scalability", column: 3 },
+  { text: "Multi device support including desktop and mobile", column: 3 },
+  { text: "Instant line provisioning", column: 3 },
+  { text: "Number porting for Las Vegas phone numbers", column: 3 },
+  { text: "Advanced reporting and analytics", column: 3 },
 ];
 
 export const PhoneFeatures = [
-  { text: "HD Voice Quality on Every Call", column: 1 },
-  { text: "Local Las Vegas Phone Numbers (702 & 725)", column: 1 },
-  { text: "Vanity Numbers for Branding & Marketing", column: 1 },
+  { text: "702 and 725 local Las Vegas area code numbers", column: 1 },
+  { text: "Toll free numbers including 800, 888, 877, and more", column: 1 },
+  { text: "Custom vanity phone numbers", column: 1 },
+  { text: "Number porting to keep your existing Las Vegas numbers", column: 1 },
 
-  { text: "SMS-Enabled Business Numbers", column: 2 },
-  { text: "Toll-Free Numbers (800, 888, 877)", column: 2 },
-  { text: "Multi-Device Support (Desktop, Mobile, Tablet)", column: 2 },
+  { text: "Instant number provisioning", column: 2 },
+  { text: "Call forwarding to mobile, desktop, or VoIP systems", column: 2 },
+  { text: "SMS enabled business numbers", column: 2 },
+  { text: "Scalable number provisioning for growing businesses", column: 2 },
 
-  { text: "Call Forwarding & Auto Attendants", column: 3 },
-  { text: "Instant Number Activation & Provisioning", column: 3 },
-  { text: "CRM & Software Integration for Business", column: 3 },
+  { text: "Advanced call routing and auto attendant integration", column: 3 },
+  { text: "Multi device support", column: 3 },
+  { text: "CRM integration capabilities", column: 3 },
+  { text: "Secure cloud management dashboard", column: 3 },
 ];
 
 export const services = [
@@ -175,54 +219,54 @@ export const services = [
     id: 1,
     image: cloudService2,
     icon: Users,
-    title: "Local & Remote Team Connectivity",
+    title: " Local and Remote Team Connectivity",
     description:
-      "Connect in-office and remote teams across Las Vegas with one unified Cloud PBX system that works on desk phones, mobiles, and desktops.",
+      "Connect multiple offices and remote employees under one unified business phone system. Everyone operates on the same professional platform regardless of location.",
     iconColor: "bg-orange-500",
   },
   {
     id: 2,
     image: cloudService1,
     icon: PhoneCall,
-    title: "Crystal-Clear Business Calling",
+    title: " Crystal Clear Voice Quality",
     description:
-      "Enjoy reliable, low-latency VoIP calling optimized for Las Vegas businesses, delivering professional voice quality for every customer interaction.",
+      "Enjoy high definition voice clarity optimized for business communication in Las Vegas. Every conversation sounds professional and reliable",
     iconColor: "bg-orange-500",
   },
   {
     id: 3,
     image: cloudService1,
     icon: ShieldCheck,
-    title: "Secure Cloud PBX Infrastructure",
+    title: "Secure Cloud Infrastructure",
     description:
-      "Protect your business communications with encrypted voice traffic, secure access, and redundant cloud infrastructure built for Las Vegas enterprises.",
+      "All voice traffic is encrypted and protected with enterprise level security standards to safeguard your business communications.",
     iconColor: "bg-orange-500",
   },
   {
     id: 4,
     image: cloudService1,
     icon: RefreshCw,
-    title: "Always-On Business Continuity",
+    title: "Automatic Failover and Business Continuity",
     description:
-      "Keep your Las Vegas business reachable during outages with automatic call rerouting, failover, and disaster recovery support.",
+      "If an internet outage occurs, calls are automatically rerouted to backup numbers or mobile devices so your business remains reachable.",
     iconColor: "bg-orange-500",
   },
   {
     id: 5,
     image: cloudService1,
     icon: TrendingUp,
-    title: "Instant Scalability for Business Growth",
+    title: "Instant Scalability",
     description:
-      "Scale your Cloud PBX instantly by adding users, extensions, or numbers—ideal for growing Las Vegas companies and seasonal demand.",
+      "Quickly add extensions, departments, or new phone numbers as your Las Vegas company grows.",
     iconColor: "bg-orange-500",
   },
   {
     id: 6,
     image: cloudService1,
     icon: MapPin,
-    title: "Las Vegas Local Number Presence",
+    title: "Local Las Vegas Number Presence",
     description:
-      "Build trust with customers using local Las Vegas phone numbers while managing calls centrally through a powerful Cloud PBX platform.",
+      "Strengthen customer trust with local Las Vegas phone numbers while managing all calls centrally through a powerful cloud dashboard.",
     iconColor: "bg-orange-500",
   },
 ];

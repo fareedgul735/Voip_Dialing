@@ -23,21 +23,22 @@ const HeroSection = () => {
       title: (
         <>
           <span>
-            Reliable
-            <span className="highlight bg-sky-600">Cloud PBX</span>
-            for
+            Upgrade Your
+            <span className="highlight bg-sky-600">Business</span>
+            Communication for{" "}
           </span>
           <span>
-            <span className="highlight bg-sky-600">Growing</span>
-            Bussiness
+            with
+            <span className="highlight bg-sky-600">Enterprise-Grade</span>
+            VoIP
           </span>
         </>
       ),
       features: [
-        "Crystal-clear conversations",
-        "Scalable & cost-effective",
-        "Flexible VoIP plans",
-        "Reliable and secure connections",
+        "Premium VoIP routes for uninterrupted, high-definition audio",
+        "Dependable SIP trunking and dialer connectivity worldwide",
+        "Low-latency network with top-tier ASR & ACD metrics",
+        "Customizable, budget-friendly calling plans that scale with your team",
       ],
       stats: { count: "12K+", label: "Happy Clients" },
     },
@@ -46,19 +47,22 @@ const HeroSection = () => {
       image: image4,
       title: (
         <>
-          Boost Your <span className="highlight bg-orange-500">Business</span>
-          <br />
-          <span className="highlight bg-orange-500">
-            Communication
-          </span> with <br />
-          Reliable VoIP Solutions
+          <span>
+            Drive Customers With
+            <span className="highlight bg-sky-600"> Engagement</span>& Mass{" "}
+          </span>
+          <span>
+            <span className="highlight bg-sky-600"> Business</span>
+            Texting
+          </span>
         </>
       ),
       features: [
-        "Crystal-clear conversational VoIP routes",
-        "Stable dialer & SIP connectivity worldwide",
-        "Low latency with high ASR & ACD",
-        "Flexible, scalable, and cost-effective VoIP plans",
+        "Achieve unmatched open rates using our high-speed bulk SMS gateway",
+        "Worldwide text messaging coverage",
+        "Track performance with live delivery receipts",
+        "Easily deploy automated text marketing campaigns",
+        "Affordable pricing tailored for high-volume senders",
       ],
       stats: { count: "12K+", label: "Happy Clients World Widw" },
     },
@@ -67,18 +71,22 @@ const HeroSection = () => {
       image: image3,
       title: (
         <>
-          Reach <span className="highlight bg-sky-600">Customers</span>
-          <br />
-          <span className="highlight bg-sky-600">Instantly</span> with Our{" "}
-          <br />
-          Bulk SMS Solutions
+          <span>
+            A Dependable
+            <span className="highlight bg-sky-600">Cloud PBX</span>
+            System Built{" "}
+          </span>
+          <span>
+            for
+            <span className="highlight bg-sky-600">Growth</span>
+          </span>
         </>
       ),
       features: [
-        "Global SMS coverage",
-        "Real-time delivery reports",
-        "Automated campaigns",
-        "Cost-effective pricing",
+        "Static-free, high-fidelity voice calling",
+        "Expandable infrastructure that goes easy on your budget",
+        "Adaptable VoIP service options",
+        "Secure, encrypted, and stable network connections",
       ],
       stats: { count: "1M+", label: "Messages Sent" },
     },
@@ -110,7 +118,7 @@ const HeroSection = () => {
 
             <h1
               key={`title-${activeSlide}`}
-              className="text-xl sm:text-2xl md:text-3xl lg:text-6xl font-bold text-[#0B1C2D] leading-snug animate-fadeIn"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-[#0B1C2D] leading-snug animate-fadeIn"
             >
               {currentSlide.title}
             </h1>

@@ -12,69 +12,72 @@ const BusinessCommunicationServices = () => {
   const services = [
     {
       icon: Cloud,
-      title: "Cloud PBX",
+      title: "Cloud Phone Systems (Hosted PBX) ",
       description:
         "Cloud PBX Everything your business needs to be efficient and stay connected",
       mainTitle: "Cloud Phone Systems",
       mainSubtitle: "Unified, Simplified and Efficient",
       mainDescription:
-        "Cloud PBX delivers everything your business needs to communicate efficiently. Built for remote teams and multi-location businesses, our cloud phone systems are secure, scalable, and easy to manage.",
+        "Unified, Simple, and Highly Efficient Get all the features of a traditional enterprise phone system without the heavy hardware costs. Perfect for remote workers and multi-office companies, our hosted PBX is secure, centralized, and remarkably easy to manage.",
       features: [
-        "Don't buy expensive equipment",
-        "Advanced Class 5 PBX features",
-        "Geographic flexibility for remote teams",
-        "Complete cloud-based communication services",
-        "Easily scalable as your business grows",
+        "Eliminate expensive upfront hardware costs",
+        "Access advanced Class 5 PBX routing features",
+        "Geographic flexibility built for distributed teams",
+        "Fully managed cloud telephony services",
+        "Scales instantly as your headcount growsF",
       ],
-      stats: { years: "20+", calls: "509+" },
+      stats: { years: "20+ Years of Telecom Experience", calls: "509+" },
     },
     {
       icon: MessageSquare,
-      title: "Bulk SMS",
+      title: "Bulk SMS & Text Marketing ",
       description:
         "High-delivery SMS solutions for marketing, alerts, and customer engagement at scale.",
       mainTitle: "Bulk SMS Solutions",
       mainSubtitle: "Reach Customers Instantly",
       mainDescription:
-        "Send thousands of messages instantly with our reliable SMS platform. Perfect for marketing campaigns, alerts, and customer notifications with high delivery rates.",
+        "Connect Instantly, Anywhere Push out thousands of messages in seconds using our robust text delivery platform. Ideal for promotional blasts, urgent alerts, and customer notifications that require guaranteed visibility",
       features: [
-        "High delivery rates guaranteed",
-        "Global SMS coverage",
-        "Real-time analytics and reporting",
+        "20+ Years of Telecom Experience",
+        "Cross-border, global SMS reach",
+        "Live campaign tracking and analytics",
       ],
-      stats: { years: "20+", calls: "1000+" },
+      stats: { years: "20+ Years of Telecom Experience", calls: "1000+" },
     },
     {
       icon: Phone,
-      title: "VOIP Lines",
+      title: "Premium VoIP Communication",
       description:
         "Crystal-clear VoIP calling with stable connectivity and low latency for businesses and call centers.",
       mainTitle: "VoIP Communication",
       mainSubtitle: "Crystal Clear Calling",
       mainDescription:
-        "Experience superior voice quality with our VoIP solutions. Designed for businesses and call centers requiring reliable, low-latency communication channels.",
+        "Unmatched Call Quality Give your call center and office teams the dependable, low-latency communication lines they need to succeed. Our VoIP infrastructure is engineered for businesses that cannot afford dropped calls or static.",
       features: [
-        "Crystal-clear voice quality",
-        "Stable connectivity guaranteed",
-        "Low latency for seamless calls",
+        "High-definition voice fidelity",
+        "Guaranteed network stability",
+        "Zero-lag connections for natural conversations",
       ],
-      stats: { years: "20+", calls: "750+" },
+      stats: {
+        years: "20+ Years of Telecom Experience",
+        calls: "750+ Calls Per Day ",
+      },
     },
     {
       icon: Hash,
-      title: "Phone Numbers",
+      title: "Virtual Phone Numbers ",
       description:
         "Local and international virtual phone numbers with flexible routing and failover.",
       mainTitle: "Virtual Phone Numbers",
       mainSubtitle: "Global Presence, Local Touch",
       mainDescription:
-        "Establish your presence anywhere with our virtual phone numbers. Get local and international numbers with intelligent routing and failover capabilities.",
+        "Think Global, Act Local Build trust in new markets instantly. Claim local and toll-free international phone numbers equipped with smart routing and disaster recovery, so you never miss an important caller.",
       features: [
-        "Local & international numbers",
-        "Flexible routing options",
-        "Automatic failover protection",
+        "Access to global and local numbering",
+        "Customizable call routing rules",
+        "Built-in automatic failover to keep you online during outages",
       ],
-      stats: { years: "20+", calls: "300+" },
+      stats: { years: "20+ Years of Telecom Experience", calls: "300+" },
     },
     {
       icon: Settings,
@@ -126,7 +129,7 @@ const BusinessCommunicationServices = () => {
               Our Services
             </p>
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
-              Business Communication Services We Offer
+              Our Business Communication Solutions
             </h1>
           </div>
 
