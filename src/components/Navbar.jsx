@@ -110,7 +110,7 @@ const Navbar = () => {
                                 </p>
                               </NavLink>
 
-                              <div className="mt-4 space-y-6">
+                              {/* <div className="mt-4 space-y-6">
                                 {(
                                   sub.enterpriseNames || [
                                     `Enterprise`,
@@ -130,13 +130,13 @@ const Navbar = () => {
                                     {name}
                                   </p>
                                 ))}
-                              </div>
+                              </div> */}
                             </div>
                           ))}
                         </div>
                       )}
 
-                      {!Array.isArray(item.submenu) && (
+                      {/* {!Array.isArray(item.submenu) && (
                         <div className="grid grid-cols-4 gap-8">
                           <div
                             className="rounded-2xl p-6 text-white bg-cover bg-center"
@@ -224,7 +224,7 @@ const Navbar = () => {
                             </ul>
                           </div>
                         </div>
-                      )}
+                      )} */}
                     </div>
                   </div>
                 )}
