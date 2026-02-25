@@ -61,13 +61,7 @@ const Equipement = () => {
     <>
       <div className="w-full p-3 sm:p-6 py-12 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
         <div className="py-12">
-          <motion.div
-            variants={scrollReveal}
-            initial="hidden"
-            // whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
-            className="mx-4 sm:mx-8 lg:mx-12 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-between"
-          >
+          <div className="mx-4 sm:mx-8 lg:mx-12 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-between">
             <div className="text-left w-full sm:w-[90%] md:w-[700px] lg:w-[758px]">
               <div className="inline-flex items-center bg-white px-4 sm:px-6 py-2 mb-4 rounded-[18px] shadow-md animate-fadeIn">
                 <span className="text-blue-500 font-medium text-sm sm:text-base">
@@ -134,7 +128,7 @@ const Equipement = () => {
                 className="rounded-lg w-full max-w-[200px] sm:max-w-xs md:max-w-md lg:max-w-xl object-contain"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
       <div className="w-full bg-[#FAF9F6] p-[12px] py-12">
