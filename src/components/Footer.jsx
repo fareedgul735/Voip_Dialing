@@ -1,6 +1,7 @@
 import React from "react";
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import logo from "../../public/logo.png";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -63,7 +64,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div>
+          {/* <div>
             <h3 className="text-lg font-bold mb-4 text-orange-500">Services</h3>
             <ul className="space-y-2">
               <li>
@@ -115,50 +116,50 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           <div>
-            <h3 className="text-lg font-bold mb-4 text-orange-500">About Us</h3>
+            <h3 className="text-lg font-bold mb-4 text-orange-500">Products</h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#"
+                <Link
+                  to={"/products/cloud-pbx"}
                   className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
                 >
-                  About Us
-                </a>
+                  Cloud PBX
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to={"/products/bulk-sms"}
                   className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
                 >
-                  Leadership
-                </a>
+                  Bulk SMS
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to={"/products/voip-lines"}
                   className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
                 >
-                  Careers
-                </a>
+                  Voip Lines
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to={"/products/phone-numbers"}
                   className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
                 >
-                  Article & News
-                </a>
+                  Phone Numbers
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to={"/products/equipment"}
                   className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
                 >
-                  Legal Notice
-                </a>
+                  Equipement
+                </Link>
               </li>
             </ul>
           </div>
@@ -169,44 +170,44 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#"
+                <Link
+                  to={"/home"}
+                  className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={"/about"}
                   className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
                 >
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to={"/contact"}
                   className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
                 >
-                  Leadership
-                </a>
+                  Contact Us
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to={"/faqs"}
                   className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
                 >
-                  Careers
-                </a>
+                  Faqs
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to={"/shoppingCart"}
                   className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
                 >
-                  Article & News
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
-                >
-                  Legal Notice
-                </a>
+                  Shop
+                </Link>
               </li>
             </ul>
           </div>
