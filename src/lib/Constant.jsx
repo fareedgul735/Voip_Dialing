@@ -452,31 +452,31 @@ export const navLinks = [
         label: "Cloud PBX",
         link: "/products/cloud-pbx",
         icon: <Cloud />,
-        description: "Cloud PBX Everything your Bussiness need.",
+        description: "Smart cloud-based business calling system.",
       },
       {
         label: "Bulk SMS",
         link: "/products/bulk-sms",
         icon: <MessageCircle />,
-        description: "Cloud PBX Everything your Bussiness need.",
+        description: "Send messages to thousands instantly.",
       },
       {
         label: "VOIP Lines",
         link: "/products/voip-lines",
         icon: <PhoneCall />,
-        description: "Cloud PBX Everything your Bussiness need.",
+        description: "Affordable and clear internet calling.",
       },
       {
         label: "Phone Numbers",
         link: "/products/phone-numbers",
         icon: <Hash />,
-        description: "Cloud PBX Everything your Bussiness need.",
+        description: "Local and international business numbers.",
       },
       {
         label: "Equipment",
         link: "/products/equipment",
         icon: <HardDrive />,
-        description: "Cloud PBX Everything your Bussiness need.",
+        description: "VoIP compatible phones and devices.",
       },
     ],
   },
@@ -684,7 +684,6 @@ export const blogDeatiledPosts = [
   },
 ];
 
-
 // 🔥 Reusable Variants
 
 export const fadeInUp = {
@@ -692,8 +691,8 @@ export const fadeInUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: "easeOut" }
-  }
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
 };
 
 export const fadeInLeft = {
@@ -701,8 +700,8 @@ export const fadeInLeft = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: "easeOut" }
-  }
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
 };
 
 export const fadeInRight = {
@@ -710,15 +709,15 @@ export const fadeInRight = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: "easeOut" }
-  }
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
 };
 
 export const staggerContainer = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.2
-    }
-  }
+      staggerChildren: 0.2,
+    },
+  },
 };
