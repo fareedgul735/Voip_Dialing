@@ -71,9 +71,15 @@ const Equipement = () => {
 
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 Professional VoIP{" "}
-                <span className="text-blue-600"> Phones and Cloud</span> PBX{" "}
-                <span className="text-blue-600">Hardware Built</span> for
-                Performance
+                <span className="bg-sky-600 text-white rounded">
+                  {" "}
+                  Phones and Cloud
+                </span>{" "}
+                PBX{" "}
+                <span className="bg-sky-600 text-white rounded">
+                  Hardware Built
+                </span>{" "}
+                for Performance
               </h1>
               <p className="text-gray-700 mb-6 text-sm sm:text-base md:text-lg">
                 In Las Vegas, your business phone system needs to keep up with

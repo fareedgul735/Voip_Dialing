@@ -57,8 +57,14 @@ const VoipLines = () => {
                 </span>
               </div>
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Reliable <span className="text-blue-600">Business Phone</span>{" "}
-                Lines Built <span className="text-blue-600">for Growing </span>{" "}
+                Reliable{" "}
+                <span className="bg-sky-600 text-white rounded">
+                  Business Phone
+                </span>{" "}
+                Lines Built{" "}
+                <span className="bg-sky-600 text-white rounded">
+                  for Growing{" "}
+                </span>{" "}
                 Las Vegas Companies
               </h1>
               <p className="text-gray-700 mb-6 text-sm sm:text-base md:text-lg">

@@ -51,11 +51,10 @@ const Products = () => {
                   Cloud PBX Phone System in Las Vegas
                 </span>
               </div>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-2xl sm:text-3xl  md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 Enterprise Ready{" "}
-                <span className="text-blue-600">Business VoIP</span> Built for
-                Growing <span className="text-blue-600">Las Vegas</span>{" "}
-                Companies
+                <span className="bg-sky-600 text-white rounded">Business VoIP</span> Built for
+                Growing <span className="bg-sky-600 text-white rounded">Las Vegas</span> Companies
               </h1>
               <p className="text-gray-700 mb-6 text-sm sm:text-base md:text-md">
                 In a fast moving city like Las Vegas, your business phone system

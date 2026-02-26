@@ -1,15 +1,11 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { FileText, BookOpen, LifeBuoy } from "lucide-react";
-import M1 from "../../public/M1.png";
+
 import M2 from "../../public/M2.png";
 import M3 from "../../public/M3.png";
-import M4 from "../../public/M4.png";
+import C1 from "../../public/ChatGPT Image Feb 26, 2026, 10_55_09 AM.png";
+import C2 from "../../public/ChatGPT Image Feb 26, 2026, 10_55_15 AM.png";
+import C3 from "../../public/ChatGPT Image Feb 26, 2026, 10_59_53 AM.png";
 
-import Doctor1 from "../../public/Doctor 1.png";
-import Doctor2 from "../../public/Doctor 2.png";
-import Doctor3 from "../../public/Doctor 3.png";
-import Doctor4 from "../../public/Doctor 4.jpg";
-import Doctor5 from "../../public/Doctor 5.png";
 import { useState } from "react";
 
 const Testominals = () => {
@@ -83,7 +79,7 @@ const Testominals = () => {
   const services = [
     {
       id: 1,
-      icon: M2,
+      icon: C2,
       title: "Cloud PBX Service in Las Vegas",
       description:
         "Learn how Cloud PBX phone systems help Las Vegas businesses improve call handling, reduce costs, and deliver a professional customer experience.",
@@ -91,7 +87,7 @@ const Testominals = () => {
     },
     {
       id: 2,
-      icon: M2,
+      icon: C1,
       title: "VoIP Solutions for Growing Businesses",
       description:
         "Explore how scalable VoIP and Cloud PBX services support fast-growing Las Vegas companies, remote teams, and multi-location offices.",
@@ -99,7 +95,7 @@ const Testominals = () => {
     },
     {
       id: 3,
-      icon: M2,
+      icon: C3,
       title: "Cloud PBX Support & Best Practices",
       description:
         "Discover best practices, setup tips, and support insights to get the most out of your Cloud PBX phone system in Las Vegas.",
@@ -253,17 +249,17 @@ const Testominals = () => {
                 <div
                   className="rounded-3xl overflow-hidden p-6 h-80 shadow-xl flex items-center justify-center"
                   style={{
-                    backgroundImage: `url(${M3})`,
+                    backgroundImage: `url(${service.icon})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
                 >
-                  <img
+                  {/* <img
                     src={service.icon}
                     alt="service"
                     className={`object-contain transition-all duration-300
-    ${index === 1 ? "w-[316px] h-[380px] rounded-2xl" : "w-[316px] h-[331px]"}`}
-                  />
+    ${index === 1 ? "w-[316px] h-[380px] rounded-md" : "w-[316px] h-[331px]"}`}
+                  /> */}
                 </div>
 
                 <div className="mt-6">

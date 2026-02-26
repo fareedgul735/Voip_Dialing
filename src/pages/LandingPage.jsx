@@ -181,7 +181,7 @@ const LandingPage = () => {
             Get up and running in minutes
           </h1>
 
-          <div className="mx-auto w-full aspect-video bg-white/80 rounded-2xl shadow-md shadow-orange-200 border border-orange-100 p-2 md:p-4 flex-1 relative overflow-hidden">
+          <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-md shadow-orange-200 border border-orange-100 p-2 md:p-4 flex-1 relative overflow-hidden">
             <video
               ref={videoRef}
               src={video1}
@@ -202,7 +202,7 @@ const LandingPage = () => {
               >
                 <div
                   className="w-16 cursor-pointer h-16 md:w-20 md:h-20 bg-orange-500/90 rounded-full flex items-center justify-center
-                      group-hover:scale-110 transition-transform duration-300 shadow-lg"
+                                  group-hover:scale-110 transition-transform duration-300 shadow-lg"
                 >
                   <svg
                     className="w-6 h-6 md:w-8 md:h-8 text-white ml-1"

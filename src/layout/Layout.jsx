@@ -19,7 +19,7 @@ const Layout = () => {
       >
         <RequestCall />
       </div>
-      <div className="award-winnerw-full px-4 md:px-12 py-8">
+      <div className="award-winner w-full px-4 md:px-12 py-8">
         <h1 className="text-orange-400 text-xl md:text-2xl font-bold text-center mb-8">
           Award Winners
         </h1>

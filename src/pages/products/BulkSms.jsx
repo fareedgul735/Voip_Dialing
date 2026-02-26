@@ -58,8 +58,14 @@ const BulkSMS = () => {
               </div>
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 Reach Your{" "}
-                <span className="text-blue-600">Customers Instantly </span> With{" "}
-                <span className="text-blue-600">Business Text</span> Messaging
+                <span className="bg-sky-600 text-white rounded">
+                  Customers Instantly{" "}
+                </span>{" "}
+                With{" "}
+                <span className="bg-sky-600 text-white rounded">
+                  Business Text
+                </span>{" "}
+                Messaging
               </h1>
               <p className="text-gray-700 mb-6 text-sm sm:text-base md:text-lg">
                 In Las Vegas, businesses move fast and customer expectations are
