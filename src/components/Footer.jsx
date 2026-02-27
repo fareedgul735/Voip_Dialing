@@ -1,5 +1,5 @@
 import React from "react";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Phone } from "lucide-react";
 import logo from "../../public/logo.png";
 import { Link } from "react-router";
 
@@ -18,19 +18,31 @@ const Footer = () => {
             </h3>
             <div className="space-y-4">
               <div>
-                <p className="text-gray-800 hover:text-orange-500 transition-colors cursor-pointer font-medium">
+                <a
+                  href="email:support@yourdomain.tld"
+                  className="flex items-center gap-2 text-[12px] hover:text-orange-600 transition"
+                >
                   support@yourdomain.tld
-                </p>
+                </a>
+
+                <p className="text-gray-800 hover:text-orange-500 transition-colors cursor-pointer font-medium"></p>
               </div>
               <div>
-                <p className="text-gray-800 hover:text-orange-500 transition-colors cursor-pointer font-medium">
-                  +852121002-2012
-                </p>
+                <a
+                  href="tel:855-VDialing (855-834-2546)"
+                  className="flex items-center gap-2 text-[12px] hover:text-orange-600 transition"
+                >
+                  855-VDialing (855-834-2546)
+                </a>
               </div>
               <div>
-                <p className="text-gray-800 hover:text-orange-500 transition-colors cursor-pointer font-medium">
-                  555-v10ailing (855-834-2546)
-                </p>
+                <a
+                  href="tel: 702-927-7777"
+                  className="flex items-center gap-2 text-[12px] hover:text-orange-600 transition"
+                >
+                  <Phone size={18} />
+                  702-927-7777
+                </a>
               </div>
 
               <div className="pt-4">

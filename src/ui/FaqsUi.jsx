@@ -7,51 +7,51 @@ export default function FAQAccordion() {
   const faqs = [
     {
       id: 1,
-      question: "Does Biotix remember previous conversations?",
+      question: "Minimum Requirements?",
       answer:
-        "Yes, Biotix maintains context throughout your conversation session, allowing for more natural and coherent interactions based on previous exchanges.",
+        "IP-PBX with External IP-Data Connection with QoS (recommended minimum of 80 kbps per concurrent call, plus bandwidth for fluctuation, and for internet browsing as needed)-QoS enabled Network (Recommended)-IP Phones/Soft Phones as applies to your application-Network switches & routers as needed by customer",
     },
     {
       id: 2,
-      question: "Does Biotix integrate with other software tools?",
+      question: "What is VoIP?",
       answer:
-        "Biotix offers seamless integration with popular business tools and platforms through our API and native connectors, enabling smooth workflow automation.",
+        "VoIP stands for Voice over Internet Protocol (IP). VoIP phone service operates by using your high-speed Internet connection to transfer your voice calls. As opposed to a traditional landline, VoIP uses your IP-phone or soft-phone on your computer to place and receive calls. The call is sent over the Internet in & out to the PSTN Network (Plan Switched Telephone Network).",
     },
     {
       id: 3,
-      question: "Biotix handle sensitive customer information?",
+      question: "How do I contact you?",
       answer:
-        "We employ enterprise-grade encryption and comply with international data protection standards to ensure your customer information remains secure and confidential.",
+        "Address:Voip Dialing Inc.PO Box 33357Las Vegas, NV 89133ONLINE FORM: HERE(www.voipdialing.com/contactus)EMAIL: support@voipdialing.comPHONE: 855-VDialing (855-834-2546)",
     },
     {
       id: 4,
-      question: "Is the memory feature in Biotix automatic?",
+      question: "Can I get a number of an area code other than mine?",
       answer:
-        "Yes, the memory feature works automatically during your session, intelligently storing relevant context to provide more personalized and accurate responses.",
+        "Yes, you can select an area code different from the area in which you are located. Simply select a Phone Number number of an area code of your choice, which will be pointed to your system.",
     },
     {
       id: 5,
-      question: "Is Biotix capable of voice interaction?",
+      question: "Do you provide E911 or E411 Directory Listing?",
       answer:
-        "Yes, Biotix supports voice interactions, allowing users to communicate naturally through speech for a more accessible and convenient experience.",
+        "For one of the recommended & detailed speed tests - Click Here(voipdialing.com/speedtest)",
     },
     {
       id: 6,
-      question: "How do I set up Biotix for my business?",
+      question: "What CODEC do you support?",
       answer:
-        "Setting up Biotix is straightforward - simply sign up, configure your business parameters, train the AI with your specific data, and integrate it with your existing systems.",
+        "We support most Audio Codec protocols available in the VoIP Industry.SIP: G711-ULaw, G711, ALaw, G729, H323, GSM610, GSM729 and others.Traditional Fax: T.38 pass-through.vFax: Contact Us.Video: H.264 or H.263.For more customizable solution please submit your request HERE.",
     },
     {
       id: 7,
-      question: "How does Biotix handle large volumes of queries?",
+      question: "How quick can I dial?",
       answer:
-        "Biotix is built on scalable infrastructure that can handle thousands of concurrent queries, ensuring consistent performance even during peak usage times.",
+        "Upon your account being verified, you can start dialing Immediately!",
     },
     {
       id: 8,
-      question: "What kind of support does Biotix provide?",
+      question: "How do I sign up?",
       answer:
-        "We offer 24/7 customer support through multiple channels including email, chat, and phone, along with comprehensive documentation and onboarding assistance.",
+        "#1 - Select a Plan & Register HERE(www.Voipdialing.com/siptrunks/index/plan/)#2 - Confirm Your Email, then Login#3 - Enter Your PBX external IP addressYou're Ready to Dial! At this point, you can use your free-dial minutes, add funds to your account and order Phone Numbers as needed.",
     },
   ];
 

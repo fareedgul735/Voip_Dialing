@@ -7,9 +7,13 @@ import RequestCall from "../ui/RequestCall";
 import title6 from "../../public/title6.png";
 import dummy3 from "../../public/dummy3.png";
 import dummy4 from "../../public/dummy4.png";
+import ScrollToTop from "../lib/ScrollToTop";
+import BackToTop from "../lib/BackToTop.jsx";
 const Layout = () => {
   return (
     <div className="w-full">
+      <ScrollToTop />
+      <BackToTop />
       <AnnoucementBar />
       <Navbar />
       <Outlet />
@@ -20,11 +24,11 @@ const Layout = () => {
         <RequestCall />
       </div>
       <div className="award-winner w-full px-4 md:px-12 py-8">
-        <h1 className="text-orange-400 text-xl md:text-2xl font-bold text-center mb-8">
+        <div className="flex items-center lg:justify-between gap-8 overflow-x-auto lg:overflow-visible no-scrollbar custom-scrollbar">
+        <h1 className="text-orange-400 text-lg md:text-2xl font-bold text-center">
           Award Winners
         </h1>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center">
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex flex-col items-center gap-2 min-w-[140px]">
             <img
               src={title6}
               alt="Award 1"
@@ -35,7 +39,7 @@ const Layout = () => {
             </p>
           </div>
 
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex flex-col items-center gap-2 min-w-[140px]">
             <img
               src={title6}
               alt="Award 2"
@@ -46,7 +50,7 @@ const Layout = () => {
             </p>
           </div>
 
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex flex-col items-center gap-2 min-w-[140px]">
             <img
               src={title6}
               alt="Award 3"
@@ -57,7 +61,7 @@ const Layout = () => {
             </p>
           </div>
 
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex flex-col items-center gap-2 min-w-[140px]">
             <img
               src={dummy3}
               alt="Award 4"
@@ -68,7 +72,7 @@ const Layout = () => {
             </p>
           </div>
 
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex flex-col items-center gap-2 min-w-[140px]">
             <img
               src={dummy4}
               alt="Award 5"

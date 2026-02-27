@@ -7,12 +7,20 @@ const AnnouncementBar = () => {
       <div className="w-full mx-12 px-4 py-2">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-8">
-            <span className="flex items-center gap-2 text-[12px]">
+            <a
+              href="tel: 702-927-7777"
+              className="flex items-center gap-2 text-[12px] hover:text-orange-600 transition"
+            >
               <Phone size={18} />
-              +09271 8999 000
-            </span>
+              702-927-7777
+            </a>
 
-            <span className="text-[12px]">- (8899 7766 55 99000) -</span>
+            <a
+              href="tel:855-VDialing (855-834-2546)"
+              className="flex items-center gap-2 text-[12px] hover:text-orange-600 transition"
+            >
+              855-VDialing (855-834-2546)
+            </a>
 
             <span
               onClick={() => {
