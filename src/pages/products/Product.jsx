@@ -9,6 +9,8 @@ import { Card, features, services } from "../../lib/Constant.jsx";
 import Testominals from "../../ui/Testominals.jsx";
 import { useRef, useState } from "react";
 import video1 from "../../../public/video1.mp4";
+import { Link } from "react-router";
+import { CustomButton, CustomButtonTwin } from "../../ui/CustomButton.jsx";
 
 const column1 = features.filter((f) => f.column === 1);
 const column2 = features.filter((f) => f.column === 2);
@@ -53,8 +55,12 @@ const Products = () => {
               </div>
               <h1 className="text-2xl sm:text-3xl  md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 Enterprise Ready{" "}
-                <span className="bg-sky-600 text-white rounded">Business VoIP</span> Built for
-                Growing <span className="bg-sky-600 text-white rounded">Las Vegas</span> Companies
+                <span className="bg-sky-600 text-white rounded">
+                  Business VoIP
+                </span>{" "}
+                Built for Growing{" "}
+                <span className="bg-sky-600 text-white rounded">Las Vegas</span>{" "}
+                Companies
               </h1>
               <p className="text-gray-700 mb-6 text-sm sm:text-base md:text-md">
                 In a fast moving city like Las Vegas, your business phone system
@@ -87,12 +93,19 @@ const Products = () => {
                 </li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                <button className="bg-orange-500 shadow-sm text-white px-4 py-2 sm:px-5 sm:py-3 rounded-full hover:bg-blue-500 transition text-sm sm:text-base">
-                  See Pricing
-                </button>
-                <button className="bg-white shadow-sm rounded-full text-orange-500 hover:text-white px-4 py-2 sm:px-5 sm:py-3 hover:bg-blue-500 transition text-sm sm:text-base">
-                  Talk Sales
-                </button>
+                <Link to={"/pricing"}>
+                  <CustomButtonTwin
+                    className="shadow-md cursor-pointer bg-orange-500 text-white text-sm md:text-base font-semibold px-5 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-500 transition"
+                    value={<span>See Pricing</span>}
+                  />
+                </Link>
+
+                <Link to={"/contact"}>
+                  <CustomButton
+                    className="bg-white cursor-pointer shadow-md border text-sm md:text-base border-gray-200 text-gray-800 font-semibold px-5 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-500 hover:text-white transition"
+                    value={<span>Talk to Sales</span>}
+                  />
+                </Link>
               </div>
             </div>
 
@@ -155,9 +168,12 @@ const Products = () => {
               applications. Purchase or lease equipment based on your business
               needs, all fully compatible with our hosted PBX platform
             </p>
-            <button className="bg-orange-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
-              See Pricing
-            </button>
+            <Link to={"/pricing"}>
+              <CustomButtonTwin
+                className="shadow-md cursor-pointer bg-orange-500 text-white text-sm md:text-base font-semibold px-5 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-500 transition"
+                value={<span>See Pricing</span>}
+              />
+            </Link>
           </div>
         </div>
       </div>

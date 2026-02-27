@@ -4,11 +4,14 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import RequestCall from "../ui/RequestCall";
 
-import title6 from "../../public/title6.png";
+import title23 from "../../public/title6.png";
+import title16 from "../../public/2016.jpg";
+import title21 from "../../public/2021.png";
 import dummy3 from "../../public/dummy3.png";
 import dummy4 from "../../public/dummy4.png";
 import ScrollToTop from "../lib/ScrollToTop";
 import BackToTop from "../lib/BackToTop.jsx";
+
 const Layout = () => {
   return (
     <div className="w-full">
@@ -25,12 +28,12 @@ const Layout = () => {
       </div>
       <div className="award-winner w-full px-4 md:px-12 py-8">
         <div className="flex items-center lg:justify-between gap-8 overflow-x-auto lg:overflow-visible no-scrollbar custom-scrollbar">
-        <h1 className="text-orange-400 text-lg md:text-2xl font-bold text-center">
-          Award Winners
-        </h1>
+          <h1 className="text-orange-400 text-lg md:text-2xl font-bold text-center">
+            Award Winners
+          </h1>
           <div className="flex flex-col items-center gap-2 min-w-[140px]">
             <img
-              src={title6}
+              src={title16}
               alt="Award 1"
               className="w-20 md:w-24 object-contain"
             />
@@ -41,7 +44,7 @@ const Layout = () => {
 
           <div className="flex flex-col items-center gap-2 min-w-[140px]">
             <img
-              src={title6}
+              src={title21}
               alt="Award 2"
               className="w-20 md:w-24 object-contain"
             />
@@ -52,7 +55,7 @@ const Layout = () => {
 
           <div className="flex flex-col items-center gap-2 min-w-[140px]">
             <img
-              src={title6}
+              src={title23}
               alt="Award 3"
               className="w-20 md:w-24 object-contain"
             />

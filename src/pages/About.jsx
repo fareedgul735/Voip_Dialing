@@ -5,6 +5,8 @@ import FAQAccordion from "../ui/FaqsUi";
 import BrandName from "../ui/BrandName";
 import Testominals from "../ui/Testominals";
 import Dots from "../../public/Dots.png";
+import { Link } from "react-router";
+import { CustomButton, CustomButtonTwin } from "../ui/CustomButton";
 
 const About = () => {
   const features = [
@@ -41,12 +43,19 @@ const About = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="bg-orange-500 shadow-md cursor-pointer hover:bg-blue-600 text-white px-8 py-3 rounded-full transition">
-                See Pricing
-              </button>
-              <button className="bg-white shadow-md cursor-pointer hover:bg-blue-600 hover:text-white text-orange-600 px-8 py-3 rounded-full transition">
-                Talk to Sales
-              </button>
+              <Link to={"/pricing"}>
+                <CustomButtonTwin
+                  className="shadow-md cursor-pointer bg-orange-500 text-white text-sm md:text-base font-semibold px-5 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-500 transition"
+                  value={<span>See Pricing</span>}
+                />
+              </Link>
+
+              <Link to={"/contact"}>
+                <CustomButton
+                  className="bg-white cursor-pointer shadow-md border text-sm md:text-base border-gray-200 text-gray-800 font-semibold px-5 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-500 hover:text-white transition"
+                  value={<span>Talk to Sales</span>}
+                />
+              </Link>
             </div>
           </div>
           <div className="relative flex justify-center lg:justify-end">

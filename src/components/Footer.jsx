@@ -76,59 +76,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          {/* <div>
-            <h3 className="text-lg font-bold mb-4 text-orange-500">Services</h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
-                >
-                  Call Center
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
-                >
-                  Collection
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
-                >
-                  Customer Support
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
-                >
-                  Inbound Requisits
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
-                >
-                  Outbound Calls
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
-                >
-                  Virtual Assistance
-                </a>
-              </li>
-            </ul>
-          </div> */}
 
           <div>
             <h3 className="text-lg font-bold mb-4 text-orange-500">Products</h3>
@@ -199,14 +146,6 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to={"/contact"}
-                  className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
-                >
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link
                   to={"/faqs"}
                   className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
                 >
@@ -215,10 +154,42 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to={"/blogs"}
+                  className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
+                >
+                  Blogs
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-bold mb-4 text-orange-500">
+              Quick Links
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  to={"/pricing"}
+                  className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
+                >
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link
                   to={"/shoppingCart"}
                   className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
                 >
                   Shop
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={"/faqs"}
+                  className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
+                >
+                  Faqs
                 </Link>
               </li>
             </ul>
@@ -231,7 +202,7 @@ const Footer = () => {
               All Rights Reserved. Copyright © 2025 VoIP Dialing
             </div>
 
-            <div className="flex flex-wrap justify-center gap-6 text-sm">
+            {/* <div className="flex flex-wrap justify-center gap-6 text-sm">
               <a
                 href="#"
                 className="text-gray-800 hover:text-orange-500 transition-colors font-medium"
@@ -256,7 +227,7 @@ const Footer = () => {
               >
                 Sitemap
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

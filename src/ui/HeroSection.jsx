@@ -137,14 +137,16 @@ const HeroSection = () => {
             </ul>
 
             <div className="flex flex-row flex-wrap gap-3 pt-3">
-              <CustomButtonTwin
-                className="shadow-md bg-orange-500 text-white text-sm md:text-base font-semibold px-5 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-500 transition"
-                value={<span>Talk to Sales</span>}
-              />
+              <Link to={"/contact"}>
+                <CustomButtonTwin
+                  className="shadow-md cursor-pointer bg-orange-500 text-white text-sm md:text-base font-semibold px-5 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-500 transition"
+                  value={<span>Talk to Sales</span>}
+                />
+              </Link>
 
               <Link to={"/pricing"}>
                 <CustomButton
-                  className="bg-white shadow-md border text-sm md:text-base border-gray-200 text-gray-800 font-semibold px-5 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-500 hover:text-white transition"
+                  className="bg-white cursor-pointer shadow-md border text-sm md:text-base border-gray-200 text-gray-800 font-semibold px-5 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-500 hover:text-white transition"
                   value={<span>Get Pricing</span>}
                 />
               </Link>

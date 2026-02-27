@@ -49,7 +49,9 @@ const Navbar = () => {
     <header className="bg-white shadow sticky top-0 z-50 w-full">
       <div className="mx-0 lg:mx-12 flex justify-between items-center px-4 py-4">
         <div className="flex gap-12 justify-center items-center">
+          <Link to={"/home"}>
           <img src={logo} alt="logo" className="w-20" />
+          </Link>
           <ul className="hidden lg:flex gap-2 items-center ">
             {navLinks.map((item) => (
               <li key={item.id} className="group">
