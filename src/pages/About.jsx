@@ -7,6 +7,7 @@ import Testominals from "../ui/Testominals";
 import Dots from "../../public/Dots.png";
 import { Link } from "react-router";
 import { CustomButton, CustomButtonTwin } from "../ui/CustomButton";
+import SEO from "../lib/SEO";
 
 const About = () => {
   const features = [
@@ -22,6 +23,11 @@ const About = () => {
 
   return (
     <>
+      <SEO
+        title="About Voip Dialing ORC | Cloud Communication Specialists"
+        description="Discover how Voip Dialing ORC delivers secure, scalable and reliable business VoIP, cloud phone systems and enterprise communication solutions worldwide."
+        url="https://voip-dialing.vercel.app/about"
+      />
       <div className="w-full bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)] p-[12px] py-12">
         <div className="grid mx-4 md:mx-8 lg:mx-12 grid-cols-1 lg:grid-cols-2 items-center">
           <div className="space-y-6">

@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { Mail, Lock, X } from "lucide-react";
 import logo from "../../../public/logo.png";
 import { Link } from "react-router";
+import NoIndexSEO from "../../lib/NoIndexSeo";
 
 export default function ForgotPassword() {
   const [step, setStep] = useState(1);
@@ -87,175 +88,181 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
-      <Link
-        to="/home"
-        className="absolute top-12 right-12 p-4 rounded bg-gray-100 hover:bg-gray-200 transition"
-      >
-        <X className="w-7 h-7 text-gray-600" />
-      </Link>
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 relative ">
-        <div className="rounded-xl p-6">
-          <div className="flex justify-center mb-6">
-            <Link to={"/home"}>
-              <div className="w-32">
-                <img src={logo} alt="logo" />
-              </div>
-            </Link>
-          </div>
-
-          <h2 className="text-xl text-center font-semibold text-orange-500 mb-6">
-            {step === 1 && "Forget Password?"}
-            {step === 2 && "Verify OTP"}
-            {step === 3 && "Reset Password"}
-          </h2>
-
-          {error && (
-            <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">
-              {error}
+    <>
+      <NoIndexSEO
+        title="Forgot Password | Voip Dialing ORC"
+        url="https://voip-dialing.vercel.app/forgotPassword"
+      />
+      <div className="min-h-screen flex items-center justify-center p-4 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
+        <Link
+          to="/home"
+          className="absolute top-12 right-12 p-4 rounded bg-gray-100 hover:bg-gray-200 transition"
+        >
+          <X className="w-7 h-7 text-gray-600" />
+        </Link>
+        <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 relative ">
+          <div className="rounded-xl p-6">
+            <div className="flex justify-center mb-6">
+              <Link to={"/home"}>
+                <div className="w-32">
+                  <img src={logo} alt="logo" />
+                </div>
+              </Link>
             </div>
-          )}
 
-          {step === 1 && (
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Email
-              </label>
-              <div className="relative mb-6">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  onKeyPress={(e) => e.key === "Enter" && handleEmailSubmit()}
-                  placeholder="Enter your email"
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                />
+            <h2 className="text-xl text-center font-semibold text-orange-500 mb-6">
+              {step === 1 && "Forget Password?"}
+              {step === 2 && "Verify OTP"}
+              {step === 3 && "Reset Password"}
+            </h2>
+
+            {error && (
+              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">
+                {error}
               </div>
+            )}
 
-              <button
-                onClick={handleEmailSubmit}
-                className="w-full cursor-pointer bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 rounded-full transition duration-200 shadow-lg"
-              >
-                Reset Password
-              </button>
-            </div>
-          )}
-
-          {step === 2 && (
-            <div>
-              <p className="text-sm text-gray-600 mb-4">
-                We've sent a 4-digit code to{" "}
-                <span className="font-semibold">{email}</span>
-              </p>
-
-              <label className="block text-sm font-medium text-gray-700 mb-3">
-                Enter OTP
-              </label>
-              <div className="flex gap-8 justify-center mb-6">
-                {otp.map((digit, index) => (
-                  <input
-                    key={index}
-                    ref={otpRefs[index]}
-                    type="text"
-                    inputMode="numeric"
-                    maxLength={1}
-                    value={digit}
-                    onChange={(e) => handleOtpChange(index, e.target.value)}
-                    onKeyDown={(e) => handleOtpKeyDown(index, e)}
-                    className="w-14 h-14 text-center text-2xl font-bold border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                  />
-                ))}
-              </div>
-
-              <button
-                onClick={handleOtpSubmit}
-                className="w-full cursor-pointer bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 rounded-full transition duration-200 shadow-lg mb-3"
-              >
-                Verify OTP
-              </button>
-
-              <button
-                onClick={() => setStep(1)}
-                className="w-full hover:text-orange cursor-pointer text-gray-600 hover:text-gray-800 text-sm font-medium"
-              >
-                ← Back to Email
-              </button>
-            </div>
-          )}
-
-          {step === 3 && (
-            <div>
-              <div className="mb-4">
+            {step === 1 && (
+              <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  New Password
+                  Email
                 </label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <div className="relative mb-6">
+                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Enter new password"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    onKeyPress={(e) => e.key === "Enter" && handleEmailSubmit()}
+                    placeholder="Enter your email"
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                   />
                 </div>
-              </div>
 
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Confirm Password
+                <button
+                  onClick={handleEmailSubmit}
+                  className="w-full cursor-pointer bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 rounded-full transition duration-200 shadow-lg"
+                >
+                  Reset Password
+                </button>
+              </div>
+            )}
+
+            {step === 2 && (
+              <div>
+                <p className="text-sm text-gray-600 mb-4">
+                  We've sent a 4-digit code to{" "}
+                  <span className="font-semibold">{email}</span>
+                </p>
+
+                <label className="block text-sm font-medium text-gray-700 mb-3">
+                  Enter OTP
                 </label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                  <input
-                    type="password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    onKeyPress={(e) =>
-                      e.key === "Enter" && handlePasswordSubmit()
-                    }
-                    placeholder="Confirm new password"
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                  />
+                <div className="flex gap-8 justify-center mb-6">
+                  {otp.map((digit, index) => (
+                    <input
+                      key={index}
+                      ref={otpRefs[index]}
+                      type="text"
+                      inputMode="numeric"
+                      maxLength={1}
+                      value={digit}
+                      onChange={(e) => handleOtpChange(index, e.target.value)}
+                      onKeyDown={(e) => handleOtpKeyDown(index, e)}
+                      className="w-14 h-14 text-center text-2xl font-bold border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    />
+                  ))}
                 </div>
+
+                <button
+                  onClick={handleOtpSubmit}
+                  className="w-full cursor-pointer bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 rounded-full transition duration-200 shadow-lg mb-3"
+                >
+                  Verify OTP
+                </button>
+
+                <button
+                  onClick={() => setStep(1)}
+                  className="w-full hover:text-orange cursor-pointer text-gray-600 hover:text-gray-800 text-sm font-medium"
+                >
+                  ← Back to Email
+                </button>
               </div>
+            )}
 
-              <button
-                onClick={handlePasswordSubmit}
-                className="w-full cursor-pointer bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 rounded-full transition duration-200 shadow-lg mb-3"
-              >
-                Reset Password
-              </button>
+            {step === 3 && (
+              <div>
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    New Password
+                  </label>
+                  <div className="relative">
+                    <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    <input
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Enter new password"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    />
+                  </div>
+                </div>
 
-              <button
-                onClick={() => setStep(2)}
-                className="w-full text-gray-600 hover:text-gray-800 text-sm font-medium"
-              >
-                ← Back to OTP
-              </button>
+                <div className="mb-6">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Confirm Password
+                  </label>
+                  <div className="relative">
+                    <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    <input
+                      type="password"
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      onKeyPress={(e) =>
+                        e.key === "Enter" && handlePasswordSubmit()
+                      }
+                      placeholder="Confirm new password"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  onClick={handlePasswordSubmit}
+                  className="w-full cursor-pointer bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 rounded-full transition duration-200 shadow-lg mb-3"
+                >
+                  Reset Password
+                </button>
+
+                <button
+                  onClick={() => setStep(2)}
+                  className="w-full text-gray-600 hover:text-gray-800 text-sm font-medium"
+                >
+                  ← Back to OTP
+                </button>
+              </div>
+            )}
+
+            <div className="flex justify-center gap-2 mt-6">
+              <div
+                className={`w-2 h-2 rounded-full ${
+                  step === 1 ? "bg-orange-500" : "bg-gray-300"
+                }`}
+              ></div>
+              <div
+                className={`w-2 h-2 rounded-full ${
+                  step === 2 ? "bg-orange-500" : "bg-gray-300"
+                }`}
+              ></div>
+              <div
+                className={`w-2 h-2 rounded-full ${
+                  step === 3 ? "bg-orange-500" : "bg-gray-300"
+                }`}
+              ></div>
             </div>
-          )}
-
-          <div className="flex justify-center gap-2 mt-6">
-            <div
-              className={`w-2 h-2 rounded-full ${
-                step === 1 ? "bg-orange-500" : "bg-gray-300"
-              }`}
-            ></div>
-            <div
-              className={`w-2 h-2 rounded-full ${
-                step === 2 ? "bg-orange-500" : "bg-gray-300"
-              }`}
-            ></div>
-            <div
-              className={`w-2 h-2 rounded-full ${
-                step === 3 ? "bg-orange-500" : "bg-gray-300"
-              }`}
-            ></div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

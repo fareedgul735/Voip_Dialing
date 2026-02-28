@@ -12,6 +12,8 @@ import Testominals from "../ui/Testominals";
 import { CustomButton, CustomButtonTwin } from "../ui/CustomButton";
 import { useRef, useState } from "react";
 import { Link } from "react-router";
+import SEO from "../lib/SEO";
+import HomeSchema from "../schema/HomeSchema";
 
 const LandingPage = () => {
   const videoRef = useRef(null);
@@ -19,6 +21,12 @@ const LandingPage = () => {
 
   return (
     <>
+      <SEO
+        title="Business VoIP Phone System & Cloud Calling Solutions | Voip Dialing"
+        description="Power your business with our advanced VoIP phone system, cloud PBX, video meetings and team messaging solutions. Reliable, scalable and affordable communication platform."
+        url="https://voip-dialing.vercel.app/home"
+      />
+      <HomeSchema />
       <div className="p-[12px] py-12 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
         <HeroSection />
       </div>

@@ -5,6 +5,7 @@ import dummy1 from "../../public/dummy1.png";
 import BrandName from "../ui/BrandName";
 import Blog from "../../public/blog.png";
 import { Link } from "react-router";
+import SEO from "../lib/SEO";
 
 const Blogs = () => {
   const [activeTab, setActiveTab] = useState("Blog");
@@ -238,41 +239,48 @@ const Blogs = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-red-50 via-white to-white p-[12px] py-12">
-      <div className="mx-4 md:mx-8 lg:mx-12">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Blog</h1>
-          <p className="text-gray-600 mb-6">Read our latest articles</p>
+    <>
+      <SEO
+        title="Business VoIP Guides & Insights | Voip Dialing ORC Blog"
+        description="Read in-depth articles about business VoIP systems, cloud PBX setup, call management and enterprise communication trends."
+        url="https://voip-dialing.vercel.app/blogs"
+      />
+      <div className="bg-gradient-to-b from-red-50 via-white to-white p-[12px] py-12">
+        <div className="mx-4 md:mx-8 lg:mx-12">
+          <div className="mb-8">
+            <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Blog</h1>
+            <p className="text-gray-600 mb-6">Read our latest articles</p>
 
-          <div
-            className="overflow-x-auto w-full custom-scrollbar"
-            style={{ WebkitOverflowScrolling: "touch" }}
-          >
-            <div className="flex gap-3 min-w-max">
-              {tabs.map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`cursor-pointer px-6 py-2.5 rounded-full font-medium transition-all whitespace-nowrap
+            <div
+              className="overflow-x-auto w-full custom-scrollbar"
+              style={{ WebkitOverflowScrolling: "touch" }}
+            >
+              <div className="flex gap-3 min-w-max">
+                {tabs.map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`cursor-pointer px-6 py-2.5 rounded-full font-medium transition-all whitespace-nowrap
           ${
             activeTab === tab
               ? "bg-orange-500 text-white shadow-md"
               : "bg-orange-100 text-orange-400 border-2 border-orange-200 hover:border-orange-300 hover:bg-orange-100"
           }`}
-                >
-                  {tab}
-                </button>
-              ))}
+                  >
+                    {tab}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        {renderContent()}
+          {renderContent()}
+        </div>
+        <div className="w-full flex justify-end mt-12 mb-12">
+          <BrandName />
+        </div>
       </div>
-      <div className="w-full flex justify-end mt-12 mb-12">
-        <BrandName />
-      </div>
-    </div>
+    </>
   );
 };
 
