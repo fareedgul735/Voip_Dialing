@@ -86,10 +86,8 @@ const Blogs = () => {
     if (activeTab === "Blog") {
       return (
         <div className="space-y-8">
-          {/* Featured Blog */}
           <div className="bg-white rounded-2xl shadow-sm p-6 md:p-8 border border-gray-100">
             <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
-              {/* Text Content */}
               <div className="flex-1">
                 <div className="flex flex-wrap items-center gap-2 mb-4">
                   <span className="bg-orange-100 text-gray-700 px-3 py-1.5 rounded-full text-sm font-medium">
@@ -123,7 +121,6 @@ const Blogs = () => {
                 </Link>
               </div>
 
-              {/* Featured Image */}
               <div className="w-full lg:w-[740px] flex-shrink-0">
                 <Link to={`/blogs/${featuredBlog.id}`}>
                   <div className="rounded-xl p-4 h-full flex items-center justify-center">
@@ -138,7 +135,6 @@ const Blogs = () => {
             </div>
           </div>
 
-          {/* All Articles */}
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
               Read all articles

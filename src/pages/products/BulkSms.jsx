@@ -14,6 +14,8 @@ import {
 import Testominals from "../../ui/Testominals.jsx";
 import { useRef, useState } from "react";
 import video1 from "../../../public/video1.mp4";
+import { Link } from "react-router";
+import { CustomButton, CustomButtonTwin } from "../../ui/CustomButton.jsx";
 
 const column1 = featuresBulk.filter((f) => f.column === 1);
 const column2 = featuresBulk.filter((f) => f.column === 2);
@@ -106,12 +108,19 @@ const BulkSMS = () => {
                 </li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                <button className="bg-orange-500 shadow-sm text-white px-4 py-2 sm:px-5 sm:py-3 rounded-full hover:bg-blue-500 transition text-sm sm:text-base">
-                  Start SMS Campaign
-                </button>
-                <button className="bg-white shadow-sm rounded-full text-orange-500 hover:text-white px-4 py-2 sm:px-5 sm:py-3 hover:bg-blue-500 transition text-sm sm:text-base">
-                  Get Las Vegas Pricing
-                </button>
+                <Link to={"/contact"}>
+                  <CustomButtonTwin
+                    className="shadow-md cursor-pointer bg-orange-500 text-white text-sm md:text-base font-semibold px-5 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-500 transition"
+                    value={<span>Start SMS Campaign</span>}
+                  />
+                </Link>
+
+                <Link to={"/pricing"}>
+                  <CustomButton
+                    className="bg-white cursor-pointer shadow-md border text-sm md:text-base border-gray-200 text-gray-800 font-semibold px-5 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-500 hover:text-white transition"
+                    value={<span>Get Las Vegas Pricing</span>}
+                  />
+                </Link>
               </div>
             </div>
 
@@ -171,9 +180,12 @@ const BulkSMS = () => {
               companies managing high volume campaigns, you get transparent
               pricing and dependable local support.
             </p>
-            <button className="bg-orange-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
-              View SMS Pricing
-            </button>
+            <Link to={"/pricing"}>
+              <CustomButtonTwin
+                className="shadow-md cursor-pointer bg-orange-500 text-white text-sm md:text-base font-semibold px-5 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-500 transition"
+                value={<span>View SMS Pricing</span>}
+              />
+            </Link>
           </div>
         </div>
       </div>

@@ -11,6 +11,7 @@ import BrandName from "../ui/BrandName";
 import Testominals from "../ui/Testominals";
 import { CustomButton, CustomButtonTwin } from "../ui/CustomButton";
 import { useRef, useState } from "react";
+import { Link } from "react-router";
 
 const LandingPage = () => {
   const videoRef = useRef(null);
@@ -86,14 +87,18 @@ const LandingPage = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <CustomButtonTwin
-                  className="cursor-pointer shadow-md bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition"
-                  value={<span>Explore Services</span>}
-                />
-                <CustomButton
-                  className="cursor-pointer shadow-md border border-gray-200 text-gray-800 px-6 py-3  hover:text-white rounded-full hover:bg-blue-500 transition"
-                  value={<span>Get Started</span>}
-                />
+                <Link>
+                  <CustomButtonTwin
+                    className="cursor-pointer shadow-md bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition"
+                    value={<span>Explore Services</span>}
+                  />
+                </Link>
+                <Link to={"/signup"}>
+                  <CustomButton
+                    className="cursor-pointer shadow-md border border-gray-200 text-gray-800 px-6 py-3  hover:text-white rounded-full hover:bg-blue-500 transition"
+                    value={<span>Get Started</span>}
+                  />
+                </Link>
               </div>
             </div>
           </div>
@@ -136,14 +141,18 @@ const LandingPage = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-start lg:items-center gap-4 sm:gap-6 justify-center lg:justify-start">
-              <CustomButtonTwin
-                className={`cursor-pointer shadow-md bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition`}
-                value={<span>Get Pricing</span>}
-              />
-              <CustomButton
-                className={`cursor-pointer shadow-md border border-gray-200 text-gray-800 px-6 py-3 rounded-full hover:bg-blue-500 hover:text-white transition`}
-                value={<span>Contact Sales</span>}
-              />
+              <Link to={"/pricing"}>
+                <CustomButtonTwin
+                  className={`cursor-pointer shadow-md bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition`}
+                  value={<span>Get Pricing</span>}
+                />
+              </Link>
+              <Link to={"/contact"}>
+                <CustomButton
+                  className={`cursor-pointer shadow-md border border-gray-200 text-gray-800 px-6 py-3 rounded-full hover:bg-blue-500 hover:text-white transition`}
+                  value={<span>Contact Sales</span>}
+                />
+              </Link>
 
               <span className="text-gray-400 text-xs sm:text-sm">
                 No credit card required

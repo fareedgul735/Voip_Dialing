@@ -1,5 +1,7 @@
 import { useState } from "react";
 import BrandName from "../ui/BrandName";
+import tele1 from "../../public/telephone.png";
+import { Plus, Minus } from "lucide-react";
 import { Link } from "react-router";
 
 const VoIPPricingInterface = () => {
@@ -73,24 +75,24 @@ const VoIPPricingInterface = () => {
   const collapseItems = [
     {
       id: "phone",
-      label: "− Phone Numbers",
+      label: "Phone Numbers",
       status: `${selectedNumbers.length} Number Selected`,
       price: "",
     },
     {
       id: "cloud",
-      label: "+ Cloud PBX",
+      label: "Cloud PBX",
       status: "Platform Selected",
       price: "$0.00",
     },
     {
       id: "dialing",
-      label: "+ Dialing Plans",
+      label: "Dialing Plans",
       status: "Outbound Usage",
       price: "$0.00",
     },
-    { id: "sms", label: "+ SMS", status: "", price: "$0.00" },
-    { id: "equipment", label: "+ Equipment", status: "", price: "$0.00" },
+    { id: "sms", label: "SMS", status: "", price: "$0.00" },
+    { id: "equipment", label: "Equipment", status: "", price: "$0.00" },
   ];
 
   const toggleNumberSelection = (number) => {
@@ -167,6 +169,11 @@ const VoIPPricingInterface = () => {
                   className="flex items-center justify-between px-4 py-3 cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
+                    {openCollapse === item.id ? (
+                      <Minus size={16} className="text-orange-500" />
+                    ) : (
+                      <Plus size={16} className="text-orange-500" />
+                    )}
                     <span className="font-medium text-gray-700 text-sm">
                       {item.label}
                     </span>
@@ -185,7 +192,6 @@ const VoIPPricingInterface = () => {
                   <div className="px-5 py-4 bg-orange-50 border-t border-orange-400">
                     {item.id === "phone" && (
                       <div className="flex flex-col md:flex-row gap-6 lg:gap-8">
-                        {/* Search Area */}
                         <div className="flex-1">
                           <h3 className="text-sm font-semibold mb-3">
                             Search For Local or Toll Free Numbers
@@ -205,7 +211,6 @@ const VoIPPricingInterface = () => {
                             </button>
                           </div>
 
-                          {/* Area Codes Grid */}
                           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 mb-2">
                             {areaCodes.map((code) => (
                               <button
@@ -642,7 +647,6 @@ const VoIPPricingInterface = () => {
                           WebkitOverflowScrolling: "touch",
                         }}
                       >
-                        {/* Conversational SMS */}
                         <div className="border border-orange-300 rounded-md overflow-hidden">
                           <div className="bg-orange-100 px-4 py-2 flex justify-between items-center">
                             <h3 className="font-semibold text-sm text-gray-800">
@@ -671,7 +675,6 @@ const VoIPPricingInterface = () => {
                           </div>
                         </div>
 
-                        {/* Conversational & Campaign SMS – Metered */}
                         <div className="border border-orange-300 rounded-md overflow-hidden">
                           <div className="bg-orange-100 px-4 py-2">
                             <h3 className="font-semibold text-sm text-gray-800">
@@ -683,12 +686,11 @@ const VoIPPricingInterface = () => {
                             </h3>
                           </div>
 
-                          {/* Scrollable table wrapper */}
                           <div
                             className="p-6 bg-white overflow-x-auto custom-scrollbar"
                             style={{ WebkitOverflowScrolling: "touch" }}
                           >
-                            <table className="min-w-[600px] text-sm">
+                            <table className="w-full text-sm">
                               <thead>
                                 <tr className="bg-orange-50 text-gray-700">
                                   <th className="text-left px-4 py-2">
@@ -781,20 +783,16 @@ const VoIPPricingInterface = () => {
                             key={idx}
                             className="border border-orange-400 rounded-md bg-white"
                           >
-                            {/* Header */}
-                            <summary className="cursor-pointer list-none flex justify-between items-center bg-orange-100 px-4 py-2 font-medium text-gray-800">
+                            <summary className="cursor-pointer list-none flex justify-start gap-2 items-center bg-orange-100 px-4 py-2 font-medium text-gray-800">
+                              <span className="text-sm text-gray-600">+</span>
                               <span>{section.brand}</span>
-                              <span className="text-sm text-gray-600">
-                                Open
-                              </span>
                             </summary>
 
-                            {/* Body */}
                             <div
                               className="p-4 overflow-x-auto custom-scrollbar"
                               style={{ WebkitOverflowScrolling: "touch" }}
                             >
-                              <table className="min-w-[600px] text-sm">
+                              <table className="w-full text-sm">
                                 <thead>
                                   <tr className="bg-orange-50 text-gray-700">
                                     <th className="text-left px-3 py-2">
@@ -819,7 +817,11 @@ const VoIPPricingInterface = () => {
                                       className="border-b last:border-0 hover:bg-orange-50"
                                     >
                                       <td className="px-3 py-3">
-                                        <div className="w-12 h-12 bg-gray-100 rounded" />
+                                        <img
+                                          src={tele1}
+                                          alt="tele_1"
+                                          className="w-12 h-12 object-cover"
+                                        />
                                       </td>
 
                                       <td className="px-3 py-3">{p.name}</td>
@@ -871,12 +873,12 @@ const VoIPPricingInterface = () => {
               </div>
 
               <div className="p-4 shadow-md pb-6 flex flex-col sm:flex-row items-center gap-3">
-                <button className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-semibold px-10 py-3 rounded-full transition-colors">
+                <button className="w-full cursr-pointer sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-semibold px-10 py-3 rounded-full transition-colors">
                   Next
                 </button>
 
-                <Link to={"/shoppingcart"} className="w-full sm:w-auto">
-                  <button className="w-full bg-white hover:bg-orange-50 text-orange-500 font-semibold px-8 py-3 rounded-full border-2 border-orange-500 transition-colors">
+                <Link to={"/shoppingCart"} className="w-full sm:w-auto">
+                  <button className="w-full cursor-pointer bg-white hover:bg-orange-50 text-orange-500 font-semibold px-8 py-3 rounded-full border-2 border-orange-500 transition-colors">
                     Checkout
                   </button>
                 </Link>

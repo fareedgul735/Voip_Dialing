@@ -10,9 +10,7 @@ const BlogDetail = () => {
   return (
    <div className="w-full bg-gradient-to-b from-red-50 via-white to-white p-3 sm:p-12">
   <div className="max-w-[1400px] mx-auto space-y-16">
-    {/* Featured Blog Card */}
     <div className="flex flex-col lg:flex-row justify-between bg-white rounded-xl shadow-md shadow-gray-300 p-6 gap-6">
-      {/* Text Content */}
       <div className="flex-1">
         {blog && (
           <div className="inline-flex gap-3 items-center bg-red-50 text-gray-700 px-4 py-1.5 rounded-full text-sm font-medium mb-4">
@@ -44,7 +42,6 @@ const BlogDetail = () => {
       </div>
     </div>
 
-    {/* Sections */}
     {[1, 2, 3, 4, 5].map((i) => (
       <section key={i} className="space-y-4">
         <h2
@@ -58,9 +55,8 @@ const BlogDetail = () => {
           {blog[`desc_${i}`]}
         </p>
 
-        {/* Optional images */}
         {i === 3 && blog.image_2 && (
-          <div className="mt-6 flex justify-center">
+          <div className="mt-6 flex justify-start">
             <img
               src={blog.image_2}
               alt="voip"

@@ -682,5 +682,56 @@ export const blogDeatiledPosts = [
     desc_6:
       "INTERNET TELEPHONY has guided IP communications since 1998™. Its magazine simplifies technology trends for practical business decisions. Explore www.itmag.com, LinkedIn forums, or Twitter updates for expert advice.",
   },
+  {
+    id: "7",
+    isFeatured: true,
+    image_1: Blog,
+    title: "Las Vegas VOIP Innovations for AI-Powered CRM",
+    shortDesc:
+      "VoIP Dialing Inc., under Ben Navon, launches upgraded VoIP systems at 5940 South Rainbow Blvd, Las Vegas. VoIP Dialing Inc., under Ben Navon, launches upgraded VoIP systems at 5940 South Rainbow Blvd, Las Vegas.VoIP Dialing Inc., under Ben Navon, launches upgraded VoIP systems at 5940 South Rainbow Blvd, Las Vegas.VoIP Dialing Inc., under Ben Navon, launches upgraded VoIP systems at 5940 South Rainbow Blvd, Las Vegas.",
+    fullDesc:
+      "VoIP Dialing Inc., under Ben Navon, launches upgraded VoIP systems at 5940 South Rainbow Blvd, Las Vegas. VoIP Dialing Inc., under Ben Navon, launches upgraded VoIP systems at 5940 South Rainbow Blvd, Las Vegas.VoIP Dialing Inc., under Ben Navon, launches upgraded VoIP systems at 5940 South Rainbow Blvd, Las Vegas.VoIP Dialing Inc., under Ben Navon, launches upgraded VoIP systems at 5940 South Rainbow Blvd, Las Vegas.",
+    head_1: "Smart Customer Engagement via AI",
+    desc_1:
+      "Las Vegas enterprises adopt Biotix AI chatbots and CRM to deliver responsive and personalized experiences. Automation handles routine queries, while staff focus on strategic growth and customer satisfaction, driving efficiency and retention.",
+    head_2: "Intelligent Analytics for Business Leaders",
+    desc_2:
+      "INTERNET TELEPHONY has been a cornerstone in IP communications since 1998™. Its magazine provides objective coverage of converged communications. Check www.itmag.com or follow their LinkedIn and Twitter channels for latest insights.",
+    image_2: Voiping,
+    head_3: "Scalable Solutions for Growing Companies",
+    desc_3:
+      "Biotix adapts to every business size in Las Vegas. Its AI chatbots improve operational workflows, speed responses, and enhance overall customer experience, helping enterprises achieve consistent growth and efficiency.",
+    head_4: "AI Insights for Performance Optimization",
+    desc_4:
+      "Since 1998™, INTERNET TELEPHONY has provided authoritative guidance on IP communications. Its magazine delivers insights into technology trends. Explore www.itmag.com or connect via LinkedIn and Twitter for updates.",
+    head_5: "Next-Gen Communication Insights",
+    desc_6:
+      "INTERNET TELEPHONY continues to lead in IP communication advice since 1998™. The magazine simplifies complex tech concepts for businesses. Visit www.itmag.com, join discussions on LinkedIn, or follow Twitter for insights.",
+  },
+  {
+    id: "8",
+    isFeatured: true,
+    image_1: Blog,
+    title: "Driving Las Vegas Success with VOIP and AI CRM",
+    shortDesc:
+      "Ben Navon, CEO of VoIP Dialing Inc., introduces cutting-edge VoIP technology at 5940 South Rainbow Blvd, Las Vegas. Ben Navon, CEO of VoIP Dialing Inc., introduces cutting-edge VoIP technology at 5940 South Rainbow Blvd, Las Vegas.Ben Navon, CEO of VoIP Dialing Inc., introduces cutting-edge VoIP technology at 5940 South Rainbow Blvd, Las Vegas.Ben Navon, CEO of VoIP Dialing Inc., introduces cutting-edge VoIP technology at 5940 South Rainbow Blvd, Las Vegas.",
+    fullDesc:
+      "Ben Navon, CEO of VoIP Dialing Inc., introduces cutting-edge VoIP technology at 5940 South Rainbow Blvd, Las Vegas. Ben Navon, CEO of VoIP Dialing Inc., introduces cutting-edge VoIP technology at 5940 South Rainbow Blvd, Las Vegas.Ben Navon, CEO of VoIP Dialing Inc., introduces cutting-edge VoIP technology at 5940 South Rainbow Blvd, Las Vegas.Ben Navon, CEO of VoIP Dialing Inc., introduces cutting-edge VoIP technology at 5940 South Rainbow Blvd, Las Vegas.",
+    head_1: "AI-Driven Customer Service Excellence",
+    desc_1:
+      "Biotix equips Las Vegas enterprises with AI chatbot and CRM integration for efficient customer service. Automation ensures fast response times while staff focus on strategic initiatives that drive retention, loyalty, and growth.",
+    head_2: "Actionable Intelligence for Leaders",
+    desc_2:
+      "INTERNET TELEPHONY has been the authority in IP communications since 1998™. Its publications provide unbiased insights into converged communication technology. Visit www.itmag.com or follow LinkedIn and Twitter for expert updates.",
+    image_2: Voiping,
+    head_3: "Efficient Scaling for Every Business Size",
+    desc_3:
+      "Las Vegas businesses leverage Biotix AI chatbots to scale operations. Workflow automation reduces time spent on routine tasks, improves customer satisfaction, and helps companies grow efficiently without sacrificing quality.",
+    head_4: "Analytics That Optimize Growth",
+    desc_4:
+      "Since 1998™, INTERNET TELEPHONY offers reliable IP communications insights. Its magazine helps businesses navigate evolving tech landscapes. Visit www.itmag.com or join their online communities on LinkedIn and Twitter.",
+    head_5: "Smart Insights for Modern Communication",
+    desc_6:
+      "INTERNET TELEPHONY has guided IP communications since 1998™. Its magazine simplifies technology trends for practical business decisions. Explore www.itmag.com, LinkedIn forums, or Twitter updates for expert advice.",
+  },
 ];
-

@@ -1,6 +1,8 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import { User, Building2, MessageSquare } from "lucide-react";
 import FAQAccordion from "../ui/FaqsUi";
 import BrandName from "../ui/BrandName";
+import { CustomButton } from "../ui/CustomButton";
 
 export default function Contact() {
   return (
@@ -42,50 +44,80 @@ export default function Contact() {
           <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="text-sm font-medium">Full Name</label>
-              <input className="mt-2 w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none" />
+              <div className="relative mt-2">
+                <User
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                  size={18}
+                />
+                <input className="w-full rounded-xl border border-gray-200 pl-12 pr-4 py-3 text-sm outline-none" />
+              </div>
             </div>
 
             <div>
               <label className="text-sm font-medium">Email</label>
-              <input
-                type="email"
-                className="mt-2 w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none"
-              />
+              <div className="relative mt-2">
+                <Mail
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                  size={18}
+                />
+                <input
+                  type="email"
+                  className="w-full rounded-xl border border-gray-200 pl-12 pr-4 py-3 text-sm outline-none"
+                />
+              </div>
             </div>
 
             <div>
               <label className="text-sm font-medium">Phone</label>
-              <input
-                type="tel"
-                className="mt-2 w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none"
-              />
+              <div className="relative mt-2">
+                <Phone
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                  size={18}
+                />
+                <input
+                  type="tel"
+                  className="w-full rounded-xl border border-gray-200 pl-12 pr-4 py-3 text-sm outline-none"
+                />
+              </div>
             </div>
 
+            {/* Department */}
             <div>
               <label className="text-sm font-medium">Department</label>
-              <select className="mt-2 w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none">
-                <option>Select department</option>
-                <option>Sales</option>
-                <option>Support</option>
-                <option>Billing</option>
-              </select>
+              <div className="relative mt-2">
+                <Building2
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                  size={18}
+                />
+                <select className="w-full rounded-xl border border-gray-200 pl-12 pr-4 py-3 text-sm outline-none appearance-none">
+                  <option>Select department</option>
+                  <option>Sales</option>
+                  <option>Support</option>
+                  <option>Billing</option>
+                </select>
+              </div>
             </div>
 
             <div className="md:col-span-2">
               <label className="text-sm font-medium">Message</label>
-              <textarea
-                placeholder="Enter your message"
-                className="mt-2 w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none h-32 resize-none"
-              />
+              <div className="relative mt-2">
+                <MessageSquare
+                  className="absolute left-4 top-4 text-gray-400"
+                  size={18}
+                />
+                <textarea
+                  placeholder="Enter your message"
+                  className="w-full rounded-xl border border-gray-200 pl-12 pr-4 py-3 text-sm outline-none h-32 resize-none"
+                />
+              </div>
             </div>
 
             <div className="md:col-span-2">
-              <button
+              <CustomButton
+                value={<span> Send Message</span>}
                 type="button"
-                className="w-full h-12 rounded-full bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold transition"
-              >
-                Send Message
-              </button>
+                className="w-full h-12 cursor-pointer hover:shadow-md rounded-full bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold transition"
+              />
             </div>
           </form>
         </div>

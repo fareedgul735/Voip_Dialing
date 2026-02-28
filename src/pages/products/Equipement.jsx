@@ -15,6 +15,8 @@ import {
 import Testominals from "../../ui/Testominals.jsx";
 import { useRef, useState } from "react";
 import video1 from "../../../public/video1.mp4";
+import { CustomButton, CustomButtonTwin } from "../../ui/CustomButton.jsx";
+import { Link } from "react-router";
 
 const column1 = features.filter((f) => f.column === 1);
 const column2 = features.filter((f) => f.column === 2);
@@ -118,12 +120,19 @@ const Equipement = () => {
                 </li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                <button className="bg-orange-500 shadow-sm text-white px-4 py-2 sm:px-5 sm:py-3 rounded-full hover:bg-blue-500 transition text-sm sm:text-base">
-                  Shop Equipment
-                </button>
-                <button className="bg-white shadow-sm rounded-full text-orange-500 hover:text-white px-4 py-2 sm:px-5 sm:py-3 hover:bg-blue-500 transition text-sm sm:text-base">
-                  Contact Sales
-                </button>
+                <Link to={"/pricing"}>
+                  <CustomButtonTwin
+                    className="shadow-md cursor-pointer bg-orange-500 text-white text-sm md:text-base font-semibold px-5 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-500 transition"
+                    value={<span>Shop Equipment</span>}
+                  />
+                </Link>
+
+                <Link to={"/contact"}>
+                  <CustomButton
+                    className="bg-white cursor-pointer shadow-md border text-sm md:text-base border-gray-200 text-gray-800 font-semibold px-5 py-2 md:px-6 md:py-3 rounded-full hover:bg-blue-500 hover:text-white transition"
+                    value={<span>Contact Sales</span>}
+                  />
+                </Link>
               </div>
             </div>
 
@@ -181,9 +190,12 @@ const Equipement = () => {
               businesses that want premium equipment without excessive upfront
               costs.
             </p>
-            <button className="bg-orange-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
-              Shop Equipment
-            </button>
+            <Link to={"/pricing"}>
+              <CustomButton
+                value={<span>Shop Equipment</span>}
+                className="bg-orange-500 cursor-pointer hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg"
+              />
+            </Link>
           </div>
         </div>
       </div>
