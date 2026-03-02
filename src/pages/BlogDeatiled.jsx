@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { blogDeatiledPosts } from "../lib/Constant";
 import SEO from "../lib/SEO";
+import BlogSchema from "../schema/BlogSchema";
 
 const BlogDetail = () => {
   const { id } = useParams();
@@ -14,6 +15,14 @@ const BlogDetail = () => {
         title={`${blog.title} | Voip Dialing ORC`}
         description={blog.title}
         url={`https://voip-dialing.vercel.app/blogs/${blog.slug}`}
+      />
+      <BlogSchema
+        title={blog.title}
+        description={blog.fullDesc}
+        url={`https://voip-dialing.vercel.app/blog/${blog.slug}`}
+        // author={blog.author}
+        // datePublished={blog.date}
+        image={blog.image_2}
       />
       <div className="w-full bg-gradient-to-b from-red-50 via-white to-white p-3 sm:p-12">
         <div className="max-w-[1400px] mx-auto space-y-16">

@@ -18,6 +18,7 @@ import video1 from "../../../public/video1.mp4";
 import { CustomButton, CustomButtonTwin } from "../../ui/CustomButton.jsx";
 import { Link } from "react-router";
 import SEO from "../../lib/SEO.jsx";
+import EquipmentSchema from "../../schema/Equipement.jsx";
 
 const column1 = features.filter((f) => f.column === 1);
 const column2 = features.filter((f) => f.column === 2);
@@ -67,6 +68,7 @@ const Equipement = () => {
         description="Find VoIP equipment and accessories including IP phones, headsets, and PBX hardware from Voip Dialing ORC, fully compatible with Cloud PBX and business VoIP systems."
         url="https://voip-dialing.vercel.app/products/equipment"
       />
+      <EquipmentSchema />
       <div className="w-full p-3 sm:p-6 py-12 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
         <div className="py-12">
           <div className="mx-4 sm:mx-8 lg:mx-12 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-between">
