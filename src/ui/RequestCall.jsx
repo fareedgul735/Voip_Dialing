@@ -1,5 +1,7 @@
 import { Mail, Phone } from "lucide-react";
 import { useState } from "react";
+import { CustomButton } from "./CustomButton";
+import { Link } from "react-router";
 
 const RequestCall = () => {
   const [formData, setFormData] = useState({
@@ -33,11 +35,12 @@ const RequestCall = () => {
               <br />
               With Us
             </h1>
-
-            <button className="bg-white text-orange-600 px-8 py-3 rounded-full cursor-pointer hover:text-white hover:bg-blue-500 transition-all duration-300 shadow-lg mb-12">
-              See Pricing
-            </button>
-
+            <Link to={"/pricing"}>
+              <CustomButton
+                value={<span>See Pricing</span>}
+                className="bg-white text-orange-600 px-8 py-3 rounded-full cursor-pointer hover:text-white hover:bg-blue-500 transition-all duration-300 shadow-lg mb-12"
+              />
+            </Link>
             <div className="border-t border-white/30 pt-8 space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5" />
