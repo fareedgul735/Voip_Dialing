@@ -50,7 +50,7 @@ const Navbar = () => {
       <div className="mx-0 lg:mx-12 flex justify-between items-center px-4 py-4">
         <div className="flex gap-12 justify-center items-center">
           <Link to={"/home"}>
-          <img src={logo} alt="logo" className="w-20" />
+            <img src={logo} alt="logo" className="w-20" />
           </Link>
           <ul className="hidden lg:flex gap-2 items-center ">
             {navLinks.map((item) => (
@@ -236,9 +236,13 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex items-center gap-4">
-          <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+          <div className="relative w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
             <Link to={"/shoppingCart"}>
               <ShoppingCart size={18} />
+
+              <span className="absolute cursor-pointer bold -top-1 -right-1 bg-orange-500 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">
+                0
+              </span>
             </Link>
           </div>
 
