@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import Motion from "../components/Motion";
 
 export default function FAQAccordion() {
   const [openItems, setOpenItems] = useState({});
@@ -64,49 +65,51 @@ export default function FAQAccordion() {
 
   return (
     <div className="w-full">
-      <div className="mx-4 sm:mx-8 lg:mx-12">
-        <div className="text-left lg:text-center mb-12">
-          <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-3">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-gray-500 text-sm">
-            How Spitflox can benefit your business, understanding its features
-          </p>
-        </div>
+      <Motion>
+        <div className="mx-4 sm:mx-8 lg:mx-12">
+          <div className="text-left lg:text-center mb-12">
+            <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-3">
+              Frequently Asked Questions
+            </h1>
+            <p className="text-gray-500 text-sm">
+              How Spitflox can benefit your business, understanding its features
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {faqs.map((faq) => (
-            <div
-              key={faq.id}
-              className="bg-orange-100 rounded-lg overflow-hidden transition-all duration-200"
-            >
-              <button
-                onClick={() => toggleItem(faq.id)}
-                className="w-full px-5 py-4 flex items-center justify-between text-left hover:bg-orange-200 transition-colors"
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {faqs.map((faq) => (
+              <div
+                key={faq.id}
+                className="bg-orange-100 rounded-lg overflow-hidden transition-all duration-200"
               >
-                <span className="text-gray-800 text-sm font-medium pr-4">
-                  {faq.question}
-                </span>
-                <div className="flex-shrink-0">
-                  {openItems[faq.id] ? (
-                    <Minus className="w-4 h-4 text-gray-600" />
-                  ) : (
-                    <Plus className="w-4 h-4 text-gray-600" />
-                  )}
-                </div>
-              </button>
+                <button
+                  onClick={() => toggleItem(faq.id)}
+                  className="w-full px-5 py-4 flex items-center justify-between text-left hover:bg-orange-200 transition-colors"
+                >
+                  <span className="text-gray-800 text-sm font-medium pr-4">
+                    {faq.question}
+                  </span>
+                  <div className="flex-shrink-0">
+                    {openItems[faq.id] ? (
+                      <Minus className="w-4 h-4 text-gray-600" />
+                    ) : (
+                      <Plus className="w-4 h-4 text-gray-600" />
+                    )}
+                  </div>
+                </button>
 
-              {openItems[faq.id] && (
-                <div className="px-5 pb-4 pt-0">
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              )}
-            </div>
-          ))}
+                {openItems[faq.id] && (
+                  <div className="px-5 pb-4 pt-0">
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </Motion>
     </div>
   );
 }

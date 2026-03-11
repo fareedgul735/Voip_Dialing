@@ -27,6 +27,7 @@ const LandingPage = () => {
         url="https://voip-dialing.vercel.app/home"
       />
       <HomeSchema />
+
       <div className="p-[12px] py-12 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
         <HeroSection />
       </div>
@@ -168,7 +169,7 @@ const LandingPage = () => {
             </div>
           </div>
 
-          <div className="relative  flex items-center justify-center">
+          <div className="relative flex items-center justify-center">
             <div className="relative w-full h-74 sm:h-80 md:h-96 lg:h-full">
               <img
                 src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1200&auto=format&fit=crop"
@@ -198,14 +199,13 @@ const LandingPage = () => {
             Get up and running in minutes
           </h1>
 
-          <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-md shadow-orange-200 border border-orange-100 p-2 md:p-4 flex-1 relative overflow-hidden">
+          <div className="relative w-full max-w-6xl mx-auto aspect-video bg-white/80 rounded-2xl overflow-hidden">
             <video
               ref={videoRef}
               src={video1}
               poster={Detailed}
-              className="w-full rounded-xl"
+              className="w-full h-full object-cover"
               controls
-              onEnded={() => setIsPlaying(false)}
             />
 
             {!isPlaying && (

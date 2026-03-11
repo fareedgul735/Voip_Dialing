@@ -6,6 +6,7 @@ import title4 from "../../public/title4.png";
 import title5 from "../../public/title5.png";
 import title6 from "../../public/title6.png";
 import title7 from "../../public/title7.png";
+import Motion from "../components/Motion";
 
 const BrandName = () => {
   const scrollContainerRef = useRef(null);

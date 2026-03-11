@@ -7,6 +7,7 @@ import C2 from "../../public/ChatGPT Image Feb 26, 2026, 10_55_15 AM.png";
 import C3 from "../../public/ChatGPT Image Feb 26, 2026, 10_59_53 AM.png";
 
 import { useState } from "react";
+import Motion from "../components/Motion";
 
 const Testominals = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -107,170 +108,181 @@ const Testominals = () => {
     <div className="w-full bg-gradient-to-b from-orange-50 to-white">
       <div className="py-16">
         <div className="mx-4 md:mx-8 lg:mx-12">
-          <div className="text-center mb-4">
-            <p className="text-orange-400 uppercase tracking-wider text-1xl">
-              Testimonials
-            </p>
-          </div>
-
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 text-center mb-12">
-            What Our Clients are Saying
-          </h2>
-
-          <div className="relative flex items-center justify-center">
-            <div className="absolute left-2 top-2 lg:left-12 lg:top-2 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-30 lg:h-30 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
-              <img
-                key={`topLeft-${currentTestimonial}`}
-                src={currentImages.topLeft}
-                className={`w-full h-full object-cover transition-opacity duration-300 ${
-                  isAnimating ? "opacity-0" : "opacity-100"
-                }`}
-                alt="Client"
-              />
+          <Motion>
+            <div className="text-center mb-4">
+              <p className="text-orange-400 uppercase tracking-wider text-1xl">
+                Testimonials
+              </p>
             </div>
+          </Motion>
+          <Motion>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 text-center mb-12">
+              What Our Clients are Saying
+            </h2>
+          </Motion>
+          <Motion>
+            <div className="relative flex items-center justify-center">
+              <div className="absolute left-2 top-2 lg:left-12 lg:top-2 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-30 lg:h-30 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
+                <img
+                  key={`topLeft-${currentTestimonial}`}
+                  src={currentImages.topLeft}
+                  className={`w-full h-full object-cover transition-opacity duration-300 ${
+                    isAnimating ? "opacity-0" : "opacity-100"
+                  }`}
+                  alt="Client"
+                />
+              </div>
 
-            <div className="absolute left-10 bottom-2 lg:left-40 lg:bottom-4 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-20 lg:h-20 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
-              <img
-                key={`bottomLeft-${currentTestimonial}`}
-                src={currentImages.bottomLeft}
-                className={`w-full h-full object-cover transition-opacity duration-300 ${
-                  isAnimating ? "opacity-0" : "opacity-100"
-                }`}
-                alt="Client"
-              />
-            </div>
+              <div className="absolute left-10 bottom-2 lg:left-40 lg:bottom-4 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-20 lg:h-20 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
+                <img
+                  key={`bottomLeft-${currentTestimonial}`}
+                  src={currentImages.bottomLeft}
+                  className={`w-full h-full object-cover transition-opacity duration-300 ${
+                    isAnimating ? "opacity-0" : "opacity-100"
+                  }`}
+                  alt="Client"
+                />
+              </div>
 
-            <div className="absolute right-12 top-4 lg:right-22 lg:top-8 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-28 lg:h-28 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
-              <img
-                key={`topRight-${currentTestimonial}`}
-                src={currentImages.topRight}
-                className={`w-full h-full object-cover transition-opacity duration-300 ${
-                  isAnimating ? "opacity-0" : "opacity-100"
-                }`}
-                alt="Client"
-              />
-            </div>
+              <div className="absolute right-12 top-4 lg:right-22 lg:top-8 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-28 lg:h-28 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
+                <img
+                  key={`topRight-${currentTestimonial}`}
+                  src={currentImages.topRight}
+                  className={`w-full h-full object-cover transition-opacity duration-300 ${
+                    isAnimating ? "opacity-0" : "opacity-100"
+                  }`}
+                  alt="Client"
+                />
+              </div>
 
-            <div className="absolute right-14 bottom-8 lg:right-44 lg:bottom-18 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
-              <img
-                key={`middleRight-${currentTestimonial}`}
-                src={currentImages.middleRight}
-                className={`w-full h-full object-cover transition-opacity duration-300 ${
-                  isAnimating ? "opacity-0" : "opacity-100"
-                }`}
-                alt="Client"
-              />
-            </div>
+              <div className="absolute right-14 bottom-8 lg:right-44 lg:bottom-18 w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
+                <img
+                  key={`middleRight-${currentTestimonial}`}
+                  src={currentImages.middleRight}
+                  className={`w-full h-full object-cover transition-opacity duration-300 ${
+                    isAnimating ? "opacity-0" : "opacity-100"
+                  }`}
+                  alt="Client"
+                />
+              </div>
 
-            <div className="absolute right-2 -bottom-4 lg:right-22 lg:bottom-2 w-7 h-7 sm:w-9 sm:h-9 md:w-12 md:h-12 lg:w-20 lg:h-20 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
-              <img
-                key={`bottomRight-${currentTestimonial}`}
-                src={currentImages.bottomRight}
-                className={`w-full h-full object-cover transition-opacity duration-300 ${
-                  isAnimating ? "opacity-0" : "opacity-100"
-                }`}
-                alt="Client"
-              />
-            </div>
+              <div className="absolute right-2 -bottom-4 lg:right-22 lg:bottom-2 w-7 h-7 sm:w-9 sm:h-9 md:w-12 md:h-12 lg:w-20 lg:h-20 rounded-full overflow-hidden shadow-lg z-19 transition-opacity duration-300">
+                <img
+                  key={`bottomRight-${currentTestimonial}`}
+                  src={currentImages.bottomRight}
+                  className={`w-full h-full object-cover transition-opacity duration-300 ${
+                    isAnimating ? "opacity-0" : "opacity-100"
+                  }`}
+                  alt="Client"
+                />
+              </div>
 
-            <div className="overflow-hidden max-w-2xl mx-auto relative z-10">
-              <div
-                className={`bg-white  rounded-2xl shadow-xl p-8 border border-gray-100 transition-all duration-300 ease-in-out ${
-                  isAnimating
-                    ? direction === "right"
-                      ? "translate-x-full opacity-0"
-                      : "-translate-x-full opacity-0"
-                    : "translate-x-0 opacity-100"
-                }`}
-              >
-                <div className="flex justify-center mb-6 ">
-                  <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
+              <div className="overflow-hidden max-w-2xl mx-auto relative z-10">
+                <div
+                  className={`bg-white  rounded-2xl shadow-xl p-8 border border-gray-100 transition-all duration-300 ease-in-out ${
+                    isAnimating
+                      ? direction === "right"
+                        ? "translate-x-full opacity-0"
+                        : "-translate-x-full opacity-0"
+                      : "translate-x-0 opacity-100"
+                  }`}
+                >
+                  <div className="flex justify-center mb-6 ">
+                    <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                      <svg
+                        className="w-6 h-6 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                      </svg>
+                    </div>
                   </div>
-                </div>
 
-                <p className="text-gray-600 text-center mb-6 leading-relaxed">
-                  {testimonials[currentTestimonial].text}
-                </p>
+                  <p className="text-gray-600 text-center mb-6 leading-relaxed">
+                    {testimonials[currentTestimonial].text}
+                  </p>
 
-                <div className="text-center">
-                  <p className="text-orange-500 font-semibold">
-                    {testimonials[currentTestimonial].author}
-                  </p>
-                  <p className="text-gray-400 text-sm">
-                    {testimonials[currentTestimonial].position}
-                  </p>
+                  <div className="text-center">
+                    <p className="text-orange-500 font-semibold">
+                      {testimonials[currentTestimonial].author}
+                    </p>
+                    <p className="text-gray-400 text-sm">
+                      {testimonials[currentTestimonial].position}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Motion>
+          <Motion>
+            <div className="flex justify-center gap-4 mt-8">
+              <button
+                onClick={handlePrev}
+                disabled={isAnimating}
+                className="w-10 h-10 cursor-pointer bg-orange-500 hover:bg-blue-600 disabled:bg-orange-300 rounded-full flex items-center justify-center text-white shadow-lg transition-colors"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
 
-          <div className="flex justify-center gap-4 mt-8">
-            <button
-              onClick={handlePrev}
-              disabled={isAnimating}
-              className="w-10 h-10 cursor-pointer bg-orange-500 hover:bg-blue-600 disabled:bg-orange-300 rounded-full flex items-center justify-center text-white shadow-lg transition-colors"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-
-            <button
-              onClick={handleNext}
-              disabled={isAnimating}
-              className="w-10 h-10 bg-orange-500 cursor-pointer hover:bg-blue-600 disabled:bg-orange-300 rounded-full flex items-center justify-center text-white shadow-lg transition-colors"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
+              <button
+                onClick={handleNext}
+                disabled={isAnimating}
+                className="w-10 h-10 bg-orange-500 cursor-pointer hover:bg-blue-600 disabled:bg-orange-300 rounded-full flex items-center justify-center text-white shadow-lg transition-colors"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </Motion>
         </div>
       </div>
 
       <div className="py-16 bg-white">
         <div className="mx-4 md:mx-8 lg:mx-12">
-          <div className="text-center mb-4">
-            <p className="text-orange-400 uppercase tracking-wider text-lg">
-              VOIP BLOGS
-            </p>
-          </div>
-
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 text-center mb-12">
-            The Services you really need for growing fast
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <div key={index} className="cursor-pointer">
-                <div
-                  className="rounded-3xl overflow-hidden p-6 h-80 shadow-xl flex items-center justify-center"
-                  style={{
-                    backgroundImage: `url(${service.icon})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  {/* <img
+          <Motion>
+            <div className="text-center mb-4">
+              <p className="text-orange-400 uppercase tracking-wider text-lg">
+                VOIP BLOGS
+              </p>
+            </div>
+          </Motion>
+          <Motion>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 text-center mb-12">
+              The Services you really need for growing fast
+            </h2>
+          </Motion>
+          <Motion>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {services.map((service, index) => (
+                <div key={index} className="cursor-pointer">
+                  <div
+                    className="rounded-3xl overflow-hidden p-6 h-80 shadow-xl flex items-center justify-center"
+                    style={{
+                      backgroundImage: `url(${service.icon})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  >
+                    {/* <img
                     src={service.icon}
                     alt="service"
                     className={`object-contain transition-all duration-300
     ${index === 1 ? "w-[316px] h-[380px] rounded-md" : "w-[316px] h-[331px]"}`}
                   /> */}
-                </div>
+                  </div>
 
-                <div className="mt-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm">{service.description}</p>
+                  <div className="mt-6">
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Motion>
         </div>
       </div>
     </div>

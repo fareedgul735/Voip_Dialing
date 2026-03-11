@@ -57,7 +57,7 @@ const BulkSMS = () => {
         url="https://voip-dialing.vercel.app/products/bulk-sms"
       />
       <BulkSMSchema />
-      
+
       <div className="w-full p-3 sm:p-6 py-12 bg-[linear-gradient(101.26deg,_#FAF5F5_0%,_#FFF2F2_27.63%,_#F9EDFF_39.44%,_#F9F7FF_54.44%,_#999CFF_100%)]">
         <div className="py-12">
           <div className="mx-4 sm:mx-8 lg:mx-12 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-between">
@@ -288,14 +288,13 @@ const BulkSMS = () => {
             Get up and running in minutes
           </h1>
 
-          <div className="mx-auto w-full max-w-6xl bg-white/80 rounded-2xl shadow-md shadow-orange-200 border border-orange-100 p-2 md:p-4 flex-1 relative overflow-hidden">
+          <div className="relative w-full max-w-6xl mx-auto aspect-video bg-white/80 rounded-2xl overflow-hidden">
             <video
               ref={videoRef}
               src={video1}
               poster={Detailed}
-              className="w-full rounded-xl"
+              className="w-full h-full object-cover"
               controls
-              onEnded={() => setIsPlaying(false)}
             />
 
             {!isPlaying && (
@@ -309,7 +308,7 @@ const BulkSMS = () => {
               >
                 <div
                   className="w-16 cursor-pointer h-16 md:w-20 md:h-20 bg-orange-500/90 rounded-full flex items-center justify-center
-                            group-hover:scale-110 transition-transform duration-300 shadow-lg"
+                                            group-hover:scale-110 transition-transform duration-300 shadow-lg"
                 >
                   <svg
                     className="w-6 h-6 md:w-8 md:h-8 text-white ml-1"

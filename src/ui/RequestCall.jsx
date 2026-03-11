@@ -2,6 +2,7 @@ import { Mail, Phone } from "lucide-react";
 import { useState } from "react";
 import { CustomButton } from "./CustomButton";
 import { Link } from "react-router";
+import Motion from "../components/Motion";
 
 const RequestCall = () => {
   const [formData, setFormData] = useState({
